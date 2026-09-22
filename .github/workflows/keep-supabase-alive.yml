@@ -11,7 +11,7 @@ name: Keep Supabase project active
 
 on:
   schedule:
-    - cron: '0 6 * * 1,4' # Mon & Thu — well under the 7-day pause window
+    - cron: '0 9 * * 1,4' # Mon & Thu, 09:00 UTC — well under the 7-day pause window
   workflow_dispatch: {}
 
 jobs:
