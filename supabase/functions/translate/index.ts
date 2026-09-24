@@ -1,5 +1,5 @@
 // Supabase Edge Function: translation (DeepL) + bilingual example sentences
-// (Tatoeba) for Canta, Alice.
+// (Tatoeba) for CantAlice.
 //
 // Why a function: DeepL has no browser CORS and its key must stay secret;
 // Tatoeba (a CC-licensed parallel corpus, our open "Reverso Context") also has

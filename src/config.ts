@@ -1,5 +1,5 @@
 /**
- * Central configuration for Canta, Alice.
+ * Central configuration for CantAlice.
  *
  * The Spotify Client ID is PUBLIC by design — the Authorization Code with PKCE
  * flow never exposes a client secret, so it is safe to ship in a static site.
@@ -54,7 +54,7 @@ export const SUPABASE_ANON_KEY =
   (import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined)?.trim() || ''
 export const IS_CLOUD_CONFIGURED = Boolean(SUPABASE_URL && SUPABASE_ANON_KEY)
 
-export const APP_NAME = 'Canta, Alice'
+export const APP_NAME = 'CantAlice'
 
 /**
  * Target language — the language the user is learning. Portuguese (pt-BR) stays
@@ -102,7 +102,7 @@ export const LANGUAGES: Record<TargetLang, LangConfig> = {
   en: {
     code: 'en',
     name: 'inglês',
-    brand: 'Canta, Alice',
+    brand: 'CantAlice',
     tagline: 'Inglês cantando',
     speech: 'en-US',
     deepl: 'EN',
