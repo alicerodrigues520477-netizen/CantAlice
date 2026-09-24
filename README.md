@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎵 Canta, Alice
+# 🎵 CantAlice
 
 **Aprender inglês cantando — letras sincronizadas, tradução e suas músicas favoritas do Spotify.**
 
@@ -54,7 +54,7 @@ Functions do Supabase, também sem servidor próprio.
 ### 1. Crie um app no Spotify (grátis)
 
 1. Acesse o [Spotify Developer Dashboard](https://developer.spotify.com/dashboard) e clique em **Create app**.
-2. Dê um nome (ex.: *Canta Alice*) e uma descrição.
+2. Dê um nome (ex.: *CantAlice*) e uma descrição.
 3. Em **Redirect URIs**, adicione **os dois** endereços abaixo (ajuste para o seu usuário/repositório):
    - Produção (GitHub Pages): `https://SEU_USUARIO.github.io/CantAlice/`
    - Desenvolvimento local: `http://127.0.0.1:5173/`

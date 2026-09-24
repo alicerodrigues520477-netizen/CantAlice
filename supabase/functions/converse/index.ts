@@ -1,4 +1,4 @@
-// Supabase Edge Function: AI conversation partner for Canta, Alice.
+// Supabase Edge Function: AI conversation partner for CantAlice.
 //
 // One turn of spoken conversation in a single call:
 //   (optional) audio  --Whisper-->  transcript

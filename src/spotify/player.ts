@@ -79,7 +79,7 @@ class PlayerController {
           return
         }
         const player = new window.Spotify.Player({
-          name: 'Canta, Alice 🎵',
+          name: 'CantAlice 🎵',
           volume: 0.8,
           getOAuthToken: (cb) => {
             getValidAccessToken().then((t) => t && cb(t))

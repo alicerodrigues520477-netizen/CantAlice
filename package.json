@@ -1,9 +1,9 @@
 {
-  "name": "canta-alice",
+  "name": "cant-alice",
   "private": true,
   "version": "1.10.0",
   "type": "module",
-  "description": "Canta, Alice — aprender inglês (ou espanhol) cantando. A beautiful app for learning a language through music.",
+  "description": "CantAlice — aprender inglês (ou espanhol) cantando. A beautiful app for learning a language through music.",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

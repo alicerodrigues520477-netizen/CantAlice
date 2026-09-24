@@ -1,4 +1,4 @@
--- Canta, Alice -- cloud progress storage.
+-- CantAlice -- cloud progress storage.
 -- Run this once in the Supabase SQL editor (Dashboard > SQL Editor > New query).
 
 create table if not exists public.progress (

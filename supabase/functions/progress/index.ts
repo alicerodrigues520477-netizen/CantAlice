@@ -1,4 +1,4 @@
-// Supabase Edge Function: per-user progress storage for Canta, Alice.
+// Supabase Edge Function: per-user progress storage for CantAlice.
 //
 // Auth model: the caller proves ownership of a Spotify account by sending that
 // account's access token in the `x-spotify-token` header. We call Spotify /me

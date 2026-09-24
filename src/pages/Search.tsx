@@ -42,7 +42,7 @@ export function SearchPage() {
         setResults([])
         setError({ message: friendlyError(detail), detail })
         // Also log for debugging in the browser console.
-        console.error('[Canta, Alice] Falha na busca do Spotify:', e)
+        console.error('[CantAlice] Falha na busca do Spotify:', e)
       } finally {
         setLoading(false)
       }
