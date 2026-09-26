@@ -211,7 +211,7 @@ async function askClaude(
     // Not valid JSON — usually a truncated answer. Salvage the fields we know
     // about rather than showing raw JSON to the learner.
     const out: Record<string, string> = {}
-    for (const k of ['reply', 'say', 'tip', 'note', 'pt']) {
+    for (const k of ['reply', 'say', 'tip', 'note', 'pt', 'yourTurn', 'progress']) {
       const v = extractField(raw, k)
       if (v !== null) out[k] = v
     }
@@ -223,7 +223,15 @@ async function askClaude(
 
 /**
  * Get the tutor's reply (+ optional pt-BR correction) from Claude.
- * With `explain`, the reply also comes back translated to Portuguese.
+ * With `explain`, the reply also comes back translated to Portuguese — this is
+ * the "espelho" shadowing flow's own step 4, and keeps its original, simpler
+ * prompt untouched below.
+ *
+ * Without `explain` ("modo direto" — the plain conversation mode), the tutor
+ * follows a richer beginner-focused coaching routine instead: travel-scenario
+ * roleplay the learner can kick off herself in her first message, a `yourTurn`
+ * line to rehearse before she speaks, structured pt-BR corrections, and a
+ * progress recap every 10 of her turns.
  */
 async function chat(
   scenario: string | null,
@@ -232,39 +240,93 @@ async function chat(
   languageName = 'English',
   explain = false,
 ) {
-  const system =
-    `You are a warm, patient ${languageName} conversation partner for a Brazilian ` +
-    `Portuguese speaker practising everyday spoken ${languageName} (easy–intermediate ` +
-    `level).` +
-    scenarioClause(scenario) +
-    (scenario ? ' Play your side of it and stay in character.' : '') +
-    ` Rules: reply ONLY in ${languageName}; keep it to 1–2 short, natural sentences; ` +
-    `always end with a simple question to keep the conversation going. If the learner's ` +
-    `last message had a noticeable ${languageName} mistake, briefly note the correction ` +
-    `in Brazilian Portuguese.` +
-    (explain
-      ? ` This message is what the learner just shadowed out loud (she heard it spoken, ` +
-        `repeated it, and it's now her turn in the conversation) — answer it as the next ` +
-        `natural line from your character, so she can shadow your reply next.`
-      : '') +
-    ` Respond as strict JSON: {"reply": string, "tip": string` +
-    (explain ? `, "pt": string` : '') +
-    `}. "tip" is the pt-BR correction or "" if there was nothing worth correcting.` +
-    (explain
-      ? ` "pt" is a natural Brazilian Portuguese translation of your own reply, delivered ` +
-        `together with "reply" as its simultaneous subtitle so the learner can follow along ` +
-        `while she listens to and shadows the ${languageName} audio.`
-      : '') +
-    ` No markdown, JSON only.`
+  const coachMode = !explain
+  const firstTurn = history.length === 0
+  const userTurnNumber = history.filter((t) => t.role === 'user').length + 1
+  const wantsProgress = coachMode && userTurnNumber % 10 === 0
+
+  const system = coachMode
+    ? [
+        `You are the learner's personal ${languageName} tutor and conversation partner. ` +
+          `Her current level is BEGINNER.`,
+        `Main goal: help her unstick her spoken ${languageName} through conversation ` +
+          `practice focused on travel situations (airport, immigration, hotel, restaurant, ` +
+          `transport, asking for directions, emergencies, casual small talk with locals). ` +
+          `Teach useful everyday idiomatic expressions that native speakers actually use.`,
+        scenario
+          ? scenarioClause(scenario) + ' Play your side of it and stay in character.'
+          : firstTurn
+            ? `There is no fixed scenario — she may open by describing a scene and your ` +
+              `role in it herself (e.g. "Let's do a hotel check-in in Lisbon. You're the ` +
+              `receptionist. Start."). If her message does that, immediately become that ` +
+              `character in ${languageName} and start the scene right away — don't ask for ` +
+              `confirmation first. If she just said hello or something else, have a warm ` +
+              `free conversation instead.`
+            : `This is a free conversation — stay with whatever character or situation was ` +
+              `already established earlier in the chat, or keep it a warm free conversation ` +
+              `if none was.`,
+        `Rules: reply ONLY in ${languageName}; keep it to 1–2 short, natural, simple ` +
+          `sentences a beginner can follow; always end with a question or a small twist ` +
+          `that moves the scene forward and nudges her a little out of her comfort zone.`,
+        `Never translate your side of the conversation into Portuguese unless she ` +
+          `explicitly asks for it — if she seems not to understand, rephrase in simpler ` +
+          `${languageName} instead.`,
+        `If her last message was in Portuguese (she got stuck), give her back what she ` +
+          `meant to say in correct ${languageName}, then continue the scene in ` +
+          `${languageName} from there.`,
+        `Also give her the exact ${languageName} sentence she should say next, so she can ` +
+          `rehearse it out loud before her turn.`,
+        `Look at her previous message (the one you're replying to). If it had a mistake, ` +
+          `note it briefly in Brazilian Portuguese: what she said, the more natural way to ` +
+          `say it, and why, in one simple sentence each. If there was no mistake — or this ` +
+          `is her first, scene-setting message — give a short compliment or encouragement ` +
+          `instead.`,
+        wantsProgress
+          ? `This is her 10th turn — also include a short Brazilian Portuguese progress ` +
+            `recap: 2 things she's improved on and 2 things she still needs to practice, ` +
+            `based on the conversation so far.`
+          : '',
+        `Respond as strict JSON: {"reply": string, "yourTurn": string, "tip": string` +
+          (wantsProgress ? `, "progress": string` : '') +
+          `}.`,
+        `"reply" is ONLY your in-character spoken line — no corrections or meta ` +
+          `commentary in it, since it is read aloud as audio.`,
+        `"yourTurn" is the exact ${languageName} sentence she should say next, nothing else.`,
+        `"tip" is the pt-BR correction or encouragement described above.`,
+        wantsProgress ? `"progress" is the pt-BR progress recap described above.` : '',
+        `No markdown, JSON only.`,
+      ]
+        .filter(Boolean)
+        .join(' ')
+    : `You are a warm, patient ${languageName} conversation partner for a Brazilian ` +
+      `Portuguese speaker practising everyday spoken ${languageName} (easy–intermediate ` +
+      `level).` +
+      scenarioClause(scenario) +
+      (scenario ? ' Play your side of it and stay in character.' : '') +
+      ` Rules: reply ONLY in ${languageName}; keep it to 1–2 short, natural sentences; ` +
+      `always end with a simple question to keep the conversation going. If the learner's ` +
+      `last message had a noticeable ${languageName} mistake, briefly note the correction ` +
+      `in Brazilian Portuguese.` +
+      ` This message is what the learner just shadowed out loud (she heard it spoken, ` +
+      `repeated it, and it's now her turn in the conversation) — answer it as the next ` +
+      `natural line from your character, so she can shadow your reply next.` +
+      ` Respond as strict JSON: {"reply": string, "tip": string, "pt": string}. "tip" is ` +
+      `the pt-BR correction or "" if there was nothing worth correcting. "pt" is a natural ` +
+      `Brazilian Portuguese translation of your own reply, delivered together with "reply" ` +
+      `as its simultaneous subtitle so the learner can follow along while she listens to ` +
+      `and shadows the ${languageName} audio.` +
+      ` No markdown, JSON only.`
 
   const messages = [...history.slice(-12), { role: 'user' as const, content: userText }]
-  // With `explain` the answer carries a full translation too — give it room so
-  // the JSON doesn't get truncated mid-string.
-  const parsed = await askClaude(system, messages, explain ? 700 : 500)
+  // Both `explain` and the progress recap add extra prose to the answer —
+  // give them room so the JSON doesn't get truncated mid-string.
+  const parsed = await askClaude(system, messages, explain || wantsProgress ? 700 : 600)
   return {
     reply: parsed.reply || parsed._raw || '',
     tip: parsed.tip ?? '',
     pt: explain ? (parsed.pt ?? '') : '',
+    yourTurn: coachMode ? (parsed.yourTurn ?? '') : '',
+    progress: wantsProgress ? (parsed.progress ?? '') : '',
   }
 }
 
@@ -301,7 +363,7 @@ async function sayIt(
     { role: 'user' as const, content: `Em português, quero dizer: ${ptText}` },
   ]
   const parsed = await askClaude(system, messages)
-  return { reply: parsed.say || parsed._raw || '', tip: parsed.note ?? '', pt: '' }
+  return { reply: parsed.say || parsed._raw || '', tip: parsed.note ?? '', pt: '', yourTurn: '', progress: '' }
 }
 
 /** The OpenAI TTS voices we accept from the client; anything else → the default. */
@@ -445,6 +507,10 @@ Deno.serve(async (req: Request) => {
       reply: out.reply,
       tip: out.tip,
       translation: out.pt,
+      // The next line to rehearse, and the periodic progress recap — both only
+      // populated by "modo direto"'s coaching routine (see `chat()`).
+      yourTurn: out.yourTurn,
+      progress: out.progress,
       audio,
       // "shadow" — sentence + audio for the learner to repeat (step 2).
       // "reply"  — the interlocutor's line + simultaneous pt-BR subtitle (step 4).

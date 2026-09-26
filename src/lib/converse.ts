@@ -21,6 +21,10 @@ export interface ConverseResult {
   tip: string
   /** pt-BR translation of `reply`, when `explain` was asked for. */
   translation: string
+  /** The exact next line to rehearse out loud, from "modo direto"'s coaching routine. */
+  yourTurn: string
+  /** pt-BR progress recap every 10 learner turns (direct mode only), or "". */
+  progress: string
   /** Base64 mp3 of the spoken reply, or null. */
   audio: string | null
   /**
@@ -121,6 +125,8 @@ export async function converse(input: {
     reply: data.reply ?? '',
     tip: data.tip ?? '',
     translation: data.translation ?? '',
+    yourTurn: data.yourTurn ?? '',
+    progress: data.progress ?? '',
     audio: data.audio ?? null,
     stage: data.stage ?? '',
   }
