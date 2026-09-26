@@ -175,6 +175,18 @@ export function listenHeld(opts: {
   rec.onresult = (e) => {
     // Recognition reports a growing list; anything final is banked, the rest is
     // still being revised and only shown as a preview.
+    //
+    // Android's on-device engine doesn't add one final result per new segment
+    // like desktop Chrome does — in continuous mode it periodically re-commits
+    // a *growing restatement of the whole utterance so far* as a fresh final
+    // result, so `results` can hold e.g. "how", "how you", "how you like a
+    // coffee" as three separate final entries instead of just the words new
+    // since the last one. Banking (and joining) every final as its own
+    // segment then stutters the transcript ("how how you how you like a...").
+    // Since each restatement already contains the previous one as its own
+    // prefix, the fix is to replace what's banked so far instead of adding to
+    // it whenever that's the case — leaving only the latest, most complete
+    // version of the sentence.
     const results = e.results
     const banked: string[] = []
     let interim = ''
@@ -182,8 +194,13 @@ export function listenHeld(opts: {
       const r = results[i] as ArrayLike<RecognitionAlternative> & { isFinal?: boolean }
       const said = (r[0]?.transcript ?? '').trim()
       if (!said) continue
-      if (r.isFinal) banked.push(said)
-      else interim = said
+      if (r.isFinal) {
+        const soFar = banked.join(' ')
+        if (soFar && fold(said).startsWith(fold(soFar))) banked.length = 0
+        banked.push(said)
+      } else {
+        interim = said
+      }
     }
     finals = banked
     live = interim
