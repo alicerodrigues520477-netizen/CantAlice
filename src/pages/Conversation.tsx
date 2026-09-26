@@ -1,6 +1,18 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Mic, Send, Loader2, Volume2, Lightbulb, Music2, RotateCcw, BookOpen, Play } from 'lucide-react'
+import {
+  Mic,
+  Send,
+  Loader2,
+  Volume2,
+  Lightbulb,
+  Music2,
+  RotateCcw,
+  BookOpen,
+  Play,
+  MessageCircle,
+  TrendingUp,
+} from 'lucide-react'
 import { useSession } from '../store/useSession'
 import { beginLogin } from '../spotify/auth'
 import { speak, canSpeak } from '../lib/speak'
@@ -32,6 +44,10 @@ interface Msg {
   tip?: string
   /** pt-BR: what the tutor's line means, or what she meant to say. */
   pt?: string
+  /** "Modo direto" only: the exact next line to rehearse before her turn. */
+  yourTurn?: string
+  /** "Modo direto" only: pt-BR progress recap every 10 of her turns. */
+  progress?: string
   audio?: string | null
   hidden?: boolean
 }
@@ -165,6 +181,8 @@ export function ConversationPage() {
           content: r.reply,
           tip: r.tip,
           pt: r.translation,
+          yourTurn: r.yourTurn,
+          progress: r.progress,
           audio: r.audio,
         })
         return next
@@ -202,7 +220,15 @@ export function ConversationPage() {
       })
       setMessages([
         { role: 'user', content: KICKOFF, hidden: true },
-        { role: 'assistant', content: r.reply, tip: r.tip, pt: r.translation, audio: r.audio },
+        {
+          role: 'assistant',
+          content: r.reply,
+          tip: r.tip,
+          pt: r.translation,
+          yourTurn: r.yourTurn,
+          progress: r.progress,
+          audio: r.audio,
+        },
       ])
       voiceReply(r)
     } catch (e) {
@@ -635,6 +661,18 @@ function Bubble({ msg, micActive }: { msg: Msg; micActive: boolean }) {
           </div>
         </div>
         <AnimatePresence>
+          {msg.yourTurn && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              className="mt-1 flex items-start gap-1.5 rounded-xl bg-aurora-3/10 px-3 py-1.5 text-xs text-aurora-3"
+            >
+              <MessageCircle size={13} className="mt-0.5 shrink-0" />
+              <span>
+                Sua vez: <span className="italic">“{msg.yourTurn}”</span>
+              </span>
+            </motion.div>
+          )}
           {msg.tip && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
@@ -643,6 +681,16 @@ function Bubble({ msg, micActive }: { msg: Msg; micActive: boolean }) {
             >
               <Lightbulb size={13} className="mt-0.5 shrink-0" />
               <span>{msg.tip}</span>
+            </motion.div>
+          )}
+          {msg.progress && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              className="mt-1 flex items-start gap-1.5 rounded-xl bg-rose-400/10 px-3 py-1.5 text-xs text-rose-200"
+            >
+              <TrendingUp size={13} className="mt-0.5 shrink-0" />
+              <span>{msg.progress}</span>
             </motion.div>
           )}
         </AnimatePresence>
