@@ -192,6 +192,9 @@ function PhraseRow({ phrase }: { phrase: Phrase }) {
           <p className="leading-snug text-cream">
             <SpeakableText text={phrase.en} />
           </p>
+          {phrase.pronuncia && (
+            <p className="mt-0.5 text-xs text-mist/45">/ {phrase.pronuncia} /</p>
+          )}
           <p className="mt-0.5 text-sm italic leading-snug text-rose-300/80">{phrase.pt}</p>
         </div>
         {canSpeak && (

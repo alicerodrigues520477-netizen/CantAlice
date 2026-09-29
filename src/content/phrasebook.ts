@@ -12,6 +12,8 @@ import type { TargetLang } from '../config'
 export interface Phrase {
   en: string
   pt: string
+  /** Optional phonetic pronunciation guide (Portuguese-style phonetics), e.g. "dís is mai béig". */
+  pronuncia?: string
 }
 export interface DialogLine {
   who: 'you' | 'them'
@@ -251,6 +253,57 @@ const EN: Scenario[] = [
       { who: 'you', en: 'How many days should I take it?', pt: 'Por quantos dias devo tomar?' },
       { who: 'them', en: 'For five days. Come back if you do not feel better in two days.', pt: 'Por cinco dias. Volte se não melhorar em dois dias.' },
       { who: 'you', en: 'Thank you, doctor. Is there a pharmacy nearby?', pt: 'Obrigada, doutor. Tem alguma farmácia por perto?' },
+    ],
+  },
+  {
+    id: 'dia-a-dia',
+    emoji: '🗓️',
+    title: 'Frases do dia a dia',
+    blurb: 'Frases simples e frequentes para praticar todo santo dia.',
+    phrases: [
+      { en: 'This is my bag.', pt: 'Esta é minha bolsa.', pronuncia: 'dís is mai béig' },
+      { en: 'This is my coffee.', pt: 'Este é meu café.', pronuncia: 'dís is mai cófi' },
+      { en: 'These are my friends.', pt: 'Estes são meus amigos.', pronuncia: 'díiz ar mai frênds' },
+      { en: 'That is a nice house.', pt: 'Aquela é uma casa bonita.', pronuncia: 'dét is a náis háus' },
+      { en: 'That is a big house.', pt: 'Aquela é uma casa grande.', pronuncia: 'dét is a big háus' },
+      { en: "It's cold today.", pt: 'Está frio hoje.', pronuncia: 'íts côuld tudêi' },
+      { en: "It's mine.", pt: 'É meu.', pronuncia: 'íts máin' },
+      { en: 'There is a café.', pt: 'Tem um café.', pronuncia: 'dér is a kafêi' },
+      { en: 'There is a market.', pt: 'Tem um mercado.', pronuncia: 'dér is a márket' },
+      { en: 'There are two markets.', pt: 'Tem dois mercados.', pronuncia: 'dér ar tu márkets' },
+      { en: 'Where is the bathroom?', pt: 'Onde fica o banheiro?', pronuncia: 'uér is dâ bá-thrum' },
+      { en: 'Where is my phone?', pt: 'Onde está meu celular?', pronuncia: 'uér is mai fôun' },
+      { en: 'My phone is on the table.', pt: 'Meu celular está em cima da mesa.', pronuncia: 'mai fôun is ón dâ têibol' },
+      { en: 'My coffee is on the table.', pt: 'Meu café está em cima da mesa.', pronuncia: 'mai cófi is ón dâ têibol' },
+      { en: "I'm at home.", pt: 'Estou em casa.', pronuncia: 'aim ét hôum' },
+      { en: 'A cup of coffee.', pt: 'Uma xícara de café.', pronuncia: 'a câp óv cófi' },
+      { en: 'Do you want coffee or tea?', pt: 'Você quer café ou chá?', pronuncia: 'du iú uónt cófi ór tí' },
+      { en: 'I like coffee. I also like tea.', pt: 'Gosto de café. Também gosto de chá.', pronuncia: 'ai láik cófi. ai ólsou láik tí' },
+      { en: 'Everything is ready.', pt: 'Tudo está pronto.', pronuncia: 'évri-thin is rédi' },
+      { en: 'Everyone is here.', pt: 'Todo mundo está aqui.', pronuncia: 'évri-uan is rír' },
+      { en: 'Your bag is nice.', pt: 'Sua bolsa é bonita.', pronuncia: 'iór béig is náis' },
+      { en: "We're at home.", pt: 'Estamos em casa.', pronuncia: 'uír ét hôum' },
+      { en: "I'll call you later.", pt: 'Eu te ligo mais tarde.', pronuncia: 'áil cól iú lêiter' },
+      { en: "I've got a phone.", pt: 'Eu tenho um celular.', pronuncia: 'áiv gót a fôun' },
+      { en: "I can't talk now.", pt: 'Não consigo falar agora.', pronuncia: 'ai quént tók náu' },
+      { en: 'Tell me.', pt: 'Me conta.', pronuncia: 'tél mí' },
+      { en: 'Give me water.', pt: 'Me dá água.', pronuncia: 'guiv mí uóter' },
+      { en: 'Keep it.', pt: 'Fica com isso.', pronuncia: 'kíip ít' },
+      { en: 'When are you home?', pt: 'Quando você está em casa?', pronuncia: 'uén ar iú hôum' },
+      { en: 'I get coffee every day.', pt: 'Eu pego café todo dia.', pronuncia: 'ai guét cófi évri dêi' },
+      { en: "I'm getting tired.", pt: 'Estou ficando cansada.', pronuncia: 'aim guétin táierd' },
+      { en: 'I have to go.', pt: 'Tenho que ir.', pronuncia: 'ai hév tu gôu' },
+      { en: 'I gotta go.', pt: 'Tenho que ir. (informal, só falado)', pronuncia: 'ai gótâ gôu' },
+      { en: 'The coffee is gone.', pt: 'O café acabou.', pronuncia: 'dâ cófi is gón' },
+      { en: 'Another coffee, please.', pt: 'Mais um café, por favor.', pronuncia: 'anâdâr cófi plíiz' },
+      { en: "It's cold, though.", pt: 'Está frio, porém...', pronuncia: 'íts côuld dôu' },
+      { en: 'I thought it was ready.', pt: 'Pensei que estava pronto.', pronuncia: 'ai thót it uós rédi' },
+      { en: 'Hi! Where are you?', pt: 'Oi! Onde você está?', pronuncia: 'rai! uér ar iú' },
+      { en: 'When can you call me?', pt: 'Quando você pode me ligar?', pronuncia: 'uén quen iú cól mí' },
+      { en: 'Tell me everything!', pt: 'Me conta tudo!', pronuncia: 'tél mí évri-thin' },
+      { en: "I'm at home and I'm going to have lunch.", pt: 'Estou em casa e vou almoçar.', pronuncia: 'aim ét hôum end aim gôuin tu hév lânch' },
+      { en: "Everything went well, but I'm getting tired.", pt: 'Tudo correu bem, mas estou ficando cansada.', pronuncia: 'évri-thin uent uél, bât aim guétin táierd' },
+      { en: 'When I speak English, I get very happy!', pt: 'Quando falo inglês, eu fico muito feliz!', pronuncia: 'uén ai spíik ínglich, ai guét véri répi' },
     ],
   },
 ]
