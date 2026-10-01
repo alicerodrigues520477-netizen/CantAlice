@@ -41,6 +41,7 @@ import { IS_SPOTIFY_CONFIGURED } from '../config'
 import { greeting, plural } from '../lib/format'
 import { SetupNotice } from '../components/States'
 import { Brand } from '../components/Brand'
+import { ReviewSession } from '../components/ReviewSession'
 
 export function HomePage() {
   const auth = useSession((s) => s.auth)
@@ -147,6 +148,17 @@ function Dashboard({ name }: { name: string }) {
   const progress = useLibrary(useShallow(selectDailyProgress))
   const counts = useLibrary(useShallow((s) => selectReviewCounts(s)))
   const go = useNav((s) => s.go)
+  // "A primeira coisa que ela faça seja revisar": whenever there are cards
+  // waiting, the review session itself opens right on the Home dashboard —
+  // not just a button to it — every time the app loads. Decided once, from
+  // the counts at mount (like ReviewSession snapshots its own queue): grading
+  // the last card drops `counts.total` to 0 reactively, and recomputing this
+  // from it on every render would swap back to the dashboard before she ever
+  // sees the "Revisão concluída" screen. Dismissing it (via "Sair", or via
+  // "Continuar" once the queue is empty) falls back to the normal dashboard
+  // for the rest of this visit; reopening the app shows it again if cards
+  // remain.
+  const [reviewing, setReviewing] = useState(() => counts.total > 0)
 
   const recent = [...learning, ...known]
     .filter((s) => s.lastPracticedAt)
@@ -159,14 +171,20 @@ function Dashboard({ name }: { name: string }) {
     <div className="space-y-10 pt-2">
       <Hero name={name} />
 
-      <TodayCard
-        progress={progress}
-        streak={streak}
-        due={counts.total}
-        onReview={() => go('vocab', 'review')}
-        onSing={() => go(recent[0] ? 'song' : 'search', recent[0]?.id)}
-        onOpenProgress={() => go('progress')}
-      />
+      {reviewing ? (
+        <div className="glass-strong rounded-3xl p-6 sm:p-7">
+          <ReviewSession onExit={() => setReviewing(false)} doneLabel="Continuar" />
+        </div>
+      ) : (
+        <TodayCard
+          progress={progress}
+          streak={streak}
+          due={counts.total}
+          onReview={() => go('vocab', 'review')}
+          onSing={() => go(recent[0] ? 'song' : 'search', recent[0]?.id)}
+          onOpenProgress={() => go('progress')}
+        />
+      )}
 
       {/* Stats */}
       <div className="grid grid-cols-3 gap-4">
