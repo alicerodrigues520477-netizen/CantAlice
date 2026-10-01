@@ -621,12 +621,14 @@ function remainingNewToday(state: LibraryState): number {
 }
 
 /**
- * Build today's review queue: every card that's due (oldest first), followed by
- * new cards up to the remaining daily allowance. Recognition (fwd) cards lead
- * the new ones so a word is recognized before it must be produced.
+ * Build today's review queue. Phrase review is the app's main stepping stone
+ * toward AI conversation, so phrase cards — due or brand new — always come
+ * before any word card, due or not; within each of those four groups, due
+ * cards lead (oldest first) and recognition (fwd) comes before production.
  */
 export function selectReviewQueue(state: LibraryState, now = Date.now()): QueueItem[] {
-  const due: QueueItem[] = []
+  const dueWord: ReviewItem[] = []
+  const duePhrase: PhraseReviewItem[] = []
   const newFwd: ReviewItem[] = []
   const newRev: ReviewItem[] = []
   const newPhraseFwd: PhraseReviewItem[] = []
@@ -637,7 +639,7 @@ export function selectReviewQueue(state: LibraryState, now = Date.now()): QueueI
     for (const dir of ['fwd', 'rev'] as const) {
       const card = cards[dir]
       if (isNew(card)) (dir === 'fwd' ? newFwd : newRev).push({ key, word, dir, state: card })
-      else if (card.due <= now) due.push({ key, word, dir, state: card })
+      else if (card.due <= now) dueWord.push({ key, word, dir, state: card })
     }
   }
   for (const phrase of phraseCardsOf(state)) {
@@ -645,21 +647,24 @@ export function selectReviewQueue(state: LibraryState, now = Date.now()): QueueI
       const card = phrase.srs[dir]
       const item: PhraseReviewItem = { kind: 'phrase', key: phrase.id, phrase, dir, state: card }
       if (isNew(card)) (dir === 'fwd' ? newPhraseFwd : newPhraseRev).push(item)
-      else if (card.due <= now) due.push(item)
+      else if (card.due <= now) duePhrase.push(item)
     }
   }
-  due.sort((a, b) => a.state.due - b.state.due)
+  duePhrase.sort((a, b) => a.state.due - b.state.due)
+  dueWord.sort((a, b) => a.state.due - b.state.due)
   newFwd.sort((a, b) => a.word.addedAt - b.word.addedAt)
   newRev.sort((a, b) => a.word.addedAt - b.word.addedAt)
   newPhraseFwd.sort((a, b) => a.phrase.addedAt - b.phrase.addedAt)
   newPhraseRev.sort((a, b) => a.phrase.addedAt - b.phrase.addedAt)
-  // Phrases lead each group so the day's phrases are never starved by a long
-  // backlog of words; recognition still comes before production.
+  // The shared daily allowance is spent on new phrases first (they're listed
+  // first below), so words only draw from what's left over.
   const fresh = [...newPhraseFwd, ...newFwd, ...newPhraseRev, ...newRev].slice(
     0,
     remainingNewToday(state),
   )
-  return [...due, ...fresh]
+  const freshPhrase = fresh.filter(isPhraseItem)
+  const freshWord = fresh.filter((i) => !isPhraseItem(i))
+  return [...duePhrase, ...freshPhrase, ...dueWord, ...freshWord]
 }
 
 /** Counts for badges/summaries: cards due now and new cards available today. */
