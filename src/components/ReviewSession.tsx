@@ -52,7 +52,14 @@ const RATINGS: { rating: Rating; label: string; cls: string }[] = [
   { rating: 4, label: 'Fácil', cls: 'bg-sky-500/20 text-sky-200 hover:bg-sky-500/30' },
 ]
 
-export function ReviewSession({ onExit }: { onExit: () => void }) {
+export function ReviewSession({
+  onExit,
+  doneLabel = 'Voltar ao vocabulário',
+}: {
+  onExit: () => void
+  /** Label for the button shown once the queue is empty (context-dependent). */
+  doneLabel?: string
+}) {
   const reviewCard = useLibrary((s) => s.reviewCard)
   const reviewPhrase = useLibrary((s) => s.reviewPhrase)
   const setWordExample = useLibrary((s) => s.setWordExample)
@@ -151,7 +158,7 @@ export function ReviewSession({ onExit }: { onExit: () => void }) {
             : 'Guarde palavras nas músicas e elas aparecem aqui para revisar no momento certo.'}
         </p>
         <button onClick={onExit} className="btn-primary">
-          Voltar ao vocabulário
+          {doneLabel}
         </button>
       </motion.div>
     )
