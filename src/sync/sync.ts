@@ -9,7 +9,13 @@
  * conflicts we keep whichever copy was touched most recently.
  */
 import { useEffect } from 'react'
-import { useLibrary, type SavedSong, type VocabWord, type CustomPhrase } from '../store/useLibrary'
+import {
+  useLibrary,
+  type SavedSong,
+  type VocabWord,
+  type CustomPhrase,
+  type PhraseCard,
+} from '../store/useLibrary'
 import type { TargetLang } from '../config'
 import { useSession } from '../store/useSession'
 import { getValidAccessToken } from '../spotify/auth'
@@ -32,6 +38,8 @@ export interface Snapshot {
   hasOnboarded: boolean
   /** User-created phrases, keyed by target language. */
   customPhrases: Partial<Record<TargetLang, CustomPhrase[]>>
+  /** Phrase review cards. Optional: snapshots saved before this field existed lack it. */
+  phraseCards?: Record<string, PhraseCard>
   updatedAt: number
 }
 
@@ -52,6 +60,7 @@ function getSnapshot(): Snapshot {
     wordHintSeen: s.wordHintSeen,
     hasOnboarded: s.hasOnboarded,
     customPhrases: s.customPhrases,
+    phraseCards: s.phraseCards,
     updatedAt: Date.now(),
   }
 }
@@ -72,6 +81,7 @@ function applySnapshot(snap: Snapshot): void {
     wordHintSeen: snap.wordHintSeen,
     hasOnboarded: snap.hasOnboarded,
     customPhrases: snap.customPhrases ?? {},
+    phraseCards: snap.phraseCards ?? {},
   })
 }
 
@@ -96,6 +106,22 @@ function mergeCustomPhrases(
     for (const p of c[lang] ?? []) byId.set(p.id, p)
     for (const p of l[lang] ?? []) byId.set(p.id, p)
     out[lang] = [...byId.values()].sort((a, b) => a.addedAt - b.addedAt)
+  }
+  return out
+}
+
+// Same rule as words: the copy with the most recent review wins, none is dropped.
+const phraseTouched = (p: PhraseCard) =>
+  Math.max(p.addedAt, p.srs?.fwd?.lastReview ?? 0, p.srs?.rev?.lastReview ?? 0)
+
+function mergePhraseCards(
+  local: Record<string, PhraseCard> | undefined,
+  cloud: Record<string, PhraseCard> | undefined,
+): Record<string, PhraseCard> {
+  const out: Record<string, PhraseCard> = { ...(cloud ?? {}) }
+  for (const [id, p] of Object.entries(local ?? {})) {
+    const other = out[id]
+    if (!other || phraseTouched(p) >= phraseTouched(other)) out[id] = p
   }
   return out
 }
@@ -173,6 +199,7 @@ export function mergeSnapshots(local: Snapshot, cloud: Snapshot | null): Snapsho
     wordHintSeen: local.wordHintSeen || cloud.wordHintSeen,
     hasOnboarded: local.hasOnboarded || cloud.hasOnboarded,
     customPhrases: mergeCustomPhrases(local.customPhrases, cloud.customPhrases),
+    phraseCards: mergePhraseCards(local.phraseCards, cloud.phraseCards),
     updatedAt: Date.now(),
   }
 }

@@ -1,13 +1,25 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { ChevronDown, Volume2, Copy, Check, MessagesSquare, Play, Plus, Trash2 } from 'lucide-react'
+import {
+  ChevronDown,
+  Volume2,
+  Copy,
+  Check,
+  MessagesSquare,
+  Play,
+  Plus,
+  Trash2,
+  Brain,
+} from 'lucide-react'
 import { PHRASEBOOKS, type Scenario, type Phrase, type DialogLine } from '../content/phrasebook'
+import { dailyPhrasesFor } from '../content/dailyPhrases'
+import { useNav } from '../store/useNav'
 import { SpeakableText } from '../components/SpeakableText'
 import { SpeechCheck } from '../components/SpeechCheck'
 import { ShadowDialog } from '../components/ShadowDialog'
 import { AddPhraseModal } from '../components/AddPhraseModal'
 import { speak, canSpeak } from '../lib/speak'
-import { useLibrary, type CustomPhrase } from '../store/useLibrary'
+import { useLibrary, todayKey, type CustomPhrase } from '../store/useLibrary'
 import { LANGUAGES } from '../config'
 
 export function PhrasesPage() {
@@ -30,6 +42,8 @@ export function PhrasesPage() {
         </p>
       </div>
 
+      {targetLang === 'en' && <DailyPhrases />}
+
       {/* My phrases */}
       <section>
         <div className="mb-3 flex items-center justify-between">
@@ -41,6 +55,12 @@ export function PhrasesPage() {
             <Plus size={15} /> Adicionar
           </button>
         </div>
+
+        {targetLang === 'en' && (
+          <p className="mb-3 text-sm text-mist/60">
+            As frases que você adicionar entram automaticamente na sua fila de revisão.
+          </p>
+        )}
 
         {customPhrases.length === 0 ? (
           <div className="glass flex flex-col items-center gap-3 rounded-3xl p-6 text-center">
@@ -75,6 +95,35 @@ export function PhrasesPage() {
 
       {addOpen && <AddPhraseModal onClose={() => setAddOpen(false)} />}
     </div>
+  )
+}
+
+/** Today's few phrases (English). They are enrolled in the review deck automatically. */
+function DailyPhrases() {
+  const go = useNav((s) => s.go)
+  const phrases = dailyPhrasesFor(todayKey())
+  if (!phrases.length) return null
+  return (
+    <section>
+      <div className="mb-3 flex items-center justify-between gap-3">
+        <h2 className="font-display text-2xl">Frases do dia</h2>
+        <button
+          onClick={() => go('vocab', 'review')}
+          className="inline-flex items-center gap-1.5 rounded-full bg-aurora-1/15 px-4 py-2 text-sm font-semibold text-aurora-1 transition-colors hover:bg-aurora-1/25"
+        >
+          <Brain size={15} /> Revisar
+        </button>
+      </div>
+      <p className="mb-3 text-sm text-mist/60">
+        {phrases.length} frases para hoje — elas já entraram na sua fila de revisão, com áudio,
+        pronúncia e treino no microfone.
+      </p>
+      <div className="glass space-y-2 rounded-3xl p-4">
+        {phrases.map((p) => (
+          <PhraseRow key={p.en} phrase={p} />
+        ))}
+      </div>
+    </section>
   )
 }
 

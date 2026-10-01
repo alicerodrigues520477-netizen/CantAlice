@@ -11,6 +11,7 @@ import { STORAGE_KEY, DEFAULT_LANG, type TargetLang } from '../config'
 import type { SpotifyTrack } from '../spotify/api'
 import type { Example } from '../lyrics/examples'
 import { type SrsState, type Rating, newCard, isNew, schedule } from '../srs/fsrs'
+import { dailyPhrasesFor, dailyPhraseId, minePhraseId } from '../content/dailyPhrases'
 
 /** The two cards generated per word: recognize (EN→PT) and produce (PT→EN). */
 export type ReviewDir = 'fwd' | 'rev'
@@ -26,6 +27,26 @@ export interface CustomPhrase {
   target: string
   pt: string
   addedAt: number
+}
+
+/** Where a phrase card came from: today's "Frases do Dia" or the user's own "Minhas frases". */
+export type PhraseSource = 'daily' | 'mine'
+
+/**
+ * A phrase enrolled in spaced repetition. It carries the same two FSRS cards as
+ * a word (recognize EN→PT, produce PT→EN) so it flows through the same queue.
+ * English only for now — the Spanish deck is left untouched.
+ */
+export interface PhraseCard {
+  id: string
+  source: PhraseSource
+  target: string
+  pt: string
+  /** Optional phonetic guide shown on the card, e.g. "dís is mai béig". */
+  pronuncia?: string
+  addedAt: number
+  srs: WordCards
+  lang: TargetLang
 }
 
 export interface SavedSong {
@@ -85,6 +106,8 @@ interface LibraryState {
   translationsVersion: number
   /** User-created phrases, keyed by target language. */
   customPhrases: Partial<Record<TargetLang, CustomPhrase[]>>
+  /** Phrases enrolled in spaced repetition (Frases do Dia + Minhas frases), by card id. */
+  phraseCards: Record<string, PhraseCard>
 
   // — song actions —
   addSong: (track: SpotifyTrack, status: SongStatus) => void
@@ -118,6 +141,16 @@ interface LibraryState {
   addCustomPhrase: (lang: TargetLang, target: string, pt: string) => void
   removeCustomPhrase: (lang: TargetLang, id: string) => void
 
+  // — phrase deck (spaced repetition) —
+  /**
+   * Idempotently enroll today's "Frases do Dia" and every "Minha frase" in the
+   * review deck. Never touches existing cards, so review progress is kept.
+   * No-op outside English.
+   */
+  syncPhraseDeck: () => void
+  /** Grade one of a phrase's two cards (1=Again … 4=Easy) and reschedule it. */
+  reviewPhrase: (id: string, dir: ReviewDir, rating: Rating) => void
+
   // — preferences —
   toggleTranslations: () => void
   toggleLargeLyrics: () => void
@@ -125,7 +158,7 @@ interface LibraryState {
 }
 
 /** Local date as YYYY-MM-DD (so streaks follow the user's calendar day). */
-function todayKey(d = new Date()): string {
+export function todayKey(d = new Date()): string {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(
     d.getDate(),
   ).padStart(2, '0')}`
@@ -191,6 +224,7 @@ export const useLibrary = create<LibraryState>()(
       targetLang: DEFAULT_LANG,
       translationsVersion: 0,
       customPhrases: {},
+      phraseCards: {},
 
       addSong: (track, status) =>
         set((s) => ({
@@ -355,12 +389,77 @@ export const useLibrary = create<LibraryState>()(
         }),
 
       removeCustomPhrase: (lang, id) =>
-        set((s) => ({
-          customPhrases: {
+        set((s) => {
+          const customPhrases = {
             ...s.customPhrases,
             [lang]: (s.customPhrases[lang] ?? []).filter((p) => p.id !== id),
-          },
-        })),
+          }
+          // Deleting a phrase on purpose also drops its review card. Only English
+          // has phrase cards, so every other language takes the original path.
+          const cardId = minePhraseId(id)
+          if (lang !== 'en' || !s.phraseCards?.[cardId]) return { customPhrases }
+          const phraseCards = { ...s.phraseCards }
+          delete phraseCards[cardId]
+          return { customPhrases, phraseCards }
+        }),
+
+      syncPhraseDeck: () =>
+        set((s) => {
+          // English only: Spanish keeps its own phrasebook and review deck as-is.
+          if ((s.targetLang ?? 'en') !== 'en') return s
+          const next = { ...(s.phraseCards ?? {}) }
+          let changed = false
+          const enroll = (
+            id: string,
+            source: PhraseSource,
+            target: string,
+            pt: string,
+            addedAt: number,
+            pronuncia?: string,
+          ) => {
+            // Never overwrite: an existing card keeps its review history.
+            if (next[id]) return
+            next[id] = {
+              id,
+              source,
+              target,
+              pt,
+              ...(pronuncia ? { pronuncia } : {}),
+              addedAt,
+              srs: freshCards(),
+              lang: 'en',
+            }
+            changed = true
+          }
+          for (const p of dailyPhrasesFor(todayKey())) {
+            enroll(dailyPhraseId(p), 'daily', p.en, p.pt, Date.now(), p.pronuncia)
+          }
+          for (const p of s.customPhrases.en ?? []) {
+            enroll(minePhraseId(p.id), 'mine', p.target, p.pt, p.addedAt)
+          }
+          return changed ? { phraseCards: next } : s
+        }),
+
+      reviewPhrase: (id, dir, rating) =>
+        set((s) => {
+          const phrase = s.phraseCards?.[id]
+          if (!phrase) return s
+          const wasNew = isNew(phrase.srs[dir])
+          const { state } = schedule(phrase.srs[dir], rating)
+          const today = todayKey()
+          const studied = s.newStudied.date === today ? s.newStudied.count : 0
+          const reviewed = s.reviewedToday.date === today ? s.reviewedToday.count : 0
+          return {
+            streak: advanceStreak(s.streak),
+            newStudied: { date: today, count: wasNew ? studied + 1 : studied },
+            reviewedToday: { date: today, count: reviewed + 1 },
+            history: { ...s.history, [today]: (s.history[today] ?? 0) + 1 },
+            phraseCards: {
+              ...s.phraseCards,
+              [id]: { ...phrase, srs: { ...phrase.srs, [dir]: state } },
+            },
+          }
+        }),
 
       toggleTranslations: () => set((s) => ({ showTranslations: !s.showTranslations })),
       toggleLargeLyrics: () => set((s) => ({ largeLyrics: !s.largeLyrics })),
@@ -393,6 +492,13 @@ export const useLibrary = create<LibraryState>()(
     },
   ),
 )
+
+// Enroll today's phrases as soon as the persisted state is loaded — before the
+// first render — so a cold start straight into review (e.g. the home CTA's deep
+// link, or a reload on #/vocab/review) already has them in the queue. The
+// usePhraseDeck hook keeps it current afterwards (new day, language switch,
+// phrases arriving from another device). No-op outside English.
+useLibrary.getState().syncPhraseDeck()
 
 // — Selectors / helpers —
 export function selectSongs(state: LibraryState, status: SongStatus): SavedSong[] {
@@ -483,7 +589,31 @@ export interface ReviewItem {
   state: SrsState
 }
 
+/** A phrase card in the review queue (a "Frase do Dia" or one of "Minhas frases"). */
+export interface PhraseReviewItem {
+  kind: 'phrase'
+  key: string
+  phrase: PhraseCard
+  dir: ReviewDir
+  state: SrsState
+}
+
+export type QueueItem = ReviewItem | PhraseReviewItem
+export const isPhraseItem = (i: QueueItem): i is PhraseReviewItem =>
+  (i as PhraseReviewItem).kind === 'phrase'
+
 const cardsOf = (w: VocabWord): WordCards => w.srs ?? { fwd: newCard(), rev: newCard() }
+
+/** Phrase cards of the language being studied (always empty outside English). */
+function phraseCardsOf(state: LibraryState): PhraseCard[] {
+  const lang = state.targetLang ?? 'en'
+  return Object.values(state.phraseCards ?? {}).filter((p) => (p.lang ?? 'en') === lang)
+}
+
+/** How many phrase cards the current language has — gates the review UI. */
+export function selectPhraseCardCount(state: LibraryState): number {
+  return phraseCardsOf(state).length
+}
 
 function remainingNewToday(state: LibraryState): number {
   const studied = state.newStudied.date === todayKey() ? state.newStudied.count : 0
@@ -495,10 +625,12 @@ function remainingNewToday(state: LibraryState): number {
  * new cards up to the remaining daily allowance. Recognition (fwd) cards lead
  * the new ones so a word is recognized before it must be produced.
  */
-export function selectReviewQueue(state: LibraryState, now = Date.now()): ReviewItem[] {
-  const due: ReviewItem[] = []
+export function selectReviewQueue(state: LibraryState, now = Date.now()): QueueItem[] {
+  const due: QueueItem[] = []
   const newFwd: ReviewItem[] = []
   const newRev: ReviewItem[] = []
+  const newPhraseFwd: PhraseReviewItem[] = []
+  const newPhraseRev: PhraseReviewItem[] = []
   for (const [key, word] of Object.entries(state.vocab)) {
     if ((word.lang ?? 'en') !== (state.targetLang ?? 'en')) continue
     const cards = cardsOf(word)
@@ -508,10 +640,25 @@ export function selectReviewQueue(state: LibraryState, now = Date.now()): Review
       else if (card.due <= now) due.push({ key, word, dir, state: card })
     }
   }
+  for (const phrase of phraseCardsOf(state)) {
+    for (const dir of ['fwd', 'rev'] as const) {
+      const card = phrase.srs[dir]
+      const item: PhraseReviewItem = { kind: 'phrase', key: phrase.id, phrase, dir, state: card }
+      if (isNew(card)) (dir === 'fwd' ? newPhraseFwd : newPhraseRev).push(item)
+      else if (card.due <= now) due.push(item)
+    }
+  }
   due.sort((a, b) => a.state.due - b.state.due)
   newFwd.sort((a, b) => a.word.addedAt - b.word.addedAt)
   newRev.sort((a, b) => a.word.addedAt - b.word.addedAt)
-  const fresh = [...newFwd, ...newRev].slice(0, remainingNewToday(state))
+  newPhraseFwd.sort((a, b) => a.phrase.addedAt - b.phrase.addedAt)
+  newPhraseRev.sort((a, b) => a.phrase.addedAt - b.phrase.addedAt)
+  // Phrases lead each group so the day's phrases are never starved by a long
+  // backlog of words; recognition still comes before production.
+  const fresh = [...newPhraseFwd, ...newFwd, ...newPhraseRev, ...newRev].slice(
+    0,
+    remainingNewToday(state),
+  )
   return [...due, ...fresh]
 }
 
@@ -527,6 +674,13 @@ export function selectReviewCounts(
     const cards = cardsOf(word)
     for (const dir of ['fwd', 'rev'] as const) {
       const card = cards[dir]
+      if (isNew(card)) newAvailable += 1
+      else if (card.due <= now) due += 1
+    }
+  }
+  for (const phrase of phraseCardsOf(state)) {
+    for (const dir of ['fwd', 'rev'] as const) {
+      const card = phrase.srs[dir]
       if (isNew(card)) newAvailable += 1
       else if (card.due <= now) due += 1
     }
