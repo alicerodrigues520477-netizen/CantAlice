@@ -371,14 +371,15 @@ const TTS_VOICES = new Set([
   'alloy', 'ash', 'coral', 'echo', 'fable', 'nova', 'onyx', 'sage', 'shimmer',
 ])
 
-// Two voices tried and rejected before this one: "sage" read as too
+// Two voices tried and rejected before "alloy": "sage" read as too
 // expressive (warm, "velvet-textured" — artificial, over-dramatized),
-// "coral" still read as forced/AI-sounding. OpenAI's own pitch for "alloy"
-// is the opposite of both: it's built to blend into any context "without
-// drawing attention to itself," avoiding the extremes (too warm/cold, too
-// energetic/subdued) that made the other two sound like a performance. The
+// "coral" still read as forced/AI-sounding. "alloy" was chosen as the
+// opposite of both: built to blend into any context "without drawing
+// attention to itself." Now moving to "shimmer" for a requested feminine,
+// soft-spoken, warm/calm narrative read — OpenAI's own catalog describes it
+// as the softest, airiest of the voices, closest to that profile. The
 // client never overrides this today, so it's the voice everyone hears.
-const DEFAULT_VOICE = 'alloy'
+const DEFAULT_VOICE = 'shimmer'
 
 /** Synthesize the reply to natural speech (mp3, base64) with OpenAI TTS. */
 async function speak(text: string, voice: string): Promise<string | null> {
@@ -388,20 +389,21 @@ async function speak(text: string, voice: string): Promise<string | null> {
       method: 'POST',
       headers: { Authorization: `Bearer ${OPENAI_KEY}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        model: 'tts-1',
+        // "hd" trades a little latency for noticeably less of the
+        // sub-1.0-speed artifacting (unnatural pauses, choppy playback)
+        // that "tts-1" showed in an earlier regression at this same speed.
+        model: 'tts-1-hd',
         voice: TTS_VOICES.has(voice) ? voice : DEFAULT_VOICE,
         input: text,
         response_format: 'mp3',
-        // A touch slower than natural conversational pace (1.0 is normal,
-        // 0.25–4.0 is the valid range), so a beginner can follow the
-        // shadowing clearly without losing the natural connected-speech
-        // rhythm. Chose the gentler end of the requested 0.85–0.9 range: a
-        // sub-1.0 speed on tts-1 is a documented source of audio artifacts
-        // (unnatural pauses, choppy playback, worse on phone speakers), and
-        // the last regression here (before dropping speed entirely) may
-        // have come from exactly this parameter rather than the old voice —
-        // 0.9 keeps that risk as small as the requested range allows.
-        speed: 0.9,
+        // Slower, more deliberate pace (1.0 is normal, 0.25–4.0 is the
+        // valid range) for a calmer, more narrative read with clearer
+        // pauses between phrases. 0.85 is the requested speed; a sub-1.0
+        // speed is a documented source of audio artifacts on "tts-1", which
+        // is why this pairs with "tts-1-hd" above — test on a phone before
+        // merging, since this is the same parameter that caused a prior
+        // regression at 0.9 on the non-hd model.
+        speed: 0.85,
       }),
     })
     if (!res.ok) return null
