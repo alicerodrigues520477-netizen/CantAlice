@@ -9,17 +9,39 @@ import { stopSpokenAudio } from './audio'
 
 export const canSpeak = typeof window !== 'undefined' && 'speechSynthesis' in window
 
+// English only: a soft-spoken, warm, calm reading voice for pronunciation
+// practice. Spanish is untouched — same pace/pitch and locale-prefix voice
+// match as before. The Web Speech API has no cloud voice catalog to pick
+// from (that's OpenAI/ElevenLabs territory) — the engine is whatever the
+// device ships — so the best the app can do is prefer an exact en-US voice
+// over any English dialect, favor a voice commonly recognized as a warmer,
+// female-leaning read where the device offers a choice, and slow the pace
+// down with rate/pitch.
+const EN_FEMALE_VOICE_HINTS = [
+  'samantha', 'victoria', 'ava', 'allison', 'susan', 'karen', 'moira', 'tessa',
+  'zira', 'female', 'woman', 'google us english',
+]
+
 /** Build a ready-to-speak utterance, preferring a voice in the target locale. */
 function makeUtterance(text: string, lang?: string): SpeechSynthesisUtterance {
   const locale = lang ?? langConfig().speech
   const utter = new SpeechSynthesisUtterance(text)
   utter.lang = locale
-  utter.rate = 0.92
-  utter.pitch = 1
+  const isEnglish = locale.toLowerCase().startsWith('en')
+  utter.rate = isEnglish ? 0.8 : 0.92
+  utter.pitch = isEnglish ? 0.95 : 1
+  const voices = window.speechSynthesis.getVoices()
   const prefix = locale.slice(0, 2).toLowerCase()
-  const match = window.speechSynthesis
-    .getVoices()
-    .find((v) => v.lang?.toLowerCase().startsWith(prefix))
+  const pool = isEnglish
+    ? voices.filter((v) => v.lang?.toLowerCase() === locale.toLowerCase())
+    : voices.filter((v) => v.lang?.toLowerCase().startsWith(prefix))
+  const warm = isEnglish
+    ? pool.find((v) => EN_FEMALE_VOICE_HINTS.some((hint) => v.name.toLowerCase().includes(hint)))
+    : undefined
+  const match =
+    warm ??
+    pool[0] ??
+    (isEnglish ? voices.find((v) => v.lang?.toLowerCase().startsWith(prefix)) : undefined)
   if (match) utter.voice = match
   return utter
 }
@@ -44,7 +66,9 @@ export function speak(text: string, lang?: string): void {
  * Falls back to a word-count ceiling so it always resolves on mobile where
  * the speechSynthesis `onend` event is unreliable. The ceiling is generous —
  * at rate 0.92 speech runs at roughly 350 ms per word, and resolving early
- * would let the next step start while the voice is still talking.
+ * would let the next step start while the voice is still talking. English's
+ * slower 0.8 rate (see `makeUtterance`) stretches that further, so the
+ * per-word budget scales with the same rate the utterance actually uses.
  */
 export function speakAndWait(text: string, lang?: string): Promise<void> {
   return new Promise((resolve) => {
@@ -57,7 +81,8 @@ export function speakAndWait(text: string, lang?: string): Promise<void> {
       synth.cancel()
       const utter = makeUtterance(clean, lang)
       const wordCount = clean.split(/\s+/).length
-      const ceiling = setTimeout(resolve, wordCount * 450 + 2000)
+      const msPerWord = Math.round(450 * (0.92 / utter.rate))
+      const ceiling = setTimeout(resolve, wordCount * msPerWord + 2000)
       utter.onend = () => { clearTimeout(ceiling); resolve() }
       utter.onerror = () => { clearTimeout(ceiling); resolve() }
       synth.speak(utter)
