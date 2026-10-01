@@ -1,12 +1,19 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Volume2, PartyPopper, Eye, Loader2, Mic, RefreshCw } from 'lucide-react'
-import { useLibrary, selectReviewQueue, type ReviewItem, type VocabWord } from '../store/useLibrary'
+import {
+  useLibrary,
+  selectReviewQueue,
+  isPhraseItem,
+  type QueueItem,
+  type VocabWord,
+} from '../store/useLibrary'
 import { previewIntervals, formatInterval, type Rating } from '../srs/fsrs'
 import { fetchExample, fetchExamples } from '../lyrics/examples'
 import { speak, canSpeak } from '../lib/speak'
 import { canListen, listenOnce, foldForCompare } from '../lib/listen'
 import { SpeakableText } from './SpeakableText'
+import { PhraseReviewBody } from './PhraseReviewCard'
 import { useUI } from '../store/useUI'
 import { useLangName } from '../lib/useLangName'
 
@@ -47,11 +54,12 @@ const RATINGS: { rating: Rating; label: string; cls: string }[] = [
 
 export function ReviewSession({ onExit }: { onExit: () => void }) {
   const reviewCard = useLibrary((s) => s.reviewCard)
+  const reviewPhrase = useLibrary((s) => s.reviewPhrase)
   const setWordExample = useLibrary((s) => s.setWordExample)
   const replaceWordExample = useLibrary((s) => s.replaceWordExample)
 
   // Snapshot the queue at session start; "Errei" cards are re-queued in-session.
-  const [queue, setQueue] = useState<ReviewItem[]>(() => selectReviewQueue(useLibrary.getState()))
+  const [queue, setQueue] = useState<QueueItem[]>(() => selectReviewQueue(useLibrary.getState()))
   const [pos, setPos] = useState(0)
   const [swapping, setSwapping] = useState(false)
   const [revealed, setRevealed] = useState(false)
@@ -61,9 +69,11 @@ export function ReviewSession({ onExit }: { onExit: () => void }) {
 
   const item = queue[pos]
   const curKey = item?.key
+  const phraseItem = item && isPhraseItem(item) ? item : null
   // Read the live word so freshly-graded SRS state and lazily-fetched example
   // phrases are reflected immediately.
-  const liveWord = useLibrary((s) => (curKey ? s.vocab[curKey] : undefined))
+  const liveWord = useLibrary((s) => (curKey && !phraseItem ? s.vocab[curKey] : undefined))
+  const livePhrase = useLibrary((s) => (phraseItem ? s.phraseCards?.[phraseItem.key] : undefined))
 
   // Every card must show a real English phrase. If an older saved word has none,
   // fetch one on the fly (e.g. words saved before example phrases existed).
@@ -84,7 +94,11 @@ export function ReviewSession({ onExit }: { onExit: () => void }) {
     }
   }, [liveWord, setWordExample])
 
-  const liveState = item && liveWord ? liveWord.srs?.[item.dir] : undefined
+  const liveState = !item
+    ? undefined
+    : phraseItem
+      ? livePhrase?.srs[item.dir]
+      : liveWord?.srs?.[item.dir]
   const intervals = useMemo(
     () => (item ? previewIntervals(liveState ?? item.state) : null),
     [item, liveState],
@@ -143,11 +157,12 @@ export function ReviewSession({ onExit }: { onExit: () => void }) {
     )
   }
 
-  const word = liveWord ?? item.word
+  const word: VocabWord | undefined = isPhraseItem(item) ? undefined : (liveWord ?? item.word)
   const { dir } = item
 
   const grade = (rating: Rating) => {
-    reviewCard(item.key, dir, rating)
+    if (isPhraseItem(item)) reviewPhrase(item.key, dir, rating)
+    else reviewCard(item.key, dir, rating)
     // Celebrate the moment she reaches today's goal (fires once, on crossing).
     const { reviewedToday, dailyGoal } = useLibrary.getState()
     if (reviewedToday.count === dailyGoal) {
@@ -171,12 +186,12 @@ export function ReviewSession({ onExit }: { onExit: () => void }) {
   }
 
   const reveal = () => setRevealed(true)
-  const typedCorrect = revealed && dir === 'rev' && answerMatches(typed, word.word)
+  const typedCorrect = revealed && dir === 'rev' && !!word && answerMatches(typed, word.word)
 
   // Fetch a fresh example for this word (e.g. when the current one is an
   // obscure or awkward sentence) and replace it.
   const swapExample = async () => {
-    if (swapping) return
+    if (swapping || !word) return
     setSwapping(true)
     try {
       const list = await fetchExamples(word.word, 6)
@@ -222,25 +237,39 @@ export function ReviewSession({ onExit }: { onExit: () => void }) {
         className="glass-strong flex min-h-[20rem] flex-col items-center justify-center gap-4 rounded-3xl p-7 text-center"
       >
         <span className="rounded-full bg-white/8 px-3 py-1 text-[0.65rem] uppercase tracking-[0.2em] text-mist/55">
-          {dir === 'fwd' ? 'Entenda a frase · EN → PT' : 'Complete a frase · PT → EN'}
+          {phraseItem
+            ? dir === 'fwd'
+              ? `${phraseItem.phrase.source === 'daily' ? 'Frase do dia' : 'Minha frase'} · EN → PT`
+              : 'Diga em inglês · PT → EN'
+            : dir === 'fwd'
+              ? 'Entenda a frase · EN → PT'
+              : 'Complete a frase · PT → EN'}
         </span>
 
-        {dir === 'fwd' ? (
-          <FwdCard word={word} revealed={revealed} fetching={fetchingPhrase} />
-        ) : (
-          <RevCard
-            word={word}
+        {phraseItem ? (
+          <PhraseReviewBody
+            phrase={livePhrase ?? phraseItem.phrase}
+            dir={dir}
             revealed={revealed}
-            fetching={fetchingPhrase}
-            typed={typed}
-            setTyped={setTyped}
-            typedCorrect={typedCorrect}
-            onEnter={reveal}
           />
-        )}
+        ) : word ? (
+          dir === 'fwd' ? (
+            <FwdCard word={word} revealed={revealed} fetching={fetchingPhrase} />
+          ) : (
+            <RevCard
+              word={word}
+              revealed={revealed}
+              fetching={fetchingPhrase}
+              typed={typed}
+              setTyped={setTyped}
+              typedCorrect={typedCorrect}
+              onEnter={reveal}
+            />
+          )
+        ) : null}
       </motion.div>
 
-      {word.example?.text && (
+      {word?.example?.text && (
         <button
           onClick={swapExample}
           disabled={swapping}

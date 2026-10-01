@@ -6,6 +6,7 @@ import {
   useLibrary,
   selectVocab,
   selectReviewCounts,
+  selectPhraseCardCount,
   type VocabWord,
 } from '../store/useLibrary'
 import { EmptyState } from '../components/States'
@@ -16,6 +17,10 @@ import { useNav } from '../store/useNav'
 export function VocabularyPage() {
   const words = useLibrary(useShallow(selectVocab))
   const counts = useLibrary(useShallow((s) => selectReviewCounts(s)))
+  // Phrase cards (English) are reviewable even before any word is saved. For any
+  // other language this is 0, so the page behaves exactly as before.
+  const phraseCount = useLibrary(selectPhraseCardCount)
+  const hasCards = words.length > 0 || phraseCount > 0
   // Deep link: arriving at #/vocab/review (e.g. the home CTA) opens review.
   const deepLinkReview = useNav((s) => s.trackId) === 'review'
   const [mode, setMode] = useState<'list' | 'review'>(deepLinkReview ? 'review' : 'list')
@@ -32,7 +37,7 @@ export function VocabularyPage() {
           </p>
         </div>
 
-        {words.length > 0 && (
+        {hasCards && (
           <div className="glass inline-flex rounded-2xl p-1.5">
             <ModeButton active={mode === 'list'} onClick={() => setMode('list')} icon={List}>
               Lista
@@ -49,7 +54,7 @@ export function VocabularyPage() {
         )}
       </div>
 
-      {words.length === 0 ? (
+      {!hasCards ? (
         <EmptyState
           icon={<BookHeart size={32} />}
           title="Seu caderninho está vazio"
