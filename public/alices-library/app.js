@@ -1291,6 +1291,7 @@ let drag = null, lastTap = { t: 0, x: 0, y: 0 };
 let lpTimer = null;
 const ptrs = new Map(); let pinch = null;
 stageEl.addEventListener('pointerdown', e => {
+  if (e.isPrimary) { ptrs.clear(); pinch = null; }   // novo gesto: esquece dedos "fantasmas" de um pointerup perdido
   ptrs.set(e.pointerId, { x: e.clientX, y: e.clientY });
   if (ptrs.size === 2 && !flip) {                // dois dedos: pinça muda o tamanho da letra
     clearTimeout(lpTimer); drag = null; closeMenu(); closeCard();
