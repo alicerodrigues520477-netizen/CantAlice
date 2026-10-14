@@ -1718,7 +1718,13 @@ function setZen(on, fromUser = true) {
   } catch { /* tela cheia indisponível (ex.: iPhone): o layout em foco continua valendo */ }
   relayout();
   if (book) { on ? hideUI() : showUI(true); }
-  if (on && fromUser && !store.get('lv:tip-zen', false)) { store.set('lv:tip-zen', true); toast('Modo foco: toque no centro para ver os controles. Esc ou F sai.', 3800); }
+  if (on && fromUser && !store.get('lv:tip-zen', false)) {
+    store.set('lv:tip-zen', true);
+    const noFs = !(de.requestFullscreen || de.webkitRequestFullscreen);
+    const standalone = navigator.standalone || (matchMedia && matchMedia('(display-mode: standalone)').matches);
+    toast(noFs && !standalone ? 'Modo foco: para tela cheia no iPhone, use Compartilhar › Adicionar à Tela de Início e abra pelo ícone. Toque no centro para ver os controles.'
+      : 'Modo foco: toque no centro para ver os controles. Esc ou F sai.', noFs && !standalone ? 6500 : 3800);
+  }
 }
 const toggleZen = () => setZen(!S.zen);
 $('#btn-zen').addEventListener('click', toggleZen);
