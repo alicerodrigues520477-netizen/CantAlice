@@ -11902,5 +11902,3893 @@
       "religião",
       "clássico"
     ]
+  },
+  {
+    "id": "c0853de8-4db6-59f1-be5b-395d29c2b6ba",
+    "titulo": "O Alquimista",
+    "autor": "Paulo Coelho",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "O pastor Santiago deixa a Espanha e atravessa o deserto em busca de um tesouro revelado em sonho, encontrando mestres e aprendizados pelo caminho. A fábula fala de seguir a própria lenda pessoal. Um dos livros brasileiros mais vendidos no mundo.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "fábula",
+      "jornada",
+      "sonhos",
+      "espiritualidade",
+      "best-seller"
+    ]
+  },
+  {
+    "id": "8b4a2383-e5a6-5a68-b657-255661d4841f",
+    "titulo": "Diário de um Mago",
+    "autor": "Paulo Coelho",
+    "genero": "Biografia e Memórias",
+    "idioma": "pt",
+    "resumo": "Paulo Coelho relata sua peregrinação pelo Caminho de Santiago e os exercícios espirituais que aprendeu pelo percurso. O livro mistura aventura e busca interior. Foi seu primeiro livro publicado.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "peregrinação",
+      "caminho de santiago",
+      "espiritualidade",
+      "autoconhecimento",
+      "aventura"
+    ]
+  },
+  {
+    "id": "31c40198-70e0-505e-a38a-3f109f40e388",
+    "titulo": "Veronika Decide Morrer",
+    "autor": "Paulo Coelho",
+    "genero": "Romance",
+    "idioma": "pt",
+    "resumo": "Veronika tenta se matar, sobrevive e acorda num hospital psiquiátrico, onde descobre que lhe resta pouco tempo de vida. Ali ela aprende a valorizar o presente. Um romance sobre normalidade e desejo de viver.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "loucura",
+      "vida",
+      "suicídio",
+      "esperança",
+      "hospital psiquiátrico"
+    ]
+  },
+  {
+    "id": "ae0d3d86-43ab-52ad-aa79-e729e20a00ba",
+    "titulo": "Onze Minutos",
+    "autor": "Paulo Coelho",
+    "genero": "Romance",
+    "idioma": "pt",
+    "resumo": "A brasileira Maria vai para a Suíça sonhando com uma vida melhor e acaba na prostituição, onde busca entender amor e prazer. O livro acompanha sua trajetória interior. Um romance sobre desejo e liberdade.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "amor",
+      "sexualidade",
+      "suíça",
+      "mulheres",
+      "descoberta"
+    ]
+  },
+  {
+    "id": "5d54174c-e093-5aa8-b75d-8e8a56017714",
+    "titulo": "Dois Irmãos",
+    "autor": "Milton Hatoum",
+    "genero": "Romance",
+    "idioma": "pt",
+    "resumo": "Numa família libanesa em Manaus, os gêmeos Yaqub e Omar crescem rivais, e a convivência com a mãe e a empregada Domingas marca a narrativa. O narrador reconstrói uma história de ciúme e perda. Um dos romances mais premiados da literatura recente.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "manaus",
+      "família",
+      "irmãos",
+      "imigração",
+      "memória"
+    ]
+  },
+  {
+    "id": "29ce44cb-4d18-5304-8a7d-00006eda188a",
+    "titulo": "Relato de um Certo Oriente",
+    "autor": "Milton Hatoum",
+    "genero": "Romance",
+    "idioma": "pt",
+    "resumo": "Uma mulher volta a Manaus depois de anos fora e reconstrói a história da família libanesa em que cresceu. Vozes e lembranças se cruzam para recompor o passado. Um romance de estreia elogiado pela crítica.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "manaus",
+      "família",
+      "imigração",
+      "memória",
+      "amazônia"
+    ]
+  },
+  {
+    "id": "c40d2fe0-a30d-5233-b7ed-0574318fbacf",
+    "titulo": "Budapeste",
+    "autor": "Chico Buarque",
+    "genero": "Romance",
+    "idioma": "pt",
+    "resumo": "Um ghost-writer brasileiro perde-se em Budapeste por acaso e se encanta pela língua húngara e por uma mulher que lhe ensina. Ao voltar ao Rio, a identidade dele se mistura com a de outro autor. Um romance sobre linguagem e identidade.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "identidade",
+      "escrita",
+      "húngaro",
+      "rio de janeiro",
+      "linguagem"
+    ]
+  },
+  {
+    "id": "f6d97d4c-ac2c-5063-9a49-b053fc61b22a",
+    "titulo": "Leite Derramado",
+    "autor": "Chico Buarque",
+    "genero": "Romance",
+    "idioma": "pt",
+    "resumo": "Um homem muito velho, internado num hospital, relembra a vida e a decadência da família numa narrativa cheia de lapsos. A memória se mistura com delírios que escondem a verdade. Um romance sobre classe e esquecimento no Brasil.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "memória",
+      "família",
+      "decadência",
+      "velhice",
+      "rio de janeiro"
+    ]
+  },
+  {
+    "id": "4529506b-87d0-5ed4-b85c-980233e411ca",
+    "titulo": "Torto Arado",
+    "autor": "Itamar Vieira Junior",
+    "genero": "Romance",
+    "idioma": "pt",
+    "resumo": "Duas irmãs crescem numa fazenda na Chapada Diamantina, e um acidente na infância muda a vida das duas. A história acompanha a luta pela terra e a força do povo negro do campo. Um romance premiado e muito lido.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "bahia",
+      "irmãs",
+      "terra",
+      "racismo",
+      "trabalho rural"
+    ]
+  },
+  {
+    "id": "443fea58-20d4-5b26-92af-7da145209ced",
+    "titulo": "Ponciá Vicêncio",
+    "autor": "Conceição Evaristo",
+    "genero": "Romance",
+    "idioma": "pt",
+    "resumo": "Ponciá deixa o campo para tentar a vida na cidade e leva consigo as lembranças dos ancestrais e do trabalho nos campos. A narrativa mostra a dor e a resistência de mulheres negras. Um romance sensível e poético.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "mulheres",
+      "racismo",
+      "memória",
+      "pobreza",
+      "negritude"
+    ]
+  },
+  {
+    "id": "021fdd98-a3b4-5ee6-88c3-5d3e49545cc5",
+    "titulo": "Olhos d'Água",
+    "autor": "Conceição Evaristo",
+    "genero": "Contos",
+    "idioma": "pt",
+    "resumo": "Os contos mostram mulheres negras que enfrentam violência, pobreza e perdas, mas também amor e afeto. A autora cria o conceito de escrevivência. Um livro de leitura curta e muito forte.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "contos",
+      "mulheres",
+      "racismo",
+      "periferia",
+      "memória"
+    ]
+  },
+  {
+    "id": "340fa40d-a93b-5e01-8406-89c29723f8d9",
+    "titulo": "Quarto de Despejo",
+    "autor": "Carolina Maria de Jesus",
+    "genero": "Biografia e Memórias",
+    "idioma": "pt",
+    "resumo": "Moradora da favela do Canindé, em São Paulo, Carolina anota no diário a fome, a luta para criar os filhos e o preconceito. O livro foi um sucesso mundial nos anos 1960. Um testemunho direto sobre pobreza no Brasil.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "diário",
+      "favela",
+      "fome",
+      "são paulo",
+      "mulheres"
+    ]
+  },
+  {
+    "id": "786a1ee5-70ba-55bc-80e0-4e29395858e5",
+    "titulo": "Ensaio sobre a Cegueira",
+    "autor": "José Saramago",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Uma epidemia de cegueira branca atinge uma cidade, e os doentes são isolados num manicômio onde reinam violência e abuso. Só uma mulher continua enxergando. Uma parábola sobre egoísmo e solidariedade.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "epidemia",
+      "cegueira",
+      "sociedade",
+      "distopia",
+      "nobel"
+    ]
+  },
+  {
+    "id": "516d3b55-0c83-5dfb-b6b0-ba46b1afc096",
+    "titulo": "O Evangelho Segundo Jesus Cristo",
+    "autor": "José Saramago",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Saramago reconta a vida de Jesus como homem comum, dividido entre o destino que Deus lhe reserva e a liberdade. O livro provocou polêmica em Portugal. Um romance sobre fé, culpa e livre-arbítrio.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "religião",
+      "jesus",
+      "polêmica",
+      "nobel",
+      "reescrita"
+    ]
+  },
+  {
+    "id": "606edb5e-4922-5207-bd55-d343d0de2f8f",
+    "titulo": "Memorial do Convento",
+    "autor": "José Saramago",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Na construção do convento de Mafra, no século XVIII, Baltasar e Blimunda constroem uma máquina de voar com o padre Bartolomeu. O romance mistura história, fantasia e amor. Uma das obras principais do Nobel português.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "portugal",
+      "história",
+      "amor",
+      "inquisição",
+      "nobel"
+    ]
+  },
+  {
+    "id": "973fec7c-8b7d-5466-b7e8-b47ea82a5ca6",
+    "titulo": "O Ano da Morte de Ricardo Reis",
+    "autor": "José Saramago",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "O heterônimo de Fernando Pessoa, Ricardo Reis, volta a Lisboa em 1936, ano de morte do poeta, e passeia por uma cidade sob ditadura. Entre conversas com o fantasma de Pessoa, ele pensa sobre liberdade e destino. Um romance de lirismo e política.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "fernando pessoa",
+      "lisboa",
+      "heterônimo",
+      "história",
+      "nobel"
+    ]
+  },
+  {
+    "id": "c9f8c74d-3072-53f4-b5fb-945fb9df3133",
+    "titulo": "Todos os Nomes",
+    "autor": "José Saramago",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Um funcionário de arquivo, o senhor José, fica obcecado em descobrir a vida de uma mulher desconhecida cujo registro ele encontra por acaso. A busca o leva a quebrar regras e mudar de vida. Uma fábula sobre solidão.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "burocracia",
+      "solidão",
+      "busca",
+      "arquivo",
+      "nobel"
+    ]
+  },
+  {
+    "id": "34d6be7b-abbc-5f06-a96d-a9ab3be3f06b",
+    "titulo": "Os Maias",
+    "autor": "Eça de Queirós",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "A história de três gerações de uma família rica de Lisboa culmina no romance proibido de Carlos da Maia com Maria Eduarda. O livro retrata a sociedade portuguesa do século XIX. Um dos grandes romances da língua portuguesa.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "portugal",
+      "realismo",
+      "família",
+      "amor",
+      "clássico"
+    ]
+  },
+  {
+    "id": "b6b477e1-472e-5517-8d11-f68c0a454c97",
+    "titulo": "O Primo Basílio",
+    "autor": "Eça de Queirós",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Luísa, casada e entediada, se envolve com o primo Basílio quando o marido viaja, e uma criada descobre o caso e passa a chantageá-la. O romance critica a hipocrisia da burguesia lisboeta. Um clássico do Realismo.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "portugal",
+      "adultério",
+      "realismo",
+      "sociedade",
+      "clássico"
+    ]
+  },
+  {
+    "id": "c02b1f18-6c3d-5f8a-a130-bfdd9c49c38a",
+    "titulo": "O Crime do Padre Amaro",
+    "autor": "Eça de Queirós",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "O jovem padre Amaro assume uma paróquia em Leiria e se envolve com Amélia, filha da hospedeira. O romance critica a hipocrisia do clero e da sociedade provinciana. Um livro que causou escândalo na época.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "portugal",
+      "igreja",
+      "realismo",
+      "hipocrisia",
+      "clássico"
+    ]
+  },
+  {
+    "id": "3f58a4ac-a53b-5217-b80e-ed518cd08fc6",
+    "titulo": "A Relíquia",
+    "autor": "Eça de Queirós",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Teodorico Raposo viaja a Jerusalém para trazer uma relíquia à tia beata e acaba com uma troca embaraçosa de presentes. A narrativa mistura humor e sátira à religiosidade de fachada. Um romance divertido e irônico.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "portugal",
+      "humor",
+      "religião",
+      "sátira",
+      "clássico"
+    ]
+  },
+  {
+    "id": "638fddfe-181e-51cc-9bee-366848b00614",
+    "titulo": "Mensagem",
+    "autor": "Fernando Pessoa",
+    "genero": "Poesia",
+    "idioma": "pt",
+    "resumo": "Único livro de poemas em português que Pessoa publicou em vida, reúne versos sobre figuras e mitos da história de Portugal. A obra mistura glória e saudade. Um clássico da poesia lusófona.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "portugal",
+      "poesia",
+      "história",
+      "mito",
+      "clássico"
+    ]
+  },
+  {
+    "id": "0b05c50b-3ec3-51f6-96c7-537dfd506239",
+    "titulo": "O Livro do Desassossego",
+    "autor": "Fernando Pessoa",
+    "genero": "Filosofia",
+    "idioma": "pt",
+    "resumo": "Pessoa atribui ao semi-heterônimo Bernardo Soares uma série de fragmentos sobre tédio, sonho e solidão numa Lisboa cotidiana. O livro foi organizado depois da morte do autor. Um texto marcante da literatura de introspecção.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "diário",
+      "fragmentos",
+      "solidão",
+      "lisboa",
+      "introspecção"
+    ]
+  },
+  {
+    "id": "262baa21-3855-528b-8373-cfee34e516c0",
+    "titulo": "Os Lusíadas",
+    "autor": "Luís de Camões",
+    "genero": "Poesia",
+    "idioma": "pt",
+    "resumo": "O poema épico narra a viagem de Vasco da Gama às Índias e exalta a história de Portugal, misturando fatos e mitologia. Foi publicado em 1572. Uma das maiores obras da língua portuguesa.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "épico",
+      "portugal",
+      "navegações",
+      "renascimento",
+      "clássico"
+    ]
+  },
+  {
+    "id": "30ca0928-639d-5c72-86e7-3daf6b99e944",
+    "titulo": "Terra Sonâmbula",
+    "autor": "Mia Couto",
+    "genero": "Romance",
+    "idioma": "pt",
+    "resumo": "Em meio à guerra civil em Moçambique, o velho Tuahir e o menino Muidinga vivem num ônibus queimado e leem cadernos de um morto. As histórias dos cadernos se misturam à realidade. Um romance poético da literatura africana de língua portuguesa.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "moçambique",
+      "guerra",
+      "realismo fantástico",
+      "infância",
+      "áfrica"
+    ]
+  },
+  {
+    "id": "620a1e3f-4228-5f61-8ff4-19d3f3636681",
+    "titulo": "O Último Voo do Flamingo",
+    "autor": "Mia Couto",
+    "genero": "Romance",
+    "idioma": "pt",
+    "resumo": "Um investigador da ONU chega a uma vila moçambicana para descobrir por que soldados estão explodindo e desaparecendo. A linguagem mistura humor e magia. Um romance cheio de invenção.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "moçambique",
+      "mistério",
+      "realismo fantástico",
+      "áfrica",
+      "humor"
+    ]
+  },
+  {
+    "id": "4e9df78c-5721-5f48-93e8-4fcb2d2d9061",
+    "titulo": "Mayombe",
+    "autor": "Pepetela",
+    "genero": "Romance",
+    "idioma": "pt",
+    "resumo": "Guerrilheiros do MPLA lutam por independência na floresta de Mayombe, em Angola, e enfrentam dilemas pessoais e tensões entre grupos. A narrativa é feita de vozes diferentes. Um clássico da literatura angolana.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "angola",
+      "guerra",
+      "independência",
+      "floresta",
+      "áfrica"
+    ]
+  },
+  {
+    "id": "33c63d11-a595-5bb2-9336-de63fa36cec7",
+    "titulo": "O Vendedor de Passados",
+    "autor": "José Eduardo Agualusa",
+    "genero": "Romance",
+    "idioma": "pt",
+    "resumo": "Félix Ventura vende passados novos a clientes ricos, inventando genealogias e histórias. Um estrangeiro estranho pede uma identidade e traz problemas. Um romance divertido sobre memória e invenção.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "angola",
+      "memória",
+      "identidade",
+      "humor",
+      "realismo fantástico"
+    ]
+  },
+  {
+    "id": "dec52096-9ee3-5226-baa6-98292195ce2d",
+    "titulo": "O Pequeno Príncipe",
+    "autor": "Antoine de Saint-Exupéry",
+    "genero": "Infantil",
+    "idioma": "pt",
+    "resumo": "Um piloto perdido no deserto conhece um pequeno príncipe vindo de um asteroide, que conta suas viagens por outros planetas. A amizade com uma raposa ensina o valor dos laços. Um clássico para crianças e adultos.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "fábula",
+      "amizade",
+      "infância",
+      "filosofia",
+      "clássico"
+    ]
+  },
+  {
+    "id": "18039157-c4d5-54e6-8b7b-86ed21e8af9d",
+    "titulo": "Reinações de Narizinho",
+    "autor": "Monteiro Lobato",
+    "genero": "Infantil",
+    "idioma": "pt",
+    "resumo": "Narizinho, que mora no Sítio do Picapau Amarelo, vive aventuras com a boneca Emília, o Visconde de Sabugosa e outros personagens. A imaginação mistura folclore e fantasia. O livro inicia a série clássica de Monteiro Lobato.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "sítio do picapau amarelo",
+      "fantasia",
+      "boneca",
+      "clássico",
+      "aventura"
+    ]
+  },
+  {
+    "id": "79ff7515-691a-5841-b852-a02a793ec753",
+    "titulo": "O Saci",
+    "autor": "Monteiro Lobato",
+    "genero": "Infantil",
+    "idioma": "pt",
+    "resumo": "Pedrinho e os amigos saem à caça do Saci-Pererê na mata, enfrentando o medo e conhecendo seres do folclore brasileiro. O livro apresenta lendas de forma divertida. Uma aventura do Sítio do Picapau Amarelo.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "sítio do picapau amarelo",
+      "folclore",
+      "saci",
+      "floresta",
+      "aventura"
+    ]
+  },
+  {
+    "id": "b7887c54-8bd3-576c-aae5-fda157ebc5f3",
+    "titulo": "Caçadas de Pedrinho",
+    "autor": "Monteiro Lobato",
+    "genero": "Infantil",
+    "idioma": "pt",
+    "resumo": "Pedrinho decide caçar a onça que ronda o sítio, e a turma se une para enfrentar o bicho. A narrativa mistura humor e fantasia. Um clássico muito lido do Sítio do Picapau Amarelo.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "sítio do picapau amarelo",
+      "aventura",
+      "animais",
+      "humor",
+      "clássico"
+    ]
+  },
+  {
+    "id": "03dea587-7ae1-520e-a56a-0d76b61e06d9",
+    "titulo": "O Menino Maluquinho",
+    "autor": "Ziraldo",
+    "genero": "Infantil",
+    "idioma": "pt",
+    "resumo": "Um menino travesso, cheio de ideias e com uma panela na cabeça, alegra a casa e a rua com suas brincadeiras. O livro retrata a infância com carinho. Um dos maiores sucessos da literatura infantil brasileira.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "infância",
+      "humor",
+      "família",
+      "clássico",
+      "ilustrado"
+    ]
+  },
+  {
+    "id": "6e2fc357-22fb-580f-8c5a-b4a8de6bedfe",
+    "titulo": "Flicts",
+    "autor": "Ziraldo",
+    "genero": "Infantil",
+    "idioma": "pt",
+    "resumo": "Flicts é uma cor que não tem lugar no arco-íris nem em outras partes e procura seu espaço no mundo. A história fala de diferença e aceitação. Um clássico ilustrado de Ziraldo.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "cores",
+      "identidade",
+      "solidão",
+      "clássico",
+      "ilustrado"
+    ]
+  },
+  {
+    "id": "09aa4e60-9152-5111-bf56-974a26e4d5ba",
+    "titulo": "Marcelo, Marmelo, Martelo",
+    "autor": "Ruth Rocha",
+    "genero": "Infantil",
+    "idioma": "pt",
+    "resumo": "Marcelo é um menino curioso que questiona os nomes das coisas e inventa os seus próprios. O livro reúne histórias leves sobre linguagem e imaginação. Um clássico de Ruth Rocha.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "palavras",
+      "curiosidade",
+      "humor",
+      "infância",
+      "clássico"
+    ]
+  },
+  {
+    "id": "0b1a1047-aaa9-5d52-85d5-ec68ee009db1",
+    "titulo": "O Reizinho Mandão",
+    "autor": "Ruth Rocha",
+    "genero": "Infantil",
+    "idioma": "pt",
+    "resumo": "Um rei mandão proíbe os súditos de dizer a palavra \"não\" e acaba perdendo o controle do reino. A fábula mostra, de forma divertida, o abuso do poder. Um clássico da literatura infantil brasileira.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "poder",
+      "humor",
+      "reis",
+      "fábula",
+      "clássico"
+    ]
+  },
+  {
+    "id": "fa83b258-751c-5ccb-a7f3-010921056a50",
+    "titulo": "Bisa Bia, Bisa Bel",
+    "autor": "Ana Maria Machado",
+    "genero": "Infantil",
+    "idioma": "pt",
+    "resumo": "Uma menina encontra num baú uma foto da bisavó e passa a conversar com a imagem dela, imaginando como era a vida da época. O livro compara gerações com delicadeza. Um clássico de Ana Maria Machado.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "família",
+      "infância",
+      "gerações",
+      "memória",
+      "fantasia"
+    ]
+  },
+  {
+    "id": "66934f13-2e40-5ec6-adc4-4518e3fd11b0",
+    "titulo": "Menina Bonita do Laço de Fita",
+    "autor": "Ana Maria Machado",
+    "genero": "Infantil",
+    "idioma": "pt",
+    "resumo": "Um coelho branco quer ter a filha tão pretinha quanto a menina bonita e descobre que a cor está na história da família. O livro aborda diversidade de forma doce. Um clássico ilustrado.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "diversidade",
+      "coelho",
+      "identidade",
+      "infância",
+      "ilustrado"
+    ]
+  },
+  {
+    "id": "6cc79120-eb89-5c7f-a6fe-ea35846e4795",
+    "titulo": "A Bolsa Amarela",
+    "autor": "Lygia Bojunga",
+    "genero": "Infantil",
+    "idioma": "pt",
+    "resumo": "Raquel esconde na bolsa amarela seus três grandes desejos: ser adulta, ser menino e ser escritora. O livro mistura fantasia e conflitos familiares com sensibilidade. Um clássico da literatura infantojuvenil.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "imaginação",
+      "infância",
+      "desejos",
+      "fantasia",
+      "clássico"
+    ]
+  },
+  {
+    "id": "84b46303-024e-5aae-b7ab-edbda8e92599",
+    "titulo": "O Sítio do Picapau Amarelo — A Chave do Tamanho",
+    "autor": "Monteiro Lobato",
+    "genero": "Infantil",
+    "idioma": "pt",
+    "resumo": "Emília tenta acabar com a guerra e acaba diminuindo o tamanho de todas as pessoas do mundo, que ficam minúsculas. A turma enfrenta novos perigos num mundo diferente. Uma das aventuras mais criativas de Lobato.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "fantasia",
+      "guerra",
+      "sítio do picapau amarelo",
+      "humor",
+      "aventura"
+    ]
+  },
+  {
+    "id": "354b2a72-3cc6-5376-897d-d14d50eaace0",
+    "titulo": "Os Meninos da Rua Paulo",
+    "autor": "Ferenc Molnár",
+    "genero": "Juvenil",
+    "idioma": "pt",
+    "resumo": "Em Budapeste, um grupo de meninos defende o terreno onde brincam contra uma gangue rival. O livro mostra coragem, amizade e sacrifício. Um clássico juvenil húngaro muito lido no Brasil.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "amizade",
+      "coragem",
+      "budapeste",
+      "guerra",
+      "clássico"
+    ]
+  },
+  {
+    "id": "e6e741d4-0515-5406-b739-6c3f36b93f66",
+    "titulo": "A Droga da Obediência",
+    "autor": "Pedro Bandeira",
+    "genero": "Juvenil",
+    "idioma": "pt",
+    "resumo": "Um grupo de jovens, os Karas, descobre um plano para controlar adolescentes com uma droga que torna as pessoas obedientes. Eles se unem para investigar. Um clássico juvenil de mistério.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "mistério",
+      "suspense",
+      "escola",
+      "aventura",
+      "juvenil"
+    ]
+  },
+  {
+    "id": "f92b10b1-b273-5ee6-970f-82f0a2b100f6",
+    "titulo": "O Diário de Anne Frank",
+    "autor": "Anne Frank",
+    "genero": "Biografia e Memórias",
+    "idioma": "pt",
+    "resumo": "Anne Frank anota no diário o tempo que passou escondida com a família num anexo secreto em Amsterdã, durante a ocupação nazista. O texto mostra medo, esperança e crescimento de uma adolescente. Um dos documentos mais lidos sobre o Holocausto.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "segunda guerra",
+      "diário",
+      "holocausto",
+      "adolescência",
+      "esperança"
+    ]
+  },
+  {
+    "id": "4399e341-810b-57aa-9a7b-1521c8fc386d",
+    "titulo": "Marley e Eu",
+    "autor": "John Grogan",
+    "genero": "Biografia e Memórias",
+    "idioma": "pt",
+    "resumo": "O autor conta como a família cresceu com um labrador exagerado e bagunceiro, o Marley, que traz alegria e confusão a todos. O livro mistura humor e emoção. Uma história sobre amizade com um animal.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "cachorro",
+      "família",
+      "humor",
+      "memórias",
+      "emoção"
+    ]
+  },
+  {
+    "id": "f4cb001d-3b53-5c67-8d09-6988f1dad351",
+    "titulo": "Sherlock Holmes — O Cão dos Baskervilles",
+    "autor": "Arthur Conan Doyle",
+    "genero": "Mistério e Suspense",
+    "idioma": "pt",
+    "resumo": "Sherlock Holmes e Watson investigam uma lenda sobre um cão sobrenatural que assombra a família Baskerville. A investigação revela uma trama de herança e crime. Um dos casos mais famosos do detetive.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "sherlock holmes",
+      "mistério",
+      "inglaterra",
+      "clássico",
+      "detetive"
+    ]
+  },
+  {
+    "id": "e292106f-4e17-5677-b8c7-d955e2c25936",
+    "titulo": "A Revolução dos Bichos",
+    "autor": "George Orwell",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Animais de uma fazenda expulsam o dono humano e criam um governo próprio, mas os porcos tomam o poder e traem os ideais. A fábula critica regimes autoritários. Um clássico curto e muito lido.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "fábula política",
+      "totalitarismo",
+      "animais",
+      "sátira",
+      "clássico"
+    ]
+  },
+  {
+    "id": "b977da7e-d049-5c7b-a055-ec47b9289e87",
+    "titulo": "As Cobras",
+    "autor": "Luis Fernando Verissimo",
+    "genero": "Quadrinhos e Graphic Novels",
+    "idioma": "pt",
+    "resumo": "As cobras criadas por Verissimo comentam o cotidiano, os costumes e a política em tiras irônicas e filosóficas. Os personagens estão sempre se engolindo. Um clássico da charge brasileira.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "quadrinhos",
+      "humor",
+      "cobras",
+      "tiras",
+      "ironia"
+    ]
+  },
+  {
+    "id": "04896067-431b-50de-913a-385260fb51ab",
+    "titulo": "Quase Memória",
+    "autor": "Carlos Heitor Cony",
+    "genero": "Biografia e Memórias",
+    "idioma": "pt",
+    "resumo": "O autor recebe um pacote misterioso e, a partir dele, revisita a história do pai, jornalista e boêmio, e sua própria infância. A narrativa mistura memória e invenção. Uma obra elogiada pela crítica.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "memórias",
+      "pai",
+      "rio de janeiro",
+      "crônica",
+      "família"
+    ]
+  },
+  {
+    "id": "c118921e-18bc-59d3-8f8e-cd56670837c9",
+    "titulo": "Cem Anos de Solidão",
+    "autor": "Gabriel García Márquez",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "A saga da família Buendía, em Macondo, passa por sete gerações cheias de amores, guerras, magia e solidão. A narrativa mistura realidade e fantasia. Um dos maiores romances do século XX.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "realismo mágico",
+      "macondo",
+      "família",
+      "américa latina",
+      "nobel"
+    ]
+  },
+  {
+    "id": "2f1da63c-15d0-57e4-b428-93bc30ef91bc",
+    "titulo": "O Amor nos Tempos do Cólera",
+    "autor": "Gabriel García Márquez",
+    "genero": "Romance",
+    "idioma": "pt",
+    "resumo": "Florentino espera mais de cinquenta anos para voltar a ficar com Fermina, que escolheu outro homem. A história mostra como o amor atravessa o tempo. Um romance intenso e melancólico.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "amor",
+      "espera",
+      "colômbia",
+      "velhice",
+      "nobel"
+    ]
+  },
+  {
+    "id": "22a0f1d6-5d67-5c1e-90fe-b29983a729d8",
+    "titulo": "Crônica de uma Morte Anunciada",
+    "autor": "Gabriel García Márquez",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Toda a cidade sabe que Santiago Nasar vai ser morto, mas ninguém consegue ou quer impedir. O narrador reconstrói o caso anos depois. Uma novela curta sobre honra e omissão.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "crime",
+      "honra",
+      "colômbia",
+      "jornalismo",
+      "nobel"
+    ]
+  },
+  {
+    "id": "2252cd59-bd07-5caf-9d49-60fddfa42db0",
+    "titulo": "O Aleph",
+    "autor": "Jorge Luis Borges",
+    "genero": "Contos",
+    "idioma": "pt",
+    "resumo": "Os contos de Borges tratam de labirintos, tempo e infinito, com ideias que desafiam a lógica. O conto que dá título ao livro descreve um ponto onde se vê todo o universo. Um clássico da literatura fantástica.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "argentina",
+      "fantasia",
+      "infinito",
+      "filosofia",
+      "contos"
+    ]
+  },
+  {
+    "id": "7c8793ef-17b0-5c38-94cf-01dcf4238179",
+    "titulo": "1808",
+    "autor": "Laurentino Gomes",
+    "genero": "História",
+    "idioma": "pt",
+    "resumo": "O jornalista conta como a fuga da corte portuguesa para o Rio de Janeiro, em 1808, mudou o Brasil. A narrativa é leve e cheia de detalhes curiosos. Um best-seller de divulgação histórica.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "brasil",
+      "corte portuguesa",
+      "história",
+      "napoleão",
+      "narrativa"
+    ]
+  },
+  {
+    "id": "d79ddb05-0337-5204-8c5c-c2d7206713ff",
+    "titulo": "1822",
+    "autor": "Laurentino Gomes",
+    "genero": "História",
+    "idioma": "pt",
+    "resumo": "Laurentino Gomes reconta a Independência do Brasil, mostrando que o processo foi mais complexo e arriscado do que ensina o mito. O livro destaca personagens e conflitos regionais. Uma leitura envolvente para quem gosta de história.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "brasil",
+      "independência",
+      "dom pedro",
+      "história",
+      "narrativa"
+    ]
+  },
+  {
+    "id": "6fb41818-4cee-5a5c-874b-01db81d79fd9",
+    "titulo": "1889",
+    "autor": "Laurentino Gomes",
+    "genero": "História",
+    "idioma": "pt",
+    "resumo": "O autor relata os acontecimentos que levaram ao fim da monarquia e à Proclamação da República no Brasil. A obra mostra uma sociedade em transformação, entre a abolição e a crise do Império. Fecha a trilogia do autor.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "brasil",
+      "república",
+      "monarquia",
+      "história",
+      "narrativa"
+    ]
+  },
+  {
+    "id": "796a6c92-c21d-5a12-b715-b0275e99761f",
+    "titulo": "Escravidão — Volume 1",
+    "autor": "Laurentino Gomes",
+    "genero": "História",
+    "idioma": "pt",
+    "resumo": "O primeiro volume mostra a origem do tráfico de africanos e como a escravidão moldou o Brasil. O autor combina pesquisa histórica e narrativa jornalística. Uma leitura importante sobre a formação do país.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "escravidão",
+      "brasil",
+      "áfrica",
+      "história",
+      "racismo"
+    ]
+  },
+  {
+    "id": "aa8a437b-fe9f-5d60-afc6-08ef465f220e",
+    "titulo": "Casa-Grande & Senzala",
+    "autor": "Gilberto Freyre",
+    "genero": "História",
+    "idioma": "pt",
+    "resumo": "Freyre analisa a formação da sociedade brasileira a partir da vida nos engenhos e da convivência entre senhores, escravizados e indígenas. A obra foi muito influente e é bastante debatida. Um clássico da sociologia brasileira.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "brasil",
+      "sociedade",
+      "formação",
+      "sociologia",
+      "clássico"
+    ]
+  },
+  {
+    "id": "d0faf001-cd8b-536b-8769-e68e10100c92",
+    "titulo": "Raízes do Brasil",
+    "autor": "Sérgio Buarque de Holanda",
+    "genero": "História",
+    "idioma": "pt",
+    "resumo": "Sérgio Buarque analisa a formação do Brasil e apresenta a ideia do homem cordial. O livro discute herança ibérica, vida rural e política. Um dos ensaios mais importantes do pensamento brasileiro.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "brasil",
+      "sociologia",
+      "formação",
+      "cordialidade",
+      "clássico"
+    ]
+  },
+  {
+    "id": "a7f4fa58-0814-5694-ae98-bc40bb2240a4",
+    "titulo": "O Povo Brasileiro",
+    "autor": "Darcy Ribeiro",
+    "genero": "História",
+    "idioma": "pt",
+    "resumo": "Darcy Ribeiro reconta a formação do povo brasileiro a partir do encontro de indígenas, portugueses e africanos. O texto é apaixonado e cheio de ideias fortes. Um ensaio clássico sobre identidade nacional.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "brasil",
+      "antropologia",
+      "identidade",
+      "formação",
+      "ensaio"
+    ]
+  },
+  {
+    "id": "5a873293-a465-50cc-98b2-0412c47ce5ab",
+    "titulo": "Pedagogia do Oprimido",
+    "autor": "Paulo Freire",
+    "genero": "Filosofia",
+    "idioma": "pt",
+    "resumo": "Paulo Freire defende uma educação que dialogue com o aluno e o ajude a perceber e a transformar sua realidade. O livro critica a educação que só deposita conteúdo. Uma obra mundialmente influente.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "educação",
+      "libertação",
+      "pedagogia",
+      "política",
+      "clássico"
+    ]
+  },
+  {
+    "id": "eea13089-82fa-5e68-b36b-264058c8ee91",
+    "titulo": "Pedagogia da Autonomia",
+    "autor": "Paulo Freire",
+    "genero": "Filosofia",
+    "idioma": "pt",
+    "resumo": "Freire reúne reflexões sobre o que significa ensinar e propõe um professor que respeita o saber do aluno e pratica a ética. O livro é curto e direto. Uma leitura essencial para quem atua em educação.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "educação",
+      "ensino",
+      "ética",
+      "autonomia",
+      "professor"
+    ]
+  },
+  {
+    "id": "52f02617-a6d8-57dd-b6d3-9e4eea003470",
+    "titulo": "Por que Fazemos o que Fazemos?",
+    "autor": "Mario Sergio Cortella",
+    "genero": "Filosofia",
+    "idioma": "pt",
+    "resumo": "O filósofo reflete sobre trabalho, propósito e escolhas, usando exemplos do cotidiano. O texto é acessível e cheio de provocações. Um livro de divulgação filosófica.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "trabalho",
+      "sentido",
+      "ética",
+      "reflexão",
+      "vida"
+    ]
+  },
+  {
+    "id": "141087ab-2c42-50c1-97b1-e177f9b045f5",
+    "titulo": "Não Nascemos Prontos",
+    "autor": "Mario Sergio Cortella",
+    "genero": "Desenvolvimento Pessoal",
+    "idioma": "pt",
+    "resumo": "Cortella reúne crônicas sobre aprendizado contínuo, convivência e vida profissional. Para ele, a vida é feita de construção constante. Um livro leve e inspirador.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "educação",
+      "crescimento",
+      "vida",
+      "ética",
+      "reflexão"
+    ]
+  },
+  {
+    "id": "dcf2d8b7-f65b-58f9-a192-88996e23f513",
+    "titulo": "Pílulas de Sabedoria",
+    "autor": "Leandro Karnal",
+    "genero": "Filosofia",
+    "idioma": "pt",
+    "resumo": "O historiador reúne textos curtos sobre felicidade, relações, educação e ética, com humor e referências históricas. O estilo é de conversa. Uma leitura acessível sobre grandes questões.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "reflexão",
+      "vida",
+      "história",
+      "ética",
+      "ensaios"
+    ]
+  },
+  {
+    "id": "5792f897-ce8a-5d17-a688-108db8b08a15",
+    "titulo": "O Dilema do Porco-Espinho",
+    "autor": "Leandro Karnal",
+    "genero": "Filosofia",
+    "idioma": "pt",
+    "resumo": "Karnal usa a metáfora do porco-espinho de Schopenhauer para falar de como lidamos com a solidão e a necessidade do outro. O livro mistura filosofia e experiência pessoal. Uma leitura leve sobre convivência.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "solidão",
+      "relacionamentos",
+      "convivência",
+      "reflexão",
+      "filosofia"
+    ]
+  },
+  {
+    "id": "ce9ac6dc-8e97-5e5e-9476-28edaa223c95",
+    "titulo": "Sapiens: Uma Breve História da Humanidade",
+    "autor": "Yuval Noah Harari",
+    "genero": "História",
+    "idioma": "pt",
+    "resumo": "Harari conta a história da humanidade, da Revolução Cognitiva à era moderna, destacando mitos coletivos e mudanças como a agricultura. O livro mistura história, biologia e filosofia. Um best-seller mundial.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "humanidade",
+      "evolução",
+      "história",
+      "antropologia",
+      "best-seller"
+    ]
+  },
+  {
+    "id": "8e5b6c1c-89f5-5afd-b35a-c83c559572ca",
+    "titulo": "Homo Deus",
+    "autor": "Yuval Noah Harari",
+    "genero": "História",
+    "idioma": "pt",
+    "resumo": "Harari imagina o futuro da humanidade diante de avanços em biotecnologia e inteligência artificial. O livro discute felicidade, imortalidade e poder. Uma continuação de Sapiens focada no amanhã.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "futuro",
+      "tecnologia",
+      "humanidade",
+      "inteligência artificial",
+      "ensaio"
+    ]
+  },
+  {
+    "id": "2d475784-ec0c-5732-a115-e6b232b2516e",
+    "titulo": "Os Segredos da Mente Milionária",
+    "autor": "T. Harv Eker",
+    "genero": "Negócios e Finanças",
+    "idioma": "pt",
+    "resumo": "O autor defende que crenças inconscientes sobre dinheiro moldam a vida financeira e propõe mudar a mentalidade. O livro reúne princípios simples. Um clássico de finanças pessoais.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "dinheiro",
+      "mentalidade",
+      "riqueza",
+      "hábitos",
+      "finanças"
+    ]
+  },
+  {
+    "id": "65c61708-975f-5f08-95f4-5f969ef3adb8",
+    "titulo": "Pai Rico, Pai Pobre",
+    "autor": "Robert Kiyosaki",
+    "genero": "Negócios e Finanças",
+    "idioma": "pt",
+    "resumo": "Kiyosaki compara o que aprendeu com o pai biológico e com o pai de um amigo sobre dinheiro e trabalho. O livro defende educação financeira e criação de ativos. Um best-seller sobre mentalidade financeira.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "finanças",
+      "investimento",
+      "educação financeira",
+      "renda",
+      "best-seller"
+    ]
+  },
+  {
+    "id": "6bd4b72a-aa0b-597c-a3be-7530ef2b47fa",
+    "titulo": "O Homem Mais Rico da Babilônia",
+    "autor": "George S. Clason",
+    "genero": "Negócios e Finanças",
+    "idioma": "pt",
+    "resumo": "Em parábolas passadas na antiga Babilônia, o livro ensina princípios simples como poupar parte da renda e investir com cuidado. A linguagem é de fábula. Um clássico de educação financeira.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "finanças",
+      "economia",
+      "babilônia",
+      "parábolas",
+      "clássico"
+    ]
+  },
+  {
+    "id": "1c194ce6-db72-5cfe-a82d-68e6b5045de4",
+    "titulo": "Mindset: A Nova Psicologia do Sucesso",
+    "autor": "Carol S. Dweck",
+    "genero": "Psicologia",
+    "idioma": "pt",
+    "resumo": "Dweck apresenta a ideia de mentalidade fixa e mentalidade de crescimento e mostra como elas afetam o desempenho. O livro usa exemplos de escola, trabalho e esporte. Uma obra influente em psicologia da motivação.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "mentalidade",
+      "aprendizado",
+      "sucesso",
+      "crescimento",
+      "psicologia"
+    ]
+  },
+  {
+    "id": "671829a8-5dd0-5af9-972a-ebf03ce98fe1",
+    "titulo": "O Poder do Hábito",
+    "autor": "Charles Duhigg",
+    "genero": "Psicologia",
+    "idioma": "pt",
+    "resumo": "Duhigg explica como se formam os hábitos e como podemos mudá-los, com exemplos de pessoas e empresas. O livro apresenta o ciclo de deixa, rotina e recompensa. Uma leitura prática e fácil.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "hábitos",
+      "mudança",
+      "comportamento",
+      "produtividade",
+      "ciência"
+    ]
+  },
+  {
+    "id": "10f88c1b-d3a2-52a5-b340-49b114add83f",
+    "titulo": "Hábitos Atômicos",
+    "autor": "James Clear",
+    "genero": "Desenvolvimento Pessoal",
+    "idioma": "pt",
+    "resumo": "James Clear mostra como pequenas mudanças diárias levam a grandes resultados e propõe métodos práticos para criar bons hábitos. A linguagem é direta e cheia de exemplos. Um dos livros de hábitos mais populares.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "hábitos",
+      "mudança",
+      "produtividade",
+      "rotina",
+      "best-seller"
+    ]
+  },
+  {
+    "id": "ac97c90c-4241-52f7-8015-cfae28508b76",
+    "titulo": "Rápido e Devagar: Duas Formas de Pensar",
+    "autor": "Daniel Kahneman",
+    "genero": "Psicologia",
+    "idioma": "pt",
+    "resumo": "Kahneman descreve dois modos de pensar, um rápido e intuitivo, outro lento e analítico, e mostra como erramos em decisões. O autor ganhou o prêmio Nobel de Economia. Um clássico da psicologia do julgamento.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "decisão",
+      "vieses",
+      "psicologia",
+      "economia comportamental",
+      "ciência"
+    ]
+  },
+  {
+    "id": "ee6a9275-ab74-5127-a189-4e611e9db170",
+    "titulo": "Como Fazer Amigos e Influenciar Pessoas",
+    "autor": "Dale Carnegie",
+    "genero": "Desenvolvimento Pessoal",
+    "idioma": "pt",
+    "resumo": "Carnegie reúne princípios simples para se relacionar melhor, como se interessar pelas pessoas e ouvir com atenção. O livro vendeu milhões de cópias desde 1936. Um clássico do desenvolvimento pessoal.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "relacionamentos",
+      "comunicação",
+      "influência",
+      "clássico",
+      "carreira"
+    ]
+  },
+  {
+    "id": "e4a0d932-c932-5194-b49a-d100d81c59f0",
+    "titulo": "A Sutil Arte de Ligar o F*da-se",
+    "autor": "Mark Manson",
+    "genero": "Desenvolvimento Pessoal",
+    "idioma": "pt",
+    "resumo": "Manson defende que a felicidade depende de escolher bem com o que se importar e aceitar que a vida tem dificuldades. O tom é direto e bem-humorado. Um best-seller que critica a autoajuda tradicional.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "prioridades",
+      "vida",
+      "autoajuda",
+      "humor",
+      "best-seller"
+    ]
+  },
+  {
+    "id": "4a7cbbcb-a13a-58bd-98d6-30bdc6cfb7f1",
+    "titulo": "O Poder do Agora",
+    "autor": "Eckhart Tolle",
+    "genero": "Espiritualidade",
+    "idioma": "pt",
+    "resumo": "Tolle defende que viver o momento presente é o caminho para a paz interior e para sair dos pensamentos que geram sofrimento. O livro mistura espiritualidade e prática. Um dos livros de consciência mais vendidos.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "presença",
+      "mente",
+      "paz",
+      "consciência",
+      "meditação"
+    ]
+  },
+  {
+    "id": "f64945b3-d0fb-5323-95d2-2759da902def",
+    "titulo": "Mulheres que Correm com os Lobos",
+    "autor": "Clarissa Pinkola Estés",
+    "genero": "Psicologia",
+    "idioma": "pt",
+    "resumo": "A psicanalista analisa contos e mitos para apresentar a mulher selvagem e propor reflexões sobre intuição e criatividade. O livro mistura psicologia e narrativas. Uma obra muito lida sobre identidade feminina.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "mulheres",
+      "mitos",
+      "psicologia",
+      "contos",
+      "feminino"
+    ]
+  },
+  {
+    "id": "1213d0ee-c36d-5c76-aeb3-04d3200eae7c",
+    "titulo": "Quem Mexeu no Meu Queijo?",
+    "autor": "Spencer Johnson",
+    "genero": "Desenvolvimento Pessoal",
+    "idioma": "pt",
+    "resumo": "Dois ratinhos e dois homenzinhos vivem num labirinto em busca de queijo e reagem de formas diferentes quando ele acaba. A fábula fala de mudança e adaptação. Um livro curto, popular em empresas.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "mudança",
+      "fábula",
+      "carreira",
+      "adaptação",
+      "best-seller"
+    ]
+  },
+  {
+    "id": "d28836fa-cd25-5a7d-8618-6140fc680689",
+    "titulo": "O Monge e o Executivo",
+    "autor": "James C. Hunter",
+    "genero": "Negócios e Finanças",
+    "idioma": "pt",
+    "resumo": "Um executivo participa de um retiro num mosteiro, onde um ex-empresário que virou monge ensina sobre liderança baseada em servir. A história é contada como romance. Um clássico de liderança para iniciantes.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "liderança",
+      "serviço",
+      "fábula",
+      "gestão",
+      "carreira"
+    ]
+  },
+  {
+    "id": "d7f97751-4521-506a-bf15-48e80a543c15",
+    "titulo": "Os 7 Hábitos das Pessoas Altamente Eficazes",
+    "autor": "Stephen R. Covey",
+    "genero": "Desenvolvimento Pessoal",
+    "idioma": "pt",
+    "resumo": "Covey apresenta sete princípios, como ser proativo e começar com o fim em mente, para melhorar a vida pessoal e profissional. A obra virou referência em liderança. Um clássico do desenvolvimento pessoal.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "hábitos",
+      "eficácia",
+      "liderança",
+      "carreira",
+      "clássico"
+    ]
+  },
+  {
+    "id": "ef273f79-c88f-522b-8153-7606be931ae5",
+    "titulo": "Maus",
+    "autor": "Art Spiegelman",
+    "genero": "Quadrinhos e Graphic Novels",
+    "idioma": "en",
+    "resumo": "O autor desenha a história do pai, sobrevivente de Auschwitz, usando ratos para os judeus e gatos para os nazistas. Entre os relatos, mostra a difícil relação entre pai e filho. A obra recebeu um Pulitzer especial.",
+    "nivel_dificuldade": "Intermediário",
+    "tags": [
+      "holocausto",
+      "memórias",
+      "pai e filho",
+      "graphic novel",
+      "pulitzer"
+    ]
+  },
+  {
+    "id": "f35708ec-1e91-5d56-b488-7f0e096bf71d",
+    "titulo": "Persepolis",
+    "autor": "Marjane Satrapi",
+    "genero": "Quadrinhos e Graphic Novels",
+    "idioma": "en",
+    "resumo": "Marjane conta sua infância e adolescência no Irã durante a Revolução Islâmica e a guerra com o Iraque, depois na Europa. Os desenhos são simples e em preto e branco. Uma memória em quadrinhos de grande sucesso.",
+    "nivel_dificuldade": "Intermediário",
+    "tags": [
+      "irã",
+      "infância",
+      "revolução",
+      "memórias",
+      "mulheres"
+    ]
+  },
+  {
+    "id": "1ae280e4-6542-598d-ad9e-b007e108f8d7",
+    "titulo": "Watchmen",
+    "autor": "Alan Moore and Dave Gibbons",
+    "genero": "Quadrinhos e Graphic Novels",
+    "idioma": "en",
+    "resumo": "Um grupo de heróis aposentados investiga o assassinato de um deles e descobre uma conspiração em plena Guerra Fria. A obra desmonta o mito do super-herói. Um marco dos quadrinhos adultos.",
+    "nivel_dificuldade": "Avançado",
+    "tags": [
+      "super-heróis",
+      "distopia",
+      "guerra fria",
+      "mistério",
+      "clássico"
+    ]
+  },
+  {
+    "id": "f18a6c59-7368-5830-b0d6-291191a5f204",
+    "titulo": "V for Vendetta",
+    "autor": "Alan Moore and David Lloyd",
+    "genero": "Quadrinhos e Graphic Novels",
+    "idioma": "en",
+    "resumo": "Num futuro autoritário na Inglaterra, o misterioso V usa uma máscara e planeja derrubar o governo com ataques simbólicos. A história questiona liberdade e controle. Um clássico distópico em quadrinhos.",
+    "nivel_dificuldade": "Avançado",
+    "tags": [
+      "distopia",
+      "anarquia",
+      "resistência",
+      "inglaterra",
+      "clássico"
+    ]
+  },
+  {
+    "id": "a6854b49-f0f8-5cfe-bfa4-39c33e69a545",
+    "titulo": "The Sandman: Preludes and Nocturnes",
+    "autor": "Neil Gaiman",
+    "genero": "Quadrinhos e Graphic Novels",
+    "idioma": "en",
+    "resumo": "Morpheus, o Senhor dos Sonhos, escapa de décadas de cativeiro e tenta reconstruir seu reino. A série mistura mitologia e horror. O primeiro volume de uma das grandes séries de fantasia em quadrinhos.",
+    "nivel_dificuldade": "Avançado",
+    "tags": [
+      "fantasia",
+      "sonhos",
+      "mitologia",
+      "terror",
+      "clássico"
+    ]
+  },
+  {
+    "id": "12e2e673-42d2-585e-82b1-f2c138af1b5d",
+    "titulo": "Fun Home",
+    "autor": "Alison Bechdel",
+    "genero": "Quadrinhos e Graphic Novels",
+    "idioma": "en",
+    "resumo": "Alison relembra a relação com o pai, que lidava com segredos e morreu cedo, e a própria descoberta da identidade. A narrativa mistura literatura e vida. Uma memória em quadrinhos premiada.",
+    "nivel_dificuldade": "Avançado",
+    "tags": [
+      "memórias",
+      "família",
+      "identidade",
+      "literatura",
+      "graphic novel"
+    ]
+  },
+  {
+    "id": "ea207ef5-f309-5d3c-96ff-5da8dae939f7",
+    "titulo": "Calvin and Hobbes: The Essential",
+    "autor": "Bill Watterson",
+    "genero": "Quadrinhos e Graphic Novels",
+    "idioma": "en",
+    "resumo": "Calvin, um menino de seis anos com muita imaginação, vive aventuras com seu tigre de pelúcia Hobbes, que ganha vida só para ele. As tiras falam de infância, filosofia e escola com humor. Um clássico dos quadrinhos.",
+    "nivel_dificuldade": "Iniciante",
+    "tags": [
+      "humor",
+      "infância",
+      "imaginação",
+      "tiras",
+      "clássico"
+    ]
+  },
+  {
+    "id": "0cc4ab69-524d-52c6-9020-6a3ccba1ce65",
+    "titulo": "The Far Side Gallery",
+    "autor": "Gary Larson",
+    "genero": "Quadrinhos e Graphic Novels",
+    "idioma": "en",
+    "resumo": "Reúne cartuns de painel único com humor absurdo e animais que agem como pessoas. As piadas são curtas e rápidas de ler. Uma coletânea clássica de humor.",
+    "nivel_dificuldade": "Iniciante",
+    "tags": [
+      "humor",
+      "cartuns",
+      "animais",
+      "absurdo",
+      "clássico"
+    ]
+  },
+  {
+    "id": "0709ec04-f253-56c7-a37c-9351c885630e",
+    "titulo": "Peanuts: The Complete Collection",
+    "autor": "Charles M. Schulz",
+    "genero": "Quadrinhos e Graphic Novels",
+    "idioma": "en",
+    "resumo": "Charlie Brown, Snoopy e a turma enfrentam derrotas, alegrias e dúvidas do dia a dia nas tiras que Schulz publicou por cinquenta anos. O humor é doce e melancólico. Um clássico dos quadrinhos.",
+    "nivel_dificuldade": "Iniciante",
+    "tags": [
+      "humor",
+      "infância",
+      "amizade",
+      "tiras",
+      "clássico"
+    ]
+  },
+  {
+    "id": "45e04ea9-b66a-5334-b2e2-e593d6ba0894",
+    "titulo": "Garfield at Large",
+    "autor": "Jim Davis",
+    "genero": "Quadrinhos e Graphic Novels",
+    "idioma": "en",
+    "resumo": "O gato preguiçoso Garfield adora lasanha, odeia segundas-feiras e atormenta o dono Jon e o cachorro Odie. As tiras são curtas e de linguagem simples. Uma leitura leve para treinar o inglês.",
+    "nivel_dificuldade": "Iniciante",
+    "tags": [
+      "humor",
+      "gatos",
+      "tiras",
+      "comida",
+      "clássico"
+    ]
+  },
+  {
+    "id": "5a7ca53d-17ec-5e59-977b-c123268a0722",
+    "titulo": "Smile",
+    "autor": "Raina Telgemeier",
+    "genero": "Quadrinhos e Graphic Novels",
+    "idioma": "en",
+    "resumo": "Raina cai e machuca os dentes e passa por anos de tratamentos dentários enquanto lida com amizades e a adolescência. O livro mistura humor e emoção. Uma graphic novel popular entre jovens leitores.",
+    "nivel_dificuldade": "Iniciante",
+    "tags": [
+      "infância",
+      "amizade",
+      "aparelho dental",
+      "escola",
+      "memórias"
+    ]
+  },
+  {
+    "id": "e528c157-bb69-50c9-bc4e-c9b8e8ef0fa7",
+    "titulo": "Dog Man",
+    "autor": "Dav Pilkey",
+    "genero": "Quadrinhos e Graphic Novels",
+    "idioma": "en",
+    "resumo": "Um policial e seu cão sofrem um acidente e são unidos numa cirurgia, formando o Dog Man, herói que combate o gato Petey. O livro é cheio de piadas bobas. Uma série de quadrinhos infantis muito popular.",
+    "nivel_dificuldade": "Iniciante",
+    "tags": [
+      "humor",
+      "super-herói",
+      "cachorro",
+      "infantil",
+      "quadrinhos"
+    ]
+  },
+  {
+    "id": "5539f903-dd5d-5b96-9fb4-6dc11e81aa4f",
+    "titulo": "Amulet: The Stonekeeper",
+    "autor": "Kazu Kibuishi",
+    "genero": "Quadrinhos e Graphic Novels",
+    "idioma": "en",
+    "resumo": "Depois de uma tragédia, Emily e o irmão se mudam e acabam descobrindo um amuleto mágico que os leva a um mundo de demônios e robôs. Ela precisa salvar a mãe. Uma aventura de fantasia em quadrinhos.",
+    "nivel_dificuldade": "Iniciante",
+    "tags": [
+      "fantasia",
+      "aventura",
+      "família",
+      "amuleto",
+      "juvenil"
+    ]
+  },
+  {
+    "id": "a52f5009-6409-5073-9a2e-8c6904a8db9a",
+    "titulo": "Bone: Out from Boneville",
+    "autor": "Jeff Smith",
+    "genero": "Quadrinhos e Graphic Novels",
+    "idioma": "en",
+    "resumo": "Os primos Bone são expulsos de sua cidade e chegam a um vale misterioso cheio de criaturas e perigos. A história mistura humor e fantasia épica. O primeiro volume de uma série premiada.",
+    "nivel_dificuldade": "Iniciante",
+    "tags": [
+      "fantasia",
+      "aventura",
+      "humor",
+      "primos",
+      "quadrinhos"
+    ]
+  },
+  {
+    "id": "04cd26d5-53a7-5b8b-8ddf-3aa02dcfadc5",
+    "titulo": "American Born Chinese",
+    "autor": "Gene Luen Yang",
+    "genero": "Quadrinhos e Graphic Novels",
+    "idioma": "en",
+    "resumo": "Três histórias paralelas, um menino filho de imigrantes, o Rei Macaco e um adolescente popular, se entrelaçam sobre identidade e pertencimento. O livro mistura humor e mitologia chinesa. Uma graphic novel premiada.",
+    "nivel_dificuldade": "Intermediário",
+    "tags": [
+      "identidade",
+      "imigração",
+      "escola",
+      "mitologia",
+      "graphic novel"
+    ]
+  },
+  {
+    "id": "9933e620-00d5-5158-8713-0642113a41dc",
+    "titulo": "March: Book One",
+    "autor": "John Lewis, Andrew Aydin and Nate Powell",
+    "genero": "Quadrinhos e Graphic Novels",
+    "idioma": "en",
+    "resumo": "O congressista John Lewis relembra sua infância no Alabama e os primeiros passos do movimento pelos direitos civis. Os desenhos em preto e branco dão força à narrativa. O primeiro volume de uma trilogia premiada.",
+    "nivel_dificuldade": "Intermediário",
+    "tags": [
+      "direitos civis",
+      "memórias",
+      "história",
+      "estados unidos",
+      "graphic novel"
+    ]
+  },
+  {
+    "id": "5c544fd3-91ef-55ac-baa1-3efeb00005f9",
+    "titulo": "Ghost World",
+    "autor": "Daniel Clowes",
+    "genero": "Quadrinhos e Graphic Novels",
+    "idioma": "en",
+    "resumo": "Duas amigas recém-formadas passam o verão vagando pela cidade, criticando todos ao redor e enfrentando o fim da adolescência. O tom é irônico e melancólico. Uma graphic novel cultuada.",
+    "nivel_dificuldade": "Avançado",
+    "tags": [
+      "adolescência",
+      "amizade",
+      "ironia",
+      "vida urbana",
+      "graphic novel"
+    ]
+  },
+  {
+    "id": "d6aa4d69-e305-5e55-835b-90e60004f1ed",
+    "titulo": "Carmilla",
+    "autor": "Joseph Sheridan Le Fanu",
+    "genero": "Terror",
+    "idioma": "en",
+    "resumo": "Laura, que vive isolada num castelo, faz amizade com a misteriosa Carmilla, e a saúde dela começa a piorar. A novela, de 1872, é anterior a Drácula. Um clássico do vampirismo gótico.",
+    "nivel_dificuldade": "Avançado",
+    "tags": [
+      "vampiros",
+      "gótico",
+      "clássico",
+      "mistério",
+      "novela"
+    ]
+  },
+  {
+    "id": "b6d19681-42d8-55d9-aeb5-f88c33f3a160",
+    "titulo": "The Haunting of Hill House",
+    "autor": "Shirley Jackson",
+    "genero": "Terror",
+    "idioma": "en",
+    "resumo": "Quatro pessoas passam o verão numa casa conhecida por ser assombrada, para um estudo sobre o sobrenatural. A frágil Eleanor se prende cada vez mais ao lugar. Um clássico do terror psicológico.",
+    "nivel_dificuldade": "Avançado",
+    "tags": [
+      "casa assombrada",
+      "psicológico",
+      "suspense",
+      "clássico",
+      "mulheres"
+    ]
+  },
+  {
+    "id": "de8dd919-3660-50cf-9e65-33996e0a15eb",
+    "titulo": "The Shining",
+    "autor": "Stephen King",
+    "genero": "Terror",
+    "idioma": "en",
+    "resumo": "Jack Torrance aceita ser zelador de um hotel isolado no inverno, e a presença do lugar e os poderes do filho Danny mudam tudo. A família fica à mercê da loucura. Um dos romances de terror mais famosos.",
+    "nivel_dificuldade": "Intermediário",
+    "tags": [
+      "hotel",
+      "isolamento",
+      "terror",
+      "família",
+      "best-seller"
+    ]
+  },
+  {
+    "id": "c76799ec-fa2b-5a4c-b608-df9a8d1b51c0",
+    "titulo": "It",
+    "autor": "Stephen King",
+    "genero": "Terror",
+    "idioma": "en",
+    "resumo": "Um grupo de amigos de Derry enfrenta, na infância e de novo adultos, uma criatura que assume a forma de um palhaço. A obra alterna passado e presente. Um dos grandes romances de terror de King.",
+    "nivel_dificuldade": "Intermediário",
+    "tags": [
+      "palhaço",
+      "infância",
+      "amizade",
+      "cidade pequena",
+      "best-seller"
+    ]
+  },
+  {
+    "id": "ea2c85aa-ae5d-538b-9123-016d65305ffa",
+    "titulo": "Pet Sematary",
+    "autor": "Stephen King",
+    "genero": "Terror",
+    "idioma": "en",
+    "resumo": "Louis Creed, depois de perder o gato da filha, enterra o animal num cemitério antigo e vê a vida ser perturbada por um desfecho assustador. O livro trata de luto e das escolhas diante da morte. Um romance sombrio de King.",
+    "nivel_dificuldade": "Intermediário",
+    "tags": [
+      "luto",
+      "morte",
+      "família",
+      "sobrenatural",
+      "best-seller"
+    ]
+  },
+  {
+    "id": "3e457815-e41b-5765-8424-253b937db578",
+    "titulo": "Carrie",
+    "autor": "Stephen King",
+    "genero": "Terror",
+    "idioma": "en",
+    "resumo": "Carrie, adolescente tímida e criada por uma mãe religiosa, descobre poderes de telecinese e sofre humilhações na escola. Uma noite de baile muda tudo. O romance de estreia de Stephen King.",
+    "nivel_dificuldade": "Intermediário",
+    "tags": [
+      "adolescência",
+      "telecinese",
+      "bullying",
+      "vingança",
+      "estreia"
+    ]
+  },
+  {
+    "id": "211b715a-2cda-5191-8c1e-2892060fd1a8",
+    "titulo": "Salem's Lot",
+    "autor": "Stephen King",
+    "genero": "Terror",
+    "idioma": "en",
+    "resumo": "Um escritor volta à sua cidade natal no Maine e descobre que um vampiro está transformando os moradores. A cidade vai sendo dominada aos poucos. Um romance de terror clássico.",
+    "nivel_dificuldade": "Intermediário",
+    "tags": [
+      "vampiros",
+      "cidade pequena",
+      "terror",
+      "best-seller",
+      "maine"
+    ]
+  },
+  {
+    "id": "a07ea71f-ae09-5999-9641-4fe7aa51ff9d",
+    "titulo": "Misery",
+    "autor": "Stephen King",
+    "genero": "Terror",
+    "idioma": "en",
+    "resumo": "O escritor Paul Sheldon sofre um acidente e é resgatado por Annie Wilkes, sua fã número um, que o mantém preso e o obriga a reescrever um livro. A obsessão dela vira pesadelo. Um thriller psicológico de King.",
+    "nivel_dificuldade": "Intermediário",
+    "tags": [
+      "suspense",
+      "escritor",
+      "obsessão",
+      "psicológico",
+      "best-seller"
+    ]
+  },
+  {
+    "id": "372debc8-6179-5c45-90af-8069290a6b74",
+    "titulo": "Interview with the Vampire",
+    "autor": "Anne Rice",
+    "genero": "Terror",
+    "idioma": "en",
+    "resumo": "Um vampiro, Louis, conta a um repórter sua vida desde que foi transformado por Lestat, em Nova Orleans. A história trata de culpa, solidão e imortalidade. Um romance que deu nova vida ao gênero.",
+    "nivel_dificuldade": "Avançado",
+    "tags": [
+      "vampiros",
+      "new orleans",
+      "imortalidade",
+      "gótico",
+      "best-seller"
+    ]
+  },
+  {
+    "id": "babaca25-2d9f-5c38-b016-da1ba326ec3f",
+    "titulo": "Frankenstein, or The Modern Prometheus",
+    "autor": "Mary Shelley",
+    "genero": "Terror",
+    "idioma": "en",
+    "resumo": "O cientista Victor Frankenstein cria um ser vivo e o abandona, o que desencadeia vingança e tragédia. O romance, de 1818, discute responsabilidade científica. Um clássico gótico e de ficção científica.",
+    "nivel_dificuldade": "Avançado",
+    "tags": [
+      "ciência",
+      "criação",
+      "monstro",
+      "gótico",
+      "clássico"
+    ]
+  },
+  {
+    "id": "135c47f1-58b1-5a94-80af-7c2d7822061f",
+    "titulo": "The Turn of the Screw",
+    "autor": "Henry James",
+    "genero": "Terror",
+    "idioma": "en",
+    "resumo": "Uma jovem governanta cuida de duas crianças numa casa de campo e passa a ver fantasmas que, segundo ela, querem corrompê-los. Nunca fica claro se são reais ou imaginados. Uma novela de terror sutil.",
+    "nivel_dificuldade": "Avançado",
+    "tags": [
+      "governanta",
+      "fantasmas",
+      "ambiguidade",
+      "novela",
+      "clássico"
+    ]
+  },
+  {
+    "id": "74c2c486-56a9-5e8a-9dea-fea4f8114592",
+    "titulo": "We Have Always Lived in the Castle",
+    "autor": "Shirley Jackson",
+    "genero": "Terror",
+    "idioma": "en",
+    "resumo": "Merricat vive numa casa grande e isolada com a irmã e o tio depois de uma tragédia familiar, até a chegada de um primo mudar tudo. A narrativa é sutil e perturbadora. Um clássico do suspense psicológico.",
+    "nivel_dificuldade": "Avançado",
+    "tags": [
+      "mistério",
+      "família",
+      "isolamento",
+      "psicológico",
+      "clássico"
+    ]
+  },
+  {
+    "id": "f749b467-420a-594e-9a18-b2d377fbff85",
+    "titulo": "Bird Box",
+    "autor": "Josh Malerman",
+    "genero": "Terror",
+    "idioma": "en",
+    "resumo": "Uma mulher precisa levar os filhos de olhos vendados por um rio, num mundo em que ver certas criaturas leva à loucura. O livro alterna passado e presente. Um terror de suspense contínuo.",
+    "nivel_dificuldade": "Intermediário",
+    "tags": [
+      "apocalipse",
+      "suspense",
+      "maternidade",
+      "criaturas",
+      "best-seller"
+    ]
+  },
+  {
+    "id": "3c098764-2b4b-5d9c-b68b-9cf1ee88e135",
+    "titulo": "The Alchemist",
+    "autor": "Paulo Coelho",
+    "genero": "Ficção Clássica",
+    "idioma": "en",
+    "resumo": "O pastor Santiago deixa a Espanha e atravessa o deserto em busca de um tesouro revelado em sonho, encontrando mestres e aprendizados pelo caminho. A fábula fala de seguir a própria lenda pessoal. Um dos livros brasileiros mais vendidos no mundo, aqui na versão em inglês.",
+    "nivel_dificuldade": "Iniciante",
+    "tags": [
+      "fábula",
+      "jornada",
+      "sonhos",
+      "espiritualidade",
+      "best-seller"
+    ]
+  },
+  {
+    "id": "1ab1dc68-fe1d-5e39-964d-1c6bb340d6fa",
+    "titulo": "Mindfulness in Plain English",
+    "autor": "Bhante Henepola Gunaratana",
+    "genero": "Espiritualidade",
+    "idioma": "en",
+    "resumo": "O monge explica de forma simples como praticar meditação de atenção plena e lidar com distrações e dúvidas. O texto combina orientação prática e ensinamentos budistas. Um guia clássico para iniciantes.",
+    "nivel_dificuldade": "Intermediário",
+    "tags": [
+      "meditação",
+      "atenção plena",
+      "budismo",
+      "prática",
+      "paz"
+    ]
+  },
+  {
+    "id": "a90d687b-17ff-5591-8c2f-65e7354d3eb0",
+    "titulo": "Sapiens: A Brief History of Humankind",
+    "autor": "Yuval Noah Harari",
+    "genero": "História",
+    "idioma": "en",
+    "resumo": "Harari conta a história da humanidade, da Revolução Cognitiva à era moderna, destacando mitos coletivos e mudanças como a agricultura. O livro mistura história, biologia e filosofia. Um best-seller mundial.",
+    "nivel_dificuldade": "Intermediário",
+    "tags": [
+      "humanidade",
+      "evolução",
+      "história",
+      "antropologia",
+      "best-seller"
+    ]
+  },
+  {
+    "id": "fb81378f-fbc4-59ca-a2a2-30bd84749298",
+    "titulo": "Orgulho e Preconceito",
+    "autor": "Jane Austen",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Elizabeth Bennet, inteligente e de opinião firme, enfrenta o orgulho do rico Darcy e os próprios preconceitos. A história satiriza casamentos arranjados e diferenças de classe. Um dos romances mais amados da literatura inglesa.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "romance",
+      "sociedade",
+      "inglaterra",
+      "clássico",
+      "humor"
+    ]
+  },
+  {
+    "id": "0f9a2d44-49c1-5b14-afbb-dad7f7464545",
+    "titulo": "Razão e Sensibilidade",
+    "autor": "Jane Austen",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "As irmãs Elinor e Marianne Dashwood, uma racional e outra impulsiva, lidam com perdas e decepções amorosas depois de perderem a herança. A obra contrasta duas formas de sentir. Um romance de costumes elegante e irônico.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "romance",
+      "irmãs",
+      "inglaterra",
+      "clássico",
+      "sociedade"
+    ]
+  },
+  {
+    "id": "5a6546a5-bde5-58fa-93a7-eba88953bcce",
+    "titulo": "Persuasão",
+    "autor": "Jane Austen",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Anne Elliot, convencida a recusar um pedido de casamento anos atrás, reencontra o capitão Wentworth, agora rico e bem-sucedido. A história fala de arrependimento e segundas chances. O último romance concluído por Austen.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "romance",
+      "segunda chance",
+      "inglaterra",
+      "clássico",
+      "maturidade"
+    ]
+  },
+  {
+    "id": "a836eb24-0076-55f1-95c4-65765f267c9e",
+    "titulo": "O Morro dos Ventos Uivantes",
+    "autor": "Emily Brontë",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Heathcliff, acolhido por uma família nos pântanos da Inglaterra, vive uma paixão obsessiva por Catherine e busca vingança depois de perdê-la. A narrativa atravessa duas gerações. Um romance sombrio e intenso.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "romance",
+      "vingança",
+      "gótico",
+      "paixão",
+      "clássico"
+    ]
+  },
+  {
+    "id": "60750376-3c03-5142-825e-4b86441091f5",
+    "titulo": "Grandes Esperanças",
+    "autor": "Charles Dickens",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "O órfão Pip recebe uma herança misteriosa e se muda para Londres para virar cavalheiro, deixando de lado quem o amava. Aos poucos, descobre a origem do dinheiro. Um romance sobre ambição e gratidão.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "romance",
+      "ascensão social",
+      "inglaterra",
+      "clássico",
+      "orfandade"
+    ]
+  },
+  {
+    "id": "bf1ec71c-6902-53ce-ba0b-e77e1d384ac3",
+    "titulo": "Um Conto de Natal",
+    "autor": "Charles Dickens",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "O avarento Scrooge recebe na véspera de Natal a visita de três espíritos que o levam a repensar a própria vida. A história fala de generosidade e redenção. Uma novela curta e muito querida.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "natal",
+      "fantasmas",
+      "redenção",
+      "novela",
+      "clássico"
+    ]
+  },
+  {
+    "id": "315024b5-80ab-5df4-9eca-73236afa8d94",
+    "titulo": "Crime e Castigo",
+    "autor": "Fiódor Dostoiévski",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "O estudante Raskólnikov mata uma velha agiota e passa a ser consumido por culpa e medo de ser descoberto. O romance explora moral, pobreza e redenção. Uma obra-prima da literatura russa.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "culpa",
+      "rússia",
+      "psicológico",
+      "clássico",
+      "filosofia"
+    ]
+  },
+  {
+    "id": "fb9eb1e1-4b47-5188-93a8-2e41c9e00618",
+    "titulo": "Os Irmãos Karamázov",
+    "autor": "Fiódor Dostoiévski",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Três irmãos muito diferentes e seu pai violento se envolvem numa disputa que termina em assassinato. O livro discute fé, livre-arbítrio e culpa. O último e mais ambicioso romance de Dostoiévski.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "rússia",
+      "família",
+      "fé",
+      "filosofia",
+      "clássico"
+    ]
+  },
+  {
+    "id": "fa2351aa-b19b-5f87-a6d2-098b01ec329b",
+    "titulo": "Guerra e Paz",
+    "autor": "Liev Tolstói",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "O romance acompanha famílias da aristocracia russa durante as guerras napoleônicas, entre bailes, batalhas e dilemas pessoais. A obra une história e vida íntima. Um monumento da literatura mundial.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "rússia",
+      "napoleão",
+      "história",
+      "família",
+      "clássico"
+    ]
+  },
+  {
+    "id": "3d0412e3-0c81-5b5a-951b-0dfc5493ca12",
+    "titulo": "Anna Kariênina",
+    "autor": "Liev Tolstói",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Anna, mulher da alta sociedade russa, abandona o casamento por um amor proibido e enfrenta o julgamento social. Em paralelo, o romance mostra a busca de Liévin por sentido. Um clássico sobre paixão e sociedade.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "rússia",
+      "adultério",
+      "sociedade",
+      "clássico",
+      "romance"
+    ]
+  },
+  {
+    "id": "cde27416-fd3b-596c-9e82-80d43a28eda8",
+    "titulo": "Os Miseráveis",
+    "autor": "Victor Hugo",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Jean Valjean, ex-presidiário, tenta recomeçar a vida enquanto o inspetor Javert o persegue na França do século XIX. O romance passa por pobreza, revolução e amor. Uma epopeia sobre justiça e redenção.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "frança",
+      "justiça",
+      "redenção",
+      "história",
+      "clássico"
+    ]
+  },
+  {
+    "id": "1ce1aeb1-de37-5d65-875b-6d3066e5cb1e",
+    "titulo": "O Corcunda de Notre-Dame",
+    "autor": "Victor Hugo",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Na Paris medieval, o sineiro deformado Quasímodo se apaixona por Esmeralda, uma cigana perseguida por um clérigo obcecado. A catedral é cenário e personagem. Um clássico romântico e trágico.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "frança",
+      "paris",
+      "catedral",
+      "amor",
+      "clássico"
+    ]
+  },
+  {
+    "id": "f804e8c0-8bee-515e-ba2c-ce7c6b6e4f17",
+    "titulo": "O Conde de Monte Cristo",
+    "autor": "Alexandre Dumas",
+    "genero": "Aventura",
+    "idioma": "pt",
+    "resumo": "Edmond Dantès é preso injustamente, foge e volta rico para punir os que o traíram. A história une aventura, mistério e justiça. Um dos grandes romances de aventura.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "frança",
+      "vingança",
+      "aventura",
+      "prisão",
+      "clássico"
+    ]
+  },
+  {
+    "id": "d2f22420-3f18-5c6f-86c5-b8d1f7161e04",
+    "titulo": "Os Três Mosqueteiros",
+    "autor": "Alexandre Dumas",
+    "genero": "Aventura",
+    "idioma": "pt",
+    "resumo": "O jovem D'Artagnan chega a Paris para ser mosqueteiro, faz amizade com Athos, Porthos e Aramis e se envolve em intrigas da corte. O lema deles é um por todos, todos por um. Um clássico da aventura.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "frança",
+      "espadachins",
+      "aventura",
+      "amizade",
+      "clássico"
+    ]
+  },
+  {
+    "id": "9d72f3bc-4ea7-55df-936e-fb930ac6f339",
+    "titulo": "Madame Bovary",
+    "autor": "Gustave Flaubert",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Emma Bovary, entediada com a vida de esposa de um médico do interior, busca emoção em casos amorosos e em gastos, e acaba endividada. O romance retrata a ilusão romântica. Um marco do Realismo.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "frança",
+      "realismo",
+      "casamento",
+      "tédio",
+      "clássico"
+    ]
+  },
+  {
+    "id": "2db36170-99fb-50a5-bf1f-45c5a6e601b7",
+    "titulo": "O Vermelho e o Negro",
+    "autor": "Stendhal",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Julien Sorel, filho de um carpinteiro, usa inteligência e charme para subir na sociedade francesa, entre a Igreja e a aristocracia. Seus amores e ambições o levam à ruína. Um clássico do romance francês.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "frança",
+      "ambição",
+      "sociedade",
+      "clássico",
+      "romance"
+    ]
+  },
+  {
+    "id": "8148a358-ead6-52c3-8c5e-047e3ff92ec8",
+    "titulo": "O Estrangeiro",
+    "autor": "Albert Camus",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Meursault, um homem indiferente, mata um árabe numa praia da Argélia e é julgado mais por sua falta de emoção do que pelo crime. O livro expressa a filosofia do absurdo. Um clássico curto e marcante.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "existencialismo",
+      "absurdo",
+      "argélia",
+      "clássico",
+      "nobel"
+    ]
+  },
+  {
+    "id": "65e03565-59d6-50de-9ef3-163f6f423a31",
+    "titulo": "A Peste",
+    "autor": "Albert Camus",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Uma epidemia de peste isola a cidade de Orã, e o médico Rieux e outros personagens lutam contra a doença e o desespero. O romance fala de solidariedade e do sentido diante do sofrimento. Uma obra relevante em tempos de crise.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "epidemia",
+      "solidariedade",
+      "argélia",
+      "existencialismo",
+      "nobel"
+    ]
+  },
+  {
+    "id": "b93cfd65-633b-503f-a29e-e4439ca7177b",
+    "titulo": "A Metamorfose",
+    "autor": "Franz Kafka",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Gregor Samsa acorda transformado em um inseto gigante e vê sua família passar do espanto à rejeição. A novela é um retrato de alienação e dever. Um clássico curto da literatura do século XX.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "absurdo",
+      "família",
+      "alienação",
+      "novela",
+      "clássico"
+    ]
+  },
+  {
+    "id": "af3cdc6f-9743-541e-b394-1f951f1ff90d",
+    "titulo": "O Processo",
+    "autor": "Franz Kafka",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Josef K é preso uma manhã sem saber o motivo e enfrenta um tribunal misterioso e inalcançável. O romance expressa angústia diante de sistemas incompreensíveis. Uma obra marcante do absurdo.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "burocracia",
+      "culpa",
+      "absurdo",
+      "justiça",
+      "clássico"
+    ]
+  },
+  {
+    "id": "6264df36-2978-5a29-b96d-7c3dcca61114",
+    "titulo": "Admirável Mundo Novo",
+    "autor": "Aldous Huxley",
+    "genero": "Ficção Científica",
+    "idioma": "pt",
+    "resumo": "Num futuro em que as pessoas são geneticamente planejadas e mantidas felizes por drogas e prazer, Bernard e John questionam o sistema. O livro critica o conforto como forma de controle. Um clássico da distopia.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "distopia",
+      "controle",
+      "tecnologia",
+      "sociedade",
+      "clássico"
+    ]
+  },
+  {
+    "id": "cd4534c4-7bcd-5f7d-a737-c052b7930ba0",
+    "titulo": "O Senhor dos Anéis: A Sociedade do Anel",
+    "autor": "J. R. R. Tolkien",
+    "genero": "Fantasia",
+    "idioma": "pt",
+    "resumo": "O hobbit Frodo recebe um anel perigoso e parte numa jornada com uma sociedade de amigos para destruí-lo no fogo onde foi forjado. O mundo da Terra-média é cheio de povos e línguas. O primeiro volume da trilogia.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "terra média",
+      "aventura",
+      "anel",
+      "épico",
+      "clássico"
+    ]
+  },
+  {
+    "id": "cb9e1903-a887-5b4d-b606-fc2eb1a44ac2",
+    "titulo": "Harry Potter e a Pedra Filosofal",
+    "autor": "J. K. Rowling",
+    "genero": "Fantasia",
+    "idioma": "pt",
+    "resumo": "Harry descobre aos onze anos que é bruxo e vai estudar em Hogwarts, onde faz amigos e enfrenta o vilão que matou seus pais. O livro iniciou a série mais popular do mundo. Uma aventura de fantasia e amizade.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "magia",
+      "hogwarts",
+      "juvenil",
+      "amizade",
+      "best-seller"
+    ]
+  },
+  {
+    "id": "2f54c807-37be-509f-a3e3-92928c28af67",
+    "titulo": "Percy Jackson e o Ladrão de Raios",
+    "autor": "Rick Riordan",
+    "genero": "Fantasia",
+    "idioma": "pt",
+    "resumo": "Percy descobre que é filho de um deus grego e é acusado de roubar o raio de Zeus, então parte numa viagem pelos Estados Unidos para provar a inocência. A história mistura humor e mitologia. Um sucesso juvenil.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "mitologia grega",
+      "aventura",
+      "juvenil",
+      "semideuses",
+      "humor"
+    ]
+  },
+  {
+    "id": "77039577-625e-5eba-bf9f-fe714eb25257",
+    "titulo": "Jogos Vorazes",
+    "autor": "Suzanne Collins",
+    "genero": "Ficção Científica",
+    "idioma": "pt",
+    "resumo": "Katniss se oferece no lugar da irmã para participar dos Jogos Vorazes, um torneio televisionado em que jovens lutam até a morte. A história critica o poder e o espetáculo. O primeiro livro de uma trilogia de grande sucesso.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "distopia",
+      "sobrevivência",
+      "juvenil",
+      "rebelião",
+      "best-seller"
+    ]
+  },
+  {
+    "id": "4e38e732-b1b5-5f25-a8e7-ccd6aa5b2c2d",
+    "titulo": "A Culpa é das Estrelas",
+    "autor": "John Green",
+    "genero": "Juvenil",
+    "idioma": "pt",
+    "resumo": "Hazel e Gus, adolescentes que se conhecem num grupo de apoio para pacientes de câncer, vivem uma história de amor cheia de humor e dor. Juntos, refletem sobre sentido e despedida. Um romance juvenil emocionante.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "amor",
+      "doença",
+      "adolescência",
+      "emoção",
+      "best-seller"
+    ]
+  },
+  {
+    "id": "a5f885aa-07a7-5877-97c2-7a0252c6a25b",
+    "titulo": "O Código Da Vinci",
+    "autor": "Dan Brown",
+    "genero": "Mistério e Suspense",
+    "idioma": "pt",
+    "resumo": "O simbologista Robert Langdon investiga um assassinato no Louvre e segue pistas escondidas em obras de arte. A trama envolve segredos da Igreja. Um thriller de ritmo acelerado.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "thriller",
+      "paris",
+      "códigos",
+      "religião",
+      "best-seller"
+    ]
+  },
+  {
+    "id": "171c9d3c-e1ca-536f-8391-449763016662",
+    "titulo": "O Perfume",
+    "autor": "Patrick Süskind",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Jean-Baptiste Grenouille tem um olfato extraordinário e nenhum cheiro próprio, e comete crimes para criar o perfume perfeito. O romance tem clima sombrio e sensorial. Um sucesso mundial.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "frança",
+      "obsessão",
+      "olfato",
+      "crime",
+      "século xviii"
+    ]
+  },
+  {
+    "id": "b02c62be-8617-5591-8ea2-4a530f67ad65",
+    "titulo": "O Nome da Rosa",
+    "autor": "Umberto Eco",
+    "genero": "Mistério e Suspense",
+    "idioma": "pt",
+    "resumo": "Em 1327, o frade Guilherme de Baskerville investiga mortes num mosteiro italiano onde há uma biblioteca labiríntica. O romance mistura mistério, filosofia e história medieval. Um clássico moderno.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "idade média",
+      "mosteiro",
+      "mistério",
+      "religião",
+      "clássico"
+    ]
+  },
+  {
+    "id": "e0236680-3e27-5cfc-833f-e84774a76ef6",
+    "titulo": "O Velho e o Mar",
+    "autor": "Ernest Hemingway",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Santiago, velho pescador cubano, passa oitenta e quatro dias sem pescar nada e fisga um marlim enorme no octogésimo quinto. A luta dura dias em alto-mar. Uma novela curta sobre coragem e dignidade.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "pesca",
+      "perseverança",
+      "cuba",
+      "novela",
+      "nobel"
+    ]
+  },
+  {
+    "id": "54802e8e-8f8b-5312-8c81-cbb14883e6eb",
+    "titulo": "O Apanhador no Campo de Centeio",
+    "autor": "J. D. Salinger",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Holden Caulfield, expulso da escola, vaga por Nova York contando seus dias com sarcasmo e angústia. A voz do narrador marcou gerações. Um clássico sobre a passagem para a vida adulta.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "adolescência",
+      "alienação",
+      "nova york",
+      "clássico",
+      "narrador"
+    ]
+  },
+  {
+    "id": "75e84d38-ac31-571d-857d-5e27cf078dff",
+    "titulo": "O Sol é para Todos",
+    "autor": "Harper Lee",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Scout Finch narra a infância numa cidade do Alabama, onde seu pai, o advogado Atticus, defende um homem negro injustamente acusado. O livro trata de justiça e preconceito. Um clássico premiado com o Pulitzer.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "racismo",
+      "justiça",
+      "infância",
+      "sul dos eua",
+      "clássico"
+    ]
+  },
+  {
+    "id": "c7043315-d415-52eb-a87e-099323667e43",
+    "titulo": "O Grande Gatsby",
+    "autor": "F. Scott Fitzgerald",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Nick Carraway conta como conheceu o misterioso milionário Gatsby, que dá festas extravagantes na esperança de reconquistar o antigo amor, Daisy. A história critica o sonho americano. Um clássico curto e elegante.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "anos 1920",
+      "sonho americano",
+      "amor",
+      "riqueza",
+      "clássico"
+    ]
+  },
+  {
+    "id": "5a45e933-c7a3-5222-be9a-c54d15c6d03d",
+    "titulo": "As Vinhas da Ira",
+    "autor": "John Steinbeck",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "A família Joad deixa Oklahoma durante a Grande Depressão e viaja para a Califórnia em busca de trabalho e dignidade. O romance denuncia a exploração dos camponeses. Um clássico premiado.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "grande depressão",
+      "migração",
+      "pobreza",
+      "estados unidos",
+      "clássico"
+    ]
+  },
+  {
+    "id": "ba6cdf9b-40db-5ed4-9073-9ebcb23d5999",
+    "titulo": "A Menina que Roubava Livros",
+    "autor": "Markus Zusak",
+    "genero": "Juvenil",
+    "idioma": "pt",
+    "resumo": "Na Alemanha nazista, a menina Liesel rouba livros e os lê para os vizinhos, enquanto sua família esconde um judeu no porão. A narradora é a própria Morte. Um romance emocionante sobre palavras e coragem.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "segunda guerra",
+      "alemanha",
+      "livros",
+      "morte",
+      "amizade"
+    ]
+  },
+  {
+    "id": "5f77eef4-947d-551e-aefb-8f1b050cbf6c",
+    "titulo": "Extraordinário",
+    "autor": "R. J. Palacio",
+    "genero": "Juvenil",
+    "idioma": "pt",
+    "resumo": "August Pullman, menino com uma diferença facial, vai à escola pela primeira vez no quinto ano e enfrenta curiosidade e preconceito. A história é contada por vários pontos de vista. Um livro sobre bondade e aceitação.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "escola",
+      "amizade",
+      "diferença",
+      "empatia",
+      "família"
+    ]
+  },
+  {
+    "id": "e9b5a743-066f-5897-823e-8d0664482a4d",
+    "titulo": "O Menino do Pijama Listrado",
+    "autor": "John Boyne",
+    "genero": "Juvenil",
+    "idioma": "pt",
+    "resumo": "Bruno, filho de um oficial nazista, faz amizade com um menino do outro lado da cerca de um campo de concentração. A inocência dos dois mostra a crueldade do mundo adulto. Um romance juvenil comovente.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "segunda guerra",
+      "holocausto",
+      "amizade",
+      "infância",
+      "ficção"
+    ]
+  },
+  {
+    "id": "15865d96-5798-5593-b996-d742b898ec68",
+    "titulo": "As Crônicas de Nárnia: O Leão, a Feiticeira e o Guarda-Roupa",
+    "autor": "C. S. Lewis",
+    "genero": "Fantasia",
+    "idioma": "pt",
+    "resumo": "Quatro irmãos entram por um guarda-roupa e chegam a Nárnia, um reino sob o inverno eterno da Feiticeira Branca. Com a ajuda do leão Aslam, eles lutam para libertá-lo. O primeiro livro publicado das Crônicas de Nárnia.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "nárnia",
+      "aventura",
+      "fantasia",
+      "irmãos",
+      "clássico"
+    ]
+  },
+  {
+    "id": "be44889e-916e-52e6-8780-61f40c8b7c4a",
+    "titulo": "Alice no País das Maravilhas",
+    "autor": "Lewis Carroll",
+    "genero": "Infantil",
+    "idioma": "pt",
+    "resumo": "Alice cai na toca de um coelho e chega a um mundo de personagens absurdos, como o Chapeleiro e a Rainha de Copas. A lógica do sonho domina a história. Um clássico cheio de humor e jogos de linguagem.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "fantasia",
+      "nonsense",
+      "clássico",
+      "coelho",
+      "aventura"
+    ]
+  },
+  {
+    "id": "8ea68878-f908-55a6-92cc-17f52f48f98d",
+    "titulo": "A Menina que Brincava com Fogo",
+    "autor": "Stieg Larsson",
+    "genero": "Mistério e Suspense",
+    "idioma": "pt",
+    "resumo": "Lisbeth Salander é acusada de assassinatos e o jornalista Mikael Blomkvist tenta provar sua inocência, descobrindo um passado sombrio. O thriller sueco cresce em tensão. O segundo livro da trilogia Millennium.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "thriller",
+      "suécia",
+      "hacker",
+      "crime",
+      "best-seller"
+    ]
+  },
+  {
+    "id": "a0cdc0b4-0084-54ca-981d-fc5514ac8699",
+    "titulo": "Assassinato no Expresso do Oriente",
+    "autor": "Agatha Christie",
+    "genero": "Mistério e Suspense",
+    "idioma": "pt",
+    "resumo": "Preso pela neve num trem de luxo, o detetive Hercule Poirot investiga o assassinato de um passageiro entre pessoas que parecem ter segredos. A solução é uma das mais famosas do gênero. Um clássico de Agatha Christie.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "poirot",
+      "mistério",
+      "trem",
+      "detetive",
+      "clássico"
+    ]
+  },
+  {
+    "id": "1a26e3c3-f92b-5e08-8f1e-e91e1e5387b2",
+    "titulo": "O Assassinato de Roger Ackroyd",
+    "autor": "Agatha Christie",
+    "genero": "Mistério e Suspense",
+    "idioma": "pt",
+    "resumo": "Num vilarejo inglês, um homem rico é encontrado morto, e o detetive aposentado Hercule Poirot aceita investigar. A solução surpreendeu os leitores da época. Um dos romances mais inventivos de Agatha Christie.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "poirot",
+      "mistério",
+      "vilarejo",
+      "detetive",
+      "clássico"
+    ]
+  },
+  {
+    "id": "faf564e6-9982-59b3-a489-550c261cf323",
+    "titulo": "Sherlock Holmes: Um Estudo em Vermelho",
+    "autor": "Arthur Conan Doyle",
+    "genero": "Mistério e Suspense",
+    "idioma": "pt",
+    "resumo": "Watson conhece Sherlock Holmes e os dois investigam um crime misterioso com a palavra \"Rache\" escrita na parede. A trama volta aos Estados Unidos para explicar a motivação. A primeira aventura do detetive.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "sherlock holmes",
+      "mistério",
+      "londres",
+      "detetive",
+      "clássico"
+    ]
+  },
+  {
+    "id": "4443f8df-df72-54bd-b8df-f51c3213162d",
+    "titulo": "Ensaio sobre a Lucidez",
+    "autor": "José Saramago",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Numa capital, a maioria dos eleitores vota em branco, e o governo reage com medo e repressão. O romance reflete sobre democracia e poder. Uma continuação espiritual de Ensaio sobre a Cegueira.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "política",
+      "eleições",
+      "sociedade",
+      "nobel",
+      "sátira"
+    ]
+  },
+  {
+    "id": "8202f2a8-79ec-53c6-b838-e387d0cfbbc9",
+    "titulo": "A Jangada de Pedra",
+    "autor": "José Saramago",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "A Península Ibérica se separa da Europa e navega pelo Atlântico, e um grupo de pessoas se encontra por causa de fatos estranhos. A história mistura fantasia e crítica política. Um romance original de Saramago.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "península ibérica",
+      "fantasia",
+      "viagem",
+      "nobel",
+      "política"
+    ]
+  },
+  {
+    "id": "69a27bd0-cc7d-547c-9423-d8ee0ca3518c",
+    "titulo": "O Cavaleiro Inexistente",
+    "autor": "Italo Calvino",
+    "genero": "Fantasia",
+    "idioma": "pt",
+    "resumo": "Um cavaleiro de armadura brilhante não tem corpo, existe apenas por vontade, e acompanha o exército de Carlos Magno. A fábula brinca com o heroísmo e a identidade. Uma narrativa curta e original.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "cavalaria",
+      "fábula",
+      "idade média",
+      "ironia",
+      "existência"
+    ]
+  },
+  {
+    "id": "bd4e1ae8-383f-5f6d-8fef-1d67246e1fab",
+    "titulo": "As Cidades Invisíveis",
+    "autor": "Italo Calvino",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Marco Polo descreve ao imperador Kublai Khan cidades imaginárias, cada uma com uma característica fantástica. Os relatos falam de memória, desejo e linguagem. Um livro poético e experimental.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "cidades",
+      "imaginação",
+      "viagem",
+      "marco polo",
+      "literatura"
+    ]
+  },
+  {
+    "id": "69c9cb9b-fbf8-53b1-b06b-f11229f48e4a",
+    "titulo": "A Insustentável Leveza do Ser",
+    "autor": "Milan Kundera",
+    "genero": "Romance",
+    "idioma": "pt",
+    "resumo": "Em Praga, depois da invasão soviética, o médico Tomas e as mulheres de sua vida enfrentam dilemas sobre amor, liberdade e leveza. O romance mistura filosofia e narrativa. Um clássico do século XX.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "amor",
+      "política",
+      "praga",
+      "filosofia",
+      "liberdade"
+    ]
+  },
+  {
+    "id": "2735b047-f9b3-5016-90e3-4c1a231b0b21",
+    "titulo": "A Elegância do Ouriço",
+    "autor": "Muriel Barbery",
+    "genero": "Romance",
+    "idioma": "pt",
+    "resumo": "Numa casa de apartamentos de luxo em Paris, uma zeladora culta e uma menina inteligente escondem suas qualidades até a chegada de um novo morador. O livro fala de beleza e invisibilidade social. Um romance delicado.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "paris",
+      "amizade",
+      "filosofia",
+      "classes sociais",
+      "sensibilidade"
+    ]
+  },
+  {
+    "id": "dfa01e72-7d28-5aca-af52-41481e2c2c52",
+    "titulo": "Mulherzinhas",
+    "autor": "Louisa May Alcott",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "As quatro irmãs March, Meg, Jo, Beth e Amy, crescem durante a Guerra Civil americana enquanto sonham com futuros diferentes. Jo quer ser escritora. Um clássico sobre família e amadurecimento.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "irmãs",
+      "família",
+      "estados unidos",
+      "clássico",
+      "juvenil"
+    ]
+  },
+  {
+    "id": "0257dfd3-7243-596a-a399-d5b1ecae5b18",
+    "titulo": "Anne de Green Gables",
+    "autor": "Lucy Maud Montgomery",
+    "genero": "Juvenil",
+    "idioma": "pt",
+    "resumo": "A órfã Anne chega por engano a uma fazenda no Canadá e conquista os irmãos Cuthbert com sua imaginação e boca grande. A vida na ilha é cheia de aventuras. Um clássico juvenil sobre pertencimento.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "orfandade",
+      "imaginação",
+      "canadá",
+      "família",
+      "clássico"
+    ]
+  },
+  {
+    "id": "be67d7d1-8ab7-550a-b6a1-6cf597be81eb",
+    "titulo": "Heidi",
+    "autor": "Johanna Spyri",
+    "genero": "Infantil",
+    "idioma": "pt",
+    "resumo": "A pequena Heidi vai morar com o avô nos Alpes suíços e depois é levada para a cidade, sentindo falta da natureza. A amizade com Clara muda tudo. Um clássico infantil sobre amor e saudade.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "alpes",
+      "infância",
+      "natureza",
+      "amizade",
+      "clássico"
+    ]
+  },
+  {
+    "id": "d1d8d9df-597b-5bf4-a2dc-73463e287f79",
+    "titulo": "Pollyanna",
+    "autor": "Eleanor H. Porter",
+    "genero": "Infantil",
+    "idioma": "pt",
+    "resumo": "Pollyanna vai morar com a tia severa e conquista a cidade com o jogo do contente, que consiste em achar algo bom em tudo. A história fala de otimismo e bondade. Um clássico infantojuvenil.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "otimismo",
+      "órfã",
+      "alegria",
+      "clássico",
+      "juvenil"
+    ]
+  },
+  {
+    "id": "57b7eca0-b933-5198-978f-a81b0339d720",
+    "titulo": "O Jardim Secreto",
+    "autor": "Frances Hodgson Burnett",
+    "genero": "Infantil",
+    "idioma": "pt",
+    "resumo": "A órfã Mary Lennox descobre um jardim trancado numa mansão inglesa e, com ajuda de um menino local, o traz de volta à vida. O jardim também cura a si e ao primo doente. Um clássico sobre natureza e transformação.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "natureza",
+      "amizade",
+      "mistério",
+      "cura",
+      "clássico"
+    ]
+  },
+  {
+    "id": "98ed580d-362d-5569-a4f1-abd52a058546",
+    "titulo": "O Vento nos Salgueiros",
+    "autor": "Kenneth Grahame",
+    "genero": "Infantil",
+    "idioma": "pt",
+    "resumo": "Toupeira, Rato, Texugo e o exagerado Sapo vivem aventuras às margens de um rio inglês. A amizade e a vida simples são os temas. Um clássico encantador da literatura infantil inglesa.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "animais",
+      "amizade",
+      "aventura",
+      "inglaterra",
+      "clássico"
+    ]
+  },
+  {
+    "id": "23d7eeaf-fb6d-548a-a053-b712f1be0c71",
+    "titulo": "Mogli, o Menino Lobo",
+    "autor": "Rudyard Kipling",
+    "genero": "Infantil",
+    "idioma": "pt",
+    "resumo": "Mogli, criado por lobos na selva indiana, aprende a lei da floresta com Baloo e Bagheera e enfrenta o tigre Shere Khan. A história une aventura e aprendizado. Uma coletânea clássica de contos.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "selva",
+      "animais",
+      "aventura",
+      "clássico",
+      "índia"
+    ]
+  },
+  {
+    "id": "9763aa9f-0b50-5bb8-a5a4-aeef341941af",
+    "titulo": "O Mágico de Oz",
+    "autor": "L. Frank Baum",
+    "genero": "Infantil",
+    "idioma": "pt",
+    "resumo": "Um ciclone leva Dorothy e o cachorro Totó para a terra de Oz, onde ela segue a estrada de tijolos amarelos para pedir ajuda ao Mágico. No caminho, conhece o Espantalho, o Homem de Lata e o Leão. Um clássico da fantasia.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "fantasia",
+      "aventura",
+      "amizade",
+      "clássico",
+      "oz"
+    ]
+  },
+  {
+    "id": "43dea514-7ecc-5a72-8f4c-f44a822c8e2d",
+    "titulo": "Pinóquio",
+    "autor": "Carlo Collodi",
+    "genero": "Infantil",
+    "idioma": "pt",
+    "resumo": "O boneco de madeira Pinóquio ganha vida, foge de casa e se mete em confusões, e seu nariz cresce quando mente. Ele aprende o valor da obediência e da verdade. Um clássico infantil italiano.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "marionete",
+      "mentira",
+      "aventura",
+      "clássico",
+      "itália"
+    ]
+  },
+  {
+    "id": "7db77e4c-5e58-57b4-b445-678b07769a17",
+    "titulo": "Ilíada",
+    "autor": "Homero",
+    "genero": "Poesia",
+    "idioma": "pt",
+    "resumo": "O poema épico narra episódios da Guerra de Troia, centrado na ira do guerreiro Aquiles e na morte de Heitor. Deuses e mortais se misturam nos combates. Um dos textos fundadores da literatura ocidental.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "épico",
+      "grécia",
+      "guerra de troia",
+      "mitologia",
+      "clássico"
+    ]
+  },
+  {
+    "id": "1891e7a9-5dc1-5e0b-ac63-39c2bac3af8b",
+    "titulo": "Odisseia",
+    "autor": "Homero",
+    "genero": "Poesia",
+    "idioma": "pt",
+    "resumo": "Depois da guerra de Troia, Ulisses tenta voltar a Ítaca e enfrenta monstros, tempestades e deuses por dez anos. Em casa, a esposa Penélope resiste aos pretendentes. Um clássico da aventura e do retorno.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "épico",
+      "grécia",
+      "aventura",
+      "mitologia",
+      "clássico"
+    ]
+  },
+  {
+    "id": "baee5552-bca4-527f-ba6c-d8ac579e65d4",
+    "titulo": "A Divina Comédia",
+    "autor": "Dante Alighieri",
+    "genero": "Poesia",
+    "idioma": "pt",
+    "resumo": "Dante é guiado por Virgílio pelo Inferno e pelo Purgatório e por Beatriz até o Paraíso, num poema sobre pecado, justiça e redenção. A obra reúne teologia e política da Idade Média. Um monumento da literatura mundial.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "épico",
+      "inferno",
+      "paraíso",
+      "idade média",
+      "clássico"
+    ]
+  },
+  {
+    "id": "d92741ad-a584-5572-9363-c07e8360fa2a",
+    "titulo": "Dom Quixote",
+    "autor": "Miguel de Cervantes",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Um fidalgo enlouquecido pelos livros de cavalaria se torna Dom Quixote e sai pelo mundo com o escudeiro Sancho Pança. Entre moinhos de vento e ilusões, a obra brinca com realidade e ficção. Um dos maiores romances de todos os tempos.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "espanha",
+      "cavalaria",
+      "sátira",
+      "aventura",
+      "clássico"
+    ]
+  },
+  {
+    "id": "c0f26ecc-13c6-5f1c-9feb-bf012c4bda34",
+    "titulo": "A Arte da Guerra",
+    "autor": "Sun Tzu",
+    "genero": "Filosofia",
+    "idioma": "pt",
+    "resumo": "Um tratado chinês antigo sobre estratégia militar que também é lido como guia de liderança e negócios. O texto defende planejamento, conhecimento do adversário e economia de esforços. Uma leitura curta e muito citada.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "estratégia",
+      "china",
+      "guerra",
+      "liderança",
+      "clássico"
+    ]
+  },
+  {
+    "id": "861d639b-da7f-5b37-84ec-d48ea0f5dfc9",
+    "titulo": "O Príncipe",
+    "autor": "Nicolau Maquiavel",
+    "genero": "Filosofia",
+    "idioma": "pt",
+    "resumo": "Maquiavel aconselha governantes sobre como conquistar e manter o poder, separando política e moral. O livro foi polêmico e influenciou o pensamento político. Um clássico curto da teoria do poder.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "política",
+      "poder",
+      "renascimento",
+      "estratégia",
+      "clássico"
+    ]
+  },
+  {
+    "id": "a2846393-481f-5ca5-8e88-686dcb61ae91",
+    "titulo": "Meditações",
+    "autor": "Marco Aurélio",
+    "genero": "Filosofia",
+    "idioma": "pt",
+    "resumo": "Anotações pessoais do imperador romano, em que ele reflete sobre dever, morte e controle das emoções. O estoicismo guia o texto. Uma leitura clássica de sabedoria prática.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "estoicismo",
+      "roma",
+      "reflexão",
+      "ética",
+      "clássico"
+    ]
+  },
+  {
+    "id": "e0bd537b-ce2a-5208-88ae-b81a730f78e0",
+    "titulo": "A República",
+    "autor": "Platão",
+    "genero": "Filosofia",
+    "idioma": "pt",
+    "resumo": "Em diálogo, Sócrates discute o que é justiça e como seria uma cidade ideal, incluindo a alegoria da caverna. O livro trata de educação, governo e filosofia. Um dos pilares da filosofia ocidental.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "justiça",
+      "política",
+      "grécia",
+      "caverna",
+      "clássico"
+    ]
+  },
+  {
+    "id": "de10cd79-1799-5ee3-974f-d1aea27d69ca",
+    "titulo": "Ética a Nicômaco",
+    "autor": "Aristóteles",
+    "genero": "Filosofia",
+    "idioma": "pt",
+    "resumo": "Aristóteles investiga o que é a boa vida e defende que a felicidade vem de agir com virtude e razão. Ele analisa coragem, justiça e amizade. Um clássico da filosofia moral.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "ética",
+      "virtude",
+      "felicidade",
+      "grécia",
+      "clássico"
+    ]
+  },
+  {
+    "id": "e512fce2-ea03-5c36-9c99-c7978e6b2d53",
+    "titulo": "Assim Falou Zaratustra",
+    "autor": "Friedrich Nietzsche",
+    "genero": "Filosofia",
+    "idioma": "pt",
+    "resumo": "O profeta Zaratustra desce da montanha para ensinar o além-homem e a morte de Deus em discursos poéticos. A obra desafia valores tradicionais. Um livro influente e provocativo.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "filosofia",
+      "além-homem",
+      "moral",
+      "poético",
+      "clássico"
+    ]
+  },
+  {
+    "id": "070a7d4f-b5e1-530f-82ef-6673d942aa98",
+    "titulo": "O Mundo de Sofia",
+    "autor": "Jostein Gaarder",
+    "genero": "Filosofia",
+    "idioma": "pt",
+    "resumo": "A adolescente Sofia recebe cartas misteriosas que contam a história da filosofia, do mito até o século XX, enquanto uma trama de mistério se desenrola. O livro combina romance e aula. Uma introdução leve à filosofia.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "filosofia",
+      "romance",
+      "juvenil",
+      "história da filosofia",
+      "mistério"
+    ]
+  },
+  {
+    "id": "256c8987-4e06-5dab-b0f1-2fec00e496d3",
+    "titulo": "Uma Breve História do Tempo",
+    "autor": "Stephen Hawking",
+    "genero": "Ciência",
+    "idioma": "pt",
+    "resumo": "Hawking explica para leigos temas como o Big Bang, os buracos negros e a natureza do tempo, com poucas equações. A linguagem é clara e cheia de analogias. Um clássico da divulgação científica.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "cosmos",
+      "física",
+      "buracos negros",
+      "tempo",
+      "divulgação"
+    ]
+  },
+  {
+    "id": "eff6eac6-62d2-5d8f-af42-d9375af27431",
+    "titulo": "O Gene Egoísta",
+    "autor": "Richard Dawkins",
+    "genero": "Ciência",
+    "idioma": "pt",
+    "resumo": "Dawkins explica a evolução do ponto de vista dos genes e cria o conceito de meme. A obra discute cooperação, egoísmo e seleção natural. Um clássico influente da biologia.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "evolução",
+      "genes",
+      "biologia",
+      "seleção natural",
+      "divulgação"
+    ]
+  },
+  {
+    "id": "f6dd648d-6a77-5f91-b7f6-14e1274e6f86",
+    "titulo": "A Origem das Espécies",
+    "autor": "Charles Darwin",
+    "genero": "Ciência",
+    "idioma": "pt",
+    "resumo": "Em 1859, Darwin apresenta a teoria da evolução por seleção natural, baseada em observações de plantas e animais. O livro mudou a biologia. Um clássico da ciência.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "evolução",
+      "seleção natural",
+      "biologia",
+      "clássico",
+      "século xix"
+    ]
+  },
+  {
+    "id": "7a740370-1aaf-543c-be70-fa1d4a1a4418",
+    "titulo": "Sidarta",
+    "autor": "Hermann Hesse",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Sidarta, jovem indiano, deixa a família em busca da iluminação e passa por ascetismo, prazer e riqueza antes de encontrar a paz. O romance reflete sobre autoconhecimento. Um clássico espiritual curto.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "espiritualidade",
+      "índia",
+      "busca",
+      "budismo",
+      "clássico"
+    ]
+  },
+  {
+    "id": "ea9cdd42-00c3-553d-b3e8-ddc448a54406",
+    "titulo": "O Lobo da Estepe",
+    "autor": "Hermann Hesse",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Harry Haller, intelectual solitário, sente-se dividido entre o homem e o lobo que carrega dentro de si, até conhecer uma jovem que o apresenta a outra vida. O romance trata de crise e identidade. Um clássico do século XX.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "identidade",
+      "solidão",
+      "alemanha",
+      "existencial",
+      "clássico"
+    ]
+  },
+  {
+    "id": "9ef63b55-5cee-5c88-a57c-a3473b485502",
+    "titulo": "O Retrato de Dorian Gray",
+    "autor": "Oscar Wilde",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Dorian Gray deseja manter sempre a juventude, e seu retrato passa a envelhecer e a mostrar os efeitos de seus atos. O livro reflete sobre vaidade e moral. Um clássico de Oscar Wilde.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "beleza",
+      "juventude",
+      "vício",
+      "retrato",
+      "clássico"
+    ]
+  },
+  {
+    "id": "2a07b100-1eba-5ec5-868d-f4d6dc017093",
+    "titulo": "O Médico e o Monstro",
+    "autor": "Robert Louis Stevenson",
+    "genero": "Terror",
+    "idioma": "pt",
+    "resumo": "Em Londres, o advogado Utterson investiga a ligação entre o respeitável Dr Jekyll e o brutal Mr Hyde. A resposta mostra a luta entre bem e mal dentro de uma pessoa. Uma novela curta e clássica.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "dualidade",
+      "gótico",
+      "londres",
+      "ciência",
+      "clássico"
+    ]
+  },
+  {
+    "id": "7c673aeb-faaf-597f-bf15-66a75c03de47",
+    "titulo": "A Ilha do Tesouro",
+    "autor": "Robert Louis Stevenson",
+    "genero": "Aventura",
+    "idioma": "pt",
+    "resumo": "O jovem Jim Hawkins encontra um mapa do tesouro e parte numa viagem de navio, onde o cozinheiro Long John Silver esconde planos traiçoeiros. A história criou muitas imagens de piratas. Um clássico de aventura.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "piratas",
+      "tesouro",
+      "aventura",
+      "juvenil",
+      "clássico"
+    ]
+  },
+  {
+    "id": "06c98918-1671-54f3-85b1-c3156ad76cdf",
+    "titulo": "Vinte Mil Léguas Submarinas",
+    "autor": "Júlio Verne",
+    "genero": "Ficção Científica",
+    "idioma": "pt",
+    "resumo": "O professor Aronnax e seus companheiros são capturados pelo capitão Nemo e viajam pelos oceanos a bordo do submarino Nautilus. A obra mistura aventura e ciência. Um clássico da ficção científica.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "submarino",
+      "oceano",
+      "aventura",
+      "capitão nemo",
+      "clássico"
+    ]
+  },
+  {
+    "id": "b45077bd-345c-5934-9c82-8ec3c047062a",
+    "titulo": "A Volta ao Mundo em Oitenta Dias",
+    "autor": "Júlio Verne",
+    "genero": "Aventura",
+    "idioma": "pt",
+    "resumo": "O inglês Phileas Fogg aposta que consegue dar a volta ao mundo em oitenta dias e parte com seu criado Passepartout, enfrentando atrasos e perigos. A viagem é cheia de reviravoltas. Um clássico da aventura.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "viagem",
+      "aposta",
+      "aventura",
+      "clássico",
+      "século xix"
+    ]
+  },
+  {
+    "id": "c5fa37e7-02f3-5602-b976-fbff5f040a9c",
+    "titulo": "A Máquina do Tempo",
+    "autor": "H. G. Wells",
+    "genero": "Ficção Científica",
+    "idioma": "pt",
+    "resumo": "Um inventor viaja ao futuro distante e encontra uma humanidade dividida em duas espécies. A novela critica desigualdades sociais. Um clássico fundador da ficção científica.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "tempo",
+      "futuro",
+      "distopia",
+      "clássico",
+      "novela"
+    ]
+  },
+  {
+    "id": "92551df9-2ca4-5183-8296-7c20d0aaeb94",
+    "titulo": "A Guerra dos Mundos",
+    "autor": "H. G. Wells",
+    "genero": "Ficção Científica",
+    "idioma": "pt",
+    "resumo": "Marcianos invadem a Inglaterra com máquinas de guerra imensas, e a humanidade se vê indefesa. O narrador relata a destruição e a fuga. Um clássico da invasão alienígena.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "marcianos",
+      "invasão",
+      "inglaterra",
+      "clássico",
+      "suspense"
+    ]
+  },
+  {
+    "id": "476f2851-656a-5a00-99dd-734ded5b5558",
+    "titulo": "Eu, Robô",
+    "autor": "Isaac Asimov",
+    "genero": "Ficção Científica",
+    "idioma": "pt",
+    "resumo": "Contos conectados mostram os conflitos entre humanos e robôs governados pelas Três Leis da Robótica. As histórias têm mistério e reflexão. Um clássico da ficção científica.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "robôs",
+      "leis da robótica",
+      "contos",
+      "clássico",
+      "futuro"
+    ]
+  },
+  {
+    "id": "9b1ee25b-b112-5234-bea8-79e1a41d4e22",
+    "titulo": "Fundação",
+    "autor": "Isaac Asimov",
+    "genero": "Ficção Científica",
+    "idioma": "pt",
+    "resumo": "Um matemático prevê a queda do Império Galáctico e cria a Fundação para reduzir o tempo de barbárie. A saga acompanha séculos de crises. Um clássico da ficção científica.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "império galáctico",
+      "ciência",
+      "futuro",
+      "saga",
+      "clássico"
+    ]
+  },
+  {
+    "id": "07879a2a-cc4d-561f-9ef9-75ae719dd595",
+    "titulo": "Duna",
+    "autor": "Frank Herbert",
+    "genero": "Ficção Científica",
+    "idioma": "pt",
+    "resumo": "O jovem Paul Atreides e sua família assumem o controle do planeta deserto Arrakis, fonte da valiosa especiaria. Traição e profecia mudam seu destino. Um épico de ficção científica.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "deserto",
+      "política",
+      "ecologia",
+      "épico",
+      "clássico"
+    ]
+  },
+  {
+    "id": "33a10575-2549-56df-a1a5-a5c5bcf522ee",
+    "titulo": "O Guia do Mochileiro das Galáxias",
+    "autor": "Douglas Adams",
+    "genero": "Ficção Científica",
+    "idioma": "pt",
+    "resumo": "Arthur Dent escapa da destruição da Terra com o amigo Ford Prefect e viaja pelo espaço com um guia eletrônico. O humor britânico domina a história. Uma comédia de ficção científica adorada.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "humor",
+      "espaço",
+      "absurdo",
+      "aventura",
+      "clássico"
+    ]
+  },
+  {
+    "id": "cf292001-cd14-5e4f-8701-e327a1fc4dc9",
+    "titulo": "A Guerra dos Tronos",
+    "autor": "George R. R. Martin",
+    "genero": "Fantasia",
+    "idioma": "pt",
+    "resumo": "Famílias nobres de Westeros disputam o Trono de Ferro enquanto uma ameaça antiga volta do norte. Os capítulos mudam de ponto de vista. O primeiro livro da saga As Crônicas de Gelo e Fogo.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "intriga",
+      "reinos",
+      "dragões",
+      "épico",
+      "best-seller"
+    ]
+  },
+  {
+    "id": "42535dfd-4b29-5406-ae51-66526b291acd",
+    "titulo": "O Nome do Vento",
+    "autor": "Patrick Rothfuss",
+    "genero": "Fantasia",
+    "idioma": "pt",
+    "resumo": "Kvothe, famoso mago e músico, conta a um cronista como foi sua juventude, da perda da família à escola de magia. O relato mistura lenda e verdade. O primeiro volume da série A Crônica do Matador do Rei.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "magia",
+      "música",
+      "narrador",
+      "épico",
+      "best-seller"
+    ]
+  },
+  {
+    "id": "f66e7170-a2ad-5884-8339-0843faa12c16",
+    "titulo": "A Moreninha",
+    "autor": "Joaquim Manuel de Macedo",
+    "genero": "Romance",
+    "idioma": "pt",
+    "resumo": "O estudante Augusto aposta com os amigos que nunca se apaixonará e passa um fim de semana na ilha de uma família, onde conhece a moça que desafia a aposta. O romance é leve e sentimental. Um clássico do Romantismo brasileiro.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "romantismo",
+      "amor",
+      "juventude",
+      "rio de janeiro",
+      "clássico"
+    ]
+  },
+  {
+    "id": "7c3fe10c-6824-5ea6-8608-7704b5dbb9de",
+    "titulo": "A Escrava Isaura",
+    "autor": "Bernardo Guimarães",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Isaura, escravizada de pele clara e muito educada, resiste às investidas do senhor e tenta viver ao lado do homem que ama. O romance denuncia a escravidão por meio de uma história de amor. Um clássico muito adaptado para a TV.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "romantismo",
+      "escravidão",
+      "amor",
+      "abolição",
+      "clássico"
+    ]
+  },
+  {
+    "id": "e30a58c7-f238-508b-b118-bbcf21f17567",
+    "titulo": "Inocência",
+    "autor": "Visconde de Taunay",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "No interior de Mato Grosso, um naturalista conhece a jovem Inocência, prometida a outro homem, e os dois se apaixonam. A pureza e a lei do pai levam a um desfecho trágico. Um clássico do Romantismo sertanejo.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "romantismo",
+      "sertão",
+      "amor",
+      "tragédia",
+      "clássico"
+    ]
+  },
+  {
+    "id": "2380a278-d737-58ca-b74d-3a173a32078d",
+    "titulo": "Esaú e Jacó",
+    "autor": "Machado de Assis",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Os gêmeos Pedro e Paulo brigam desde o ventre e disputam, em tudo, a atenção da mesma moça. A narrativa acompanha a passagem do Império para a República. Um romance elegante e irônico de Machado de Assis.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "realismo",
+      "irmãos",
+      "política",
+      "império",
+      "república"
+    ]
+  },
+  {
+    "id": "a573b7f0-8aed-5b5d-95bf-5e47ecd36f5e",
+    "titulo": "Memorial de Aires",
+    "autor": "Machado de Assis",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "O diplomata aposentado Aires registra no diário a vida de um casal de velhos e dos jovens ao redor. O livro é delicado e melancólico. O último romance de Machado de Assis.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "realismo",
+      "diário",
+      "velhice",
+      "casamento",
+      "clássico"
+    ]
+  },
+  {
+    "id": "e44e117a-e314-5293-b7e1-9b33fa5deb53",
+    "titulo": "Viva o Povo Brasileiro",
+    "autor": "João Ubaldo Ribeiro",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "O romance acompanha por séculos várias gerações de brasileiros no Recôncavo Baiano, entre senhores e escravizados, em busca de liberdade e identidade. A narrativa mistura humor, mito e história. Uma saga monumental.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "história",
+      "bahia",
+      "saga",
+      "identidade",
+      "brasil"
+    ]
+  },
+  {
+    "id": "0a079e72-3fd7-5c00-9e33-6dad853a1b8c",
+    "titulo": "Sargento Getúlio",
+    "autor": "João Ubaldo Ribeiro",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Um sargento teimoso leva um preso por centenas de quilômetros pelo sertão, decidido a cumprir a ordem mesmo diante de mudanças políticas. O romance é narrado pelo próprio personagem. Uma obra intensa e regional.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "sertão",
+      "violência",
+      "dever",
+      "monólogo",
+      "clássico"
+    ]
+  },
+  {
+    "id": "4ac43761-de52-5ea0-a0f4-40bb969eeae2",
+    "titulo": "Menino de Engenho",
+    "autor": "José Lins do Rego",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Carlinhos, órfão, vai viver no engenho do avô e conta a infância cercada de parentes, escravizados e moradores. O livro retrata a decadência do ciclo da cana. Um clássico do regionalismo nordestino.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "nordeste",
+      "infância",
+      "engenho",
+      "memória",
+      "clássico"
+    ]
+  },
+  {
+    "id": "9fc621d7-dce3-596c-8dcd-cdd97c07ed6b",
+    "titulo": "Fogo Morto",
+    "autor": "José Lins do Rego",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Três personagens, um mestre seleiro, o dono do engenho e um capitão, mostram o fim do mundo dos engenhos de cana na Paraíba. O romance tem tom sombrio e humano. Considerado uma obra-prima do regionalismo.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "nordeste",
+      "engenho",
+      "decadência",
+      "clássico",
+      "regionalismo"
+    ]
+  },
+  {
+    "id": "89e86ea5-60a1-56f5-bfbf-d377665855d0",
+    "titulo": "Lavoura Arcaica",
+    "autor": "Raduan Nassar",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "André foge de casa e depois volta à família de origem libanesa, onde enfrenta o pai autoritário e seus desejos proibidos. A linguagem é poética e intensa. Um romance curto e impactante.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "família",
+      "tradição",
+      "rebeldia",
+      "poético",
+      "libanês"
+    ]
+  },
+  {
+    "id": "5a976bde-6c75-54a1-87da-1e689da8d5ff",
+    "titulo": "Um Copo de Cólera",
+    "autor": "Raduan Nassar",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Depois de uma noite de amor, um homem e uma mulher entram em uma discussão feroz que revela poder e vaidade. A novela é curta e muito intensa. Um texto marcante da literatura brasileira.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "casal",
+      "discussão",
+      "poder",
+      "novela",
+      "intenso"
+    ]
+  },
+  {
+    "id": "947347e8-5e60-5325-8e3a-e5bd37188882",
+    "titulo": "O Encontro Marcado",
+    "autor": "Fernando Sabino",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Eduardo Marciano cresce em Belo Horizonte, passa a juventude entre amigos e sonhos literários e enfrenta o amadurecimento. O romance acompanha as escolhas e perdas. Um clássico de formação da literatura brasileira.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "juventude",
+      "amizade",
+      "minas gerais",
+      "amadurecimento",
+      "clássico"
+    ]
+  },
+  {
+    "id": "f26560d3-36d2-5b48-9c47-f46638a0b016",
+    "titulo": "O Homem Nu",
+    "autor": "Fernando Sabino",
+    "genero": "Ensaios e Crônicas",
+    "idioma": "pt",
+    "resumo": "Reúne crônicas curtas e divertidas sobre situações do cotidiano, com destaque para a que dá título ao livro, em que um homem fica trancado fora do apartamento. O humor é fino e acessível. Uma boa porta de entrada para as crônicas brasileiras.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "crônicas",
+      "humor",
+      "cotidiano",
+      "brasil",
+      "clássico"
+    ]
+  },
+  {
+    "id": "0e414187-133d-544a-963e-f025a7e796f1",
+    "titulo": "Vestido de Noiva",
+    "autor": "Nelson Rodrigues",
+    "genero": "Teatro",
+    "idioma": "pt",
+    "resumo": "Depois de um atropelamento, Alaíde revive lembranças e fantasias entre três planos: realidade, memória e alucinação. A peça de 1943 renovou o teatro brasileiro. Um marco do teatro moderno.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "teatro",
+      "memória",
+      "modernismo",
+      "tragédia",
+      "clássico"
+    ]
+  },
+  {
+    "id": "9edf4ec3-71a5-579d-ac41-eaed1dd0d1ee",
+    "titulo": "O Beijo no Asfalto",
+    "autor": "Nelson Rodrigues",
+    "genero": "Teatro",
+    "idioma": "pt",
+    "resumo": "Um homem beija um desconhecido que está morrendo no asfalto, e um jornal cria um escândalo em torno do ato. A peça revela hipocrisia e sensacionalismo. Uma tragédia carioca de Nelson Rodrigues.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "teatro",
+      "rio de janeiro",
+      "imprensa",
+      "tragédia",
+      "preconceito"
+    ]
+  },
+  {
+    "id": "5df49907-cab4-54c6-9296-2edeab56dc0e",
+    "titulo": "Bonitinha, mas Ordinária",
+    "autor": "Nelson Rodrigues",
+    "genero": "Teatro",
+    "idioma": "pt",
+    "resumo": "Um jovem pobre é pressionado a casar com a filha de um milionário que sofreu um abuso, e o dinheiro entra em conflito com a honra. A peça fala de moral e interesse. Um clássico ácido de Nelson Rodrigues.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "teatro",
+      "dinheiro",
+      "moral",
+      "rio de janeiro",
+      "sátira"
+    ]
+  },
+  {
+    "id": "7e248cf4-60ea-5938-bde7-7837170dd923",
+    "titulo": "Navalha na Carne",
+    "autor": "Plínio Marcos",
+    "genero": "Teatro",
+    "idioma": "pt",
+    "resumo": "Num quarto de pensão, uma prostituta, seu cafetão e o empregado se confrontam em uma noite de humilhação e tensão. A peça retrata a vida à margem com crueza. Um marco do teatro brasileiro.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "teatro",
+      "marginalidade",
+      "violência",
+      "são paulo",
+      "drama"
+    ]
+  },
+  {
+    "id": "6dcae9e6-677d-50d5-998f-6bd4fc2ebb16",
+    "titulo": "Eles Eram Muitos Cavalos",
+    "autor": "Luiz Ruffato",
+    "genero": "Romance",
+    "idioma": "pt",
+    "resumo": "Num único dia em São Paulo, o romance reúne cenas, vozes e fragmentos de vidas muito diferentes. O resultado é um retrato da metrópole. Uma obra premiada da literatura contemporânea.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "são paulo",
+      "fragmentos",
+      "cidade",
+      "vozes",
+      "contemporâneo"
+    ]
+  },
+  {
+    "id": "7903d091-d7cb-590d-910d-d41c16017052",
+    "titulo": "Cidade de Deus",
+    "autor": "Paulo Lins",
+    "genero": "Romance",
+    "idioma": "pt",
+    "resumo": "O romance acompanha, por décadas, a história do conjunto habitacional Cidade de Deus, no Rio de Janeiro, e a vida de jovens do crime e da pobreza. A narrativa mistura vozes e gírias. Uma obra marcante da literatura brasileira.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "favela",
+      "violência",
+      "rio de janeiro",
+      "crime",
+      "contemporâneo"
+    ]
+  },
+  {
+    "id": "769915e5-264a-59e1-a726-91cc85e515a0",
+    "titulo": "Estorvo",
+    "autor": "Chico Buarque",
+    "genero": "Romance",
+    "idioma": "pt",
+    "resumo": "Um homem tenta fugir de um perseguidor desconhecido e circula pela cidade e pelo passado, em uma narrativa confusa e angustiante. O romance de estreia de Chico Buarque mostra a paranoia urbana. Um texto curto e enigmático.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "rio de janeiro",
+      "paranoia",
+      "fuga",
+      "urbano",
+      "contemporâneo"
+    ]
+  },
+  {
+    "id": "9596fbf5-bb12-551f-b58c-78ccf0e495c9",
+    "titulo": "Feliz Ano Novo",
+    "autor": "Rubem Fonseca",
+    "genero": "Contos",
+    "idioma": "pt",
+    "resumo": "Os contos mostram assaltos, desigualdade e vidas à margem no Rio de Janeiro, narrados em linguagem direta. O livro foi censurado durante a ditadura. Uma coletânea importante do conto brasileiro.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "contos",
+      "violência",
+      "rio de janeiro",
+      "crime",
+      "contemporâneo"
+    ]
+  },
+  {
+    "id": "941173ad-0289-5ce5-9ce0-e3151665f4fe",
+    "titulo": "A Grande Arte",
+    "autor": "Rubem Fonseca",
+    "genero": "Mistério e Suspense",
+    "idioma": "pt",
+    "resumo": "O advogado Mandrake investiga um caso de assassinatos envolvendo uma prostituta e acaba enfrentando um perigoso assassino. A narrativa é crua e cheia de ação. Um dos romances policiais mais conhecidos do autor.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "policial",
+      "rio de janeiro",
+      "crime",
+      "advogado",
+      "thriller"
+    ]
+  },
+  {
+    "id": "8edd4a3f-bfa3-5fca-bc1c-25e155a2cfdf",
+    "titulo": "As Meninas",
+    "autor": "Lygia Fagundes Telles",
+    "genero": "Romance",
+    "idioma": "pt",
+    "resumo": "Três jovens universitárias moram numa pensão de freiras em São Paulo, durante a ditadura, e enfrentam dilemas sobre amor, política e liberdade. O romance dá voz a cada uma delas. Um clássico da escritora.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "ditadura",
+      "mulheres",
+      "amizade",
+      "são paulo",
+      "década de 1970"
+    ]
+  },
+  {
+    "id": "740dbfd1-6730-5798-8395-3c6dad23a3d9",
+    "titulo": "Antes do Baile Verde",
+    "autor": "Lygia Fagundes Telles",
+    "genero": "Contos",
+    "idioma": "pt",
+    "resumo": "Contos de Lygia Fagundes Telles exploram amor, solidão, medo e a passagem do tempo. A autora usa detalhes para criar tensão e emoção. Uma coletânea clássica do conto brasileiro.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "contos",
+      "mulheres",
+      "memória",
+      "suspense",
+      "clássico"
+    ]
+  },
+  {
+    "id": "8c903dd7-da16-51d2-b4ec-fcca3af3203d",
+    "titulo": "Morangos Mofados",
+    "autor": "Caio Fernando Abreu",
+    "genero": "Contos",
+    "idioma": "pt",
+    "resumo": "Reúne contos sobre jovens e adultos em crise na cidade, em tempos de ditadura e mudança. A prosa é sensível e urbana. Um dos livros mais queridos de Caio Fernando Abreu.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "contos",
+      "juventude",
+      "solidão",
+      "anos 1980",
+      "urbano"
+    ]
+  },
+  {
+    "id": "cd91cb87-e186-5728-ba27-9ae1b1452054",
+    "titulo": "O Centauro no Jardim",
+    "autor": "Moacyr Scliar",
+    "genero": "Romance",
+    "idioma": "pt",
+    "resumo": "Guedali, nascido centauro numa família de imigrantes judeus no Sul do Brasil, tenta encontrar seu lugar no mundo. O romance une humor, fantasia e reflexão sobre identidade. Uma obra premiada de Moacyr Scliar.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "imigração",
+      "identidade",
+      "realismo fantástico",
+      "rio grande do sul",
+      "humor"
+    ]
+  },
+  {
+    "id": "3d98824c-723c-5e6b-95d0-88d5a49d6cea",
+    "titulo": "A Máquina de Fazer Espanhóis",
+    "autor": "Valter Hugo Mãe",
+    "genero": "Romance",
+    "idioma": "pt",
+    "resumo": "Silva, viúvo de oitenta e quatro anos, é levado para um lar de idosos em Portugal e reflete sobre a vida, a perda e a amizade. A linguagem é poética e sem maiúsculas. Um romance comovente.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "velhice",
+      "portugal",
+      "perda",
+      "memória",
+      "sensibilidade"
+    ]
+  },
+  {
+    "id": "f6c655d3-46cf-54c3-a0e8-574d5ca3d027",
+    "titulo": "Broquéis",
+    "autor": "Cruz e Sousa",
+    "genero": "Poesia",
+    "idioma": "pt",
+    "resumo": "Publicado em 1893, o livro reúne poemas de Cruz e Sousa com imagens musicais, tom místico e sofrimento do poeta negro. É um marco do Simbolismo brasileiro. Uma poesia densa e sonora.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "simbolismo",
+      "poesia",
+      "brasil",
+      "século xix",
+      "clássico"
+    ]
+  },
+  {
+    "id": "9b1e6e54-d907-5950-93c3-604052b23d42",
+    "titulo": "Eu e Outras Poesias",
+    "autor": "Augusto dos Anjos",
+    "genero": "Poesia",
+    "idioma": "pt",
+    "resumo": "Os poemas misturam termos científicos, morte e pessimismo em versos fortes e inconfundíveis. O livro, de 1912, tem uma voz diferente na poesia da época. Um clássico singular da poesia brasileira.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "poesia",
+      "pré-modernismo",
+      "morte",
+      "ciência",
+      "sombrio"
+    ]
+  },
+  {
+    "id": "79aa8ab3-b4f7-5a9c-8f97-2d60beed846f",
+    "titulo": "Espumas Flutuantes",
+    "autor": "Castro Alves",
+    "genero": "Poesia",
+    "idioma": "pt",
+    "resumo": "Primeiro livro de Castro Alves, reúne poemas de amor e de temas sociais, como O Navio Negreiro, contra a escravidão. O ritmo é forte e cheio de imagens. Um clássico do Romantismo brasileiro.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "romantismo",
+      "amor",
+      "liberdade",
+      "poesia",
+      "século xix"
+    ]
+  },
+  {
+    "id": "1b3ae7a2-0146-5479-9307-c5a125a18599",
+    "titulo": "Canção do Exílio e Outros Poemas",
+    "autor": "Gonçalves Dias",
+    "genero": "Poesia",
+    "idioma": "pt",
+    "resumo": "Reúne poemas do Romantismo brasileiro, entre eles a Canção do Exílio, em que o poeta, longe, sente saudade da pátria. A linguagem é simples e musical. Uma leitura essencial da poesia nacional.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "romantismo",
+      "pátria",
+      "saudade",
+      "indianismo",
+      "clássico"
+    ]
+  },
+  {
+    "id": "a138c20a-4932-5f89-a310-eb478db889e4",
+    "titulo": "Poemas, Sonetos e Baladas",
+    "autor": "Vinicius de Moraes",
+    "genero": "Poesia",
+    "idioma": "pt",
+    "resumo": "Reúne poemas de amor, sonetos e baladas de Vinicius de Moraes, poeta e compositor da bossa nova. A linguagem é musical e apaixonada. Uma coletânea muito querida.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "poesia",
+      "amor",
+      "bossa nova",
+      "sonetos",
+      "clássico"
+    ]
+  },
+  {
+    "id": "44d609eb-0ac3-5a1d-b8fc-ccdc35a70c9f",
+    "titulo": "Bagagem",
+    "autor": "Adélia Prado",
+    "genero": "Poesia",
+    "idioma": "pt",
+    "resumo": "Em seu livro de estreia, Adélia Prado fala do cotidiano, do corpo e da fé com linguagem simples e surpreendente. A poeta mineira uniu o sagrado ao dia a dia. Uma estreia elogiada por Drummond.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "poesia",
+      "cotidiano",
+      "fé",
+      "mulheres",
+      "minas gerais"
+    ]
+  },
+  {
+    "id": "f2e48ebe-a261-588c-a7bc-f2ff3c71e0bb",
+    "titulo": "Poema Sujo",
+    "autor": "Ferreira Gullar",
+    "genero": "Poesia",
+    "idioma": "pt",
+    "resumo": "Escrito no exílio, em Buenos Aires, o longo poema reconstrói a memória do poeta, de sua infância em São Luís à vida no Rio. A linguagem é intensa e cheia de imagens. Um marco da poesia brasileira.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "poesia",
+      "exílio",
+      "memória",
+      "ditadura",
+      "clássico"
+    ]
+  },
+  {
+    "id": "11b565c1-9e22-5a46-a317-4afbebdb8a63",
+    "titulo": "Toda Poesia",
+    "autor": "Paulo Leminski",
+    "genero": "Poesia",
+    "idioma": "pt",
+    "resumo": "Reúne poemas curtos de Leminski, cheios de humor, jogos de palavras e influência do haicai. O poeta curitibano uniu cultura pop e erudição. Uma coletânea querida.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "poesia",
+      "haicai",
+      "curitiba",
+      "humor",
+      "contemporâneo"
+    ]
+  },
+  {
+    "id": "558a04e4-b74d-5532-9774-07762b86e879",
+    "titulo": "O Vampiro de Curitiba",
+    "autor": "Dalton Trevisan",
+    "genero": "Contos",
+    "idioma": "pt",
+    "resumo": "Contos curtos mostram personagens solitários e obsessivos da cidade de Curitiba, em linguagem seca e direta. O autor é considerado um mestre do conto. Uma leitura intensa e rápida.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "contos",
+      "curitiba",
+      "cotidiano",
+      "obsessão",
+      "minimalismo"
+    ]
+  },
+  {
+    "id": "ec9d5ff0-a18b-5036-a4df-d99aa4b7267c",
+    "titulo": "Memórias Sentimentais de João Miramar",
+    "autor": "Oswald de Andrade",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Em capítulos curtos e experimentais, João Miramar conta sua vida de elite paulistana, de infância a viagens à Europa. A linguagem rompe com a tradição. Um marco do Modernismo brasileiro.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "modernismo",
+      "experimental",
+      "são paulo",
+      "fragmentos",
+      "clássico"
+    ]
+  },
+  {
+    "id": "e9a3c115-c9e3-5622-8369-29b7103527d5",
+    "titulo": "Contos Novos",
+    "autor": "Mário de Andrade",
+    "genero": "Contos",
+    "idioma": "pt",
+    "resumo": "Reúne contos de Mário de Andrade sobre infância, vida em São Paulo e relações humanas. O estilo é simples e sensível. Um dos grandes livros de contos do Modernismo.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "contos",
+      "modernismo",
+      "são paulo",
+      "infância",
+      "clássico"
+    ]
+  },
+  {
+    "id": "e4ac3788-f02b-50ce-a89f-8405ba9eb44b",
+    "titulo": "Dona Guidinha do Poço",
+    "autor": "Manuel de Oliveira Paiva",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "Num sertão do Ceará, uma fazendeira poderosa se envolve com um jovem e é levada a um crime que destrói sua vida. O romance retrata costumes e violência do interior. Um clássico do regionalismo.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "realismo",
+      "ceará",
+      "sertão",
+      "crime",
+      "clássico"
+    ]
+  },
+  {
+    "id": "f66419db-3f44-5d45-bea5-c18ef3349045",
+    "titulo": "Mad Maria",
+    "autor": "Márcio Souza",
+    "genero": "Ficção Clássica",
+    "idioma": "pt",
+    "resumo": "O romance reconstrói a construção da ferrovia Madeira-Mamoré, na Amazônia, marcada por doenças, ganância e mortes. Entre engenheiros e operários, mostra o preço do progresso. Uma obra de ficção histórica.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "amazônia",
+      "ferrovia",
+      "história",
+      "ambição",
+      "tragédia"
+    ]
+  },
+  {
+    "id": "1d865108-e5a8-5921-b634-0c896522959a",
+    "titulo": "O Cobrador",
+    "autor": "Rubem Fonseca",
+    "genero": "Contos",
+    "idioma": "pt",
+    "resumo": "Contos cruéis e diretos mostram personagens que usam a violência contra o que consideram injustiça social. O livro incomodou na época de sua publicação. Uma coletânea marcante do conto urbano.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "contos",
+      "violência",
+      "desigualdade",
+      "rio de janeiro",
+      "crime"
+    ]
+  },
+  {
+    "id": "37050a14-ecbc-5909-8a49-f32f8e4350ba",
+    "titulo": "A Cartomante e Outros Contos",
+    "autor": "Machado de Assis",
+    "genero": "Contos",
+    "idioma": "pt",
+    "resumo": "Reúne contos curtos de Machado de Assis, com humor e ironia, como A Cartomante, em que a crença no destino leva a uma tragédia. As histórias revelam hipocrisias do cotidiano. Uma boa porta de entrada para o autor.",
+    "nivel_dificuldade": null,
+    "tags": [
+      "contos",
+      "realismo",
+      "destino",
+      "ciúme",
+      "clássico"
+    ]
   }
 ]
