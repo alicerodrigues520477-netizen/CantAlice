@@ -1,6 +1,6 @@
 /* Cache simples para o app abrir offline depois da primeira visita. */
-const CACHE = 'alices-library-v7';
-const FILES = ['./', 'index.html', 'style.css', 'app.js', 'catalogo.json', 'dict.js', 'dicionario-en-pt.json', 'lib/jszip.min.js', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png', 'apple-touch-icon.png'];
+const CACHE = 'alices-library-v8';
+const FILES = ['./', 'index.html', 'style.css', 'app.js', 'acervo.js', 'acervo.json', 'catalogo.json', 'dict.js', 'dicionario-en-pt.json', 'lib/jszip.min.js', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png', 'apple-touch-icon.png'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES)).then(() => self.skipWaiting()));
