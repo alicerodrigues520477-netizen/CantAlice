@@ -32,6 +32,7 @@
     <label class="btn primary" for="file-book">＋ Adicionar livro (.epub ou .txt)</label>
     <input id="file-book" type="file" accept=".epub,.txt,application/epub+zip,text/plain" hidden>
     <button type="button" class="btn" id="btn-vocab">📚 Meu vocabulário</button>
+    <button type="button" class="btn" id="btn-acervo">📖 Acervo de livros</button>
   </section>
 
   <section id="hero" class="hero" hidden></section>
@@ -60,6 +61,33 @@
       <li><a href="https://librivox.org" target="_blank" rel="noopener">LibriVox</a> — audiobooks grátis (MP3) para anexar no botão 🎧.</li>
     </ul>
   </section>
+</main>
+
+<!-- ============ ACERVO ============ -->
+<main id="acervo" class="view" hidden>
+  <header class="ac-head">
+    <button type="button" class="icon" id="ac-back" aria-label="Voltar à estante"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" /></svg></button>
+    <h1>Acervo <em>de livros</em></h1>
+  </header>
+  <section class="ac-controls" aria-label="Buscar e filtrar">
+    <input id="ac-q" type="search" placeholder="Buscar título, autor ou tema…" enterkeyhint="search" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false">
+    <div class="ac-chips" id="ac-lang" role="group" aria-label="Idioma">
+      <button type="button" class="fchip on" data-v="" aria-pressed="true">Todos</button>
+      <button type="button" class="fchip" data-v="en" aria-pressed="false">Inglês</button>
+      <button type="button" class="fchip" data-v="pt" aria-pressed="false">Português</button>
+    </div>
+    <div class="ac-selects">
+      <select id="ac-genre" aria-label="Gênero"><option value="">Todos os gêneros</option></select>
+      <select id="ac-level" aria-label="Nível de inglês">
+        <option value="">Todos os níveis</option><option>Iniciante</option><option>Intermediário</option><option>Avançado</option>
+      </select>
+      <button type="button" class="btn" id="ac-clear">Limpar</button>
+    </div>
+  </section>
+  <p id="ac-count" class="muted ac-count" role="status"></p>
+  <div id="ac-list" class="ac-list"></div>
+  <div class="ac-foot"><button type="button" class="btn primary" id="ac-more" hidden>Mostrar mais</button></div>
+  <p class="muted ac-note">Aqui ficam as fichas dos livros (resumo, gênero e nível de inglês). Para ler, use os livros grátis da estante ou “Adicionar livro”. Níveis são uma estimativa.</p>
 </main>
 
 <!-- ============ LEITOR ============ -->
@@ -310,5 +338,6 @@
 <script src="lib/jszip.min.js"></script>
 <script src="dict.js"></script>
 <script src="app.js"></script>
+<script src="acervo.js"></script>
 </body>
 </html>

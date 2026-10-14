@@ -31,6 +31,10 @@ Leitor gratuito de livros em inglês para iPad, com **páginas que viram**, **le
 - **Navegação:** deslizar ou tocar nas bordas; **pinça** com dois dedos muda o tamanho da letra; roda do mouse/trackpad vira a página.
 - **Teclado:** ← → / Espaço / PageUp / PageDown (página), **[ ]** (capítulo), **Home/End** (início/fim), **+ −** (letra), **T** (tema), **F** (modo foco), **Esc** (sair).
 
+## Acervo de livros
+
+Na estante, o botão **Acervo** abre a lista de 1000 livros (745 em inglês, 255 em português) com busca por título, autor ou tema, filtros de idioma, gênero e nível, e "mostrar mais". É a mesma lista que está no Supabase (`public.livros`), guardada no app em `acervo.json` (gerada de `supabase/catalog/livros.json`). Cada ficha traz resumo, gênero, nível de inglês (estimativa) e um atalho para procurar o texto grátis no Project Gutenberg. As fichas não trazem o texto do livro: para ler, use os livros grátis da estante ou "Adicionar livro".
+
 ## Dicionário inglês → português
 
 Toque numa palavra do texto e abre um cartão com a **tradução**, a classe gramatical e o botão 🔊 para ouvir a pronúncia.
