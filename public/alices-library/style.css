@@ -1,7 +1,7 @@
 :root {
-  --paper: #f6efe0;
-  --paper-edge: #e4d8bd;
-  --ink: #2b2420;
+  --paper: #f3e7cc;
+  --paper-edge: #dccaa0;
+  --ink: #35271a;
   --stage: #2b1e18;
   --stage-2: #4a3128;
   --accent: #c0701f;
@@ -11,6 +11,7 @@
   --font-read: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
   --font-ui: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
   --fs: 21px;
+  --lh: 1.55;
   --pw: 600px;
   --ph: 800px;
   --sat: 0px; --sab: 0px; --sal: 0px; --sar: 0px;
@@ -78,7 +79,7 @@ a { color: inherit; }
 .page.solo::after { background: linear-gradient(to right, rgba(0,0,0,.20), transparent 8%); }
 
 .clip { position: absolute; overflow: hidden; }
-.flow { position: absolute; left: 0; top: 0; column-fill: auto; font-family: var(--font-read); font-size: var(--fs); line-height: 1.55; text-align: justify; hyphens: auto; -webkit-hyphens: auto; orphans: 2; widows: 2; margin: 0; padding: 0; }
+.flow { position: absolute; left: 0; top: 0; column-fill: auto; font-family: var(--font-read); font-size: var(--fs); line-height: var(--lh); text-align: justify; hyphens: auto; -webkit-hyphens: auto; orphans: 2; widows: 2; margin: 0; padding: 0; }
 .flow p { margin: 0; text-indent: 1.5em; }
 .flow h1 + p, .flow h2 + p, .flow h3 + p, .flow hr + p { text-indent: 0; }
 .flow h1, .flow h2, .flow h3, .flow h4 { text-align: center; text-indent: 0; font-weight: 600; line-height: 1.25; break-after: avoid; -webkit-column-break-after: avoid; margin: .9em 0 .9em; }
@@ -90,11 +91,16 @@ a { color: inherit; }
 .flow em { font-style: italic; }
 .s { transition: background-color .25s; border-radius: 4px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 .s.hl { background: var(--hl); }
-body.sans { --font-read: -apple-system, "SF Pro Text", "Helvetica Neue", Arial, sans-serif; }
+body.f-sans, body.sans { --font-read: -apple-system, "SF Pro Text", "Helvetica Neue", Arial, sans-serif; }
+body.f-georgia { --font-read: Georgia, "Times New Roman", serif; }
+body.f-rounded { --font-read: ui-rounded, "SF Pro Rounded", "Hiragino Maru Gothic ProN", "Nunito", "Segoe UI", system-ui, sans-serif; }
+body.f-mono { --font-read: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+.seg button.f-serif { font-family: "Iowan Old Style", Palatino, Georgia, serif; } .seg button.f-georgia { font-family: Georgia, serif; }
+.seg button.f-sans { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; } .seg button.f-rounded { font-family: ui-rounded, "SF Pro Rounded", system-ui, sans-serif; }
 
 .folio { position: absolute; left: 0; right: 0; font: 12.5px/1 var(--font-read); letter-spacing: .06em; opacity: .5; text-align: center; pointer-events: none; z-index: 1; }
-.folio.top { top: 22px; text-transform: uppercase; font-size: 11px; padding: 0 56px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.folio.bot { bottom: 22px; }
+.folio.top { top: 14px; text-transform: uppercase; font-size: 11px; padding: 0 56px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.folio.bot { bottom: 12px; }
 
 /* folha que vira */
 .leaf { position: absolute; top: 0; width: var(--pw); height: var(--ph); transform-style: preserve-3d; will-change: transform; z-index: 5; }
@@ -494,3 +500,41 @@ input.switch:checked { background: #b88f3a; }
 .modal-card.flash h3 { margin-top: 10px; }
 
 .aquote strong, .fc-ex strong { font-style: normal; color: var(--gold-2); }
+
+
+/* ---------------- Leitor: progresso, modo foco, ajustes ---------------- */
+#readbar { position: absolute; top: var(--sat); left: 0; right: 0; height: 3px; z-index: 25; background: rgba(0,0,0,.12); pointer-events: none; }
+#readbar i { display: block; height: 100%; width: 0; background: var(--accent); border-radius: 0 2px 2px 0; transition: width .35s ease; }
+#readpct { position: absolute; right: calc(var(--sar) + 14px); bottom: calc(var(--sab) + 6px); z-index: 25; font: 600 11px/1 var(--font-ui); letter-spacing: .06em; color: var(--ink); opacity: 0; transition: opacity .3s; pointer-events: none; text-shadow: 0 0 6px var(--paper); }
+body.zen #readpct { opacity: .5; }
+body.zen:not(.ui-hidden) #readpct { opacity: 0; }
+
+.scrub { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 2px 6px; flex: 1; min-width: 0; }
+.scrub input[type=range] { min-width: 0; width: 100%; }
+.scrub #pos-label { grid-column: 1 / -1; text-align: center; }
+button.icon.sm { width: 36px; height: 36px; }
+button.icon.sm svg { width: 20px; height: 20px; }
+
+body.zen #reader { background: var(--paper); }
+body.zen #book::before { display: none; }
+body.zen #book { perspective: none; }
+body.zen .page::before { display: none; }
+body.zen .folio { opacity: .32; }
+body.zen .page.left::after, body.zen .page.right::after { opacity: .5; }
+body.zen .page.solo::after { display: none; }
+@media (max-width: 700px) { body:not(.zen) .titles span { display: none; } .bar.top { gap: 2px; } button.icon { width: 40px; } }
+@media (max-width: 460px) { .bar.top button.icon { width: 34px; } .bar.top button.icon svg { width: 23px; height: 23px; } .bar.top { gap: 0; padding-left: calc(var(--sal) + 8px); padding-right: calc(var(--sar) + 8px); } .titles strong { font-size: 14px; } }
+
+.seg { flex-wrap: wrap; }
+.row.col .seg { width: 100%; }
+.row.col .seg button { flex: 1; }
+.keys { margin: 10px 0 4px; padding: 10px 12px; border-radius: 12px; background: rgba(255,255,255,.06); font-size: 13.5px; line-height: 1.5; }
+.keys summary { cursor: pointer; font-weight: 600; }
+.keys ul { margin: 8px 0 0; padding-left: 18px; opacity: .85; }
+.keys li { margin: 4px 0; }
+@media (prefers-reduced-motion: reduce) { #readbar i { transition: none; } }
+@media (max-width: 600px) {
+  .bar.bottom { flex-wrap: wrap; gap: 4px 12px; padding-top: 8px; }
+  .scrub { flex: 1 1 100%; }
+  .tts { flex: 1 1 100%; justify-content: center; }
+}

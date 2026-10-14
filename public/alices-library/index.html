@@ -64,6 +64,8 @@
 
 <!-- ============ LEITOR ============ -->
 <main id="reader" class="view" hidden>
+  <div id="readbar" role="progressbar" aria-label="Progresso de leitura" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i></i></div>
+  <div id="readpct" aria-hidden="true">0%</div>
   <div id="stage">
     <div id="book" aria-live="off"></div>
   </div>
@@ -85,12 +87,17 @@
     <button class="icon" id="btn-audio" aria-label="Audiolivro">
       <svg viewBox="0 0 24 24"><path d="M4 15v-3a8 8 0 0116 0v3" /><rect x="3" y="14" width="4" height="6" rx="1.5" /><rect x="17" y="14" width="4" height="6" rx="1.5" /></svg>
     </button>
+    <button class="icon" id="btn-zen" aria-label="Modo foco (tela cheia)" title="Modo foco (F)">
+      <svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" /></svg>
+    </button>
     <button class="icon" id="btn-settings" aria-label="Ajustes"><span class="aa">Aa</span></button>
   </header>
 
   <footer id="bottombar" class="bar bottom">
     <div class="scrub">
+      <button class="icon sm" id="ch-prev" aria-label="Capítulo anterior" title="Capítulo anterior ( [ )"><svg viewBox="0 0 24 24"><path d="M6 5v14M19 5l-9 7 9 7z" /></svg></button>
       <input id="slider" type="range" min="0" max="0" value="0" aria-label="Página">
+      <button class="icon sm" id="ch-next" aria-label="Próximo capítulo" title="Próximo capítulo ( ] )"><svg viewBox="0 0 24 24"><path d="M18 5v14M5 5l9 7-9 7z" /></svg></button>
       <span id="pos-label">—</span>
     </div>
     <div class="tts">
@@ -153,20 +160,45 @@
   </div>
 
   <div class="row">
-    <label>Tema</label>
+    <label>Espaçamento entre linhas</label>
+    <div class="stepper">
+      <button id="lh-minus" aria-label="Menos espaço entre linhas">−</button>
+      <span id="lh-val">1.55</span>
+      <button id="lh-plus" aria-label="Mais espaço entre linhas">＋</button>
+    </div>
+  </div>
+
+  <div class="row col">
+    <label>Tema de cor</label>
     <div class="seg" id="seg-theme">
-      <button data-v="paper">Papel</button>
-      <button data-v="white">Branco</button>
-      <button data-v="night">Noite</button>
+      <button data-v="white">☀ Claro</button>
+      <button data-v="paper">Sépia</button>
+      <button data-v="night">☾ Escuro</button>
+    </div>
+  </div>
+
+  <div class="row col">
+    <label>Tipografia</label>
+    <div class="seg" id="seg-font">
+      <button data-v="serif" class="f-serif">Clássica</button>
+      <button data-v="georgia" class="f-georgia">Georgia</button>
+      <button data-v="sans" class="f-sans">Moderna</button>
+      <button data-v="rounded" class="f-rounded">Suave</button>
+    </div>
+  </div>
+
+  <div class="row col">
+    <label>Margens da página</label>
+    <div class="seg" id="seg-margin">
+      <button data-v="narrow">Estreitas</button>
+      <button data-v="normal">Normais</button>
+      <button data-v="wide">Largas</button>
     </div>
   </div>
 
   <div class="row">
-    <label>Fonte</label>
-    <div class="seg" id="seg-font">
-      <button data-v="serif">Serifa</button>
-      <button data-v="sans">Sem serifa</button>
-    </div>
+    <label for="chk-zen">Modo foco (tela cheia, sem distrações)</label>
+    <input type="checkbox" id="chk-zen" class="switch">
   </div>
 
   <div class="row">
@@ -183,6 +215,15 @@
     <label for="chk-online">Buscar na internet palavras que o dicionário do app não tem</label>
     <input type="checkbox" id="chk-online" class="switch">
   </div>
+
+  <details class="keys">
+    <summary>Atalhos e gestos</summary>
+    <ul>
+      <li><b>← →</b> ou <b>Espaço</b> — página · <b>[ ]</b> — capítulo · <b>Home/End</b> — início/fim</li>
+      <li><b>+ −</b> — tamanho da letra · <b>T</b> — tema · <b>F</b> — modo foco · <b>Esc</b> — sair</li>
+      <li>Deslize para virar · toque nas bordas · <b>pinça</b> com dois dedos muda o tamanho · roda do mouse vira a página</li>
+    </ul>
+  </details>
 
   <div class="row col">
     <label for="sel-voice">Voz (inglês)</label>

@@ -22,6 +22,15 @@ Leitor gratuito de livros em inglês para iPad, com **páginas que viram**, **le
 | Tamanho, tema, fonte, voz, velocidade | botão **Aa** |
 | Audiolivro (MP3/M4A/M4B) | botão 🎧 → anexar arquivo |
 
+## Leitor: tela, ajustes e navegação
+
+- **Aproveitamento da tela:** a página ocupa quase toda a área (celular, tablet e computador), com uma moldura fina; as barras flutuam por cima e somem sozinhas. Em paisagem a partir de 720 px o livro abre em duas páginas.
+- **Modo foco (Zen):** botão de tela cheia na barra de cima, ou tecla **F**. A página vai de ponta a ponta, sem barras, e usa a tela cheia do navegador quando existir (no iPhone vale só o layout em foco). Toque no centro para ver os controles; **Esc** ou **F** saem.
+- **Ajustes › Aa:** tamanho do texto, espaçamento entre linhas (1,3 a 2,0), tema **Claro / Sépia / Escuro**, tipografia (Clássica, Georgia, Moderna, Suave) e margens da página (estreitas, normais, largas). Tudo é salvo no aparelho.
+- **Progresso:** barra fina no topo da tela e a porcentagem lida (visível no modo foco); na barra de baixo aparecem página, capítulo e porcentagem, com botões de capítulo anterior/próximo.
+- **Navegação:** deslizar ou tocar nas bordas; **pinça** com dois dedos muda o tamanho da letra; roda do mouse/trackpad vira a página.
+- **Teclado:** ← → / Espaço / PageUp / PageDown (página), **[ ]** (capítulo), **Home/End** (início/fim), **+ −** (letra), **T** (tema), **F** (modo foco), **Esc** (sair).
+
 ## Dicionário inglês → português
 
 Toque numa palavra do texto e abre um cartão com a **tradução**, a classe gramatical e o botão 🔊 para ouvir a pronúncia.

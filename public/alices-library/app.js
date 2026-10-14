@@ -22,7 +22,7 @@ function toast(msg, ms = 2600) {
 }
 
 /* ================= ajustes ================= */
-const S = Object.assign({ theme: 'paper', size: 21, font: 'serif', sound: true, rate: 1, voice: '', dict: true, dictOnline: true }, store.get('lv:settings', {}));
+const S = Object.assign({ theme: 'paper', size: 21, font: 'serif', lh: 1.55, margin: 'normal', zen: false, sound: true, rate: 1, voice: '', dict: true, dictOnline: true }, store.get('lv:settings', {}));
 const saveSettings = () => store.set('lv:settings', S);
 
 /* ================= IndexedDB ================= */
@@ -437,19 +437,24 @@ const bookEl = $('#book'), stageEl = $('#stage');
 const measureBox = el('div'); measureBox.style.cssText = 'position:fixed;left:-20000px;top:0;visibility:hidden;pointer-events:none;';
 document.body.append(measureBox);
 
+const MARGINS = { narrow: { x: .055, y: .05, xmin: 16, xmax: 38, ymin: 30, ymax: 44 }, normal: { x: .07, y: .065, xmin: 22, xmax: 54, ymin: 34, ymax: 58 }, wide: { x: .10, y: .09, xmin: 32, xmax: 78, ymin: 44, ymax: 78 } };
 function computeGeometry() {
   const probe = getComputedStyle($('#safe-probe'));
   const sat = parseFloat(probe.paddingTop) || 0, sar = parseFloat(probe.paddingRight) || 0, sab = parseFloat(probe.paddingBottom) || 0, sal = parseFloat(probe.paddingLeft) || 0;
   const rs = document.documentElement.style;
   rs.setProperty('--sat', sat + 'px'); rs.setProperty('--sar', sar + 'px'); rs.setProperty('--sab', sab + 'px'); rs.setProperty('--sal', sal + 'px');
   const W = innerWidth, H = innerHeight;
-  const availW = W - sal - sar - 28, availH = H - sat - sab - 40;
-  g.per = (W >= 900 && W > H * 1.05) ? 2 : 1;
-  const pw = g.per === 2 ? Math.min(availW / 2, availH * 0.82) : Math.min(availW, 700, availH * 0.86);
+  // modo foco: a página ocupa a tela inteira; no modo normal sobra só uma moldura fina (as barras flutuam por cima)
+  const frameX = S.zen ? 0 : 12, frameY = S.zen ? 0 : 16;
+  const availW = W - sal - sar - frameX, availH = H - sat - sab - frameY;
+  g.per = (W >= 720 && W > H * 1.05) ? 2 : 1;
+  const maxSingle = S.zen ? 920 : 780;
+  const pw = g.per === 2 ? Math.min(availW / 2, availH * 1.15) : Math.min(availW, maxSingle, availH * 0.9);
   g.pw = Math.floor(pw);
-  g.ph = Math.floor(Math.min(availH, g.pw * 1.62));
-  g.padX = clamp(Math.round(g.pw * 0.085), 26, 60);
-  g.padY = clamp(Math.round(g.ph * 0.075), 38, 66);
+  g.ph = Math.floor(Math.min(availH, g.pw * (g.per === 2 ? 1.62 : 2.3)));
+  const m = MARGINS[S.margin] || MARGINS.normal;
+  g.padX = clamp(Math.round(g.pw * m.x), m.xmin, m.xmax);
+  g.padY = clamp(Math.round(g.ph * m.y), m.ymin, m.ymax);
   g.tw = g.pw - 2 * g.padX; g.th = g.ph - 2 * g.padY; g.gap = 2 * g.padX;
   rs.setProperty('--pw', g.pw + 'px'); rs.setProperty('--ph', g.ph + 'px'); rs.setProperty('--fs', S.size + 'px');
 }
@@ -672,6 +677,8 @@ function refreshChrome() {
   const slider = $('#slider');
   slider.max = Math.max(0, Math.ceil(L.n / g.per) - 1); slider.value = Math.floor(pos.p / g.per);
   $('#pos-label').textContent = `Página ${pos.p + 1}${g.per === 2 && pos.p + 1 < L.n ? '–' + (pos.p + 2) : ''} de ${L.n} · Cap. ${pos.c + 1}/${book.chapters.length} · ${Math.round(bookFraction() * 100)}%`;
+  const pct = Math.round(bookFraction() * 100);
+  $('#readbar i').style.width = pct + '%'; $('#readbar').setAttribute('aria-valuenow', pct); $('#readpct').textContent = pct + '%';
   $$('#toc-list button').forEach((b, i) => b.classList.toggle('cur', i === pos.c));
   $('#btn-bm').classList.toggle('on', !!bmOnSpread().length);
 }
@@ -1282,7 +1289,16 @@ function toggleUI() { document.body.classList.contains('ui-hidden') ? showUI(tru
 
 let drag = null, lastTap = { t: 0, x: 0, y: 0 };
 let lpTimer = null;
+const ptrs = new Map(); let pinch = null;
 stageEl.addEventListener('pointerdown', e => {
+  ptrs.set(e.pointerId, { x: e.clientX, y: e.clientY });
+  if (ptrs.size === 2 && !flip) {                // dois dedos: pinça muda o tamanho da letra
+    clearTimeout(lpTimer); drag = null; closeMenu(); closeCard();
+    const [a, b] = [...ptrs.values()];
+    pinch = { d0: Math.hypot(a.x - b.x, a.y - b.y) || 1, size0: S.size, size: S.size };
+    return;
+  }
+  if (pinch) return;
   if (menuEl) { closeMenu(); drag = null; return; }
   const hadCard = !!cardEl; if (hadCard) closeCard();
   if (flip) return;
@@ -1294,6 +1310,14 @@ stageEl.addEventListener('pointerdown', e => {
   }, 480);
 });
 stageEl.addEventListener('pointermove', e => {
+  if (ptrs.has(e.pointerId)) ptrs.set(e.pointerId, { x: e.clientX, y: e.clientY });
+  if (pinch) {
+    if (ptrs.size < 2) return;
+    const [a, b] = [...ptrs.values()];
+    pinch.size = clamp(Math.round(pinch.size0 * (Math.hypot(a.x - b.x, a.y - b.y) / pinch.d0)), 15, 34);
+    $('#fs-val').textContent = pinch.size; toast('Letra ' + pinch.size, 700);
+    return;
+  }
   if (!drag || drag.id !== e.pointerId) return;
   const dx = e.clientX - drag.x, dy = e.clientY - drag.y;
   if (!drag.active) {
@@ -1313,6 +1337,8 @@ stageEl.addEventListener('pointermove', e => {
   setFlip(clamp(signed, 0, 1), false);
 });
 const endDrag = e => {
+  ptrs.delete(e.pointerId);
+  if (pinch) { if (ptrs.size === 0) { const n = pinch.size; pinch = null; setSize(n); } return; }
   if (!drag || drag.id !== e.pointerId) return;
   const d = drag; drag = null; clearTimeout(lpTimer);
   if (d.lp) return;
@@ -1360,12 +1386,43 @@ function readFromSpan(span) {
   ttsStart(+page.dataset.c, +span.dataset.i);
 }
 
+function chapterJump(dir) {
+  const c = clamp(pos.c + dir, 0, book.chapters.length - 1);
+  if (c === pos.c && dir > 0) return toast('Último capítulo');
+  if (c === pos.c && dir < 0) { if (pos.p > 0) jumpTo({ c, p: 0 }); return; }
+  jumpTo({ c, p: 0 }); toast(book.chapters[c].title, 1200);
+}
+$('#ch-prev').addEventListener('click', () => chapterJump(-1));
+$('#ch-next').addEventListener('click', () => chapterJump(1));
+
 document.addEventListener('keydown', e => {
   if (!book || views.reader.hidden || sheetOpen()) return;
-  if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') { e.preventDefault(); turn(1); }
-  else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); turn(-1); }
-  else if (e.key === 'Escape') closeBook();
+  if (e.target && /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) return;
+  if (e.metaKey || e.ctrlKey || e.altKey) return;
+  const k = e.key;
+  if (k === 'ArrowRight' || k === 'PageDown' || (k === ' ' && !e.shiftKey) || k === 'ArrowDown') { e.preventDefault(); turn(1); }
+  else if (k === 'ArrowLeft' || k === 'PageUp' || (k === ' ' && e.shiftKey) || k === 'ArrowUp') { e.preventDefault(); turn(-1); }
+  else if (k === 'Home') { e.preventDefault(); jumpTo({ c: 0, p: 0 }); }
+  else if (k === 'End') { e.preventDefault(); const c = book.chapters.length - 1; jumpTo({ c, p: lastStart(getLayout(c).n) }); }
+  else if (k === ']' || k === 'n') { e.preventDefault(); chapterJump(1); }
+  else if (k === '[' || k === 'p') { e.preventDefault(); chapterJump(-1); }
+  else if (k === '+' || k === '=') { e.preventDefault(); setSize(S.size + 1); }
+  else if (k === '-' || k === '_') { e.preventDefault(); setSize(S.size - 1); }
+  else if (k === 'f' || k === 'F') { e.preventDefault(); toggleZen(); }
+  else if (k === 't' || k === 'T') { e.preventDefault(); const o = ['paper', 'white', 'night']; S.theme = o[(o.indexOf(S.theme) + 1) % 3]; saveSettings(); applySettings(); }
+  else if (k === 'Escape') { if (S.zen) setZen(false); else closeBook(); }
 });
+
+/* roda do mouse / trackpad vira a página (com trava para a inércia não pular várias) */
+let wheelLock = 0;
+stageEl.addEventListener('wheel', e => {
+  if (!book || sheetOpen() || flip) return;
+  e.preventDefault();
+  const now = performance.now(); if (now < wheelLock) return;
+  const d = Math.abs(e.deltaY) >= Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
+  if (Math.abs(d) < 12) return;
+  wheelLock = now + 650; turn(d > 0 ? 1 : -1);
+}, { passive: false });
 
 $('#slider').addEventListener('input', e => {
   const v = +e.target.value * g.per, L = getLayout(pos.c);
@@ -1611,13 +1668,18 @@ $('#btn-back').addEventListener('click', closeBook);
 
 function applySettings() {
   document.documentElement.dataset.theme = S.theme;
-  document.body.classList.toggle('sans', S.font === 'sans');
+  for (const f of ['sans', 'georgia', 'rounded', 'mono']) document.body.classList.toggle('f-' + f, S.font === f);
+  document.body.classList.toggle('zen', !!S.zen);
+  $$('#seg-margin button').forEach(b => b.classList.toggle('on', b.dataset.v === S.margin));
+  $('#lh-val').textContent = S.lh.toFixed(2).replace(/0$/, '');
+  $('#chk-zen').checked = !!S.zen;
+  document.documentElement.style.setProperty('--lh', S.lh);
   $$('#seg-theme button').forEach(b => b.classList.toggle('on', b.dataset.v === S.theme));
   $$('#seg-font button').forEach(b => b.classList.toggle('on', b.dataset.v === S.font));
   $('#fs-val').textContent = S.size; $('#chk-sound').checked = S.sound; $('#chk-dict').checked = S.dict; $('#chk-online').checked = S.dictOnline;
   $('#tts-rate').textContent = fmtRate(S.rate); $('#rate-val').textContent = fmtRate(S.rate); $('#rng-rate').value = S.rate;
   document.documentElement.style.setProperty('--fs', S.size + 'px');
-  const m = document.querySelector('meta[name=theme-color]'); if (m) m.content = S.theme === 'night' ? '#0c0b0a' : '#2a1a14';
+  const m = document.querySelector('meta[name=theme-color]'); if (m) m.content = S.zen ? ({ night: '#1f1c1a', white: '#ffffff', paper: '#f1e4c8' })[S.theme] || '#2a1a14' : S.theme === 'night' ? '#0c0b0a' : '#2a1a14';
 }
 
 /** Recalcula as páginas mantendo o leitor na mesma frase (rotação, fonte, tema). */
@@ -1636,10 +1698,40 @@ const onResize = ms => () => { clearTimeout(rzTimer); rzTimer = setTimeout(() =>
 addEventListener('resize', onResize(180));
 addEventListener('orientationchange', onResize(350));
 
-$('#fs-minus').addEventListener('click', () => { S.size = clamp(S.size - 1, 15, 34); saveSettings(); applySettings(); relayout(); });
-$('#fs-plus').addEventListener('click', () => { S.size = clamp(S.size + 1, 15, 34); saveSettings(); applySettings(); relayout(); });
+$('#fs-minus').addEventListener('click', () => setSize(S.size - 1));
+$('#fs-plus').addEventListener('click', () => setSize(S.size + 1));
 $$('#seg-theme button').forEach(b => b.addEventListener('click', () => { S.theme = b.dataset.v; saveSettings(); applySettings(); }));
 $$('#seg-font button').forEach(b => b.addEventListener('click', () => { S.font = b.dataset.v; saveSettings(); applySettings(); relayout(); }));
+$$('#seg-margin button').forEach(b => b.addEventListener('click', () => { S.margin = b.dataset.v; saveSettings(); applySettings(); relayout(); }));
+const setLh = v => { S.lh = clamp(Math.round(v * 20) / 20, 1.3, 2.0); saveSettings(); applySettings(); relayout(); };
+$('#lh-minus').addEventListener('click', () => setLh(S.lh - 0.05));
+$('#lh-plus').addEventListener('click', () => setLh(S.lh + 0.05));
+const setSize = v => { const n = clamp(Math.round(v), 15, 34); if (n === S.size) return; S.size = n; saveSettings(); applySettings(); relayout(); };
+
+/* modo foco (Zen): página em tela cheia, sem barras; usa a tela cheia do navegador quando existir */
+function setZen(on, fromUser = true) {
+  S.zen = !!on; saveSettings(); applySettings();
+  const de = document.documentElement;
+  try {
+    if (on && fromUser) (de.requestFullscreen || de.webkitRequestFullscreen || (() => {})).call(de);
+    else if (!on && (document.fullscreenElement || document.webkitFullscreenElement)) (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+  } catch { /* tela cheia indisponível (ex.: iPhone): o layout em foco continua valendo */ }
+  relayout();
+  if (book) { on ? hideUI() : showUI(true); }
+  if (on && fromUser && !store.get('lv:tip-zen', false)) {
+    store.set('lv:tip-zen', true);
+    const noFs = !(de.requestFullscreen || de.webkitRequestFullscreen);
+    const standalone = navigator.standalone || (matchMedia && matchMedia('(display-mode: standalone)').matches);
+    toast(noFs && !standalone ? 'Modo foco: para tela cheia no iPhone, use Compartilhar › Adicionar à Tela de Início e abra pelo ícone. Toque no centro para ver os controles.'
+      : 'Modo foco: toque no centro para ver os controles. Esc ou F sai.', noFs && !standalone ? 6500 : 3800);
+  }
+}
+const toggleZen = () => setZen(!S.zen);
+$('#btn-zen').addEventListener('click', toggleZen);
+$('#chk-zen').addEventListener('change', e => setZen(e.target.checked));
+const onFs = () => { if (S.zen && !document.fullscreenElement && !document.webkitFullscreenElement && fsWasOn) { fsWasOn = false; setZen(false, false); } fsWasOn = !!(document.fullscreenElement || document.webkitFullscreenElement); };
+let fsWasOn = false;
+document.addEventListener('fullscreenchange', onFs); document.addEventListener('webkitfullscreenchange', onFs);
 $('#chk-sound').addEventListener('change', e => { S.sound = e.target.checked; saveSettings(); if (S.sound) pageSound(); });
 $('#chk-dict').addEventListener('change', e => { S.dict = e.target.checked; saveSettings(); });
 $('#chk-online').addEventListener('change', e => { S.dictOnline = e.target.checked; saveSettings(); });
