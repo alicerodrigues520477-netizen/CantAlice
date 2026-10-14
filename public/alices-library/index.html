@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="paper">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Alice's Library</title>
+<meta name="description" content="Alice's Library — leia e ouça livros em inglês, com páginas que viram.">
+<meta name="theme-color" content="#2a1a14">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Alice's Library">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="safe-probe" aria-hidden="true"></div>
+
+<!-- ============ BIBLIOTECA ============ -->
+<main id="library" class="view">
+  <header class="lib-head">
+    <div class="crest" aria-hidden="true"><svg viewBox="0 0 64 40"><path d="M32 10C25 5 14 5 6 8v26c8-3 19-3 26 2 7-5 18-5 26-2V8c-8-3-19-3-26 2z"/><path d="M32 10v26"/></svg></div>
+    <h1>Alice's <em>Library</em></h1>
+    <p class="tag">Leia, ouça e vire as páginas.</p>
+    <div class="rule"><i></i></div>
+  </header>
+
+  <section class="lib-actions">
+    <label class="btn primary" for="file-book">＋ Adicionar livro (.epub ou .txt)</label>
+    <input id="file-book" type="file" accept=".epub,.txt,application/epub+zip,text/plain" hidden>
+    <button type="button" class="btn" id="btn-vocab">📚 Meu vocabulário</button>
+  </section>
+
+  <section id="hero" class="hero" hidden></section>
+
+  <section class="case-wrap" aria-label="Sua estante">
+    <h2 class="case-title"><span>Minha estante</span></h2>
+    <div id="shelf" class="bookcase"></div>
+  </section>
+
+  <section class="catalog" aria-label="Livros grátis para começar">
+    <h2>Livros grátis para começar</h2>
+    <p class="muted">Escritos em inglês simples para este app. Toque para levar para a sua estante. <b>A1</b> = bem básico · <b>A2</b> = básico.</p>
+    <div id="cat-filter" class="cat-filter" role="group" aria-label="Filtrar por tema"></div>
+    <div id="catalog-list" class="cat-list"></div>
+  </section>
+
+  <section class="tips">
+    <h2>Mais clássicos gratuitos</h2>
+    <p class="muted">Textos de domínio público, em inglês um pouco mais antigo (nível intermediário). Baixe o <b>EPUB</b> no iPad e use “Adicionar livro”.</p>
+    <ul>
+      <li><a href="https://www.gutenberg.org/ebooks/search/?query=as+a+man+thinketh" target="_blank" rel="noopener"><i>As a Man Thinketh</i></a> — James Allen · autoajuda curtinha.</li>
+      <li><a href="https://www.gutenberg.org/ebooks/search/?query=game+of+life+and+how+to+play+it" target="_blank" rel="noopener"><i>The Game of Life and How to Play It</i></a> — Florence Scovel Shinn · fé e pensamento positivo.</li>
+      <li><a href="https://www.gutenberg.org/ebooks/search/?query=acres+of+diamonds" target="_blank" rel="noopener"><i>Acres of Diamonds</i></a> — Russell Conwell · motivação.</li>
+      <li><a href="https://www.gutenberg.org/ebooks/search/?query=imitation+of+christ" target="_blank" rel="noopener"><i>The Imitation of Christ</i></a> — Thomas à Kempis · devoção e orações.</li>
+      <li><a href="https://standardebooks.org/ebooks" target="_blank" rel="noopener">Standard Ebooks</a> — clássicos com ótima formatação (EPUB).</li>
+      <li><a href="https://librivox.org" target="_blank" rel="noopener">LibriVox</a> — audiobooks grátis (MP3) para anexar no botão 🎧.</li>
+    </ul>
+  </section>
+</main>
+
+<!-- ============ LEITOR ============ -->
+<main id="reader" class="view" hidden>
+  <div id="stage">
+    <div id="book" aria-live="off"></div>
+  </div>
+
+  <header id="topbar" class="bar top">
+    <button class="icon" id="btn-back" aria-label="Biblioteca">
+      <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" /></svg>
+    </button>
+    <div class="titles"><strong id="bk-title">—</strong><span id="bk-chapter"></span></div>
+    <button class="icon" id="btn-search" aria-label="Buscar no texto">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5" /><path d="M16 16l5 5" /></svg>
+    </button>
+    <button class="icon" id="btn-bm" aria-label="Marcar esta página">
+      <svg viewBox="0 0 24 24"><path d="M7 4h10v16l-5-4-5 4z" /></svg>
+    </button>
+    <button class="icon" id="btn-toc" aria-label="Índice, marcadores e destaques">
+      <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10" /></svg>
+    </button>
+    <button class="icon" id="btn-audio" aria-label="Audiolivro">
+      <svg viewBox="0 0 24 24"><path d="M4 15v-3a8 8 0 0116 0v3" /><rect x="3" y="14" width="4" height="6" rx="1.5" /><rect x="17" y="14" width="4" height="6" rx="1.5" /></svg>
+    </button>
+    <button class="icon" id="btn-settings" aria-label="Ajustes"><span class="aa">Aa</span></button>
+  </header>
+
+  <footer id="bottombar" class="bar bottom">
+    <div class="scrub">
+      <input id="slider" type="range" min="0" max="0" value="0" aria-label="Página">
+      <span id="pos-label">—</span>
+    </div>
+    <div class="tts">
+      <button class="icon" id="tts-prev" aria-label="Frase anterior">
+        <svg viewBox="0 0 24 24"><path d="M6 5v14M19 5l-9 7 9 7z" /></svg>
+      </button>
+      <button class="icon big" id="tts-play" aria-label="Ler em voz alta">
+        <svg id="ic-play" viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z" class="fill" /></svg>
+        <svg id="ic-pause" viewBox="0 0 24 24" hidden><path d="M8 5v14M16 5v14" /></svg>
+      </button>
+      <button class="icon" id="tts-next" aria-label="Próxima frase">
+        <svg viewBox="0 0 24 24"><path d="M18 5v14M5 5l9 7-9 7z" /></svg>
+      </button>
+      <button class="chip" id="tts-rate" aria-label="Velocidade da voz">1.0×</button>
+    </div>
+  </footer>
+</main>
+
+<!-- ============ PAINÉIS ============ -->
+<div id="scrim" hidden></div>
+
+<aside id="sheet-toc" class="sheet" hidden>
+  <div class="sheet-head"><h2>Índice</h2><button class="icon close" data-close aria-label="Fechar">✕</button></div>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="toc" class="on">Capítulos</button>
+    <button type="button" role="tab" data-tab="bm">Marcadores</button>
+    <button type="button" role="tab" data-tab="notes">Destaques</button>
+  </div>
+  <ol id="toc-list"></ol>
+  <div id="bm-list" class="alist" hidden></div>
+  <div id="notes-list" class="alist" hidden></div>
+  <button type="button" class="btn" id="btn-copy-notes" hidden>Copiar para a área de transferência</button>
+</aside>
+
+<aside id="sheet-vocab" class="sheet" hidden>
+  <div class="sheet-head"><h2>Meu vocabulário</h2><button class="icon close" data-close aria-label="Fechar">✕</button></div>
+  <p id="vocab-sum" class="muted"></p>
+  <button type="button" class="btn primary" id="btn-review">Revisar agora</button>
+  <div id="vocab-list" class="alist"></div>
+  <button type="button" class="btn" id="btn-copy-vocab" hidden>Copiar lista</button>
+</aside>
+
+<aside id="sheet-search" class="sheet" hidden>
+  <div class="sheet-head"><h2>Buscar</h2><button class="icon close" data-close aria-label="Fechar">✕</button></div>
+  <input id="q" type="search" placeholder="Buscar palavra ou frase no livro…" enterkeyhint="search" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false">
+  <p id="q-status" class="muted"></p>
+  <ul id="q-results" class="results"></ul>
+</aside>
+
+<aside id="sheet-settings" class="sheet" hidden>
+  <div class="sheet-head"><h2>Ajustes</h2><button class="icon close" data-close aria-label="Fechar">✕</button></div>
+
+  <div class="row">
+    <label>Tamanho do texto</label>
+    <div class="stepper">
+      <button id="fs-minus" aria-label="Diminuir">A−</button>
+      <span id="fs-val">21</span>
+      <button id="fs-plus" aria-label="Aumentar">A＋</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <label>Tema</label>
+    <div class="seg" id="seg-theme">
+      <button data-v="paper">Papel</button>
+      <button data-v="white">Branco</button>
+      <button data-v="night">Noite</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <label>Fonte</label>
+    <div class="seg" id="seg-font">
+      <button data-v="serif">Serifa</button>
+      <button data-v="sans">Sem serifa</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <label for="chk-sound">Som de página virando</label>
+    <input type="checkbox" id="chk-sound" class="switch">
+  </div>
+
+  <div class="row">
+    <label for="chk-dict">Tocar numa palavra mostra o significado</label>
+    <input type="checkbox" id="chk-dict" class="switch">
+  </div>
+
+  <div class="row">
+    <label for="chk-online">Buscar na internet palavras que o dicionário do app não tem</label>
+    <input type="checkbox" id="chk-online" class="switch">
+  </div>
+
+  <div class="row col">
+    <label for="sel-voice">Voz (inglês)</label>
+    <select id="sel-voice"></select>
+    <p class="muted" id="voice-hint">Para uma voz bem mais natural, vá em Ajustes do iPad › Acessibilidade › Conteúdo Falado › Vozes › Inglês e baixe uma voz “Aprimorada” (grátis).</p>
+  </div>
+
+  <div class="row col">
+    <label for="rng-rate">Velocidade da voz <b id="rate-val">1.0×</b></label>
+    <input type="range" id="rng-rate" min="0.6" max="1.6" step="0.05" value="1">
+    <button class="btn" id="btn-voice-test">Testar voz</button>
+  </div>
+</aside>
+
+<aside id="sheet-audio" class="sheet" hidden>
+  <div class="sheet-head"><h2>Audiolivro</h2><button class="icon close" data-close aria-label="Fechar">✕</button></div>
+
+  <div id="audio-empty">
+    <p>Tem o áudio deste livro (MP3, M4A, M4B…)? Anexe aqui e ouça com os controles abaixo. A posição fica salva.</p>
+    <label class="btn primary" for="file-audio">Anexar arquivo de áudio</label>
+    <input id="file-audio" type="file" accept="audio/*,.mp3,.m4a,.m4b,.aac,.ogg,.wav" hidden>
+    <p class="muted">Sem arquivo de áudio? Use o botão ▶ da barra inferior: o iPad lê o texto em voz alta e destaca a frase, virando as páginas sozinho.</p>
+  </div>
+
+  <div id="audio-player" hidden>
+    <p id="audio-name" class="audio-name">—</p>
+    <input id="audio-seek" type="range" min="0" max="1000" value="0" aria-label="Posição do áudio">
+    <div class="times"><span id="audio-cur">0:00</span><span id="audio-dur">0:00</span></div>
+    <div class="transport">
+      <button class="icon" id="a-back" aria-label="Voltar 15 segundos"><svg viewBox="0 0 24 24"><path d="M12 5a7 7 0 11-6.3 4M5 4v5h5" /></svg><small>15</small></button>
+      <button class="icon big" id="a-play" aria-label="Tocar">
+        <svg id="a-ic-play" viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z" class="fill" /></svg>
+        <svg id="a-ic-pause" viewBox="0 0 24 24" hidden><path d="M8 5v14M16 5v14" /></svg>
+      </button>
+      <button class="icon" id="a-fwd" aria-label="Avançar 15 segundos"><svg viewBox="0 0 24 24"><path d="M12 5a7 7 0 106.3 4M19 4v5h-5" /></svg><small>15</small></button>
+    </div>
+    <div class="row">
+      <label for="a-speed">Velocidade</label>
+      <select id="a-speed">
+        <option value="0.75">0.75×</option><option value="1" selected>1×</option>
+        <option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option>
+      </select>
+    </div>
+    <div class="row">
+      <label for="a-sleep">Desligar em</label>
+      <select id="a-sleep">
+        <option value="0" selected>Nunca</option><option value="15">15 min</option>
+        <option value="30">30 min</option><option value="60">60 min</option>
+      </select>
+    </div>
+    <button class="btn danger" id="a-remove">Remover áudio deste livro</button>
+  </div>
+</aside>
+
+<div id="flash-modal" class="modal" hidden>
+  <div class="modal-card flash" role="dialog" aria-modal="true" aria-label="Revisão de palavras">
+    <div class="flash-top"><span id="flash-count"></span><button type="button" class="icon close" id="flash-close" aria-label="Fechar">✕</button></div>
+    <div id="flash-body"></div>
+  </div>
+</div>
+
+<div id="note-modal" class="modal" hidden>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-label="Anotação">
+    <h3>Anotação</h3>
+    <blockquote id="note-quote"></blockquote>
+    <textarea id="note-text" rows="5" placeholder="Escreva sua anotação…"></textarea>
+    <div class="modal-actions">
+      <button type="button" class="btn" id="note-cancel">Cancelar</button>
+      <button type="button" class="btn danger" id="note-del">Apagar nota</button>
+      <button type="button" class="btn primary" id="note-save">Salvar</button>
+    </div>
+  </div>
+</div>
+
+<div id="search-pill" class="pill" hidden>
+  <button type="button" id="sp-prev" aria-label="Resultado anterior">‹</button>
+  <span id="sp-label">1 / 1</span>
+  <button type="button" id="sp-next" aria-label="Próximo resultado">›</button>
+  <button type="button" id="sp-close" aria-label="Fechar busca">✕</button>
+</div>
+
+<div id="toast" role="status" hidden></div>
+
+<script src="lib/jszip.min.js"></script>
+<script src="dict.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

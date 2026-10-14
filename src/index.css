@@ -1,5 +1,9 @@
 @import 'tailwindcss';
 
+/* Alice's Library (public/alices-library) is a separate, static app copied as-is into the
+   site. Keep Tailwind from scanning its files for class names so CantAlice's CSS is unchanged. */
+@source not "../public/alices-library";
+
 /*
   ╔═══════════════════════════════════════════════════════════════╗
   ║  CantAlice — Design System                                    ║
