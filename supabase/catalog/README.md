@@ -1,6 +1,6 @@
 # Catálogo de livros — Alice's Library
 
-987 livros prontos para inserir no banco do Supabase (tabela `public.livros`).
+1000 livros prontos para inserir no banco do Supabase (tabela `public.livros`).
 
 | Arquivo | Para quê |
 |---|---|
@@ -37,4 +37,4 @@ O validador recusa: duplicatas (título sem artigo inicial + autor), gênero for
 - **Níveis** são estimativa editorial, não medição: Iniciante ≈ A2–B1, Intermediário ≈ B2, Avançado ≈ C1–C2 ou texto arcaico/denso. O nível serve a quem estuda inglês, por isso é vazio nos livros em português.
 - **Resumos** são textos originais, escritos de memória; títulos, autores e fatos **não foram conferidos na web**. Vale uma revisão antes de publicar.
 - Títulos de obras do mesmo texto em inglês e em português (por exemplo, edições distintas) aparecem como entradas separadas, pois o idioma muda a edição.
-- Meta de 1000 livros: ficou em 987, priorizando só obras que tenho certeza de que existem, em vez de preencher o número.
+- Meta de 1000 livros: atingida: 1000 livros, o teto pedido.

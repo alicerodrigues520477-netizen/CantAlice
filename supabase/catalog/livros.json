@@ -15790,5 +15790,213 @@
       "ciúme",
       "clássico"
     ]
+  },
+  {
+    "id": "873c24b8-d768-56ce-b000-5945d460b19d",
+    "titulo": "The Posthumous Memoirs of Brás Cubas",
+    "autor": "Machado de Assis",
+    "genero": "Ficção Clássica",
+    "idioma": "en",
+    "resumo": "Brás Cubas, já morto, narra a própria vida com humor e ironia, sem poupar a si nem a sociedade carioca do século XIX. O livro quebra as regras do romance de sua época. Um marco da literatura brasileira em tradução.",
+    "nivel_dificuldade": "Avançado",
+    "tags": [
+      "realismo",
+      "ironia",
+      "sátira",
+      "brasil",
+      "clássico"
+    ]
+  },
+  {
+    "id": "2c34835d-5056-5100-81ff-6ae85f2aa392",
+    "titulo": "The Hour of the Star",
+    "autor": "Clarice Lispector",
+    "genero": "Ficção Clássica",
+    "idioma": "en",
+    "resumo": "O narrador conta a vida de Macabéa, uma datilógrafa nordestina pobre e ingênua no Rio de Janeiro. A história questiona quem tem direito a ser visto. O último livro que Clarice publicou em vida, em tradução.",
+    "nivel_dificuldade": "Intermediário",
+    "tags": [
+      "brasil",
+      "pobreza",
+      "mulheres",
+      "modernismo",
+      "novela"
+    ]
+  },
+  {
+    "id": "c4aec86d-6323-5b9d-898c-33875d39e871",
+    "titulo": "The Devil to Pay in the Backlands",
+    "autor": "João Guimarães Rosa",
+    "genero": "Ficção Clássica",
+    "idioma": "en",
+    "resumo": "O ex-jagunço Riobaldo conta sua vida a um interlocutor, falando de lutas, pacto com o diabo e do amor por Diadorim. A linguagem inventiva mistura fala sertaneja e invenção. Uma obra-prima brasileira em tradução.",
+    "nivel_dificuldade": "Avançado",
+    "tags": [
+      "sertão",
+      "jagunços",
+      "amor",
+      "linguagem",
+      "clássico"
+    ]
+  },
+  {
+    "id": "377e41e6-31ac-5db5-81b7-a690aa2091d6",
+    "titulo": "One Hundred Years of Solitude",
+    "autor": "Gabriel García Márquez",
+    "genero": "Ficção Clássica",
+    "idioma": "en",
+    "resumo": "A saga da família Buendía, em Macondo, passa por sete gerações cheias de amores, guerras, magia e solidão. A narrativa mistura realidade e fantasia. Um dos maiores romances do século XX, em tradução.",
+    "nivel_dificuldade": "Avançado",
+    "tags": [
+      "realismo mágico",
+      "macondo",
+      "família",
+      "américa latina",
+      "nobel"
+    ]
+  },
+  {
+    "id": "cd5d887b-f6fc-53a7-82a8-b326e8e625ab",
+    "titulo": "Love in the Time of Cholera",
+    "autor": "Gabriel García Márquez",
+    "genero": "Romance",
+    "idioma": "en",
+    "resumo": "Florentino espera mais de cinquenta anos para voltar a ficar com Fermina, que escolheu outro homem. A história mostra como o amor atravessa o tempo. Um romance intenso e melancólico, em tradução.",
+    "nivel_dificuldade": "Avançado",
+    "tags": [
+      "amor",
+      "espera",
+      "colômbia",
+      "velhice",
+      "nobel"
+    ]
+  },
+  {
+    "id": "74db6579-d821-5635-9900-b65d3f4a2c34",
+    "titulo": "Blindness",
+    "autor": "José Saramago",
+    "genero": "Ficção Clássica",
+    "idioma": "en",
+    "resumo": "Uma epidemia de cegueira branca atinge uma cidade, e os doentes são isolados num manicômio onde reinam violência e abuso. Só uma mulher continua enxergando. Uma parábola sobre egoísmo e solidariedade, em tradução.",
+    "nivel_dificuldade": "Avançado",
+    "tags": [
+      "epidemia",
+      "cegueira",
+      "sociedade",
+      "distopia",
+      "nobel"
+    ]
+  },
+  {
+    "id": "fcd99498-fcd9-54df-8368-574d65479964",
+    "titulo": "The Little Prince",
+    "autor": "Antoine de Saint-Exupéry",
+    "genero": "Infantil",
+    "idioma": "en",
+    "resumo": "Um piloto perdido no deserto conhece um pequeno príncipe vindo de um asteroide, que conta suas viagens por outros planetas. A amizade com uma raposa ensina o valor dos laços. Um clássico para crianças e adultos, em tradução.",
+    "nivel_dificuldade": "Iniciante",
+    "tags": [
+      "fábula",
+      "amizade",
+      "infância",
+      "filosofia",
+      "clássico"
+    ]
+  },
+  {
+    "id": "085b73e9-a0ee-5b06-991c-895265b94ee9",
+    "titulo": "The Diary of a Young Girl",
+    "autor": "Anne Frank",
+    "genero": "Biografia e Memórias",
+    "idioma": "en",
+    "resumo": "Anne Frank anota no diário o tempo que passou escondida com a família num anexo secreto em Amsterdã, durante a ocupação nazista. O texto mostra medo, esperança e crescimento de uma adolescente. Um dos documentos mais lidos sobre o Holocausto.",
+    "nivel_dificuldade": "Intermediário",
+    "tags": [
+      "segunda guerra",
+      "diário",
+      "holocausto",
+      "adolescência",
+      "esperança"
+    ]
+  },
+  {
+    "id": "2e0d320a-af19-5fa8-82ae-a6078daa1710",
+    "titulo": "Don Quixote",
+    "autor": "Miguel de Cervantes",
+    "genero": "Ficção Clássica",
+    "idioma": "en",
+    "resumo": "Um fidalgo enlouquecido pelos livros de cavalaria se torna Dom Quixote e sai pelo mundo com o escudeiro Sancho Pança. Entre moinhos de vento e ilusões, a obra brinca com realidade e ficção. Um dos maiores romances de todos os tempos.",
+    "nivel_dificuldade": "Avançado",
+    "tags": [
+      "espanha",
+      "cavalaria",
+      "sátira",
+      "aventura",
+      "clássico"
+    ]
+  },
+  {
+    "id": "1ec4c5c9-7769-5097-8c24-430b261469bc",
+    "titulo": "The Odyssey",
+    "autor": "Homer",
+    "genero": "Poesia",
+    "idioma": "en",
+    "resumo": "Depois da guerra de Troia, Ulisses tenta voltar a Ítaca e enfrenta monstros, tempestades e deuses por dez anos. Em casa, a esposa Penélope resiste aos pretendentes. Um clássico da aventura e do retorno.",
+    "nivel_dificuldade": "Avançado",
+    "tags": [
+      "épico",
+      "grécia",
+      "aventura",
+      "mitologia",
+      "clássico"
+    ]
+  },
+  {
+    "id": "c6511ab3-0eae-581f-a226-5710fc6fed79",
+    "titulo": "The Iliad",
+    "autor": "Homer",
+    "genero": "Poesia",
+    "idioma": "en",
+    "resumo": "O poema épico narra episódios da Guerra de Troia, centrado na ira do guerreiro Aquiles e na morte de Heitor. Deuses e mortais se misturam nos combates. Um dos textos fundadores da literatura ocidental.",
+    "nivel_dificuldade": "Avançado",
+    "tags": [
+      "épico",
+      "grécia",
+      "guerra de troia",
+      "mitologia",
+      "clássico"
+    ]
+  },
+  {
+    "id": "c65adf5c-02be-591e-a309-5b8a52a75304",
+    "titulo": "The Art of War",
+    "autor": "Sun Tzu",
+    "genero": "Filosofia",
+    "idioma": "en",
+    "resumo": "Um tratado chinês antigo sobre estratégia militar que também é lido como guia de liderança e negócios. O texto defende planejamento, conhecimento do adversário e economia de esforços. Uma leitura curta e muito citada.",
+    "nivel_dificuldade": "Intermediário",
+    "tags": [
+      "estratégia",
+      "china",
+      "guerra",
+      "liderança",
+      "clássico"
+    ]
+  },
+  {
+    "id": "decc8632-3294-5793-bd1d-26490548fda0",
+    "titulo": "Meditations",
+    "autor": "Marcus Aurelius",
+    "genero": "Filosofia",
+    "idioma": "en",
+    "resumo": "Anotações pessoais do imperador romano, em que ele reflete sobre dever, morte e controle das emoções. O estoicismo guia o texto. Uma leitura clássica de sabedoria prática.",
+    "nivel_dificuldade": "Avançado",
+    "tags": [
+      "estoicismo",
+      "roma",
+      "reflexão",
+      "ética",
+      "clássico"
+    ]
   }
 ]
