@@ -523,7 +523,7 @@ body.zen .folio { opacity: .32; }
 body.zen .page.left::after, body.zen .page.right::after { opacity: .5; }
 body.zen .page.solo::after { display: none; }
 @media (max-width: 700px) { body:not(.zen) .titles span { display: none; } .bar.top { gap: 2px; } button.icon { width: 40px; } }
-@media (max-width: 420px) { #btn-search { display: none; } }
+@media (max-width: 460px) { .bar.top button.icon { width: 34px; } .bar.top button.icon svg { width: 23px; height: 23px; } .bar.top { gap: 0; padding-left: calc(var(--sal) + 8px); padding-right: calc(var(--sar) + 8px); } .titles strong { font-size: 14px; } }
 
 .seg { flex-wrap: wrap; }
 .row.col .seg { width: 100%; }
