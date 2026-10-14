@@ -566,3 +566,8 @@ body.zen .page.solo::after { display: none; }
 .ac-foot { text-align: center; margin-top: 20px; }
 .ac-note { margin-top: 22px; text-align: center; }
 @media (max-width: 520px) { .ac-selects { grid-template-columns: 1fr 1fr; } .ac-selects .btn { grid-column: 1 / -1; } .ac-head h1 { font-size: 26px; } }
+
+/* filtros ligados ficam em destaque no Acervo */
+.ac-selects select.set { border: 1px solid #d9b866; background: rgba(217,184,102,.18); font-weight: 600; }
+.ac-selects select:disabled { opacity: .45; }
+.ac-selects .btn.set { background: linear-gradient(180deg, #ecd48f, #b88f3a); color: #2c1a0e; }

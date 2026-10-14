@@ -49,14 +49,26 @@
     return c;
   }
 
+  /* destaca o que está filtrando; o nível só existe para livros em inglês */
+  function syncUi(n) {
+    const noLevel = f.lang === 'pt';
+    $('#ac-level').disabled = noLevel;
+    $('#ac-level').title = noLevel ? 'O nível vale só para livros em inglês' : '';
+    $('#ac-level').classList.toggle('set', !!f.level);
+    $('#ac-genre').classList.toggle('set', !!f.genre);
+    $('#ac-clear').classList.toggle('set', n > 0);
+  }
+
   function render() {
     const list = $('#ac-list'); list.replaceChildren();
     for (const b of matches.slice(0, shown)) list.append(card(b));
+    const active = [f.q && `“${f.q.trim()}”`, f.lang && (f.lang === 'pt' ? 'Português' : 'Inglês'), f.genre, f.level].filter(Boolean);
+    const total = books.length;
     $('#ac-count').textContent = matches.length
-      ? `${matches.length} ${matches.length === 1 ? 'livro' : 'livros'}${matches.length > shown ? ` · mostrando ${shown}` : ''}`
-      : 'Nenhum livro encontrado. Tente outra palavra ou limpe os filtros.';
+      ? `${matches.length}${active.length ? ` de ${total}` : ''} ${matches.length === 1 ? 'livro' : 'livros'}${matches.length > shown ? ` · mostrando ${shown}` : ''}${active.length ? ` · filtrando por ${active.join(' + ')}` : ''}`
+      : 'Nenhum livro encontrado. Tente outra palavra ou toque em Limpar.';
+    syncUi(active.length);
     $('#ac-more').hidden = matches.length <= shown;
-    if (f.level && f.lang === 'pt') $('#ac-count').textContent += ' · o nível vale só para livros em inglês';
   }
 
   function open() {
@@ -78,7 +90,9 @@
   $('#ac-genre').addEventListener('change', e => { f.genre = e.target.value; books && apply(); });
   $('#ac-level').addEventListener('change', e => { f.level = e.target.value; books && apply(); });
   $$('#ac-lang button').forEach(b => b.addEventListener('click', () => {
-    f.lang = b.dataset.v; $$('#ac-lang button').forEach(x => { x.classList.toggle('on', x === b); x.setAttribute('aria-pressed', x === b); });
+    f.lang = b.dataset.v;
+    if (f.lang === 'pt') { f.level = ''; $('#ac-level').value = ''; }   // livros em português não têm nível
+    $$('#ac-lang button').forEach(x => { x.classList.toggle('on', x === b); x.setAttribute('aria-pressed', x === b); });
     books && apply();
   }));
   $('#ac-more').addEventListener('click', () => { shown += PAGE; render(); });

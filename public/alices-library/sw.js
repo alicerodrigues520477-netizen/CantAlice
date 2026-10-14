@@ -1,5 +1,5 @@
 /* Cache simples para o app abrir offline depois da primeira visita. */
-const CACHE = 'alices-library-v8';
+const CACHE = 'alices-library-v9';
 const FILES = ['./', 'index.html', 'style.css', 'app.js', 'acervo.js', 'acervo.json', 'catalogo.json', 'dict.js', 'dicionario-en-pt.json', 'lib/jszip.min.js', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png', 'apple-touch-icon.png'];
 
 self.addEventListener('install', e => {
