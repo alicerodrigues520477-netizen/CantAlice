@@ -846,3 +846,9 @@ body.has-sheet #toast { bottom: calc(var(--safe-b) + 24px); z-index: 200; }
 body[data-view="bil"] #toast { bottom: calc(var(--sab) + 92px); }
 #bil .bar button.icon.on { background: rgba(201,162,75,.28); }
 @media (max-width: 899px) { #bil[data-mode="wide"] .bil-row, #bil[data-mode="wide"] #bil-h, #bil[data-mode="wide"] .bil-cols-head { column-gap: 44px; } #bil[data-mode="wide"] .bil-sheet { padding-left: 24px; padding-right: 24px; } #bil[data-mode="wide"] .bil-row { font-size: calc(var(--fs) * .88); } }
+
+.bil-cut { margin: 4px auto 26px; max-width: 560px; text-align: center; padding: 14px 18px; border-top: 1px solid rgba(160,110,40,.45); border-bottom: 1px solid rgba(160,110,40,.45); display: flex; flex-direction: column; gap: 3px; }
+.bil-cut strong { font: italic 600 19px/1.25 var(--font-sub, var(--font-display)); }
+.bil-cut strong::before { content: "❦ "; color: #a36a1a; }
+.bil-cut span { font: 13px/1.4 var(--font-ui); opacity: .7; }
+#bil[data-mode="narrow"][data-lang="pt"] .bil-row.untr { display: none; }

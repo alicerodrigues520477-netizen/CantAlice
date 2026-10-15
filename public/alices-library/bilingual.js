@@ -109,7 +109,15 @@
       if (r.node.tagName === 'H3') row.classList.add('bil-h3'); else if (r.quote) row.classList.add('bil-blockquote');
       if (r.pt) r.pt.split('\n').forEach((line, i) => { if (i) pt.append(document.createElement('br')); pt.append(document.createTextNode(line)); });
       else { pt.classList.add('missing'); if (na && trCount() === 0) pt.append(na.cloneNode(true)); }
-      row.append(en, pt); rowsEl.append(row);
+      row.append(en, pt); rowsEl.append(row); r.row = row;
+    }
+    // tradução parcial (trecho de abertura): marca onde ela termina; o que vem depois fica só em inglês
+    let last = -1; rows.forEach((r, i) => { if (r.pt) last = i; });
+    if (last >= 0 && last < rows.length - 1) {
+      rows.forEach((r, i) => { if (i > last) r.row.classList.add('untr'); });
+      const cut = el('div', 'bil-cut');
+      cut.append(el('strong', null, 'A tradução deste livro, por enquanto, vai até aqui'), el('span', null, 'Só o trecho de abertura está traduzido; daqui em diante, apenas o inglês.'));
+      rows[last].row.after(cut);
     }
     // aviso elegante quando não há tradução
     noteEl.hidden = true; noteEl.replaceChildren();
@@ -117,7 +125,7 @@
       noteEl.append(el('strong', null, 'Tradução não disponível para este título'), el('span', null, 'Por enquanto só o texto em inglês. Os livros com tradução mostram o português ao lado, parágrafo por parágrafo.'));
       noteEl.hidden = false;
     } else if (trCount() === 0) {
-      noteEl.append(el('strong', null, 'Tradução ainda não disponível para este capítulo'), el('span', null, 'Este livro já tem capítulos traduzidos: escolha outro no seletor acima.'));
+      noteEl.append(el('strong', null, 'Tradução ainda não disponível para este capítulo'), el('span', null, 'Este livro tem só parte do texto traduzido: volte ao capítulo traduzido pelo seletor acima.'));
       noteEl.hidden = false;
     }
     $('#bil-credit').textContent = tr && trCount() ? 'English | Português' : 'Leitura bilíngue';
