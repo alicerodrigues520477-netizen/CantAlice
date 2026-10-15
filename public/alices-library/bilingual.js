@@ -54,14 +54,17 @@
   }
 
   /* ----- estado ----- */
-  let book = null, tr = null, ci = 0, rows = [], mode = 'narrow', lang = store.get('lv:bil-lang', 'en'), opened = false;
+  let book = null, tr = null, ci = 0, rows = [], mode = 'narrow', lang = store.get('lv:bil-lang', 'en'), opened = false, forceTwo = store.get('lv:bil-two', false);
   const mq = window.matchMedia('(min-width: 720px) and (orientation: landscape), (min-width: 1000px)');
   const trCount = () => rows.filter(r => r.pt).length;
   const saveKey = () => 'lv:bil:' + (book && book.id);
 
   function setMode() {
-    mode = mq.matches ? 'wide' : 'narrow';
+    // paisagem/telas grandes: duas colunas; em retrato (iPad) o botão da barra permite forçar duas colunas
+    const canForce = !mq.matches && innerWidth >= 700;
+    mode = (mq.matches || (forceTwo && canForce)) ? 'wide' : 'narrow';
     view.dataset.mode = mode;
+    const lb = $('#bil-layout'); lb.hidden = !canForce; lb.classList.toggle('on', mode === 'wide'); lb.setAttribute('aria-pressed', String(mode === 'wide'));
     flipBtn.hidden = mode === 'wide' || !tr;
     syncFlip();
   }
@@ -151,6 +154,7 @@
   $('#btn-bil').addEventListener('click', open);
   $('#bil-back').addEventListener('click', close);
   flipBtn.addEventListener('click', () => flip());
+  $('#bil-layout').addEventListener('click', () => { const a = anchorRow(); forceTwo = !forceTwo; store.set('lv:bil-two', forceTwo); setMode(); requestAnimationFrame(() => restoreRow(a)); });
   chSel.addEventListener('change', () => renderChapter(+chSel.value, 0));
   $('#bil-prev').addEventListener('click', () => renderChapter(ci - 1, 0));
   $('#bil-next').addEventListener('click', () => renderChapter(ci + 1, 0));
