@@ -19,7 +19,8 @@
       books = data.map(b => Object.assign(b, { _s: norm([b.titulo, b.autor, b.genero, b.resumo, (b.tags || []).join(' ')].join(' ')) }));
       const genres = [...new Set(books.map(b => b.genero))].sort((a, b) => a.localeCompare(b, 'pt'));
       for (const g of genres) $('#ac-genre').append(new Option(`${g} (${books.filter(b => b.genero === g).length})`, g));
-      $('#btn-acervo').textContent = `📖 Acervo · ${books.length} livros`;
+      const n = books.filter(b => b.texto).length;
+      $('#ac-sub').textContent = `${books.length} títulos para descobrir · ${n} com texto para ler no app`;
       return books;
     }).catch(err => { loading = null; throw err; });
     return loading;
@@ -57,17 +58,26 @@
     return row;
   }
 
+  const LV = { Iniciante: 'B1', Intermediário: 'B2', Avançado: 'C1' };
+  let seq = 0;
   function card(b) {
-    const c = el('article', 'ac-card');
-    c.append(el('h3', null, b.titulo), el('p', 'ac-author', b.autor));
+    const c = el('article', 'ac-card' + (b.texto ? ' has-text' : ''));
+    const api = window.__lvLib;
+    if (api && api.cover) {                                           // capa desenhada, igual à da estante
+      const cv = api.cover({ id: 'cat-ac-' + (seq++), title: b.titulo, author: b.autor, level: LV[b.nivel_dificuldade] || '' }, 'div');
+      cv.classList.add('mini'); cv.setAttribute('aria-hidden', 'true'); c.append(cv);
+    }
+    const body = el('div', 'ac-body');
+    body.append(el('h3', null, b.titulo), el('p', 'ac-author', b.autor));
     const badges = el('div', 'ac-badges');
     badges.append(el('span', 'tchip', b.idioma === 'pt' ? 'Português' : 'Inglês'));
     if (b.nivel_dificuldade) badges.append(el('span', 'tchip lvl', b.nivel_dificuldade));
     badges.append(el('span', 'tchip alt', b.genero));
     if (b.texto) badges.append(el('span', 'tchip txt', '📖 com texto'));
-    c.append(badges, el('p', 'ac-sum', b.resumo));
-    if (b.tags && b.tags.length) c.append(el('p', 'ac-tags', b.tags.map(t => '#' + t.replace(/\s+/g, '-')).join('  ')));
-    c.append(actions(b));
+    body.append(badges, el('p', 'ac-sum', b.resumo));
+    if (b.tags && b.tags.length) body.append(el('p', 'ac-tags', b.tags.map(t => '#' + t.replace(/\s+/g, '-')).join('  ')));
+    body.append(actions(b));
+    c.append(body);
     return c;
   }
 
@@ -95,17 +105,16 @@
   }
 
   function open() {
-    lib.hidden = true; view.hidden = false; view.scrollTop = 0;
+    lib.hidden = true; view.hidden = false; view.scrollTop = 0; document.body.dataset.view = 'acervo';
     $('#ac-count').textContent = 'Carregando o acervo…';
     load().then(apply).catch(() => {
       $('#ac-count').textContent = 'Não consegui carregar o acervo agora. Verifique a conexão e toque aqui para tentar de novo.';
       $('#ac-count').onclick = () => { $('#ac-count').onclick = null; open(); };
     });
   }
-  function close() { view.hidden = true; lib.hidden = false; }
+  function close() { view.hidden = true; lib.hidden = false; document.body.dataset.view = 'library'; }
+  window.__acervo = { open, close };
 
-  $('#btn-acervo').addEventListener('click', open);
-  $('#ac-back').addEventListener('click', close);
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && !view.hidden && document.activeElement.id !== 'ac-q') close(); });
 
   let t;

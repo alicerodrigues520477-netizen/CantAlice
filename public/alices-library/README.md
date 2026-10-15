@@ -111,3 +111,14 @@ Sem build: HTML/CSS/JS puros + [JSZip](https://stuk.github.io/jszip/) (em `lib/`
 ```bash
 cd leitor-ipad && python3 -m http.server 8000   # abra http://localhost:8000
 ```
+
+## Design system (v11)
+
+Identidade "Alice no País das Maravilhas": madeira quente, ouro envelhecido, roxo/vinho, esmeralda e pergaminho.
+
+- **Tokens** (`:root` em `style.css`): paleta (`--wood-*`, `--gold-*`, `--wine-*`, `--emerald-*`, `--parch-*`), escala tipográfica (`--fs-*`), sombras, movimento (`--ease`, `--dur-*`) e layout (`--appbar-h`, `--tab-h`, `--safe-*`).
+- **Tipografia**: títulos em serifa (itálico dourado no destaque), corpo em sans; hierarquia única em Estante, Acervo e Ajustes.
+- **Navegação**: barra superior fixa (≥720px) e barra de abas inferior (<720px). `nav.js` trata os botões `[data-nav]` (estante, acervo, vocabulário, ajustes) e marca `aria-current`. `body[data-view="library|acervo|reader"]` define o que aparece; no leitor a navegação some.
+- **Estante fluida**: `renderShelf` calcula o nº de colunas e define `--cw`; capas, textos e espaçamentos escalam com ela.
+- **Acervo**: cartões com mini-capa e prateleira de madeira; livros com texto no app ganham destaque esmeralda.
+- **Microinterações**: hover só com `@media (hover:hover)`, foco visível, `prefers-reduced-motion` respeitado.
