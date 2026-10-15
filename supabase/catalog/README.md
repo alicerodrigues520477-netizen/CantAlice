@@ -13,6 +13,14 @@
 
 Rode **depois** de `livros.sql` (pode repetir): troca as sinopses genéricas ou repetidas dos 59 livros com texto por sinopses específicas em português, acrescenta `resumo_en` (versão em inglês) e marca `texto_no_app`, `texto_slug`, `texto_fonte` e `estante_inicial`. Também dá um resumo próprio às 7 edições em inglês que repetiam o resumo da edição em português. A estante de leitura de cada pessoa fica no aparelho, não nesta tabela; `estante_inicial` só marca quais livros o app coloca na estante no primeiro uso.
 
+## Traduções para a leitura bilíngue (`livros_traducoes.sql`)
+
+Rode **depois** de `livros.sql` e `livros_texto.sql` (pode repetir). Cria `public.livros_traducoes` (uma linha por livro, leitura pública, escrita só pelo painel), guarda os parágrafos em português em `jsonb` e marca `public.livros.traducao_pt` (`trecho`, `parcial` ou `completa`) dos 59 livros da estante. É gerado por `node scripts/build-traducoes-sql.mjs` a partir de `public/alices-library/livros/*.pt.json`.
+
+**Atenção:** o leitor do iPad lê as traduções desses arquivos `.pt.json`, que vão junto com o app; rodar o SQL **não é necessário** para a leitura bilíngue funcionar. O SQL serve para guardar a tradução no banco (consulta, backup, revisão). Cobertura atual: *Alice's Adventures in Wonderland* capítulos I e II; os outros 58 livros, só o trecho de abertura.
+
+> Validado em um Postgres real (PGlite): roda duas vezes sem duplicar, `anon` lê e não escreve, e os 59 livros ficam marcados.
+
 ## Campos
 
 `id` (UUID v5 determinístico a partir de título + autor), `titulo`, `autor`, `genero`, `idioma` (`pt` ou `en`), `resumo` (2–3 frases), `nivel_dificuldade` (`Iniciante`, `Intermediário` ou `Avançado`; `null` nos livros em português) e `tags` (3 a 6, em minúsculas).

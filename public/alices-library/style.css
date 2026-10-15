@@ -852,3 +852,4 @@ body[data-view="bil"] #toast { bottom: calc(var(--sab) + 92px); }
 .bil-cut strong::before { content: "❦ "; color: #a36a1a; }
 .bil-cut span { font: 13px/1.4 var(--font-ui); opacity: .7; }
 #bil[data-mode="narrow"][data-lang="pt"] .bil-row.untr { display: none; }
+.bil-end .btn { color: #3b2a14; background: rgba(160,110,40,.14); border-color: rgba(160,110,40,.55); }
