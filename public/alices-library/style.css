@@ -1,4 +1,3 @@
-@font-face { font-family: 'Cinzel Decorative'; font-style: normal; font-weight: 700; font-display: swap; src: url(fonts/CinzelDecorative-700.woff2) format('woff2'); }
 @font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 500; font-display: swap; src: url(fonts/CormorantGaramond-500i.woff2) format('woff2'); }
 @font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 600; font-display: swap; src: url(fonts/CormorantGaramond-600i.woff2) format('woff2'); }
 @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 600; font-display: swap; src: url(fonts/CormorantGaramond-600.woff2) format('woff2'); }
@@ -787,16 +786,15 @@ body.has-sheet #toast { bottom: calc(var(--safe-b) + 24px); z-index: 200; }
   .brand-name { font-size: 20px; }
 }
 
-/* ---- TIPOGRAFIA VITORIANA (v12): Cinzel Decorative + Cormorant Garamond, hospedadas em fonts/ ---- */
+/* ---- TIPOGRAFIA VITORIANA (v13): título em Cormorant Garamond itálico, leve e fluido; fontes em fonts/ ---- */
 :root {
-  --font-title: "Cinzel Decorative", "Cinzel", Didot, "Bodoni 72", "Playfair Display", Georgia, serif;
+  --font-title: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
   --font-sub: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
 }
-.lib-head h1 { font-family: var(--font-title); font-weight: 700; font-size: clamp(30px, 5.4vw, 54px); line-height: 1.12; letter-spacing: .035em; color: var(--gold-100); text-shadow: 0 1px 0 rgba(90,60,10,.8), 0 3px 18px rgba(0,0,0,.6); }
-.lib-head h1 em { font-style: normal; color: var(--gold-2); }
-.lib-head .tag { margin-top: 14px; font: italic 600 clamp(20px, 2.6vw, 25px)/1.3 var(--font-sub); letter-spacing: .03em; color: #f1e3bf; text-shadow: 0 1px 8px rgba(0,0,0,.5); }
-.lib-head .tag::before, .lib-head .tag::after { content: "❦"; display: inline-block; margin: 0 .55em; font-style: normal; font-size: .8em; color: var(--gold-500); opacity: .85; }
-.brand-name { font-family: var(--font-title); font-weight: 700; font-size: 17px; letter-spacing: .04em; }
-.brand-name em { font-style: normal; color: var(--gold-200); }
-@media (max-width: 380px) { .brand-name { font-size: 15px; } }
-@media (min-width: 720px) and (max-width: 940px) { .brand-name { font-size: 15px; } }
+.lib-head h1 { font-family: var(--font-title); font-style: italic; font-weight: 500; font-size: clamp(42px, 7vw, 72px); line-height: 1.04; letter-spacing: .01em; text-transform: none; color: var(--gold-100); text-shadow: 0 2px 16px rgba(0,0,0,.55); }
+.lib-head h1 em { font-style: italic; font-weight: 600; color: var(--gold-2); }
+.lib-head .tag { margin-top: 12px; font: italic 500 clamp(18px, 2.3vw, 22px)/1.3 var(--font-sub); letter-spacing: .04em; color: rgba(241, 227, 191, .84); text-shadow: 0 1px 8px rgba(0,0,0,.5); }
+.lib-head .tag::before, .lib-head .tag::after { content: "❦"; display: inline-block; margin: 0 .55em; font-style: normal; font-size: .8em; color: var(--gold-500); opacity: .8; }
+.brand-name { font-family: var(--font-title); font-style: italic; font-weight: 500; font-size: 25px; letter-spacing: .01em; text-transform: none; }
+.brand-name em { font-style: italic; font-weight: 600; color: var(--gold-200); }
+@media (max-width: 380px) { .brand-name { font-size: 22px; } }
