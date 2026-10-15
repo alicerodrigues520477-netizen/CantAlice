@@ -125,7 +125,7 @@ Identidade "Alice no País das Maravilhas": madeira quente, ouro envelhecido, ro
 
 ## Leitura bilíngue (English | Português)
 
-Botão ▥ na barra do leitor. No iPad em paisagem e no desktop abre em duas colunas (inglês à esquerda, português à direita) com a emenda de livro no meio; em retrato e no celular mostra um idioma por vez e o botão flutuante **Ver tradução / Ver inglês** alterna sem perder o parágrafo. Cada parágrafo é uma linha de grade, então as duas colunas rolam juntas e ficam alinhadas. O código está em `bilingual.js` (tela `#bil` no `index.html`; ponte `window.__lvRd` em `app.js`).
+Botão ▥ na barra do leitor. Em retrato no iPad, o botão de duas colunas na barra da leitura bilíngue força o modo lado a lado (útil com a rotação travada). No iPad em paisagem e no desktop abre em duas colunas (inglês à esquerda, português à direita) com a emenda de livro no meio; em retrato e no celular mostra um idioma por vez e o botão flutuante **Ver tradução / Ver inglês** alterna sem perder o parágrafo. Cada parágrafo é uma linha de grade, então as duas colunas rolam juntas e ficam alinhadas. O código está em `bilingual.js` (tela `#bil` no `index.html`; ponte `window.__lvRd` em `app.js`).
 
 As traduções são arquivos `livros/<slug>.pt.json` (o `slug` é o do livro; o trecho de amostra `sample-alice` usa o de *Alice*):
 

@@ -844,3 +844,5 @@ body.has-sheet #toast { bottom: calc(var(--safe-b) + 24px); z-index: 200; }
 #bil-ch { color: var(--gold-100); background: rgba(255,255,255,.08); }
 #bil .titles span { color: var(--gold-200); }
 body[data-view="bil"] #toast { bottom: calc(var(--sab) + 92px); }
+#bil .bar button.icon.on { background: rgba(201,162,75,.28); }
+@media (max-width: 899px) { #bil[data-mode="wide"] .bil-row, #bil[data-mode="wide"] #bil-h, #bil[data-mode="wide"] .bil-cols-head { column-gap: 44px; } #bil[data-mode="wide"] .bil-sheet { padding-left: 24px; padding-right: 24px; } #bil[data-mode="wide"] .bil-row { font-size: calc(var(--fs) * .88); } }
