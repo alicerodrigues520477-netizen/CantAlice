@@ -115,6 +115,29 @@
   </footer>
 </main>
 
+<!-- ============ LEITURA BILÍNGUE (English | Português) ============ -->
+<main id="bil" class="view" hidden data-lang="en" data-mode="narrow" aria-label="Leitura bilíngue">
+  <header id="bil-bar" class="bar top bil-bar">
+    <button class="icon" id="bil-back" aria-label="Voltar ao leitor"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" /></svg></button>
+    <div class="titles"><strong id="bil-title">—</strong><span id="bil-credit">Leitura bilíngue</span></div>
+    <button class="icon" id="bil-prev" aria-label="Capítulo anterior"><svg viewBox="0 0 24 24"><path d="M6 5v14M19 5l-9 7 9 7z" /></svg></button>
+    <select id="bil-ch" aria-label="Capítulo"></select>
+    <button class="icon" id="bil-next" aria-label="Próximo capítulo"><svg viewBox="0 0 24 24"><path d="M18 5v14M5 5l9 7-9 7z" /></svg></button>
+    <button class="icon" id="bil-minus" aria-label="Diminuir a letra"><span class="aa">A−</span></button>
+    <button class="icon" id="bil-plus" aria-label="Aumentar a letra"><span class="aa">A+</span></button>
+  </header>
+  <div id="bil-scroll" tabindex="-1">
+    <div class="bil-sheet">
+      <div id="bil-note" class="bil-note" role="status" hidden></div>
+      <div class="bil-cols-head" aria-hidden="true"><span>English</span><i></i><span>Português</span></div>
+      <h2 id="bil-h"></h2>
+      <div id="bil-rows"></div>
+      <div class="bil-end"><button type="button" class="btn" id="bil-end-next">Próximo capítulo →</button></div>
+    </div>
+  </div>
+  <button type="button" id="bil-flip" class="bil-fab" aria-live="polite">Ver tradução</button>
+</main>
+
 <!-- ============ LEITOR ============ -->
 <main id="reader" class="view" hidden>
   <div id="readbar" role="progressbar" aria-label="Progresso de leitura" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i></i></div>
@@ -136,6 +159,9 @@
     </button>
     <button class="icon" id="btn-toc" aria-label="Índice, marcadores e destaques">
       <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10" /></svg>
+    </button>
+    <button class="icon" id="btn-bil" aria-label="Leitura bilíngue (English | Português)" title="Leitura bilíngue">
+      <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M12 5v14M6 10h3M6 13h2M15 10h3M15 13h2" /></svg>
     </button>
     <button class="icon" id="btn-audio" aria-label="Audiolivro">
       <svg viewBox="0 0 24 24"><path d="M4 15v-3a8 8 0 0116 0v3" /><rect x="3" y="14" width="4" height="6" rx="1.5" /><rect x="17" y="14" width="4" height="6" rx="1.5" /></svg>
@@ -366,5 +392,6 @@
 <script src="app.js"></script>
 <script src="acervo.js"></script>
 <script src="nav.js"></script>
+<script src="bilingual.js"></script>
 </body>
 </html>
