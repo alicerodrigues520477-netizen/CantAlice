@@ -22,6 +22,7 @@ function toast(msg, ms = 2600) {
 }
 
 /* ================= ajustes ================= */
+const APP_VERSION = 'v11';
 const S = Object.assign({ theme: 'paper', size: 21, font: 'serif', lh: 1.55, margin: 'normal', zen: false, sound: true, rate: 1, voice: '', dict: true, dictOnline: true }, store.get('lv:settings', {}));
 const saveSettings = () => store.set('lv:settings', S);
 
@@ -316,7 +317,7 @@ async function ensureSample() {
 
 /* ================= tela da biblioteca ================= */
 const views = { library: $('#library'), reader: $('#reader') };
-function showView(name) { for (const [k, v] of Object.entries(views)) v.hidden = k !== name; }
+function showView(name) { for (const [k, v] of Object.entries(views)) v.hidden = k !== name; document.body.dataset.view = name; }
 
 function hueOf(s) { let h = 0; for (const ch of s) h = (h * 31 + ch.charCodeAt(0)) % 360; return h; }
 
@@ -352,14 +353,18 @@ async function hydrateCovers() {
   }
 }
 
-const COVER_W = 176, SHELF_GAP = 30, CASE_PAD = 34;
+const COVER_W = 176, COVER_MIN = 118, COVER_MAX = 230, SHELF_GAP = 30, CASE_PAD = 34;
 
 function renderShelf() {
   const shelf = $('#shelf'); shelf.replaceChildren();
   renderHero();
   if (!lib.length) { shelf.append(el('p', 'empty-note', 'A estante está vazia. Adicione um livro ou escolha um dos livros grátis logo abaixo.')); renderCatalog(); return; }
-  const inner = Math.max(COVER_W, (shelf.clientWidth || innerWidth - 56) - 2 * CASE_PAD);
-  const cols = Math.max(1, Math.floor((inner + SHELF_GAP) / (COVER_W + SHELF_GAP)));
+  const padX = parseFloat(getComputedStyle(shelf).paddingLeft) || CASE_PAD;                    // margem interna real (muda no celular)
+  const inner = Math.max(COVER_MIN, (shelf.clientWidth || innerWidth - 56) - 2 * padX);
+  // escolhe a quantidade de colunas mais próxima do tamanho ideal e deixa as capas crescerem para preencher a prateleira
+  const cols = Math.max(1, Math.round((inner + SHELF_GAP) / (COVER_W + SHELF_GAP)));
+  const cw = Math.max(COVER_MIN, Math.min(COVER_MAX, Math.floor((inner - (cols - 1) * SHELF_GAP) / cols)));
+  shelf.style.setProperty('--cw', cw + 'px');
   for (let i = 0; i < lib.length; i += cols) {
     const row = el('div', 'shelf-row');
     for (const b of lib.slice(i, i + cols)) row.append(shelfCard(b));
@@ -1123,7 +1128,12 @@ function exampleEl(cls, text, word) {
 const isSaved = w => vocab.some(v => v.k === vkey(w));
 function updateVocabBtn() {
   const due = vocab.filter(v => v.due <= Date.now()).length;
-  const b = $('#btn-vocab'); if (b) b.textContent = '📚 Meu vocabulário' + (vocab.length ? ` · ${vocab.length}` : '') + (due ? ` (${due} p/ revisar)` : '');
+  const title = vocab.length ? `${vocab.length} palavras salvas` + (due ? ` · ${due} para revisar` : '') : 'Nenhuma palavra salva ainda';
+  $$('[data-nav="vocab"]').forEach(b => {
+    b.title = title;
+    const c = $('.count', b); if (!c) return;
+    c.textContent = due || (vocab.length ? vocab.length : ''); c.hidden = !vocab.length; c.classList.toggle('due', due > 0);
+  });
 }
 
 /* ----- cartão de significado ----- */
@@ -1277,7 +1287,6 @@ function renderVocab() {
     item.append(box, del); list.append(item);
   }
 }
-$('#btn-vocab').addEventListener('click', () => { renderVocab(); openSheet('#sheet-vocab'); });
 $('#btn-copy-vocab').addEventListener('click', () => copyText([...vocab].sort((a, b) => a.k.localeCompare(b.k)).map(v => `${v.w} — ${v.pt}${v.ex ? '\n   “' + v.ex + '”' : ''}`).join('\n')));
 
 /* ----- revisão com flashcards (repetição espaçada simples) ----- */
@@ -1693,8 +1702,8 @@ $('#a-remove').addEventListener('click', async () => {
 /* ================= painéis e ajustes ================= */
 const sheets = ['#sheet-toc', '#sheet-settings', '#sheet-audio', '#sheet-search', '#sheet-vocab'].map(s => $(s));
 const sheetOpen = () => sheets.some(s => !s.hidden);
-function openSheet(id) { closeMenu(); closeCard(); closeSheets(); if (id === '#sheet-toc') renderAnnLists(); $(id).hidden = false; $('#scrim').hidden = false; showUI(false); if (id === '#sheet-audio') syncAudioPanel(); }
-function closeSheets() { sheets.forEach(s => { s.hidden = true; }); $('#scrim').hidden = true; if (book) showUI(true); }
+function openSheet(id) { closeMenu(); closeCard(); closeSheets(); if (id === '#sheet-toc') renderAnnLists(); $(id).hidden = false; $('#scrim').hidden = false; document.body.classList.add('has-sheet'); showUI(false); if (id === '#sheet-audio') syncAudioPanel(); }
+function closeSheets() { sheets.forEach(s => { s.hidden = true; }); $('#scrim').hidden = true; document.body.classList.remove('has-sheet'); if (book) showUI(true); }
 $('#scrim').addEventListener('click', closeSheets);
 $$('[data-close]').forEach(b => b.addEventListener('click', closeSheets));
 $('#btn-toc').addEventListener('click', () => openSheet('#sheet-toc'));
@@ -1801,6 +1810,8 @@ $('#file-book').addEventListener('change', async e => {
 })();
 
 // ganchos para teste automatizado
-window.__lvLib = { has: id => lib.some(b => b.id === id), addBundled, open: openBook };
+window.__lvLib = { has: id => lib.some(b => b.id === id), addBundled, open: openBook, cover: buildCover,
+  openVocab: () => { renderVocab(); openSheet('#sheet-vocab'); }, openSettings: () => openSheet('#sheet-settings') };
+$$('.app-ver').forEach(n => { n.textContent = APP_VERSION; });
 window.__lv = { get pos() { return pos; }, get g() { return g; }, get tts() { return tts; }, turn, jumpTo, ttsStart, ttsStop, getLayout, importFile, openBook };
 })();

@@ -15,25 +15,38 @@
 <link rel="icon" href="icon-192.png">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-view="library">
 
 <div id="safe-probe" aria-hidden="true"></div>
+
+<!-- ============ NAVEGAÇÃO PRINCIPAL ============ -->
+<header id="appbar" class="appbar">
+  <button type="button" class="brand" data-nav="shelf" aria-label="Alice's Library — ir para a estante">
+    <span class="crest" aria-hidden="true"><svg viewBox="0 0 64 40" aria-hidden="true"><path d="M32 10C25 5 14 5 6 8v26c8-3 19-3 26 2 7-5 18-5 26-2V8c-8-3-19-3-26 2z"/><path d="M32 10v26"/></svg></span><span class="brand-name">Alice's <em>Library</em></span>
+  </button>
+  <nav class="navlinks" aria-label="Principal">
+    <button type="button" class="navlink" data-nav="shelf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4v16M10 4v16M15 6l4 14M3 20h18"/></svg><span>Estante</span></button>
+    <button type="button" class="navlink" data-nav="acervo" id="btn-acervo"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></svg><span>Acervo</span></button>
+    <button type="button" class="navlink" data-nav="vocab" id="btn-vocab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16l-7-4-7 4z"/></svg><span>Vocabulário</span><b class="count" hidden></b></button>
+    <button type="button" class="navlink" data-nav="settings"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg><span>Ajustes</span></button>
+  </nav>
+  <label class="btn primary add" for="file-book" title="Adicionar um livro seu (.epub ou .txt)">＋ <span>Adicionar livro</span></label>
+  <input id="file-book" type="file" accept=".epub,.txt,application/epub+zip,text/plain" hidden>
+</header>
+<nav id="tabbar" class="tabbar" aria-label="Principal (celular)">
+  <button type="button" class="tab" data-nav="shelf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4v16M10 4v16M15 6l4 14M3 20h18"/></svg><span>Estante</span></button>
+  <button type="button" class="tab" data-nav="acervo"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></svg><span>Acervo</span></button>
+  <button type="button" class="tab" data-nav="vocab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16l-7-4-7 4z"/></svg><span>Vocabulário</span><b class="count" hidden></b></button>
+  <button type="button" class="tab" data-nav="settings"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg><span>Ajustes</span></button>
+</nav>
 
 <!-- ============ BIBLIOTECA ============ -->
 <main id="library" class="view">
   <header class="lib-head">
-    <div class="crest" aria-hidden="true"><svg viewBox="0 0 64 40"><path d="M32 10C25 5 14 5 6 8v26c8-3 19-3 26 2 7-5 18-5 26-2V8c-8-3-19-3-26 2z"/><path d="M32 10v26"/></svg></div>
     <h1>Alice's <em>Library</em></h1>
     <p class="tag">Leia, ouça e vire as páginas.</p>
     <div class="rule"><i></i></div>
   </header>
-
-  <section class="lib-actions">
-    <label class="btn primary" for="file-book">＋ Adicionar livro (.epub ou .txt)</label>
-    <input id="file-book" type="file" accept=".epub,.txt,application/epub+zip,text/plain" hidden>
-    <button type="button" class="btn" id="btn-vocab">📚 Meu vocabulário</button>
-    <button type="button" class="btn" id="btn-acervo">📖 Acervo de livros</button>
-  </section>
 
   <section id="hero" class="hero" hidden></section>
 
@@ -61,13 +74,19 @@
       <li><a href="https://librivox.org" target="_blank" rel="noopener">LibriVox</a> — audiobooks grátis (MP3) para anexar no botão 🎧.</li>
     </ul>
   </section>
+  <footer class="appfoot">
+    <span class="foot-ornament" aria-hidden="true">❦</span>
+    <p>Alice's Library · <span class="app-ver"></span></p>
+    <p class="foot-sub">Textos de domínio público do <a href="https://standardebooks.org" target="_blank" rel="noopener">Standard Ebooks</a> (CC0). Seus livros ficam só neste aparelho.</p>
+  </footer>
 </main>
 
 <!-- ============ ACERVO ============ -->
 <main id="acervo" class="view" hidden>
-  <header class="ac-head">
-    <button type="button" class="icon" id="ac-back" aria-label="Voltar à estante"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" /></svg></button>
+  <header class="lib-head ac-head">
     <h1>Acervo <em>de livros</em></h1>
+    <p class="tag" id="ac-sub">Mil títulos para descobrir</p>
+    <div class="rule"><i></i></div>
   </header>
   <section class="ac-controls" aria-label="Buscar e filtrar">
     <input id="ac-q" type="search" placeholder="Buscar título, autor ou tema…" enterkeyhint="search" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false">
@@ -89,6 +108,11 @@
   <div id="ac-list" class="ac-list"></div>
   <div class="ac-foot"><button type="button" class="btn primary" id="ac-more" hidden>Mostrar mais</button></div>
   <p class="muted ac-note">Os livros marcados com 📖 são de domínio público e têm o texto dentro do app: toque em “Adicionar à estante” e leia, sem baixar nada. Os outros têm só a ficha (resumo, gênero e nível de inglês). Níveis são uma estimativa.</p>
+  <footer class="appfoot">
+    <span class="foot-ornament" aria-hidden="true">❦</span>
+    <p>Alice's Library · <span class="app-ver"></span></p>
+    <p class="foot-sub">Textos de domínio público do <a href="https://standardebooks.org" target="_blank" rel="noopener">Standard Ebooks</a> (CC0). Seus livros ficam só neste aparelho.</p>
+  </footer>
 </main>
 
 <!-- ============ LEITOR ============ -->
@@ -178,6 +202,7 @@
 
 <aside id="sheet-settings" class="sheet" hidden>
   <div class="sheet-head"><h2>Ajustes</h2><button class="icon close" data-close aria-label="Fechar">✕</button></div>
+  <p class="muted sheet-sub">Valem para a leitura dos livros e ficam salvos neste aparelho.</p>
 
   <div class="row">
     <label>Tamanho do texto</label>
@@ -340,5 +365,6 @@
 <script src="dict.js"></script>
 <script src="app.js"></script>
 <script src="acervo.js"></script>
+<script src="nav.js"></script>
 </body>
 </html>
