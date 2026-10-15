@@ -5,7 +5,7 @@
     "autor": "Jane Austen",
     "genero": "Romance",
     "idioma": "en",
-    "resumo": "Elizabeth Bennet conhece o orgulhoso Darcy e forma dele um juízo precipitado. Entre bailes, mal-entendidos e a pressão para casar bem, os dois precisam rever seus preconceitos. Uma comédia de costumes sobre amor, classe e autoconhecimento.",
+    "resumo": "Elizabeth Bennet, a segunda de cinco irmãs, vive numa família que precisa casar as filhas bem. Quando o rico Bingley aluga a mansão vizinha, ele se encanta por Jane, e o amigo orgulhoso, Darcy, se interessa por Elizabeth. Ela forma uma opinião ruim dele, apoiada nas histórias de Wickham, e só descobre os erros do próprio julgamento depois de recusar um pedido de casamento.",
     "nivel_dificuldade": "Avançado",
     "tags": [
       "clássico",
@@ -21,7 +21,7 @@
     "autor": "Jane Austen",
     "genero": "Romance",
     "idioma": "en",
-    "resumo": "As irmãs Elinor e Marianne Dashwood perdem a casa e o conforto após a morte do pai. Uma é contida e racional, a outra apaixonada e impulsiva, e cada uma enfrenta o amor a seu modo. O romance contrasta razão e emoção com ironia fina.",
+    "resumo": "Com a morte do pai, as irmãs Elinor e Marianne Dashwood perdem a casa e vão morar num chalé no campo com a mãe. Elinor é contida e racional; Marianne, apaixonada, se entrega ao charmoso Willoughby. Enquanto uma esconde a dor por Edward Ferrars e a outra sofre abertamente, o romance compara duas formas de enfrentar o amor.",
     "nivel_dificuldade": "Avançado",
     "tags": [
       "clássico",
@@ -53,7 +53,7 @@
     "autor": "Jane Austen",
     "genero": "Romance",
     "idioma": "en",
-    "resumo": "Anne Elliot recusou o pedido de casamento do capitão Wentworth anos atrás, persuadida por uma amiga próxima da família. Quando ele volta, rico e bem-sucedido, os dois precisam lidar com mágoas antigas. É o livro mais maduro e melancólico de Austen.",
+    "resumo": "Aos vinte e sete anos, Anne Elliot ainda pensa em Frederick Wentworth, com quem rompeu o noivado oito anos antes por conselho de uma madrinha. Ele volta rico e respeitado como capitão da marinha, e os dois passam a se encontrar em Lyme e em Bath. Entre cortesia e silêncio, o livro mostra se existe uma segunda chance quando os dois já mudaram.",
     "nivel_dificuldade": "Avançado",
     "tags": [
       "clássico",
@@ -69,7 +69,7 @@
     "autor": "Jane Austen",
     "genero": "Romance",
     "idioma": "en",
-    "resumo": "Catherine Morland adora romances góticos e imagina mistérios sombrios ao visitar uma antiga abadia. A realidade, porém, é bem menos dramática do que sua imaginação. A obra brinca com a literatura da época e com a ingenuidade de quem cresce.",
+    "resumo": "Catherine Morland, de dezessete anos, vive devorando romances góticos e vai a Bath, onde conhece Henry Tilney e as irmãs Thorpe. Convidada para a abadia de Northanger, ela imagina segredos horríveis e crimes escondidos nos corredores. Ao ver que a realidade é bem menos sombria, aprende a separar a ficção da vida, com humor e sem perder o encanto.",
     "nivel_dificuldade": "Avançado",
     "tags": [
       "clássico",
@@ -117,7 +117,7 @@
     "autor": "Emily Brontë",
     "genero": "Ficção Clássica",
     "idioma": "en",
-    "resumo": "Nas charnecas de Yorkshire, a ligação intensa entre Heathcliff e Catherine atravessa gerações de amor, ciúme e vingança. A história é contada por vozes diferentes, o que dá ao romance um tom sombrio e turbulento. Um dos livros mais intensos da literatura inglesa.",
+    "resumo": "Nos campos de Yorkshire, o órfão Heathcliff é criado na casa dos Earnshaw e se apaixona por Catherine, que acaba se casando com o rico Edgar Linton. Ferido, ele some e volta anos depois rico, decidido a se vingar das duas famílias. A história é contada pela criada Nelly Dean a um inquilino curioso, o senhor Lockwood.",
     "nivel_dificuldade": "Avançado",
     "tags": [
       "clássico",
@@ -229,7 +229,7 @@
     "autor": "Charles Dickens",
     "genero": "Ficção Clássica",
     "idioma": "en",
-    "resumo": "Na cidade industrial de Coketown, o senhor Gradgrind educa os filhos só com fatos e números, sem espaço para imaginação. A rigidez cobra um preço alto nas escolhas e nos sentimentos de seus filhos. Uma crítica curta e direta ao utilitarismo.",
+    "resumo": "Em Coketown, cidade industrial cinzenta, o professor Thomas Gradgrind educa os filhos e os alunos só com fatos e números, sem espaço para imaginação. Sua filha Louisa casa sem amor com o banqueiro Bounderby, e o filho Tom se mete em dívidas. Ao lado, o operário honesto Stephen Blackpool paga o preço de uma sociedade que trata pessoas como máquinas.",
     "nivel_dificuldade": "Avançado",
     "tags": [
       "clássico",
@@ -245,7 +245,7 @@
     "autor": "Charles Dickens",
     "genero": "Ficção Clássica",
     "idioma": "en",
-    "resumo": "O avarento Scrooge odeia o Natal e é visitado, em uma noite, por três espíritos que lhe mostram passado, presente e futuro. O que ele vê o obriga a repensar a forma como trata os outros. Um conto curto e caloroso sobre generosidade e segunda chance.",
+    "resumo": "Ebenezer Scrooge, um velho avarento, odeia o Natal e trata mal o empregado Bob Cratchit. Na véspera, o fantasma do ex-sócio Marley o avisa de que três espíritos virão: o do Natal Passado, o do Presente e o do Futuro. Depois de ver sua própria vida e a morte do pequeno Tiny Tim, Scrooge acorda decidido a mudar.",
     "nivel_dificuldade": "Intermediário",
     "tags": [
       "clássico",
@@ -357,7 +357,7 @@
     "autor": "Thomas Hardy",
     "genero": "Ficção Clássica",
     "idioma": "en",
-    "resumo": "Num momento de embriaguez, Michael Henchard vende a esposa e a filha e, anos depois, se torna prefeito de Casterbridge. O passado volta a cobrar a conta de suas decisões. Um estudo sobre orgulho, culpa e queda.",
+    "resumo": "Numa feira rural, o lavrador Michael Henchard, bêbado, vende a esposa Susan e a filha pequena por cinco guinéus. Dezoito anos depois, é o prefeito respeitado de Casterbridge, mas Susan reaparece e o segredo volta à tona. Com o orgulho, o temperamento e a rivalidade com o jovem escocês Donald Farfrae, Henchard destrói a própria vida.",
     "nivel_dificuldade": "Avançado",
     "tags": [
       "clássico",
@@ -373,7 +373,7 @@
     "autor": "Mark Twain",
     "genero": "Aventura",
     "idioma": "en",
-    "resumo": "Tom é um menino travesso de uma cidadezinha à beira do Mississippi, sempre às voltas com travessuras e planos mirabolantes. Uma noite, ele e o amigo Huck testemunham algo que muda a brincadeira de rumo. Um retrato bem-humorado da infância americana.",
+    "resumo": "Em St Petersburg, uma cidade às margens do Mississippi, Tom Sawyer foge da escola, engana os amigos para caiarem a cerca da tia Polly e se apaixona por Becky Thatcher. À noite, no cemitério, ele e Huck Finn veem um assassinato cometido pelo Injun Joe. O medo de contar a verdade os leva a uma caverna, onde Tom e Becky se perdem.",
     "nivel_dificuldade": "Intermediário",
     "tags": [
       "clássico",
@@ -405,7 +405,7 @@
     "autor": "Mark Twain",
     "genero": "Aventura",
     "idioma": "en",
-    "resumo": "Dois meninos muito parecidos, um príncipe e um mendigo, trocam de lugar por acaso na Inglaterra do século XVI. Cada um descobre como vive o outro lado da sociedade. Uma aventura leve com crítica social por trás.",
+    "resumo": "Na Londres de 1547, o príncipe Edward e o menino pobre Tom Canty, que são idênticos, trocam de roupa por brincadeira. Tom é levado ao palácio e todos acham que ele é o príncipe; Edward, expulso, passa pelas ruas e conhece a miséria. Com a ajuda do cavaleiro Miles Hendon, Edward luta para voltar antes da coroação.",
     "nivel_dificuldade": "Intermediário",
     "tags": [
       "clássico",
@@ -421,7 +421,7 @@
     "autor": "Mark Twain",
     "genero": "Ficção Clássica",
     "idioma": "en",
-    "resumo": "Um engenheiro americano acorda na Inglaterra medieval, na corte do Rei Arthur, e tenta modernizar o reino com tecnologia. O choque entre épocas rende humor e reflexões amargas. Uma sátira sobre progresso, poder e superstição.",
+    "resumo": "Hank Morgan, mecânico de uma fábrica de Connecticut, leva uma pancada na cabeça e acorda no ano 528, na corte do rei Arthur. Usa o que sabe de ciência, como a previsão de um eclipse, para virar o homem mais poderoso do reino, o Chefe. Tenta trazer telégrafo, escolas e fábricas, mas a Igreja e os cavaleiros resistem, e o final é de guerra.",
     "nivel_dificuldade": "Avançado",
     "tags": [
       "clássico",
@@ -437,7 +437,7 @@
     "autor": "Nathaniel Hawthorne",
     "genero": "Ficção Clássica",
     "idioma": "en",
-    "resumo": "Na Boston puritana, Hester Prynne é obrigada a usar uma letra vermelha no peito por um pecado público, mas se recusa a revelar o pai da criança. Enquanto a comunidade a condena, outro personagem carrega a culpa em silêncio. Um romance denso sobre pecado, hipocrisia e dignidade.",
+    "resumo": "Na Boston puritana do século XVII, Hester Prynne tem uma filha, Pearl, fora do casamento e é obrigada a usar no peito a letra A, de adúltera. Ela se recusa a revelar quem é o pai. Enquanto isso o pastor Arthur Dimmesdale esconde o segredo e adoece de culpa, e o marido de Hester, agora com outro nome, procura vingança.",
     "nivel_dificuldade": "Avançado",
     "tags": [
       "clássico",
@@ -485,7 +485,7 @@
     "autor": "Oscar Wilde",
     "genero": "Ficção Clássica",
     "idioma": "en",
-    "resumo": "Dorian Gray deseja permanecer jovem para sempre, e quem envelhece e carrega as marcas de sua vida desregrada é o seu retrato. Seguindo conselhos de um amigo cínico, ele mergulha em prazeres sem se preocupar com as consequências. Um romance sobre beleza, vaidade e consciência.",
+    "resumo": "O pintor Basil Hallward faz o retrato do belo Dorian Gray, e Lord Henry Wotton o convence de que a juventude é tudo o que importa. Dorian deseja que o quadro envelheça no lugar dele, e o desejo se realiza. Enquanto leva uma vida cada vez mais cruel, o rosto de Dorian continua intacto e a pintura guarda o preço de cada ato.",
     "nivel_dificuldade": "Avançado",
     "tags": [
       "clássico",
@@ -501,7 +501,7 @@
     "autor": "Robert Louis Stevenson",
     "genero": "Aventura",
     "idioma": "en",
-    "resumo": "O jovem Jim Hawkins encontra um mapa do tesouro e embarca numa expedição com piratas disfarçados na tripulação. O carismático Long John Silver o encanta e ameaça ao mesmo tempo. A aventura que moldou a imagem moderna dos piratas.",
+    "resumo": "Jim Hawkins, filho de uma estalajadeira, encontra um mapa do tesouro entre as coisas de um velho pirata morto. Ele embarca no navio Hispaniola com o fidalgo Trelawney, o doutor Livesey e o cozinheiro de uma perna só, Long John Silver, que esconde planos de motim. Na ilha, o grupo disputa o tesouro com piratas e com Ben Gunn, abandonado há anos.",
     "nivel_dificuldade": "Intermediário",
     "tags": [
       "clássico",
@@ -533,7 +533,7 @@
     "autor": "Robert Louis Stevenson",
     "genero": "Aventura",
     "idioma": "en",
-    "resumo": "David Balfour é sequestrado por um tio ganancioso e acaba nos mares e nas Highlands escocesas ao lado do destemido Alan Breck. Os dois fogem, brigam e se tornam aliados. Uma aventura histórica cheia de perseguições.",
+    "resumo": "Em 1751, o órfão David Balfour, de dezessete anos, vai ao encontro do tio Ebenezer, que o engana e o vende a um navio rumo à América. Depois de um naufrágio, David encontra o jacobita Alan Breck Stewart, e os dois fogem pelas montanhas da Escócia, perseguidos pelos soldados ingleses. A amizade entre eles, tão diferentes, dá força à aventura.",
     "nivel_dificuldade": "Intermediário",
     "tags": [
       "clássico",
@@ -565,7 +565,7 @@
     "autor": "Mary Shelley",
     "genero": "Ficção Clássica",
     "idioma": "en",
-    "resumo": "O cientista Victor Frankenstein dá vida a uma criatura e foge assustado da própria obra. Rejeitada e solitária, a criatura passa a perseguir o criador. Um livro precursor da ficção científica sobre ambição e responsabilidade.",
+    "resumo": "O estudante Victor Frankenstein monta uma criatura com partes de corpos e a faz viver, mas foge horrorizado e a abandona. Rejeitada por todos, a criatura aprende a falar lendo livros, procura o criador e pede uma companheira. Quando Victor se recusa, ela se vinga dele, e a história, contada nas cartas de um capitão no Ártico, termina em perseguição.",
     "nivel_dificuldade": "Avançado",
     "tags": [
       "clássico",
@@ -581,7 +581,7 @@
     "autor": "H. G. Wells",
     "genero": "Ficção Científica",
     "idioma": "en",
-    "resumo": "Um inventor viaja ao futuro distante e encontra uma humanidade dividida entre os frágeis Eloi e os sombrios Morlocks. O que ele vê o faz refletir sobre desigualdade e destino. Uma novela curta que ajudou a definir o gênero.",
+    "resumo": "Um inventor, chamado só de Viajante do Tempo, mostra aos amigos uma máquina e parte para o ano 802.701. Lá encontra os Eloi, gente frágil e despreocupada, e descobre que sob a terra vivem os Morlocks, que os caçam. Depois de perder a máquina e fazer amizade com a jovem Weena, ele ainda avança para um futuro em que a Terra está morrendo.",
     "nivel_dificuldade": "Intermediário",
     "tags": [
       "clássico",
@@ -597,7 +597,7 @@
     "autor": "H. G. Wells",
     "genero": "Ficção Científica",
     "idioma": "en",
-    "resumo": "Cilindros vindos de Marte caem na Inglaterra e deles saem máquinas gigantes que devastam tudo. Um narrador comum tenta sobreviver ao caos e à destruição. A história que inspirou incontáveis relatos de invasão alienígena.",
+    "resumo": "Cilindros vindos de Marte caem na região de Surrey, e deles saem máquinas de três pernas que disparam um raio de calor e soltam fumaça negra. O narrador, sem nome, foge com a esposa e depois sozinho enquanto Londres entra em pânico. Ninguém consegue deter os invasores, até que algo muito pequeno faz o trabalho.",
     "nivel_dificuldade": "Intermediário",
     "tags": [
       "clássico",
@@ -613,7 +613,7 @@
     "autor": "H. G. Wells",
     "genero": "Ficção Científica",
     "idioma": "en",
-    "resumo": "Um cientista descobre como tornar-se invisível e, sem conseguir reverter o efeito, perde o controle sobre a própria vida. Ele aterroriza uma vila inglesa enquanto é caçado. Uma narrativa de suspense sobre poder e isolamento.",
+    "resumo": "Em pleno inverno, um desconhecido todo enfaixado chega à vila de Iping e se tranca numa pousada. Ele é Griffin, um cientista que descobriu como ficar invisível e não sabe voltar atrás. Sem dinheiro, perseguido e cada vez mais violento, procura abrigo com o antigo colega doutor Kemp, que precisa decidir o que fazer.",
     "nivel_dificuldade": "Intermediário",
     "tags": [
       "clássico",
@@ -629,7 +629,7 @@
     "autor": "H. G. Wells",
     "genero": "Ficção Científica",
     "idioma": "en",
-    "resumo": "Um náufrago chega a uma ilha onde o doutor Moreau transforma animais em criaturas quase humanas. A convivência com elas revela violência e perigo. Uma novela inquietante sobre ciência sem limites.",
+    "resumo": "Edward Prendick sobrevive a um naufrágio e é levado a uma ilha onde o doutor Moreau e o assistente Montgomery fazem experimentos. As criaturas que andam por lá são animais transformados à força em quase humanos, obrigados a seguir uma Lei. Quando a cirurgia perde o controle, a ilha vira um lugar de medo para Prendick.",
     "nivel_dificuldade": "Intermediário",
     "tags": [
       "clássico",
@@ -645,7 +645,7 @@
     "autor": "Joseph Conrad",
     "genero": "Ficção Clássica",
     "idioma": "en",
-    "resumo": "O marinheiro Marlow sobe um rio africano em busca de Kurtz, um agente colonial lendário que se isolou na selva. A viagem expõe a brutalidade do colonialismo e os limites da civilização. Uma novela curta, densa e ambígua.",
+    "resumo": "Numa noite no Tâmisa, o marinheiro Marlow conta aos companheiros do barco como subiu o rio Congo a serviço de uma empresa de marfim. O objetivo era encontrar Kurtz, um agente que virou lenda e que ninguém vê há meses. A viagem pela selva mostra a crueldade da colonização e o que acontece com o homem quando longe de qualquer lei.",
     "nivel_dificuldade": "Avançado",
     "tags": [
       "clássico",
@@ -677,7 +677,7 @@
     "autor": "Arthur Conan Doyle",
     "genero": "Mistério e Suspense",
     "idioma": "en",
-    "resumo": "Uma antiga maldição fala de um cão espectral que assombra a família Baskerville nos pântanos de Devon. Sherlock Holmes e o doutor Watson investigam a morte misteriosa de Sir Charles. Um dos casos mais famosos do detetive.",
+    "resumo": "Sir Charles Baskerville aparece morto nos pântanos de Devonshire, e diz a lenda que um cão gigante e sobrenatural persegue a família. Holmes envia Watson para proteger o herdeiro, Sir Henry, na mansão isolada, enquanto investiga por conta própria. Entre a névoa, o lamaçal de Grimpen e vizinhos de aparência suspeita, o perigo cresce a cada noite.",
     "nivel_dificuldade": "Intermediário",
     "tags": [
       "clássico",
@@ -693,7 +693,7 @@
     "autor": "Arthur Conan Doyle",
     "genero": "Mistério e Suspense",
     "idioma": "en",
-    "resumo": "Watson conhece Sherlock Holmes e divide com ele um apartamento em Londres, logo depois testemunhando seu método de dedução. Os dois investigam uma morte misteriosa com uma palavra escrita na parede. É a obra que apresenta a dupla ao mundo.",
+    "resumo": "O doutor Watson volta ferido do Afeganistão e divide um apartamento na Baker Street com um sujeito estranho, Sherlock Holmes. Quando um homem aparece morto numa casa vazia de Londres, com a palavra RACHE escrita na parede, Holmes mostra seu método de dedução pela primeira vez. A segunda metade do livro viaja ao deserto de Utah para explicar o motivo do crime.",
     "nivel_dificuldade": "Intermediário",
     "tags": [
       "clássico",
@@ -709,7 +709,7 @@
     "autor": "Arthur Conan Doyle",
     "genero": "Mistério e Suspense",
     "idioma": "en",
-    "resumo": "Doze contos acompanham Holmes e Watson em casos que vão de disfarces a mistérios domésticos. Cada história se resolve pela observação atenta e pelo raciocínio do detetive. É a porta de entrada ideal para o universo de Baker Street.",
+    "resumo": "Doze contos narrados por Watson mostram Holmes em casos bem diferentes: o rei da Boêmia e a astuta Irene Adler, a Liga dos Cabeças-Vermelhas, a banda malhada que mata dentro de um quarto trancado. Cada história é curta, tem um enigma e uma solução que parece óbvia só depois que Holmes explica.",
     "nivel_dificuldade": "Intermediário",
     "tags": [
       "clássico",
@@ -725,7 +725,7 @@
     "autor": "Rudyard Kipling",
     "genero": "Aventura",
     "idioma": "en",
-    "resumo": "Mogli, um menino criado por lobos na selva indiana, aprende as leis da mata com ajuda de Baloo e Bagheera, enquanto escapa do tigre Shere Khan. O livro reúne contos de animais e de crescimento. Uma obra clássica de aventura e identidade.",
+    "resumo": "Mogli, um menino criado por lobos na selva indiana, aprende a Lei da Selva com o urso Balu e a pantera Bagheera. O tigre Shere Khan quer matá-lo, e Mogli precisa decidir entre os animais e o povo da aldeia. Os contos incluem também Rikki-Tikki-Tavi, a mangusto que defende uma casa de cobras.",
     "nivel_dificuldade": "Intermediário",
     "tags": [
       "clássico",
@@ -741,7 +741,7 @@
     "autor": "Rudyard Kipling",
     "genero": "Aventura",
     "idioma": "en",
-    "resumo": "Kim, órfão de pai irlandês que vive nas ruas da Índia britânica, acompanha um lama em busca de um rio sagrado e acaba envolvido em espionagem. O romance mistura espiritualidade e aventura. Retrata a Índia colonial com vivacidade.",
+    "resumo": "Kim, órfão de um soldado irlandês, vive nas ruas de Lahore, na Índia britânica, e vira discípulo de um velho lama tibetano que procura um rio sagrado. No caminho, é recrutado como espião pelo Grande Jogo, a disputa secreta entre a Inglaterra e a Rússia. O livro é uma aventura pela estrada, cheia de cores, línguas e religiões da Índia.",
     "nivel_dificuldade": "Avançado",
     "tags": [
       "clássico",
@@ -773,7 +773,7 @@
     "autor": "Jonathan Swift",
     "genero": "Aventura",
     "idioma": "en",
-    "resumo": "Lemuel Gulliver visita terras estranhas, como a dos minúsculos habitantes de Lilliput e a dos gigantes de Brobdingnag. Cada viagem funciona como espelho satírico da política e da sociedade da época. Uma aventura fantástica com crítica afiada.",
+    "resumo": "Lemuel Gulliver, médico de navio, faz quatro viagens que dão errado: à ilha de Lilliput, onde os habitantes têm quinze centímetros; a Brobdingnag, terra de gigantes; à ilha voadora de Laputa; e ao país dos Houyhnhnms, cavalos que falam e governam. Cada lugar serve de espelho para criticar a política, a ciência e os costumes da Inglaterra de Swift.",
     "nivel_dificuldade": "Avançado",
     "tags": [
       "clássico",
@@ -837,7 +837,7 @@
     "autor": "F. Scott Fitzgerald",
     "genero": "Ficção Clássica",
     "idioma": "en",
-    "resumo": "O narrador Nick Carraway observa o vizinho milionário Jay Gatsby, que dá festas luxuosas na esperança de reencontrar Daisy, seu antigo amor. Por trás do brilho dos anos 1920 há ilusão, desigualdade e perda. Um retrato curto e elegante do sonho americano.",
+    "resumo": "No verão de 1922, Nick Carraway se muda para Long Island e vira vizinho do misterioso Jay Gatsby, que dá festas enormes todo fim de semana. Aos poucos Nick descobre que tudo aquilo serve para reencontrar Daisy, prima dele, hoje casada com o rico Tom Buchanan. O sonho de recuperar o passado termina em tragédia.",
     "nivel_dificuldade": "Intermediário",
     "tags": [
       "sonho americano",
@@ -1589,7 +1589,7 @@
     "autor": "Lewis Carroll",
     "genero": "Fantasia",
     "idioma": "en",
-    "resumo": "Alice segue um coelho branco por uma toca e chega a um mundo onde nada obedece à lógica. Ela encontra o Chapeleiro Maluco, a Rainha de Copas e muitas outras figuras estranhas. Um clássico de humor e imaginação.",
+    "resumo": "Numa tarde quente, Alice segue um coelho branco de colete até uma toca e cai num mundo onde tudo muda de tamanho e de regra. Ela encontra o Gato de Cheshire, o Chapeleiro Maluco num chá sem fim e a Rainha de Copas, que manda cortar cabeças por qualquer coisa. O livro brinca com a lógica, a linguagem e o jeito dos sonhos.",
     "nivel_dificuldade": "Intermediário",
     "tags": [
       "clássico",
@@ -1605,7 +1605,7 @@
     "autor": "Lewis Carroll",
     "genero": "Fantasia",
     "idioma": "en",
-    "resumo": "Alice atravessa um espelho e entra num mundo organizado como um tabuleiro de xadrez. Lá ela encontra Tweedledum, Tweedledee e Humpty Dumpty. A continuação cheia de charadas e jogos de palavras.",
+    "resumo": "Alice atravessa o espelho da sala e chega a um mundo organizado como um tabuleiro de xadrez, onde tudo é ao contrário. Ela encontra a Rainha Vermelha, os gêmeos Tweedledum e Tweedledee, o Humpty Dumpty e o poema do Jabberwocky. Seu objetivo é chegar ao último quadrado para virar rainha.",
     "nivel_dificuldade": "Intermediário",
     "tags": [
       "clássico",
@@ -1621,7 +1621,7 @@
     "autor": "L. Frank Baum",
     "genero": "Fantasia",
     "idioma": "en",
-    "resumo": "Um ciclone leva Dorothy do Kansas à terra de Oz, e ela segue a estrada de tijolos amarelos até o Mágico. No caminho, junta-se ao Espantalho, ao Homem de Lata e ao Leão Covarde. Uma aventura sobre coragem, inteligência e coração.",
+    "resumo": "Um ciclone leva a casa de Dorothy, do Kansas, até a terra de Oz. Para voltar, ela segue a estrada de tijolos amarelos até a Cidade das Esmeraldas, onde mora o Mágico, e no caminho faz amizade com o Espantalho, o Homem de Lata e o Leão Covarde, cada um em busca de algo. No livro, os sapatos mágicos são de prata, não vermelhos como no filme.",
     "nivel_dificuldade": "Intermediário",
     "tags": [
       "clássico",
@@ -1653,7 +1653,7 @@
     "autor": "Frances Hodgson Burnett",
     "genero": "Infantil",
     "idioma": "en",
-    "resumo": "A órfã e mimada Mary Lennox vai morar numa mansão em Yorkshire e descobre um jardim trancado há anos. Com Colin e Dickon, ela devolve vida ao lugar e a si mesma. Uma história de cura, amizade e natureza.",
+    "resumo": "Mary Lennox, uma menina mimada, perde os pais na Índia e vai morar numa mansão enorme em Yorkshire com um tio distante. Ali ela ouve choros à noite, descobre um jardim trancado há dez anos e ganha a ajuda do menino Dickon. Cuidar do jardim muda Mary e também o primo doente, Colin, escondido num quarto da casa.",
     "nivel_dificuldade": "Intermediário",
     "tags": [
       "clássico",
@@ -1669,7 +1669,7 @@
     "autor": "Frances Hodgson Burnett",
     "genero": "Infantil",
     "idioma": "en",
-    "resumo": "Sara Crewe, menina rica, estuda num internato em Londres até que a morte do pai a deixa pobre. Mesmo tratada como criada, ela preserva a imaginação e a gentileza. Uma história sobre dignidade e esperança.",
+    "resumo": "Sara Crewe, filha de um pai rico, estuda num internato de Londres e é tratada como princesa pela diretora, a senhorita Minchin. Quando o pai morre e a fortuna desaparece, Sara é mandada para um sótão e vira criada da escola. Ela se agarra à imaginação e à amizade da copeira Becky, até que o vizinho do lado muda o seu destino.",
     "nivel_dificuldade": "Intermediário",
     "tags": [
       "clássico",
@@ -1701,7 +1701,7 @@
     "autor": "L. M. Montgomery",
     "genero": "Juvenil",
     "idioma": "en",
-    "resumo": "Anne Shirley, uma órfã ruiva e cheia de imaginação, chega por engano à casa dos irmãos Cuthbert, na Ilha do Príncipe Eduardo. Com seu jeito expansivo, ela conquista a comunidade e a família. Uma história calorosa de pertencimento.",
+    "resumo": "Os irmãos Marilla e Matthew Cuthbert pedem um menino para ajudar na fazenda, mas por engano chega Anne Shirley, uma órfã de onze anos, ruiva e muito falante. Ela transforma a vida em Avonlea, na Ilha do Príncipe Eduardo, com a imaginação, a amizade com Diana e a rivalidade com Gilbert Blythe. A história acompanha seu crescimento até a idade adulta.",
     "nivel_dificuldade": "Intermediário",
     "tags": [
       "clássico",
@@ -1717,7 +1717,7 @@
     "autor": "Anna Sewell",
     "genero": "Infantil",
     "idioma": "en",
-    "resumo": "A história é contada pelo próprio cavalo Beauty, que passa por donos gentis e cruéis ao longo da vida. O livro denuncia maus-tratos e defende o respeito pelos animais. Um clássico comovente sobre compaixão.",
+    "resumo": "Black Beauty, um cavalo de pelagem negra, conta a própria vida: dos prados da infância na Inglaterra a donos gentis, a donos cruéis e aos anos puxando carros de aluguel em Londres. Pelo caminho encontra a égua Ginger e o pônei Merrylegs, e vê o que o cansaço e os maus-tratos fazem com os animais. O livro foi escrito para pedir bondade com os cavalos.",
     "nivel_dificuldade": "Intermediário",
     "tags": [
       "clássico",
@@ -1733,7 +1733,7 @@
     "autor": "Kenneth Grahame",
     "genero": "Infantil",
     "idioma": "en",
-    "resumo": "Toupeira, Rato d'Água, Texugo e o impulsivo Sapo vivem aventuras às margens de um rio inglês. A paixão do Sapo por automóveis o leva a confusões em série. Uma história afetuosa sobre amizade e vida simples.",
+    "resumo": "A Toupeira, cansada da faxina de primavera, sai de casa e conhece o Rato d'Água na beira do rio. Os dois fazem amizade com o sábio Texugo e o Sapo, rico e doido por carros, que acaba preso por roubá-los. Quando o Sapo foge, os amigos tentam retomar o castelo dele, tomado pelos furões e doninhas da Floresta Selvagem.",
     "nivel_dificuldade": "Intermediário",
     "tags": [
       "clássico",
@@ -8965,7 +8965,7 @@
     "autor": "Frederick Douglass",
     "genero": "Biografia e Memórias",
     "idioma": "en",
-    "resumo": "Publicado em 1845, o livro conta a vida de Douglass, nascido escravizado, que aprendeu a ler e fugiu para o Norte. O relato denuncia a violência da escravidão e a força da educação. Um clássico da literatura americana.",
+    "resumo": "Frederick Douglass conta como nasceu escravizado em Maryland, sem saber a própria idade, e como aprendeu a ler escondido, mesmo proibido. Relata os castigos, a luta corpo a corpo contra o feitor Covey e a fuga para o Norte em 1838. Publicado em 1845, o livro virou uma das armas mais fortes do movimento abolicionista.",
     "nivel_dificuldade": "Avançado",
     "tags": [
       "escravidão",
@@ -9733,7 +9733,7 @@
     "autor": "G. K. Chesterton",
     "genero": "Espiritualidade",
     "idioma": "en",
-    "resumo": "Chesterton recorre à história da humanidade para defender o caráter singular do cristianismo e de Cristo. A obra influenciou muitos leitores, entre eles o próprio Lewis. Um clássico de escrita vivaz e argumentos fortes.",
+    "resumo": "Chesterton escreve em 1925 uma resposta às histórias da humanidade que tratam o homem como mais um animal. Na primeira parte olha para a pré-história, a arte das cavernas e as religiões antigas; na segunda, para a figura de Jesus de Nazaré. O tom é cheio de humor e paradoxos, e o raciocínio vai de imagens simples a grandes conclusões.",
     "nivel_dificuldade": "Avançado",
     "tags": [
       "cristianismo",
@@ -10293,7 +10293,7 @@
     "autor": "Kahlil Gibran",
     "genero": "Poesia",
     "idioma": "en",
-    "resumo": "Em poemas em prosa, o profeta Almustafa, antes de partir, responde a perguntas sobre amor, trabalho, alegria, liberdade e morte. A linguagem é simples e poética. Um clássico de sabedoria que atravessa culturas e crenças.",
+    "resumo": "Almustafa, o profeta, passou doze anos na cidade de Orphalese e espera um navio que o levará para casa. Antes de partir, o povo lhe pede conselhos sobre o amor, o casamento, os filhos, o trabalho, a alegria, a dor e a morte. As respostas vêm em vinte e seis textos curtos, em prosa poética, que se leem em poucos minutos cada um.",
     "nivel_dificuldade": "Intermediário",
     "tags": [
       "poesia",
@@ -10389,7 +10389,7 @@
     "autor": "William Shakespeare",
     "genero": "Teatro",
     "idioma": "en",
-    "resumo": "O príncipe Hamlet recebe a visita do fantasma do pai, que diz ter sido assassinado pelo tio Cláudio, agora no trono. Dividido entre dúvida e vingança, ele finge loucura e vê tudo desmoronar. Uma das maiores tragédias do teatro.",
+    "resumo": "O príncipe Hamlet, da Dinamarca, recebe a visita do fantasma do pai, que conta ter sido envenenado pelo irmão, Cláudio, agora rei e casado com a viúva. Para ter certeza, Hamlet finge loucura e encena uma peça diante da corte. A dúvida entre agir e esperar custa a vida de Ofélia, Polônio e, num duelo final, de quase todos.",
     "nivel_dificuldade": "Avançado",
     "tags": [
       "shakespeare",
@@ -10405,7 +10405,7 @@
     "autor": "William Shakespeare",
     "genero": "Teatro",
     "idioma": "en",
-    "resumo": "Depois de ouvir de três bruxas que será rei, o general escocês Macbeth, incentivado pela esposa, mata o rei Duncan para tomar o trono. A culpa e a paranoia o consomem. Uma tragédia sobre ambição e consciência.",
+    "resumo": "Três bruxas dizem ao general escocês Macbeth que ele será rei, e a esposa, lady Macbeth, o empurra para assassinar o rei Duncan. Depois do crime, Macbeth manda matar também o amigo Banquo e passa a ver o fantasma dele. A culpa enlouquece o casal, e a profecia da floresta de Birnam se cumpre de um jeito que ele não esperava.",
     "nivel_dificuldade": "Avançado",
     "tags": [
       "shakespeare",
@@ -10421,7 +10421,7 @@
     "autor": "William Shakespeare",
     "genero": "Teatro",
     "idioma": "en",
-    "resumo": "Em Verona, Romeu e Julieta, de famílias inimigas, se apaixonam e se casam em segredo. A rivalidade entre as casas leva a um desfecho trágico. A história de amor mais famosa do teatro.",
+    "resumo": "Em Verona, as famílias Montéquio e Capuleto vivem em guerra, mas Romeu e Julieta se conhecem num baile de máscaras e se apaixonam. Frei Lourenço os casa em segredo, e uma briga de rua termina com a morte de Mercúcio e Teobaldo e o exílio de Romeu. Um plano para fingir a morte de Julieta dá errado, e os dois acabam mortos, o que enfim reconcilia as famílias.",
     "nivel_dificuldade": "Avançado",
     "tags": [
       "shakespeare",
@@ -10437,7 +10437,7 @@
     "autor": "William Shakespeare",
     "genero": "Teatro",
     "idioma": "en",
-    "resumo": "O general mouro Otelo é manipulado por seu alferes Iago, que o convence de que a esposa, Desdêmona, o trai. O ciúme destrói tudo. Uma tragédia sobre confiança e engano.",
+    "resumo": "O general mouro Otelo, a serviço de Veneza, se casa em segredo com Desdêmona e é enviado a Chipre. Iago, ressentido por ter sido preterido na promoção, planta a suspeita de que a esposa o trai com o tenente Cássio, usando um lenço como falsa prova. O ciúme leva Otelo a cometer um crime que ele só entende tarde demais.",
     "nivel_dificuldade": "Avançado",
     "tags": [
       "shakespeare",
@@ -10453,7 +10453,7 @@
     "autor": "William Shakespeare",
     "genero": "Teatro",
     "idioma": "en",
-    "resumo": "O rei Lear decide dividir o reino entre as filhas conforme a declaração de amor de cada uma e rejeita a mais sincera, Cordélia. A decisão leva a traições, loucura e perdas. Uma tragédia sobre poder, velhice e família.",
+    "resumo": "O velho rei Lear decide dividir o reino entre as três filhas conforme o amor que declaram. Goneril e Regan o adulam; Cordélia, que não sabe bajular, é deserdada. Traído pelas duas, Lear vaga numa tempestade ao lado do Bobo, enquanto, numa história paralela, o conde de Gloucester é enganado pelo filho bastardo Edmund.",
     "nivel_dificuldade": "Avançado",
     "tags": [
       "shakespeare",
@@ -10469,7 +10469,7 @@
     "autor": "William Shakespeare",
     "genero": "Teatro",
     "idioma": "en",
-    "resumo": "Numa floresta perto de Atenas, fadas, atores amadores e jovens apaixonados se misturam, e uma poção de amor causa confusões. A magia transforma tudo em sonho e riso. Uma comédia leve e fantasiosa.",
+    "resumo": "Em Atenas, Hermia ama Lysander, mas o pai quer casá-la com Demetrius, e Helena, apaixonada por Demetrius, os segue pela floresta. Lá, o rei das fadas, Oberon, manda o duende Puck pingar uma poção do amor nos olhos errados, e tudo se embaralha. Enquanto isso, o tecelão Bottom ganha cabeça de burro e conquista a rainha Titânia.",
     "nivel_dificuldade": "Avançado",
     "tags": [
       "shakespeare",
@@ -10485,7 +10485,7 @@
     "autor": "William Shakespeare",
     "genero": "Teatro",
     "idioma": "en",
-    "resumo": "O mago Próspero, exilado numa ilha, provoca uma tempestade para trazer seus inimigos até ele e decidir entre vingança e perdão. Entre espíritos e criaturas, a filha Miranda descobre o amor. A última grande peça de Shakespeare.",
+    "resumo": "Próspero, antigo duque de Milão, vive numa ilha há doze anos com a filha Miranda, o espírito Ariel e o escravo Caliban. Ao saber que o irmão traidor passa de navio por ali, provoca uma tempestade e traz todos para a ilha. Entre feitiços, o amor de Miranda por Ferdinand e uma conspiração desajeitada, ele escolhe perdoar e abrir mão de sua magia.",
     "nivel_dificuldade": "Avançado",
     "tags": [
       "shakespeare",
@@ -10501,7 +10501,7 @@
     "autor": "William Shakespeare",
     "genero": "Teatro",
     "idioma": "en",
-    "resumo": "Beatriz e Benedito trocam farpas espirituosas, e os amigos tramam para que se apaixonem. Em paralelo, uma intriga ameaça o casamento de Hero e Cláudio. Uma comédia de diálogos brilhantes.",
+    "resumo": "Em Messina, os soldados voltam da guerra, e Beatriz e Benedito, que vivem trocando farpas, são enganados pelos amigos, que os fazem acreditar que cada um ama o outro em segredo. Em paralelo, o vilão Dom João arma uma intriga que quase destrói o casamento de Cláudio e Hero. Os guardas atrapalhados do guarda-mor Dogberry ajudam a revelar a verdade.",
     "nivel_dificuldade": "Avançado",
     "tags": [
       "shakespeare",
@@ -10517,7 +10517,7 @@
     "autor": "William Shakespeare",
     "genero": "Teatro",
     "idioma": "en",
-    "resumo": "Depois de um naufrágio, Viola se disfarça de homem e se apaixona pelo duque a quem serve, enquanto uma condessa se apaixona por ela. A confusão de identidades rende humor e emoção. Uma comédia romântica clássica.",
+    "resumo": "Depois de um naufrágio, Viola chega à Ilíria e, achando que o irmão gêmeo Sebastian morreu, se disfarça de rapaz com o nome de Cesário e serve ao duque Orsino. Ela se apaixona por ele, que ama a condessa Olívia, que por sua vez se apaixona por Cesário. A chegada de Sebastian e uma carta falsa que faz do mordomo Malvólio um tolo completam a confusão.",
     "nivel_dificuldade": "Avançado",
     "tags": [
       "shakespeare",
@@ -10533,7 +10533,7 @@
     "autor": "William Shakespeare",
     "genero": "Teatro",
     "idioma": "en",
-    "resumo": "Um grupo de senadores, entre eles Brutus, conspira para assassinar César por medo de que ele vire tirano. A morte do líder mergulha Roma em guerra civil. Uma tragédia política sobre poder e consciência.",
+    "resumo": "Em Roma, Brutus e Cássio temem que Júlio César queira virar rei e organizam uma conspiração para matá-lo nos Idos de Março. Depois do assassinato, Marco Antônio faz um discurso no funeral que vira o povo contra os conspiradores. A guerra civil termina em Filipos, e Brutus, mesmo vencido, é tratado como um homem de honra.",
     "nivel_dificuldade": "Avançado",
     "tags": [
       "shakespeare",
@@ -10549,7 +10549,7 @@
     "autor": "William Shakespeare",
     "genero": "Teatro",
     "idioma": "en",
-    "resumo": "O mercador Antônio pede dinheiro emprestado ao agiota Shylock para ajudar um amigo e assina um contrato arriscado. O julgamento que se segue levanta questões de justiça e preconceito. Uma peça complexa e muito debatida.",
+    "resumo": "Bassanio quer pedir a mão da rica Pórcia e consegue o dinheiro por meio do amigo Antônio, que toma emprestado do agiota Shylock com um contrato horrível: se não pagar a tempo, dará uma libra da própria carne. Quando os navios de Antônio se perdem, a dívida vai a julgamento, e Pórcia, disfarçada de advogado, decide o caso. A peça trata de justiça, misericórdia e preconceito.",
     "nivel_dificuldade": "Avançado",
     "tags": [
       "shakespeare",
@@ -10565,7 +10565,7 @@
     "autor": "William Shakespeare",
     "genero": "Teatro",
     "idioma": "en",
-    "resumo": "Exilada, Rosalinda foge para a floresta de Arden disfarçada de rapaz e testa o amor do apaixonado Orlando. No bosque, vários personagens encontram liberdade e reviravoltas. Uma comédia pastoral e espirituosa.",
+    "resumo": "Banida pelo tio, o duque Frederick, Rosalinda foge para a Floresta de Arden com a prima Celia e o bobo Touchstone, disfarçada de rapaz. Lá reencontra Orlando, que a ama, e o testa sem se revelar. Entre canções, poemas pendurados nas árvores e casamentos finais, a peça traz o célebre discurso de que o mundo todo é um palco.",
     "nivel_dificuldade": "Avançado",
     "tags": [
       "shakespeare",
@@ -10581,7 +10581,7 @@
     "autor": "William Shakespeare",
     "genero": "Teatro",
     "idioma": "en",
-    "resumo": "O ambicioso Ricardo, duque de Gloucester, elimina rivais e conquista a coroa da Inglaterra com astúcia e crueldade. O carisma do vilão atrai e assusta o público. Uma tragédia histórica sobre manipulação.",
+    "resumo": "Ricardo, duque de Gloucester, deformado e cheio de ambição, abre a peça dizendo que o inverno do descontentamento chegou. Com charme e crueldade ele elimina o irmão Clarence, casa com Anne e manda prender os dois sobrinhos na Torre de Londres para tomar a coroa. Seu reinado dura pouco: na batalha de Bosworth, o conde de Richmond o derrota.",
     "nivel_dificuldade": "Avançado",
     "tags": [
       "shakespeare",
@@ -10597,7 +10597,7 @@
     "autor": "William Shakespeare",
     "genero": "Teatro",
     "idioma": "en",
-    "resumo": "O jovem rei Henrique V leva a Inglaterra à guerra contra a França e conduz seus soldados à vitória em Azincourt. A peça discute liderança, honra e o custo do conflito. Uma peça histórica de discursos famosos.",
+    "resumo": "O jovem rei Henrique V, antes conhecido pelas farras, reivindica o trono da França e leva o exército inglês a atravessar o Canal. Depois do cerco de Harfleur, as tropas cansadas e doentes enfrentam um exército muito maior em Azincourt. O discurso da irmandade de quem luta ao lado do rei é um dos mais famosos do teatro.",
     "nivel_dificuldade": "Avançado",
     "tags": [
       "shakespeare",
@@ -10613,7 +10613,7 @@
     "autor": "William Shakespeare",
     "genero": "Teatro",
     "idioma": "en",
-    "resumo": "Petruchio decide conquistar e \"domar\" a geniosa Catarina, enquanto a irmã mais nova tem muitos pretendentes. A peça é divertida, mas hoje é debatida por sua visão de gênero. Uma comédia clássica e polêmica.",
+    "resumo": "Em Pádua, o pai de Catarina e Bianca só deixará casar a mais nova depois que a geniosa mais velha encontrar marido. Petruchio, em busca de fortuna, aceita o desafio e tenta dominar Catarina com comportamentos exagerados. A peça é encenada para o bêbado Christopher Sly, e o final, em que Catarina fala sobre obediência, é muito discutido hoje.",
     "nivel_dificuldade": "Avançado",
     "tags": [
       "shakespeare",
@@ -10629,7 +10629,7 @@
     "autor": "Oscar Wilde",
     "genero": "Teatro",
     "idioma": "en",
-    "resumo": "Dois amigos criam identidades falsas para escapar de obrigações, e a mentira se complica quando ambos tentam casar usando o nome Earnest. Os diálogos são cheios de ironia. Uma comédia de costumes brilhante.",
+    "resumo": "Jack Worthing e Algernon Moncrieff inventam identidades falsas para escapar de obrigações, mas ambos dizem se chamar Ernest quando se apaixonam por Gwendolen e Cecily, que só aceitam casar com um homem com esse nome. Entre confusões, uma bolsa de mão esquecida e a lady Bracknell, a peça ridiculariza as regras da boa sociedade com diálogos rápidos.",
     "nivel_dificuldade": "Intermediário",
     "tags": [
       "comédia",
@@ -10645,7 +10645,7 @@
     "autor": "Oscar Wilde",
     "genero": "Teatro",
     "idioma": "en",
-    "resumo": "Um político respeitado, Sir Robert Chiltern, é chantageado por uma antiga conhecida que sabe de um segredo do passado. A esposa idealiza o marido, e a descoberta ameaça o casamento. Uma comédia sobre honra e perdão.",
+    "resumo": "Sir Robert Chiltern é um político respeitado, casado com uma mulher que o admira como a um homem perfeito. A senhora Cheveley aparece com uma carta que prova que, no começo da carreira, ele vendeu um segredo de Estado, e o chantageia. Para sair do aperto, Robert recorre ao amigo irônico Lord Goring, e o casal precisa aprender a perdoar.",
     "nivel_dificuldade": "Intermediário",
     "tags": [
       "comédia",
@@ -10661,7 +10661,7 @@
     "autor": "George Bernard Shaw",
     "genero": "Teatro",
     "idioma": "en",
-    "resumo": "O professor de fonética Higgins aposta que consegue transformar a vendedora de flores Eliza Doolittle numa dama apenas ensinando-a a falar. A experiência afeta os dois de formas inesperadas. A peça inspirou o musical My Fair Lady.",
+    "resumo": "O professor de fonética Henry Higgins aposta com o coronel Pickering que consegue passar uma vendedora de flores, Eliza Doolittle, por duquesa, só mudando a maneira dela de falar. Eliza treina por meses e brilha num baile da alta sociedade. Depois, ela exige ser tratada como pessoa, e não como experiência, numa peça que inspirou o musical My Fair Lady.",
     "nivel_dificuldade": "Intermediário",
     "tags": [
       "comédia",
@@ -10677,7 +10677,7 @@
     "autor": "George Bernard Shaw",
     "genero": "Teatro",
     "idioma": "en",
-    "resumo": "Shaw dramatiza a vida e o julgamento de Joana d'Arc, a camponesa que liderou tropas francesas e foi condenada por heresia. A peça discute fé, política e consciência individual. Um drama histórico de ideias.",
+    "resumo": "Shaw acompanha Joana d'Arc desde as visões que a levam a convencer o príncipe herdeiro a lhe dar um exército até o julgamento por heresia em Ruão, onde é condenada. A peça mostra tanto os soldados que a seguem quanto os bispos que a temem. Um epílogo passa-se em 1920, depois da canonização, e pergunta se o mundo estaria pronto para receber uma santa viva.",
     "nivel_dificuldade": "Avançado",
     "tags": [
       "história",
@@ -13637,7 +13637,7 @@
     "autor": "Henry James",
     "genero": "Terror",
     "idioma": "en",
-    "resumo": "Uma jovem governanta cuida de duas crianças numa casa de campo e passa a ver fantasmas que, segundo ela, querem corrompê-los. Nunca fica claro se são reais ou imaginados. Uma novela de terror sutil.",
+    "resumo": "Numa noite de Natal, alguém lê o diário de uma jovem governanta contratada para cuidar de duas crianças, Miles e Flora, numa casa de campo chamada Bly. Ela começa a ver dois vultos, os fantasmas do antigo criado Peter Quint e da governanta Miss Jessel, e acredita que querem as crianças. Até o fim, o leitor não sabe se os espíritos existem ou se ela está enlouquecendo.",
     "nivel_dificuldade": "Avançado",
     "tags": [
       "governanta",
@@ -13717,7 +13717,7 @@
     "autor": "Yuval Noah Harari",
     "genero": "História",
     "idioma": "en",
-    "resumo": "Harari conta a história da humanidade, da Revolução Cognitiva à era moderna, destacando mitos coletivos e mudanças como a agricultura. O livro mistura história, biologia e filosofia. Um best-seller mundial.",
+    "resumo": "O historiador Yuval Noah Harari propõe que o Homo sapiens dominou o planeta por saber criar histórias em comum, como religiões, dinheiro e países, que fazem milhões de desconhecidos cooperarem. O livro passa pelas revoluções Cognitiva, Agrícola e Científica. A edição em inglês tem frases claras, adequadas ao nível intermediário.",
     "nivel_dificuldade": "Intermediário",
     "tags": [
       "humanidade",
@@ -15909,7 +15909,7 @@
     "autor": "Anne Frank",
     "genero": "Biografia e Memórias",
     "idioma": "en",
-    "resumo": "Anne Frank anota no diário o tempo que passou escondida com a família num anexo secreto em Amsterdã, durante a ocupação nazista. O texto mostra medo, esperança e crescimento de uma adolescente. Um dos documentos mais lidos sobre o Holocausto.",
+    "resumo": "Entre 1942 e 1944, a adolescente Anne Frank escreve cartas à amiga imaginária Kitty sobre a vida num esconderijo atrás de uma estante em Amsterdã, com a família e outras quatro pessoas. Fala de medo, brigas, do primeiro amor por Peter e do sonho de virar escritora. Em inglês, o texto é simples e direto, bom para o nível intermediário.",
     "nivel_dificuldade": "Intermediário",
     "tags": [
       "segunda guerra",
@@ -15925,7 +15925,7 @@
     "autor": "Miguel de Cervantes",
     "genero": "Ficção Clássica",
     "idioma": "en",
-    "resumo": "Um fidalgo enlouquecido pelos livros de cavalaria se torna Dom Quixote e sai pelo mundo com o escudeiro Sancho Pança. Entre moinhos de vento e ilusões, a obra brinca com realidade e ficção. Um dos maiores romances de todos os tempos.",
+    "resumo": "Alonso Quijano, um fidalgo da Mancha, enlouquece de tanto ler livros de cavalaria e se declara o cavaleiro Dom Quixote, com o fiel escudeiro Sancho Pança ao lado. Os dois confundem moinhos com gigantes e estalagens com castelos, e o humor se mistura com a tristeza dos fracassos. Em inglês, é um clássico longo, de leitura avançada.",
     "nivel_dificuldade": "Avançado",
     "tags": [
       "espanha",
@@ -15941,7 +15941,7 @@
     "autor": "Homer",
     "genero": "Poesia",
     "idioma": "en",
-    "resumo": "Depois da guerra de Troia, Ulisses tenta voltar a Ítaca e enfrenta monstros, tempestades e deuses por dez anos. Em casa, a esposa Penélope resiste aos pretendentes. Um clássico da aventura e do retorno.",
+    "resumo": "Dez anos depois de Troia, Ulisses ainda tenta chegar a Ítaca e enfrenta o ciclope Polifemo, as sereias, Circe e Calipso. Em casa, a esposa Penélope adia o casamento com os pretendentes que consomem os bens da família, e o filho Telêmaco parte em busca do pai. A edição em inglês é uma leitura avançada, cheia de epítetos repetidos.",
     "nivel_dificuldade": "Avançado",
     "tags": [
       "épico",
@@ -15957,7 +15957,7 @@
     "autor": "Homer",
     "genero": "Poesia",
     "idioma": "en",
-    "resumo": "O poema épico narra episódios da Guerra de Troia, centrado na ira do guerreiro Aquiles e na morte de Heitor. Deuses e mortais se misturam nos combates. Um dos textos fundadores da literatura ocidental.",
+    "resumo": "Nos últimos dias do cerco de Troia, Aquiles se recusa a lutar depois de uma ofensa de Agamêmnon, e os gregos sofrem derrotas. Ele só volta ao combate quando o amigo Pátroclo é morto por Heitor, e o duelo entre os dois é o ponto alto do poema. Em inglês, é uma leitura de linguagem elevada e frases longas.",
     "nivel_dificuldade": "Avançado",
     "tags": [
       "épico",
@@ -15973,7 +15973,7 @@
     "autor": "Sun Tzu",
     "genero": "Filosofia",
     "idioma": "en",
-    "resumo": "Um tratado chinês antigo sobre estratégia militar que também é lido como guia de liderança e negócios. O texto defende planejamento, conhecimento do adversário e economia de esforços. Uma leitura curta e muito citada.",
+    "resumo": "Atribuído ao general chinês Sun Tzu, o tratado tem treze capítulos curtos sobre planejamento, terreno, espionagem e o uso do engano. A ideia central é vencer sem lutar sempre que possível, conhecendo a si mesmo e ao adversário. Em inglês, as frases são curtas e diretas, boas para treinar a leitura.",
     "nivel_dificuldade": "Intermediário",
     "tags": [
       "estratégia",
@@ -15989,7 +15989,7 @@
     "autor": "Marcus Aurelius",
     "genero": "Filosofia",
     "idioma": "en",
-    "resumo": "Anotações pessoais do imperador romano, em que ele reflete sobre dever, morte e controle das emoções. O estoicismo guia o texto. Uma leitura clássica de sabedoria prática.",
+    "resumo": "O imperador romano Marco Aurélio escreveu estas notas para si mesmo durante campanhas militares, sem pensar em publicá-las. Elas repetem ideias estoicas: aceitar o que não depende de nós, agir com justiça e lembrar que a vida é breve. Em inglês, é um texto de frases curtas e aforismos, de nível avançado.",
     "nivel_dificuldade": "Avançado",
     "tags": [
       "estoicismo",
