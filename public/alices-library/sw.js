@@ -1,5 +1,5 @@
 /* Cache simples para o app abrir offline depois da primeira visita. */
-const CACHE = 'alices-library-v9';
+const CACHE = 'alices-library-v10';
 const FILES = ['./', 'index.html', 'style.css', 'app.js', 'acervo.js', 'acervo.json', 'catalogo.json', 'dict.js', 'dicionario-en-pt.json', 'lib/jszip.min.js', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png', 'apple-touch-icon.png'];
 
 self.addEventListener('install', e => {
@@ -11,6 +11,7 @@ self.addEventListener('activate', e => {
 self.addEventListener('fetch', e => {
   if (e.request.method !== 'GET') return;
   if (new URL(e.request.url).origin !== self.location.origin) return;   // APIs externas (dicionário online) não passam pelo cache
+  if (new URL(e.request.url).pathname.includes('/livros/')) return;       // textos grandes: vão direto para o armazenamento do app (IndexedDB)
   // rede primeiro (para receber atualizações), cache como reserva offline
   e.respondWith(
     fetch(e.request).then(res => {

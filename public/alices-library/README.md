@@ -31,9 +31,13 @@ Leitor gratuito de livros em inglês para iPad, com **páginas que viram**, **le
 - **Navegação:** deslizar ou tocar nas bordas; **pinça** com dois dedos muda o tamanho da letra; roda do mouse/trackpad vira a página.
 - **Teclado:** ← → / Espaço / PageUp / PageDown (página), **[ ]** (capítulo), **Home/End** (início/fim), **+ −** (letra), **T** (tema), **F** (modo foco), **Esc** (sair).
 
-## Acervo de livros
+## Acervo de livros e estante inicial
 
-Na estante, o botão **Acervo** abre a lista de 1000 livros (745 em inglês, 255 em português) com busca por título, autor ou tema, filtros de idioma, gênero e nível, e "mostrar mais". É a mesma lista que está no Supabase (`public.livros`), guardada no app em `acervo.json` (gerada de `supabase/catalog/livros.json`). Cada ficha traz resumo, gênero, nível de inglês (estimativa) e um atalho para procurar o texto grátis no Project Gutenberg. As fichas não trazem o texto do livro: para ler, use os livros grátis da estante ou "Adicionar livro".
+- **Acervo:** na estante, o botão **Acervo** abre a lista de 1000 livros (745 em inglês, 255 em português) com busca por título, autor ou tema, filtros de idioma, gênero e nível e "só com texto no app". Os dados ficam em `acervo.json` (gerado de `supabase/catalog/livros.json`, a mesma lista da tabela `public.livros`).
+- **Texto dentro do app:** 59 livros de domínio público (Austen, Dickens, Brontë, Wells, Doyle, Shakespeare, Wilde, Twain, Carroll e outros) têm o texto na pasta `livros/` (JSON por livro, extraído do Standard Ebooks, licença CC0). No Acervo, o botão **Adicionar à estante** baixa o texto do próprio app, guarda no aparelho (IndexedDB) e o livro abre no leitor interno, sem Apple Books nem Arquivos. Os demais livros têm só a ficha, com um atalho "Procurar fora do app".
+- **Estante inicial:** no primeiro uso a estante já mostra esses 59 livros ("Pronto"). O texto de cada um é baixado na primeira vez que você toca na capa e depois fica no aparelho. Se você remover um livro, ele não volta sozinho (flag `lv:starter-v1`).
+- **Direitos autorais:** só entram obras cujo autor morreu há mais de 70 anos, para valer também no Brasil; autores mais recentes (como Hemingway, Christie e Milne) ficam de fora mesmo que existam em edições dos EUA.
+- Para atualizar os textos: `scripts/` não faz isso; a conversão foi feita a partir dos repositórios `standardebooks/*` no GitHub e os arquivos gerados estão versionados em `livros/`.
 
 ## Dicionário inglês → português
 

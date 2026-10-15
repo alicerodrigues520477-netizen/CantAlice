@@ -281,6 +281,33 @@ async function importFile(file) {
   return book;
 }
 
+/* ================= livros de domínio público incluídos no app (pasta livros/) ================= */
+async function fetchBundled(slug) {
+  const r = await fetch('livros/' + encodeURIComponent(slug) + '.json');
+  if (!r.ok) throw new Error('livros/' + slug + ' → ' + r.status);
+  return r.json();
+}
+/** Coloca na estante os livros do índice, prontos para abrir; o texto só é baixado na primeira abertura. */
+async function ensureStarterShelf() {
+  if (store.get('lv:starter-v1', false)) return;
+  let idx;
+  try { const r = await fetch('livros/indice.json'); if (!r.ok) return; idx = await r.json(); } catch { return; }   // sem rede: tenta de novo na próxima vez
+  const now = Date.now();
+  idx.forEach((e, i) => {
+    if (lib.some(b => b.id === e.id)) return;
+    lib.push({ id: e.id, title: e.title, author: e.author, level: e.level || '', chapters: e.chapters, chars: e.chars, added: now - i, remote: e.slug });
+  });
+  saveLib(); store.set('lv:starter-v1', true);
+}
+/** Botão "Adicionar à estante" do Acervo: baixa o texto do próprio app e guarda no aparelho. */
+async function addBundled(slug) {
+  const id = 'txt-' + slug;
+  if (lib.some(b => b.id === id)) return;                       // já está (inclusive "pronto para abrir")
+  const b = await fetchBundled(slug);
+  await saveBook(b); renderShelf();
+  toast('“' + b.title + '” está na sua estante ✓');
+}
+
 async function ensureSample() {
   if (store.get('lv:sample-removed', false) || lib.some(b => b.id === SAMPLE.id)) return;
   const book = { id: SAMPLE.id, title: SAMPLE.title, author: SAMPLE.author, chapters: SAMPLE.chapters.map(c => paragraphsToChapter(c.title, c.paras)) };
@@ -358,7 +385,7 @@ function shelfCard(b) {
   });
   const pct = Math.round((store.get('lv:pct:' + b.id, 0)) * 100);
   const prog = el('div', 'prog'); const bar = el('i'); bar.style.width = pct + '%'; prog.append(bar);
-  const meta = el('div', 'meta'); meta.append(el('span', null, pct ? pct + '% lido' : 'Novo'), el('span', null, b.chapters + ' cap.'));
+  const meta = el('div', 'meta'); meta.append(el('span', null, pct ? pct + '% lido' : (b.remote ? 'Pronto' : 'Novo')), el('span', null, b.chapters + ' cap.'));
   card.append(open, del, el('div', 'info'));
   $('.info', card).append(prog, meta);
   return card;
@@ -687,6 +714,14 @@ function refreshChrome() {
 async function openBook(id) {
   let b;
   try { b = await DB.get('books', id); } catch { b = null; }
+  if (!b) {
+    const entry = lib.find(x => x.id === id);
+    if (entry && entry.remote) {                                  // livro da estante inicial: busca o texto e abre aqui mesmo
+      toast('Preparando “' + entry.title + '”…', 15000);
+      try { b = await fetchBundled(entry.remote); await saveBook(b); renderShelf(); toast('Pronto ✓', 600); }
+      catch (err) { console.error(err); toast('Não consegui preparar este livro agora. Verifique a conexão e tente de novo.', 4500); return; }
+    }
+  }
   if (!b) { toast('Não consegui abrir este livro.'); return; }
   ttsStop(); audioStop();
   book = b; clearLayouts(); resetAnnState(); loadAnn();
@@ -1758,6 +1793,7 @@ $('#file-book').addEventListener('change', async e => {
   applySettings();
   loadDictionary(); updateVocabBtn();
   try { await ensureSample(); } catch (e) { console.error(e); toast('Aviso: o armazenamento do navegador não está disponível.', 5000); }
+  await ensureStarterShelf();
   renderShelf();
   const hash = location.hash.slice(1);
   if (hash && lib.some(b => b.id === hash)) openBook(hash); else showView('library');
@@ -1765,5 +1801,6 @@ $('#file-book').addEventListener('change', async e => {
 })();
 
 // ganchos para teste automatizado
+window.__lvLib = { has: id => lib.some(b => b.id === id), addBundled, open: openBook };
 window.__lv = { get pos() { return pos; }, get g() { return g; }, get tts() { return tts; }, turn, jumpTo, ttsStart, ttsStop, getLayout, importFile, openBook };
 })();

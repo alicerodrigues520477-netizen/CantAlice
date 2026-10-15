@@ -10,7 +10,7 @@
 
   const view = $('#acervo'), lib = $('#library');
   let books = null, loading = null, shown = PAGE, matches = [];
-  const f = { q: '', lang: '', genre: '', level: '' };
+  const f = { q: '', lang: '', genre: '', level: '', text: false };
 
   function load() {
     if (books) return Promise.resolve(books);
@@ -29,8 +29,32 @@
     const words = norm(f.q).split(/\s+/).filter(Boolean);
     matches = books.filter(b =>
       (!f.lang || b.idioma === f.lang) && (!f.genre || b.genero === f.genre) &&
-      (!f.level || b.nivel_dificuldade === f.level) && words.every(w => b._s.includes(w)));
+      (!f.level || b.nivel_dificuldade === f.level) && (!f.text || b.texto) && words.every(w => b._s.includes(w)));
     shown = PAGE; render();
+  }
+
+  /* botão principal do cartão: livros com texto no app entram na estante sem sair daqui */
+  function actions(b) {
+    const row = el('div', 'ac-actions');
+    const api = window.__lvLib;
+    if (b.texto && api) {
+      const id = 'txt-' + b.texto, btn = el('button', 'btn primary ac-add'); btn.type = 'button';
+      const paint = () => { const on = api.has(id); btn.textContent = on ? '✓ Na estante · Abrir' : '＋ Adicionar à estante'; btn.classList.toggle('is-in', on); btn.disabled = false; };
+      paint();
+      btn.addEventListener('click', async () => {
+        if (api.has(id)) { close(); api.open(id); return; }          // já está: abre no leitor do app
+        btn.disabled = true; btn.textContent = 'Adicionando…';        // retorno visual imediato
+        try { await api.addBundled(b.texto); paint(); btn.classList.add('just-added'); }
+        catch (err) { console.error(err); btn.textContent = 'Não deu · tentar de novo'; btn.disabled = false; }
+      });
+      row.append(btn, el('span', 'ac-hint', 'Texto de domínio público dentro do app'));
+    } else {
+      row.append(el('span', 'ac-hint', 'Texto não incluído no app'));
+      const a = el('a', 'ac-link', 'Procurar fora do app ↗');
+      a.href = 'https://www.gutenberg.org/ebooks/search/?query=' + encodeURIComponent(b.titulo + ' ' + b.autor);
+      a.target = '_blank'; a.rel = 'noopener'; row.append(a);
+    }
+    return row;
   }
 
   function card(b) {
@@ -40,12 +64,10 @@
     badges.append(el('span', 'tchip', b.idioma === 'pt' ? 'Português' : 'Inglês'));
     if (b.nivel_dificuldade) badges.append(el('span', 'tchip lvl', b.nivel_dificuldade));
     badges.append(el('span', 'tchip alt', b.genero));
+    if (b.texto) badges.append(el('span', 'tchip txt', '📖 com texto'));
     c.append(badges, el('p', 'ac-sum', b.resumo));
     if (b.tags && b.tags.length) c.append(el('p', 'ac-tags', b.tags.map(t => '#' + t.replace(/\s+/g, '-')).join('  ')));
-    const a = el('a', 'ac-link', 'Procurar texto grátis ↗');
-    a.href = 'https://www.gutenberg.org/ebooks/search/?query=' + encodeURIComponent(b.titulo + ' ' + b.autor);
-    a.target = '_blank'; a.rel = 'noopener';
-    c.append(a);
+    c.append(actions(b));
     return c;
   }
 
@@ -57,15 +79,16 @@
     $('#ac-level').classList.toggle('set', !!f.level);
     $('#ac-genre').classList.toggle('set', !!f.genre);
     $('#ac-clear').classList.toggle('set', n > 0);
+    $('#ac-text').classList.toggle('on', f.text); $('#ac-text').setAttribute('aria-pressed', f.text);
   }
 
   function render() {
     const list = $('#ac-list'); list.replaceChildren();
     for (const b of matches.slice(0, shown)) list.append(card(b));
-    const active = [f.q && `“${f.q.trim()}”`, f.lang && (f.lang === 'pt' ? 'Português' : 'Inglês'), f.genre, f.level].filter(Boolean);
+    const active = [f.q && `“${f.q.trim()}”`, f.lang && (f.lang === 'pt' ? 'Português' : 'Inglês'), f.genre, f.level, f.text && 'com texto no app'].filter(Boolean);
     const total = books.length;
     $('#ac-count').textContent = matches.length
-      ? `${matches.length}${active.length ? ` de ${total}` : ''} ${matches.length === 1 ? 'livro' : 'livros'}${matches.length > shown ? ` · mostrando ${shown}` : ''}${active.length ? ` · filtrando por ${active.join(' + ')}` : ''}`
+      ? `${matches.length}${active.length ? ` de ${total} livros` : (matches.length === 1 ? ' livro' : ' livros')}${matches.length > shown ? ` · mostrando ${shown}` : ''}${active.length ? ` · filtrando por ${active.join(' + ')}` : ''}`
       : 'Nenhum livro encontrado. Tente outra palavra ou toque em Limpar.';
     syncUi(active.length);
     $('#ac-more').hidden = matches.length <= shown;
@@ -95,9 +118,10 @@
     $$('#ac-lang button').forEach(x => { x.classList.toggle('on', x === b); x.setAttribute('aria-pressed', x === b); });
     books && apply();
   }));
+  $('#ac-text').addEventListener('click', () => { f.text = !f.text; books && apply(); });
   $('#ac-more').addEventListener('click', () => { shown += PAGE; render(); });
   $('#ac-clear').addEventListener('click', () => {
-    Object.assign(f, { q: '', lang: '', genre: '', level: '' });
+    Object.assign(f, { q: '', lang: '', genre: '', level: '', text: false });
     $('#ac-q').value = ''; $('#ac-genre').value = ''; $('#ac-level').value = '';
     $$('#ac-lang button').forEach(x => { const on = x.dataset.v === ''; x.classList.toggle('on', on); x.setAttribute('aria-pressed', on); });
     books && apply();
