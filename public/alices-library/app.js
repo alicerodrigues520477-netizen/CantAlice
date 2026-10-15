@@ -22,7 +22,7 @@ function toast(msg, ms = 2600) {
 }
 
 /* ================= ajustes ================= */
-const APP_VERSION = 'v13';
+const APP_VERSION = 'v14';
 const S = Object.assign({ theme: 'paper', size: 21, font: 'serif', lh: 1.55, margin: 'normal', zen: false, sound: true, rate: 1, voice: '', dict: true, dictOnline: true }, store.get('lv:settings', {}));
 const saveSettings = () => store.set('lv:settings', S);
 
@@ -1710,6 +1710,17 @@ $('#btn-toc').addEventListener('click', () => openSheet('#sheet-toc'));
 $('#btn-settings').addEventListener('click', () => openSheet('#sheet-settings'));
 $('#btn-audio').addEventListener('click', () => openSheet('#sheet-audio'));
 $('#btn-back').addEventListener('click', closeBook);
+
+/* ponte para a leitura bilíngue (bilingual.js) */
+views.bil = $('#bil');
+window.__lvRd = {
+  book: () => book, pos: () => pos, S, showView, showUI, applySettings,
+  stop() { ttsStop(); audioStop(); },
+  pages: c => getLayout(c).n,
+  go(c, frac) { const L = getLayout(c); jumpTo({ c, p: Math.floor(clamp(frac, 0, 0.999) * L.n) }, false); },
+  fraction() { const L = getLayout(pos.c); return clamp(pos.p / L.n, 0, 1); },
+  setSize: v => setSize(v),
+};
 
 function applySettings() {
   document.documentElement.dataset.theme = S.theme;

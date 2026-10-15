@@ -122,3 +122,18 @@ Identidade "Alice no País das Maravilhas": madeira quente, ouro envelhecido, ro
 - **Estante fluida**: `renderShelf` calcula o nº de colunas e define `--cw`; capas, textos e espaçamentos escalam com ela.
 - **Acervo**: cartões com mini-capa e prateleira de madeira; livros com texto no app ganham destaque esmeralda.
 - **Microinterações**: hover só com `@media (hover:hover)`, foco visível, `prefers-reduced-motion` respeitado.
+
+## Leitura bilíngue (English | Português)
+
+Botão ▥ na barra do leitor. No iPad em paisagem e no desktop abre em duas colunas (inglês à esquerda, português à direita) com a emenda de livro no meio; em retrato e no celular mostra um idioma por vez e o botão flutuante **Ver tradução / Ver inglês** alterna sem perder o parágrafo. Cada parágrafo é uma linha de grade, então as duas colunas rolam juntas e ficam alinhadas. O código está em `bilingual.js` (tela `#bil` no `index.html`; ponte `window.__lvRd` em `app.js`).
+
+As traduções são arquivos `livros/<slug>.pt.json` (o `slug` é o do livro; o trecho de amostra `sample-alice` usa o de *Alice*):
+
+```json
+{ "lang": "pt", "credit": "quem traduziu", "titles": { "downtherabbithole": "Pela Toca do Coelho" },
+  "paras": { "<chave do parágrafo em inglês>": "tradução (use \n para quebrar linha em versos)" } }
+```
+
+A chave é `keyOf(texto)` (`window.__bil.keyOf`): o texto sem acentos/pontuação em minúsculas, com os 40 primeiros e os 24 últimos caracteres separados por `~`. Assim a tradução não depende da numeração de capítulos e pode cobrir só parte do livro. Sem arquivo, o app mostra "Tradução não disponível para este título"; com arquivo mas sem o capítulo, "Tradução ainda não disponível para este capítulo". Livros que você importa não têm tradução.
+
+Hoje: *Alice's Adventures in Wonderland*, capítulos I e II (tradução feita por IA, revisão pendente).
