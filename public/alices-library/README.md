@@ -134,8 +134,8 @@ As traduções são arquivos `livros/<slug>.pt.json` (o `slug` é o do livro; o 
   "paras": { "<chave do parágrafo em inglês>": "tradução (use \n para quebrar linha em versos)" } }
 ```
 
-A chave é `keyOf(texto)` (`window.__bil.keyOf`): o texto sem acentos/pontuação em minúsculas, com os 40 primeiros e os 24 últimos caracteres separados por `~`. Assim a tradução não depende da numeração de capítulos e pode cobrir só parte do livro. Sem arquivo, o app mostra "Tradução não disponível para este título"; com arquivo mas sem o capítulo, "Tradução ainda não disponível para este capítulo". Livros que você importa não têm tradução.
+A chave é `keyOf(texto)` (`window.__bil.keyOf`): o texto sem acentos/pontuação em minúsculas, com os 40 primeiros e os 24 últimos caracteres e o tamanho, separados por `~`. Assim a tradução não depende da numeração de capítulos e pode cobrir só parte do livro. Sem arquivo, o app mostra "Tradução não disponível para este título"; com arquivo mas sem o capítulo, "Tradução ainda não disponível para este capítulo". Livros que você importa não têm tradução.
 
-Hoje: os 59 livros da estante têm tradução. *Alice's Adventures in Wonderland* tem os capítulos I e II; cada um dos outros 58 tem o **trecho de abertura** (≈650 palavras, parágrafos completos do primeiro capítulo com texto). Onde a tradução termina, o leitor mostra "A tradução deste livro, por enquanto, vai até aqui" e o resto fica só em inglês. Tradução feita por IA, revisão pendente. Para ampliar um livro, acrescente mais parágrafos em `paras` (a chave é `keyOf`); `coverage` pode ser `trecho`, `partial` ou `full`.
+Hoje: os 59 livros da estante têm tradução. *Alice's Adventures in Wonderland* tem os capítulos I e II; cada um dos outros 58 tem os **3 primeiros capítulos com texto** (≈18,6 mil parágrafos no total). Nos capítulos seguintes o leitor mostra "Tradução ainda não disponível para este capítulo" e deixa o inglês. Tradução feita por IA, revisão pendente. Para ampliar um livro, acrescente mais parágrafos em `paras` (a chave é `keyOf`); `coverage` pode ser `trecho`, `partial` ou `full`.
 
-O mesmo conteúdo vai para o Supabase com `node scripts/build-traducoes-sql.mjs` (gera `supabase/catalog/livros_traducoes.sql`).
+O mesmo conteúdo vai para o Supabase com `node scripts/build-traducoes-sql.mjs` (gera `supabase/catalog/traducoes/*.sql`).

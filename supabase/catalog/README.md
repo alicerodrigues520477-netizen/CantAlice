@@ -13,13 +13,21 @@
 
 Rode **depois** de `livros.sql` (pode repetir): troca as sinopses genéricas ou repetidas dos 59 livros com texto por sinopses específicas em português, acrescenta `resumo_en` (versão em inglês) e marca `texto_no_app`, `texto_slug`, `texto_fonte` e `estante_inicial`. Também dá um resumo próprio às 7 edições em inglês que repetiam o resumo da edição em português. A estante de leitura de cada pessoa fica no aparelho, não nesta tabela; `estante_inicial` só marca quais livros o app coloca na estante no primeiro uso.
 
-## Traduções para a leitura bilíngue (`livros_traducoes.sql`)
+## Traduções para a leitura bilíngue (`traducoes/*.sql`)
 
-Rode **depois** de `livros.sql` e `livros_texto.sql` (pode repetir). Cria `public.livros_traducoes` (uma linha por livro, leitura pública, escrita só pelo painel), guarda os parágrafos em português em `jsonb` e marca `public.livros.traducao_pt` (`trecho`, `parcial` ou `completa`) dos 59 livros da estante. É gerado por `node scripts/build-traducoes-sql.mjs` a partir de `public/alices-library/livros/*.pt.json`.
+Rode **depois** de `livros.sql` e `livros_texto.sql`, **na ordem dos números** (pode repetir: é um "upsert"):
 
-**Atenção:** o leitor do iPad lê as traduções desses arquivos `.pt.json`, que vão junto com o app; rodar o SQL **não é necessário** para a leitura bilíngue funcionar. O SQL serve para guardar a tradução no banco (consulta, backup, revisão). Cobertura atual: *Alice's Adventures in Wonderland* capítulos I e II; os outros 58 livros, só o trecho de abertura.
+| Arquivo | O que faz |
+|---|---|
+| `traducoes/00_estrutura.sql` | Cria `public.livros_traducoes` (leitura pública, escrita só pelo painel) e a coluna `public.livros.traducao_pt`. |
+| `traducoes/01_livros.sql` … `10_livros.sql` | Inserem as traduções, uma linha por livro (cada arquivo tem uns 500–630 KB, para caber no SQL Editor). |
+| `traducoes/11_marcar_livros.sql` | Marca `traducao_pt` (`trecho`, `parcial` ou `completa`) nos 59 livros. |
 
-> Validado em um Postgres real (PGlite): roda duas vezes sem duplicar, `anon` lê e não escreve, e os 59 livros ficam marcados.
+No SQL Editor: abra cada arquivo, cole e clique em **Run**, um de cada vez, do 00 ao 11. Eles são gerados por `node scripts/build-traducoes-sql.mjs` a partir de `public/alices-library/livros/*.pt.json`.
+
+**Atenção:** o leitor do iPad lê as traduções desses arquivos `.pt.json`, que vão junto com o app; rodar o SQL **não é necessário** para a leitura bilíngue funcionar. O SQL serve para guardar a tradução no banco (consulta, backup, revisão). Cobertura atual: *Alice's Adventures in Wonderland* capítulos I e II; os outros 58 livros, os 3 primeiros capítulos com texto (≈18,6 mil parágrafos no total).
+
+> Validado em um Postgres real (PGlite): os 12 arquivos rodam em ordem, duas vezes, sem duplicar; `anon` lê e não escreve; os 59 livros ficam marcados.
 
 ## Campos
 
