@@ -17,7 +17,7 @@
 
   /* ----- chaves e arquivo de tradução ----- */
   const norm = t => t.normalize('NFD').toLowerCase().replace(/[^a-z0-9]/g, '');
-  const keyOf = t => { const n = norm(t); return n.slice(0, 40) + '~' + n.slice(-24); };
+  const keyOf = t => { const n = norm(t); return n.slice(0, 40) + '~' + n.slice(-24) + '~' + n.length; };
   const SAMPLE_SLUG = { 'sample-alice': 'lewis-carroll_alices-adventures-in-wonderland' };
   const slugOf = id => SAMPLE_SLUG[id] || (/^txt-/.test(id) ? id.slice(4) : null);
   const memo = new Map();
@@ -93,6 +93,8 @@
     ci = clamp(c, 0, book.chapters.length - 1);
     const ch = book.chapters[ci];
     rows = chapterRows(ch).map(r => ({ ...r, pt: tr && tr.paras[keyOf(r.text)] || '' }));
+    // capítulo sem tradução de fato: só falas curtas idênticas a outras já traduzidas (ex.: “Yes.”) não contam
+    if (rows.filter(r => r.pt).length < Math.max(3, rows.length * 0.25) && rows.some(r => !r.pt)) rows.forEach(r => { r.pt = ''; });
     const ptTitle = tr && tr.titles && tr.titles[titleTail(ch.title)];
     const h = $('#bil-h'), hEn = el('span', 'bil-en', ch.title), pre = ch.title.split(/\s*[:—–-]\s*/)[0].replace(/^chapter/i, 'Capítulo');
     const hPt = el('span', 'bil-pt', ptTitle ? pre + ': ' + ptTitle : '');
@@ -109,7 +111,15 @@
       if (r.node.tagName === 'H3') row.classList.add('bil-h3'); else if (r.quote) row.classList.add('bil-blockquote');
       if (r.pt) r.pt.split('\n').forEach((line, i) => { if (i) pt.append(document.createElement('br')); pt.append(document.createTextNode(line)); });
       else { pt.classList.add('missing'); if (na && trCount() === 0) pt.append(na.cloneNode(true)); }
-      row.append(en, pt); rowsEl.append(row);
+      row.append(en, pt); rowsEl.append(row); r.row = row;
+    }
+    // tradução parcial (trecho de abertura): marca onde ela termina; o que vem depois fica só em inglês
+    let last = -1; rows.forEach((r, i) => { if (r.pt) last = i; });
+    if (last >= 0 && last < rows.length - 1) {
+      rows.forEach((r, i) => { if (i > last) r.row.classList.add('untr'); });
+      const cut = el('div', 'bil-cut');
+      cut.append(el('strong', null, 'A tradução deste livro, por enquanto, vai até aqui'), el('span', null, 'Só o trecho de abertura está traduzido; daqui em diante, apenas o inglês.'));
+      rows[last].row.after(cut);
     }
     // aviso elegante quando não há tradução
     noteEl.hidden = true; noteEl.replaceChildren();
@@ -117,7 +127,7 @@
       noteEl.append(el('strong', null, 'Tradução não disponível para este título'), el('span', null, 'Por enquanto só o texto em inglês. Os livros com tradução mostram o português ao lado, parágrafo por parágrafo.'));
       noteEl.hidden = false;
     } else if (trCount() === 0) {
-      noteEl.append(el('strong', null, 'Tradução ainda não disponível para este capítulo'), el('span', null, 'Este livro já tem capítulos traduzidos: escolha outro no seletor acima.'));
+      noteEl.append(el('strong', null, 'Tradução ainda não disponível para este capítulo'), el('span', null, 'Os primeiros capítulos deste livro estão traduzidos; use o seletor acima para voltar a eles.'));
       noteEl.hidden = false;
     }
     $('#bil-credit').textContent = tr && trCount() ? 'English | Português' : 'Leitura bilíngue';

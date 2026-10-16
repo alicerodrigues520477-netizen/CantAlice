@@ -22,7 +22,7 @@ function toast(msg, ms = 2600) {
 }
 
 /* ================= ajustes ================= */
-const APP_VERSION = 'v15';
+const APP_VERSION = 'v17';
 const S = Object.assign({ theme: 'paper', size: 21, font: 'serif', lh: 1.55, margin: 'normal', zen: false, sound: true, rate: 1, voice: '', dict: true, dictOnline: true }, store.get('lv:settings', {}));
 const saveSettings = () => store.set('lv:settings', S);
 
