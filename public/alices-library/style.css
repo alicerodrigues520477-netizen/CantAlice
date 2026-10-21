@@ -853,3 +853,22 @@ body[data-view="bil"] #toast { bottom: calc(var(--sab) + 92px); }
 .bil-cut span { font: 13px/1.4 var(--font-ui); opacity: .7; }
 #bil[data-mode="narrow"][data-lang="pt"] .bil-row.untr { display: none; }
 .bil-end .btn { color: #3b2a14; background: rgba(160,110,40,.14); border-color: rgba(160,110,40,.55); }
+
+/* ===== LEITURA BILÍNGUE + ÁUDIO ===== */
+#bil .bar.top { transform: none !important; opacity: 1 !important; pointer-events: auto !important; }   /* a barra não some com o resto da interface */
+#bil-audio.active::after { content: ""; position: absolute; top: 8px; right: 8px; width: 8px; height: 8px; border-radius: 50%; background: var(--gold-500, #c9a24b); box-shadow: 0 0 0 2px rgba(0,0,0,.35); }
+.bil-player { position: absolute; left: 0; right: 0; bottom: 0; z-index: 30; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 8px calc(var(--sar) + 14px) calc(var(--sab) + 10px) calc(var(--sal) + 14px); background: var(--ui); backdrop-filter: blur(18px) saturate(1.4); -webkit-backdrop-filter: blur(18px) saturate(1.4); border-top: 1px solid rgba(201,162,75,.28); color: var(--gold-100); }
+.bil-player[hidden] { display: none; }
+.bil-player button.icon { color: var(--gold-100); }
+.bil-player button.icon.big { width: 52px; height: 52px; color: var(--on-gold, #2a1a14); }
+.bil-player button:disabled { opacity: .35; }
+.bil-player .chip { min-height: 38px; padding: 0 14px; border-radius: 999px; border: 1px solid rgba(201,162,75,.4); background: rgba(255,255,255,.07); color: var(--gold-100); font: 600 14px var(--font-ui); }
+.bil-player .chip.on { background: rgba(201,162,75,.3); }
+.bil-player .chip[hidden], .bil-player [hidden] { display: none; }
+.bp-label { font: italic 15px var(--font-sub, var(--font-display)); opacity: .85; white-space: nowrap; margin: 0 4px; }
+#bil[data-player="on"] #bil-scroll { bottom: calc(var(--sab) + 74px); padding-bottom: 60px; }
+#bil[data-player="on"] .bil-fab { bottom: calc(var(--sab) + 90px); }
+.bil-row.playing { background: color-mix(in srgb, var(--hl) 40%, transparent); }
+.bil-row.playing .bil-pt { box-shadow: inset 3px 0 0 var(--gold-500, #c9a24b); padding-left: 10px; margin-left: -10px; }
+.bil-en .s.hl { background: var(--hl); box-shadow: 0 0 0 2px var(--hl); border-radius: 3px; }
+@media (max-width: 560px) { .bp-label { display: none; } .bil-player { gap: 4px; } .bil-player .chip { padding: 0 10px; } }

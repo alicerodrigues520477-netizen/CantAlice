@@ -22,7 +22,7 @@ function toast(msg, ms = 2600) {
 }
 
 /* ================= ajustes ================= */
-const APP_VERSION = 'v17';
+const APP_VERSION = 'v18';
 const S = Object.assign({ theme: 'paper', size: 21, font: 'serif', lh: 1.55, margin: 'normal', zen: false, sound: true, rate: 1, voice: '', dict: true, dictOnline: true }, store.get('lv:settings', {}));
 const saveSettings = () => store.set('lv:settings', S);
 
@@ -1540,7 +1540,8 @@ function ttsStop() {
   if (synth) synth.cancel();
   setHL(null); setTtsUi(false); keepAwake(false);
 }
-function setTtsUi(on) { $('#ic-play').hidden = on; $('#ic-pause').hidden = !on; }
+const showIf = (n, on) => n.toggleAttribute('hidden', !on);          // SVG não tem a propriedade .hidden
+function setTtsUi(on) { showIf($('#ic-play'), !on); showIf($('#ic-pause'), on); document.dispatchEvent(new Event('lv:audio')); }
 
 function speakCurrent(fresh) {
   if (!tts.on) return;
@@ -1563,7 +1564,7 @@ function speakCurrent(fresh) {
 
 /** Garante que a frase lida está visível, virando páginas se preciso. */
 function ensureVisible(c, idx) {
-  if (flip) return;
+  if (flip || views.reader.hidden) return;
   const L = getLayout(c);
   const page = L.sentPage[idx] || 0, start = page - page % g.per;
   if (c === pos.c && start === pos.p) return;
@@ -1592,6 +1593,7 @@ function setRate(r, restart = true) {
   S.rate = r; saveSettings();
   $('#tts-rate').textContent = fmtRate(r); $('#rate-val').textContent = fmtRate(r); $('#rng-rate').value = r;
   if (tts.on && restart) speakCurrent(true);
+  document.dispatchEvent(new Event('lv:audio'));
 }
 $('#tts-rate').addEventListener('click', () => {
   const i = RATES.findIndex(r => Math.abs(r - S.rate) < 0.01);
@@ -1606,7 +1608,7 @@ function applyHL() {
   const L = layouts.get(hl.c); if (L) L.tpl.querySelectorAll(q).forEach(e => e.classList.add('hl'));
   bookEl.querySelectorAll(`.page[data-c="${hl.c}"] ${q}`).forEach(e => e.classList.add('hl'));
 }
-function setHL(c, idx) { clearHLDom(); hl = c == null ? null : { c, idx }; applyHL(); }
+function setHL(c, idx) { clearHLDom(); hl = c == null ? null : { c, idx }; applyHL(); document.dispatchEvent(new CustomEvent('lv:hl', { detail: { c, idx } })); }
 
 /* ----- tela sempre acesa durante a leitura ----- */
 let wake = null;
@@ -1660,12 +1662,14 @@ function syncAudioPanel() {
   $('#audio-empty').hidden = has; $('#audio-player').hidden = !has;
   $('#audio-name').textContent = audio.dataset.name || '';
   updateAudioUi();
+  document.dispatchEvent(new Event('lv:audio'));
 }
 function updateAudioUi() {
   const d = audio.duration || 0;
   $('#audio-cur').textContent = fmtTime(audio.currentTime); $('#audio-dur').textContent = fmtTime(d);
   $('#audio-seek').value = d ? Math.round(audio.currentTime / d * 1000) : 0;
-  $('#a-ic-play').hidden = !audio.paused; $('#a-ic-pause').hidden = audio.paused;
+  const was = updateAudioUi.paused; showIf($('#a-ic-play'), audio.paused); showIf($('#a-ic-pause'), !audio.paused);
+  if (was !== audio.paused) { updateAudioUi.paused = audio.paused; document.dispatchEvent(new Event('lv:audio')); }
 }
 function skip(s) { audio.currentTime = clamp(audio.currentTime + s, 0, audio.duration || 0); }
 
@@ -1720,6 +1724,14 @@ window.__lvRd = {
   go(c, frac) { const L = getLayout(c); jumpTo({ c, p: Math.floor(clamp(frac, 0, 0.999) * L.n) }, false); },
   fraction() { const L = getLayout(pos.c); return clamp(pos.p / L.n, 0, 1); },
   setSize: v => setSize(v),
+  // áudio (voz alta em inglês e audiolivro em arquivo) para a leitura bilíngue
+  wrapSentences, openSheet,
+  audioState: () => ({ tts: tts.on, c: tts.c, idx: tts.idx, file: !audio.paused, hasFile: !!audioUrl, rate: S.rate, rateLabel: fmtRate(S.rate), fileRateLabel: audio.playbackRate.toFixed(2).replace(/\.?0+$/, '') + '×', speech: !!synth }),
+  ttsStart: (c, idx) => ttsStart(c, idx), ttsStop: () => ttsStop(), ttsStep: d => ttsStep(d),
+  cycleRate() { const i = RATES.findIndex(r => Math.abs(r - S.rate) < 0.01); setRate(RATES[(i + 1) % RATES.length]); },
+  fileSkip: d => skip(d),
+  fileRate() { const sel = $('#a-speed'), o = [...sel.options].map(x => +x.value), n = o[(o.indexOf(+sel.value) + 1) % o.length]; sel.value = String(n); audio.playbackRate = n; document.dispatchEvent(new Event('lv:audio')); },
+  fileToggle() { if (audio.paused) audio.play().catch(() => toast('Não consegui tocar este áudio.')); else audio.pause(); },
 };
 
 function applySettings() {
