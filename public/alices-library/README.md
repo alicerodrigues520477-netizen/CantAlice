@@ -139,3 +139,10 @@ A chave é `keyOf(texto)` (`window.__bil.keyOf`): o texto sem acentos/pontuaçã
 Hoje: os 59 livros da estante têm tradução. *Alice's Adventures in Wonderland* tem os capítulos I e II; cada um dos outros 58 tem os **3 primeiros capítulos com texto** (≈18,6 mil parágrafos no total). Nos capítulos seguintes o leitor mostra "Tradução ainda não disponível para este capítulo" e deixa o inglês. Tradução feita por IA, revisão pendente. Para ampliar um livro, acrescente mais parágrafos em `paras` (a chave é `keyOf`); `coverage` pode ser `trecho`, `partial` ou `full`.
 
 O mesmo conteúdo vai para o Supabase com `node scripts/build-traducoes-sql.mjs` (gera `supabase/catalog/traducoes/*.sql`).
+
+### Áudio na leitura bilíngue
+
+O botão de fones na barra da leitura bilíngue abre o player de áudio, que fica fixo embaixo (o texto termina acima dele, sem ficar coberto). Ele tem play/pause, frase anterior/próxima, velocidade e o botão de ajustes do audiolivro.
+
+- **Voz em inglês (padrão):** lê o texto em inglês, frase por frase, com a frase destacada na coluna em inglês e o parágrafo correspondente em português marcado ao lado (em retrato, com o português na tela, o parágrafo da frase lida é marcado e acompanhado). Trocar de capítulo com a voz tocando reinicia a leitura no capítulo novo; ao fim do capítulo a voz segue para o próximo. Voltar ao leitor mantém a voz e o destaque.
+- **Audiolivro em arquivo:** se houver um arquivo anexado ao livro, o player passa a controlá-lo (play/pause, voltar/avançar 15 s e velocidade) e um botão "Audiolivro / Voz" alterna entre os dois; só um toca por vez. O arquivo se anexa pelo botão de ajustes do player (o mesmo painel do leitor).

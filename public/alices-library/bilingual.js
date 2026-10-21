@@ -42,6 +42,7 @@
   const titleTail = t => norm(t.split(/\s*[:—–-]\s*/).slice(1).join(' ') || t);
   function chapterRows(c) {
     const tmp = el('div'); tmp.innerHTML = c.html;
+    if (R() && R().wrapSentences) R().wrapSentences(tmp);       // <span class="s" data-i>: mesmos índices da leitura em voz alta do leitor
     const titleKey = norm(c.title.replace(/^chapter\s+/i, '')), rows = [];
     const push = (n, quote) => { const text = plain(n); if (text) rows.push({ node: n, text, quote }); };
     for (const n of tmp.children) {
@@ -140,16 +141,94 @@
   const fractionNow = () => { const m = Math.max(1, scroller.scrollHeight - scroller.clientHeight); return clamp(scroller.scrollTop / m, 0, 1); };
   const persist = () => { if (book) store.set(saveKey(), { c: ci, f: fractionNow() }); };
 
+
+  /* ----- áudio: voz alta em inglês (com destaque) e audiolivro em arquivo ----- */
+  const player = $('#bil-player'), btnAudio = $('#bil-audio');
+  let playerOn = false;
+  function setPlayer(on) {
+    playerOn = !!on; player.hidden = !on; view.dataset.player = on ? 'on' : 'off';
+    btnAudio.setAttribute('aria-pressed', String(on)); btnAudio.classList.toggle('on', on);
+  }
+  /** Com um arquivo de audiolivro anexado, escolhe entre ele e a voz em inglês (o arquivo vem primeiro). */
+  const amode = st => !st.hasFile ? 'voice' : (store.get('lv:bil-amode', 'file') === 'voice' ? 'voice' : 'file');
+  function syncAudio() {
+    const rd = R(); if (!rd || !opened) return;
+    const st = rd.audioState(), m = amode(st), playing = st.tts || st.file, file = m === 'file';
+    $('#bp-ic-play').toggleAttribute('hidden', playing); $('#bp-ic-pause').toggleAttribute('hidden', !playing);   // SVG não tem .hidden
+    $('#bp-rate').textContent = file ? st.fileRateLabel : st.rateLabel;
+    $('#bp-label').textContent = file ? '🎧 Audiolivro' : st.speech ? '🔊 English' : 'Sem voz neste navegador';
+    $('#bp-mode').hidden = !st.hasFile; $('#bp-mode').textContent = file ? 'Audiolivro' : 'Voz';
+    $('#bp-prev').disabled = $('#bp-next').disabled = !file && !st.speech;
+    $('#bp-prev').setAttribute('aria-label', file ? 'Voltar 15 segundos' : 'Frase anterior');
+    $('#bp-next').setAttribute('aria-label', file ? 'Avançar 15 segundos' : 'Próxima frase');
+    $('#bp-play').setAttribute('aria-label', playing ? 'Pausar' : file ? 'Tocar o audiolivro' : 'Ler em voz alta (inglês)');
+    btnAudio.classList.toggle('active', playing);
+    if (playing && !playerOn) setPlayer(true);
+  }
+  /** Índice (no leitor) da primeira frase em inglês visível: onde a leitura em voz alta começa. */
+  function firstSentence() {
+    const a = anchorRow(), kids = [...rowsEl.children];
+    for (let i = a.i; i < kids.length; i++) { const s = kids[i].querySelector('.s'); if (s) return +s.dataset.i; }
+    return 0;
+  }
+  function goChapter(c) {
+    renderChapter(c, 0);
+    if (R().audioState().tts) R().ttsStart(ci, 0);               // a voz acompanha o capítulo escolhido
+  }
+  function clearPlaying() {
+    rowsEl.querySelectorAll('.s.hl').forEach(e => e.classList.remove('hl'));
+    rowsEl.querySelectorAll('.bil-row.playing').forEach(r => r.classList.remove('playing'));
+  }
+  /** Mantém a frase lida à vista, sem ficar sob a barra de cima nem sob o player. */
+  function keepInView(target) {
+    const sr = scroller.getBoundingClientRect(), rr = target.getBoundingClientRect();
+    const top = sr.top + $('#bil-bar').offsetHeight + 8, bottom = sr.bottom - 24;
+    if (rr.top >= top && rr.bottom <= bottom) return;
+    scroller.scrollTo({ top: scroller.scrollTop + rr.top - (top + (bottom - top) * 0.3), behavior: 'smooth' });
+  }
+  document.addEventListener('lv:hl', e => {
+    if (!opened) return;
+    const { c, idx } = e.detail || {};
+    clearPlaying();
+    if (c == null) return;
+    if (c !== ci) renderChapter(c, 0);                           // a voz passou para o próximo capítulo
+    const spans = rowsEl.querySelectorAll(`.s[data-i="${idx}"]`);
+    if (!spans.length) return;
+    spans.forEach(s => s.classList.add('hl'));
+    const row = spans[0].closest('.bil-row'); row.classList.add('playing');
+    keepInView(spans[0].getClientRects().length ? spans[0] : row);   // em português (coluna única) acompanha o parágrafo
+  });
+  document.addEventListener('lv:audio', syncAudio);
+  btnAudio.addEventListener('click', () => setPlayer(!playerOn));
+  const fileMode = () => amode(R().audioState()) === 'file';
+  $('#bp-play').addEventListener('click', () => {
+    const rd = R(), st = rd.audioState();
+    if (fileMode()) { if (st.tts) rd.ttsStop(); rd.fileToggle(); }
+    else if (st.tts) rd.ttsStop(); else if (st.speech) { if (st.file) rd.fileToggle(); rd.ttsStart(ci, firstSentence()); }
+  });
+  const stepBtn = d => () => { const rd = R(); if (fileMode()) rd.fileSkip(15 * d); else if (rd.audioState().tts) rd.ttsStep(d); else rd.ttsStart(ci, firstSentence()); };
+  $('#bp-prev').addEventListener('click', stepBtn(-1));
+  $('#bp-next').addEventListener('click', stepBtn(1));
+  $('#bp-rate').addEventListener('click', () => { if (fileMode()) R().fileRate(); else R().cycleRate(); });
+  $('#bp-mode').addEventListener('click', () => {
+    const rd = R(), next = fileMode() ? 'voice' : 'file';
+    store.set('lv:bil-amode', next);
+    if (rd.audioState().tts) rd.ttsStop(); if (rd.audioState().file) rd.fileToggle();
+    syncAudio();
+  });
+  $('#bp-sheet').addEventListener('click', () => R().openSheet('#sheet-audio'));
+
   /* ----- abrir / fechar ----- */
   async function open() {
     const rd = R(), b = rd && rd.book(); if (!b) return;
-    rd.stop(); book = b;
+    book = b;                                                     // o áudio que estiver tocando continua
     $('#bil-title').textContent = b.title;
     chSel.replaceChildren(...b.chapters.map((c, i) => { const o = el('option', null, c.title); o.value = String(i); return o; }));
     tr = await loadTranslation(b.id);
     const p = rd.pos();
     rd.showView('bil'); rd.showUI(false); opened = true; setMode(); view.classList.toggle('no-tr', !tr);
     renderChapter(p.c, rd.fraction());
+    syncAudio();
     $('#bil-credit').title = tr && tr.credit ? tr.credit : '';
     scroller.focus({ preventScroll: true });
   }
@@ -165,10 +244,10 @@
   $('#bil-back').addEventListener('click', close);
   flipBtn.addEventListener('click', () => flip());
   $('#bil-layout').addEventListener('click', () => { const a = anchorRow(); forceTwo = !forceTwo; store.set('lv:bil-two', forceTwo); setMode(); requestAnimationFrame(() => restoreRow(a)); });
-  chSel.addEventListener('change', () => renderChapter(+chSel.value, 0));
-  $('#bil-prev').addEventListener('click', () => renderChapter(ci - 1, 0));
-  $('#bil-next').addEventListener('click', () => renderChapter(ci + 1, 0));
-  $('#bil-end-next').addEventListener('click', () => renderChapter(ci + 1, 0));
+  chSel.addEventListener('change', () => goChapter(+chSel.value));
+  $('#bil-prev').addEventListener('click', () => goChapter(ci - 1));
+  $('#bil-next').addEventListener('click', () => goChapter(ci + 1));
+  $('#bil-end-next').addEventListener('click', () => goChapter(ci + 1));
   $('#bil-minus').addEventListener('click', () => { const a = anchorRow(); R().setSize(R().S.size - 1); restoreRow(a); });
   $('#bil-plus').addEventListener('click', () => { const a = anchorRow(); R().setSize(R().S.size + 1); restoreRow(a); });
   let st; scroller.addEventListener('scroll', () => { clearTimeout(st); st = setTimeout(persist, 400); }, { passive: true });
@@ -183,8 +262,8 @@
     if (e.target && /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) return;
     if (e.key === 'Escape') { e.preventDefault(); close(); }
     else if (e.key === 't' || e.key === 'T') { if (mode === 'narrow' && !flipBtn.hidden) { e.preventDefault(); flip(); } }
-    else if (e.key === ']' || e.key === 'n') { if (ci + 1 < book.chapters.length) { e.preventDefault(); renderChapter(ci + 1, 0); } }
-    else if (e.key === '[' || e.key === 'p') { if (ci > 0) { e.preventDefault(); renderChapter(ci - 1, 0); } }
+    else if (e.key === ']' || e.key === 'n') { if (ci + 1 < book.chapters.length) { e.preventDefault(); goChapter(ci + 1); } }
+    else if (e.key === '[' || e.key === 'p') { if (ci > 0) { e.preventDefault(); goChapter(ci - 1); } }
   });
   const onMq = () => { if (!opened) { setMode(); return; } const a = anchorRow(); setMode(); requestAnimationFrame(() => restoreRow(a)); };
   (mq.addEventListener ? mq.addEventListener('change', onMq) : mq.addListener(onMq));

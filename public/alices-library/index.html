@@ -123,6 +123,9 @@
     <button class="icon" id="bil-prev" aria-label="Capítulo anterior"><svg viewBox="0 0 24 24"><path d="M6 5v14M19 5l-9 7 9 7z" /></svg></button>
     <select id="bil-ch" aria-label="Capítulo"></select>
     <button class="icon" id="bil-next" aria-label="Próximo capítulo"><svg viewBox="0 0 24 24"><path d="M18 5v14M5 5l9 7-9 7z" /></svg></button>
+    <button class="icon" id="bil-audio" aria-label="Áudio: ler em voz alta e audiolivro" aria-pressed="false" title="Áudio">
+      <svg viewBox="0 0 24 24"><path d="M4 15v-3a8 8 0 0116 0v3" /><rect x="3" y="14" width="4" height="6" rx="1.5" /><rect x="17" y="14" width="4" height="6" rx="1.5" /></svg>
+    </button>
     <button class="icon" id="bil-layout" aria-label="Alternar entre duas colunas e uma coluna" title="Duas colunas / uma coluna" hidden><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M12 5v14" /></svg></button>
     <button class="icon" id="bil-minus" aria-label="Diminuir a letra"><span class="aa">A−</span></button>
     <button class="icon" id="bil-plus" aria-label="Aumentar a letra"><span class="aa">A+</span></button>
@@ -135,6 +138,18 @@
       <div id="bil-rows"></div>
       <div class="bil-end"><button type="button" class="btn" id="bil-end-next">Próximo capítulo →</button></div>
     </div>
+  </div>
+  <div id="bil-player" class="bil-player" role="region" aria-label="Controles de áudio" hidden>
+    <button class="icon" id="bp-prev" aria-label="Frase anterior"><svg viewBox="0 0 24 24"><path d="M6 5v14M19 5l-9 7 9 7z" /></svg></button>
+    <button class="icon big" id="bp-play" aria-label="Ler em voz alta (inglês)">
+      <svg id="bp-ic-play" viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z" class="fill" /></svg>
+      <svg id="bp-ic-pause" viewBox="0 0 24 24" hidden><path d="M7 5h4v14H7zM13 5h4v14h-4z" class="fill" /></svg>
+    </button>
+    <button class="icon" id="bp-next" aria-label="Próxima frase"><svg viewBox="0 0 24 24"><path d="M18 5v14M5 5l9 7-9 7z" /></svg></button>
+    <button class="chip" id="bp-rate" aria-label="Velocidade da voz">1×</button>
+    <span id="bp-label" class="bp-label">🔊 English</span>
+    <button class="chip" id="bp-mode" aria-label="Trocar entre a voz em inglês e o audiolivro" hidden>Voz</button>
+    <button class="icon" id="bp-sheet" aria-label="Audiolivro: anexar arquivo e mais controles"><svg viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h2M10 17h10" /><circle cx="16" cy="7" r="2" /><circle cx="8" cy="17" r="2" /></svg></button>
   </div>
   <button type="button" id="bil-flip" class="bil-fab" aria-live="polite">Ver tradução</button>
 </main>
