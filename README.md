@@ -246,7 +246,14 @@ sem deploy manual.
 ### 💤 Evitando a pausa automática do Supabase
 
 Projetos gratuitos do Supabase podem pausar por pouca atividade no banco ao
-longo de **7 dias**. O workflow
+longo de **7 dias**. Para manter consultas regulares mesmo quando o repositório
+fica parado, o Worker gratuito **cantalice-supabase-keepalive** roda na
+**Cloudflare quatro vezes por dia**, lendo um ID do catálogo público de livros.
+Esse agendamento independe de GitHub Actions, Codex e computador ligado.
+Código, configuração e manutenção estão em
+[`cloudflare/supabase-keepalive`](cloudflare/supabase-keepalive/README.md).
+
+Como verificação adicional, o workflow
 [`keep-supabase-alive.yml`](.github/workflows/keep-supabase-alive.yml) verifica
 a API REST **quatro vezes por dia**, usando as mesmas variáveis ou secrets
 `SUPABASE_URL`/`SUPABASE_ANON_KEY` da sincronização na nuvem. Configuração
@@ -259,10 +266,13 @@ Run workflow → resume_project**. Essa opção usa o secret existente
 `ACTIVE_HEALTHY`, uma consulta SQL somente leitura e a API REST.
 As execuções agendadas não desfazem uma pausa manual.
 
-Esses checks reduzem o risco, mas não garantem disponibilidade: o GitHub pode
-atrasar execuções e desativar schedules em repositórios públicos após 60 dias
-sem atividade. Confira as notificações de falhas do GitHub Actions e os e-mails
-do Supabase. Para eliminar pausas por inatividade, o Supabase recomenda o
+O GitHub pode desativar seu schedule após 60 dias sem atividade no repositório;
+o Cron Trigger da Cloudflare continua independente desse limite. Os resultados
+do Worker ficam em **Cloudflare → Workers & Pages → cantalice-supabase-keepalive
+→ Observability**. Confira também as notificações de falhas do GitHub Actions
+e os e-mails do Supabase. Esses checks mantêm atividade regular, mas não
+garantem disponibilidade nem protegem contra futuras mudanças de política.
+Para eliminar pausas por inatividade pelo plano, o Supabase recomenda o
 [plano Pro](https://supabase.com/docs/guides/platform/free-project-pausing)
 (pago; não é ativado por este workflow).
 
