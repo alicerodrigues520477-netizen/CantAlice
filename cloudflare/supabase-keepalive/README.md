@@ -32,8 +32,11 @@ without promising an availability SLA or immunity from future policy changes.
 4. In **Domains**, disable the workers.dev and Preview URLs routes. The Worker
    needs no HTTP endpoint. Its HTTP handler also rejects requests without
    accessing Supabase.
-5. Keep **Settings → Observability → Logs** enabled. In **Edit code → Schedule**,
-   run a scheduled-handler test and confirm the database success message.
+5. Keep **Settings → Observability → Logs** enabled. To verify actual scheduled
+   execution immediately, temporarily add `* * * * *` as a second Cron Trigger
+   and save. Wait for an invocation in **Observability → Live** and confirm
+   the database success message, then remove the temporary trigger and save.
+   Trigger changes can take up to 15 minutes to propagate.
 
 `wrangler.jsonc` records the same source and schedule for deployment with
 Cloudflare's CLI if needed. Keep the public key in a runtime binding rather
