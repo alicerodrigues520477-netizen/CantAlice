@@ -245,12 +245,26 @@ sem deploy manual.
 
 ### 💤 Evitando a pausa automática do Supabase
 
-Projetos gratuitos do Supabase pausam sozinhos depois de **7 dias sem
-atividade** na API. O workflow
-[`keep-supabase-alive.yml`](.github/workflows/keep-supabase-alive.yml) faz uma
-chamada leve à API REST duas vezes por semana (segunda e quinta) usando as
-mesmas variáveis `SUPABASE_URL`/`SUPABASE_ANON_KEY` da sincronização na
-nuvem — sem elas configuradas, o job é pulado sem erro.
+Projetos gratuitos do Supabase podem pausar por pouca atividade no banco ao
+longo de **7 dias**. O workflow
+[`keep-supabase-alive.yml`](.github/workflows/keep-supabase-alive.yml) verifica
+a API REST **quatro vezes por dia**, usando as mesmas variáveis ou secrets
+`SUPABASE_URL`/`SUPABASE_ANON_KEY` da sincronização na nuvem. Configuração
+ausente, projeto incorreto ou erro HTTP/rede agora fazem o job **falhar**.
+A consulta é somente leitura, respeita RLS e não imprime dados pessoais.
+
+Para retomar um projeto pausado: **Actions → Keep Supabase project active →
+Run workflow → resume_project**. Essa opção usa o secret existente
+`SUPABASE_ACCESS_TOKEN`, retoma somente o projeto CantAlice e verifica
+`ACTIVE_HEALTHY`, uma consulta SQL somente leitura e a API REST.
+As execuções agendadas não desfazem uma pausa manual.
+
+Esses checks reduzem o risco, mas não garantem disponibilidade: o GitHub pode
+atrasar execuções e desativar schedules em repositórios públicos após 60 dias
+sem atividade. Confira as notificações de falhas do GitHub Actions e os e-mails
+do Supabase. Para eliminar pausas por inatividade, o Supabase recomenda o
+[plano Pro](https://supabase.com/docs/guides/platform/free-project-pausing)
+(pago; não é ativado por este workflow).
 
 ---
 
