@@ -16,7 +16,8 @@ export async function checkDatabase(env) {
   const response = await fetch(ENDPOINT, {
     headers: { apikey: publicKey(env), 'Cache-Control': 'no-cache' },
     cache: 'no-store',
-    redirect: 'error',
+    // Cloudflare supports manual/follow; reject redirects via the status check.
+    redirect: 'manual',
     signal: AbortSignal.timeout(20000),
   });
   if (response.status !== 200) {

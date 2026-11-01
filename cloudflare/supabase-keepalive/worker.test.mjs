@@ -17,7 +17,7 @@ test('scheduled execution reads the fixed public catalog with no cache', async (
   assert.equal(url, 'https://kpdmrcvtqeomxmosjvuf.supabase.co/rest/v1/livros?select=id&limit=1');
   assert.equal(options.headers.apikey, key);
   assert.equal(options.cache, 'no-store');
-  assert.equal(options.redirect, 'error');
+  assert.equal(options.redirect, 'manual');
 });
 
 test('missing and privileged credentials never reach the network', async (t) => {
@@ -31,6 +31,13 @@ test('missing and privileged credentials never reach the network', async (t) => 
 test('HTTP failures propagate as failed scheduled executions', async (t) => {
   t.mock.method(globalThis, 'fetch', async () => new Response('unavailable', { status: 503 }));
   await assert.rejects(worker.scheduled({}, env), /HTTP 503/);
+});
+
+test('redirects fail instead of forwarding the API key', async (t) => {
+  t.mock.method(globalThis, 'fetch', async () => new Response(null, {
+    status: 302, headers: { Location: 'https://example.com/' },
+  }));
+  await assert.rejects(worker.scheduled({}, env), /HTTP 302/);
 });
 
 test('malformed or empty catalog responses fail', async (t) => {
