@@ -1,34 +1,41 @@
 name: Keep Supabase project active
 
-# Supabase's free tier pauses a project after 7 days without API activity.
-# This pings the REST API on a schedule so the project never goes quiet long
-# enough to trigger that (see the "sincronização na nuvem" section in the
-# README for how SUPABASE_URL / SUPABASE_ANON_KEY are set up).
-#
-# Uses the same repository Variables (or Secrets) as deploy.yml — no extra
-# setup needed if cloud sync is already configured. Without them, the job
-# just skips itself.
-
+# Free projects need sufficient database activity throughout the week.
+# These checks reduce inactivity pauses; only a paid plan guarantees no pauses.
 on:
   schedule:
-    - cron: '0 9 * * 1,4' # Mon & Thu, 09:00 UTC — well under the 7-day pause window
-  workflow_dispatch: {}
+    - cron: '17 3,9,15,21 * * *'
+  workflow_dispatch:
+    inputs:
+      resume_project:
+        description: Resume CantAlice if paused, then verify database health
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: supabase-health
+  cancel-in-progress: false
 
 jobs:
   ping:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
-      - name: Ping Supabase REST API
+      - uses: actions/checkout@v4
+
+      # The existing deployment credential stays inside GitHub Actions.
+      # Resuming is explicitly manual so an intentional pause stays paused.
+      - name: Resume paused project and verify database
+        if: github.event_name == 'workflow_dispatch' && inputs.resume_project
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+        run: python3 scripts/resume-supabase.py
+
+      - name: Verify Supabase REST database access
         env:
           SUPABASE_URL: ${{ vars.SUPABASE_URL || secrets.SUPABASE_URL }}
           SUPABASE_ANON_KEY: ${{ vars.SUPABASE_ANON_KEY || secrets.SUPABASE_ANON_KEY }}
-        run: |
-          if [ -z "$SUPABASE_URL" ] || [ -z "$SUPABASE_ANON_KEY" ]; then
-            echo "SUPABASE_URL/SUPABASE_ANON_KEY not set — skipping keep-alive ping."
-            exit 0
-          fi
-          status=$(curl -sS -o /dev/null -w '%{http_code}' \
-            "$SUPABASE_URL/rest/v1/progress?select=spotify_user_id&limit=1" \
-            -H "apikey: $SUPABASE_ANON_KEY" \
-            -H "Authorization: Bearer $SUPABASE_ANON_KEY")
-          echo "Supabase REST API responded with HTTP $status"
+        run: bash scripts/check-supabase.sh
